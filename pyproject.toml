@@ -1,0 +1,16 @@
+[project]
+name = "deepeval-exploration"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "datasets>=4.5.0",
+    "deepeval>=3.7.9",
+    "langchain>=1.2.4",
+    "langchain-core>=1.2.7",
+    "langchain-text-splitters>=1.1.0",
+    "notebook>=7.5.2",
+    "pydantic-ai>=1.42.0",
+    "qdrant-client>=1.16.2",
+]
