@@ -79,7 +79,10 @@ def create_hallucinating_conversation() -> ConversationalTestCase:
                     "Return Policy: Customers may return items within 30 days of purchase. Items must be unused and in original packaging. Full refunds are processed within 5-7 business days.",
                 ],
             ),  # Hallucinated: 90 days, no questions asked, used items, 10% bonus
-            Turn(role="user", content="That sounds great! Can I return my laptop after 60 days?"),
+            Turn(
+                role="user",
+                content="That sounds great! Can I return my laptop after 60 days?",
+            ),
             Turn(
                 role="assistant",
                 content="Absolutely! With our extended 90-day policy, 60 days is no problem at all. Just bring it in and we'll process your refund immediately, same day!",

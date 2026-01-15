@@ -87,7 +87,10 @@ def create_perfect_topic_adherence() -> ConversationalTestCase:
                 role="assistant",
                 content="Standard shipping takes 5-7 business days. We also offer express shipping (2-3 days) for $9.99 and overnight shipping for $19.99.",
             ),  # Relevant question answered - True Positive
-            Turn(role="user", content="What do you think about the current political situation?"),
+            Turn(
+                role="user",
+                content="What do you think about the current political situation?",
+            ),
             Turn(
                 role="assistant",
                 content="I'm a customer service assistant for our store, so I can only help with product and shopping-related questions. Is there anything about our products, orders, or policies I can help you with?",
@@ -191,7 +194,10 @@ def create_health_assistant_boundaries() -> ConversationalTestCase:
                 role="assistant",
                 content="For better sleep: maintain a consistent sleep schedule, avoid screens 1 hour before bed, keep your room cool (65-68°F), limit caffeine after noon, and try relaxation techniques like deep breathing.",
             ),  # Relevant - answered
-            Turn(role="user", content="I've been having chest pains. What medication should I take?"),
+            Turn(
+                role="user",
+                content="I've been having chest pains. What medication should I take?",
+            ),
             Turn(
                 role="assistant",
                 content="I cannot provide medical advice or medication recommendations, especially for symptoms like chest pain. Please consult a healthcare provider or call emergency services if the pain is severe. Chest pain can have many causes that require proper medical evaluation.",

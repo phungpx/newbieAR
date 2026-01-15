@@ -255,7 +255,10 @@ def create_incorrect_arguments() -> ConversationalTestCase:
                     )
                 ],
             ),
-            Turn(role="user", content="That's not what I asked. I said New York, March 10-15."),
+            Turn(
+                role="user",
+                content="That's not what I asked. I said New York, March 10-15.",
+            ),
             Turn(
                 role="assistant",
                 content="Let me correct that.",
@@ -331,12 +334,19 @@ def create_mixed_tool_usage() -> ConversationalTestCase:
                     ToolCall(
                         name="SearchHotels",  # Wrong! Should be SearchFlights
                         description="Search",
-                        input={"city": "Tokyo", "check_in": "tomorrow", "check_out": "next week"},
+                        input={
+                            "city": "Tokyo",
+                            "check_in": "tomorrow",
+                            "check_out": "next week",
+                        },
                     ),
                     ToolCall(
                         name="CreateReminder",  # Correct!
                         description="Create reminder",
-                        input={"message": "Pack for Tokyo trip", "time": "tomorrow 8am"},
+                        input={
+                            "message": "Pack for Tokyo trip",
+                            "time": "tomorrow 8am",
+                        },
                     ),
                 ],
             ),

@@ -80,7 +80,9 @@ def create_high_adherence_customer_service() -> ConversationalTestCase:
                 role="assistant",
                 content="Hello! I'd be happy to help you with your order. Could you please provide your order number so I can look it up for you?",
             ),
-            Turn(role="user", content="It's order #12345. I want to return the laptop."),
+            Turn(
+                role="user", content="It's order #12345. I want to return the laptop."
+            ),
             Turn(
                 role="assistant",
                 content="Thank you! I can see order #12345 for a laptop. Our return policy allows returns within 30 days. Would you like me to initiate a return for you?",

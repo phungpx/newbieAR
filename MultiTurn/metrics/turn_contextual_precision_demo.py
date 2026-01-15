@@ -195,7 +195,7 @@ def evaluate_scenario(scenario_name: str, test_case: ConversationalTestCase) -> 
         if turn.retrieval_context:
             print("       Retrieval Context (ranked):")
             for j, ctx in enumerate(turn.retrieval_context):
-                relevance = "?" # We'll let the metric determine
+                relevance = "?"  # We'll let the metric determine
                 print(f"         Rank {j+1}: {ctx[:50]}...")
 
     # Create and run metric
