@@ -41,9 +41,24 @@ def search_flights(origin: str, destination: str, date: str) -> dict:
     """Simulate searching for flights."""
     return {
         "flights": [
-            {"airline": "United", "price": 450, "departure": "08:00", "arrival": "14:30"},
-            {"airline": "Delta", "price": 520, "departure": "10:30", "arrival": "17:00"},
-            {"airline": "American", "price": 480, "departure": "14:00", "arrival": "20:30"},
+            {
+                "airline": "United",
+                "price": 450,
+                "departure": "08:00",
+                "arrival": "14:30",
+            },
+            {
+                "airline": "Delta",
+                "price": 520,
+                "departure": "10:30",
+                "arrival": "17:00",
+            },
+            {
+                "airline": "American",
+                "price": 480,
+                "departure": "14:00",
+                "arrival": "20:30",
+            },
         ],
         "origin": origin,
         "destination": destination,
@@ -69,12 +84,19 @@ def search_restaurants(city: str, cuisine: str = None) -> dict:
     """Simulate searching for restaurants."""
     restaurants = [
         {"name": "Sukiyabashi Jiro", "cuisine": "Sushi", "rating": 4.9, "price": "$$$"},
-        {"name": "Narisawa", "cuisine": "French-Japanese", "rating": 4.8, "price": "$$$$"},
+        {
+            "name": "Narisawa",
+            "cuisine": "French-Japanese",
+            "rating": 4.8,
+            "price": "$$$$",
+        },
         {"name": "Ichiran Ramen", "cuisine": "Ramen", "rating": 4.6, "price": "$"},
         {"name": "Tonki", "cuisine": "Tonkatsu", "rating": 4.5, "price": "$$"},
     ]
     if cuisine:
-        restaurants = [r for r in restaurants if cuisine.lower() in r["cuisine"].lower()]
+        restaurants = [
+            r for r in restaurants if cuisine.lower() in r["cuisine"].lower()
+        ]
     return {"restaurants": restaurants, "city": city}
 
 
@@ -125,7 +147,11 @@ def complete_trip_planner(user_request: str) -> str:
         ToolCall(
             name="SearchHotels",
             description="Search for hotels in a city",
-            input={"city": "Tokyo", "check_in": "2024-04-15", "check_out": "2024-04-20"},
+            input={
+                "city": "Tokyo",
+                "check_in": "2024-04-15",
+                "check_out": "2024-04-20",
+            },
         )
     )
 
@@ -255,7 +281,9 @@ def evaluate_single_scenario(scenario_name: str, agent_func, user_input: str):
         print(f"\nAgent Output (truncated): {output[:500]}...")
         print(f"\n--- Evaluation Results ---")
         print(f"Task Completion Score: {metric.score}")
-        print(f"Passed Threshold ({metric.threshold}): {metric.score >= metric.threshold}")
+        print(
+            f"Passed Threshold ({metric.threshold}): {metric.score >= metric.threshold}"
+        )
         print(f"Reason: {metric.reason}")
 
     return metric.score
