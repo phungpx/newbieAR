@@ -28,9 +28,7 @@ Argument Correctness = Total Number of Tool Calls / Number of Correctly 
 
 The Step Efficiency metric is an agentic metric that extracts the task from your agent's trace and evaluates the `efficiency of your agent's execution steps` in completing that task. It analyzes your agent's full trace to determine the task and execution efficiency.
 
-### Required Arguments
-
-The StepEfficiencyMetric is a trace-only metric and **MUST** be used with `evals_iterator` or `@observe` decorator. It requires:
+### Required ArgumentsThe StepEfficiencyMetric is a trace-only metric and **MUST** be used with `evals_iterator` or `@observe` decorator. It requires:
 
 - Setting up tracing with `@observe` decorators
 - Using `update_current_trace()` to provide:

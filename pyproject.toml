@@ -10,7 +10,10 @@ dependencies = [
     "langchain>=1.2.4",
     "langchain-core>=1.2.7",
     "langchain-text-splitters>=1.1.0",
+    "loguru>=0.7.3",
     "notebook>=7.5.2",
     "pydantic-ai>=1.42.0",
     "qdrant-client>=1.16.2",
+    "sentence-transformers>=5.2.2",
+    "transformers>=4.57.6",
 ]

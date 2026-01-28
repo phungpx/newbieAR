@@ -365,7 +365,9 @@ def demonstrate_expected_output_importance():
         complex_case,
     )
 
-    print(f"\n*** Same context, different scores: Simple={simple_score:.2f}, Complex={complex_score:.2f} ***")
+    print(
+        f"\n*** Same context, different scores: Simple={simple_score:.2f}, Complex={complex_score:.2f} ***"
+    )
     print("The expected_output determines what information needs to be retrieved!")
 
 

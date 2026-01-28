@@ -1,12 +1,9 @@
 from openai import OpenAI
 
 
-class OpenAIClient:
+class LLMClient:
     def __init__(
-        self,
-        base_url: str,
-        api_keys: str | list[str],
-        model_id: str = "gemma-3-12b-it",
+        self, base_url: str, api_keys: str | list[str], model_id: str = "gemma-3-12b-it"
     ):
         if not api_keys or len(api_keys) == 0:
             raise ValueError("api_keys is required")

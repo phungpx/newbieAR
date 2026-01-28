@@ -32,7 +32,13 @@ class QdrantSettings(ProjectBaseSettings):
     qdrant_collection_name: str = "qdrant-deepeval"
 
 
-class ProjectSettings(LLMSettings, LangfuseSettings, QdrantSettings):
+class EmbeddingSettings(ProjectBaseSettings):
+    embedding_model_name: str = "thenlper/gte-large"
+    embedding_dimensions: int = 1024
+    embedding_batch_size: int = 32
+
+
+class ProjectSettings(LLMSettings, LangfuseSettings, QdrantSettings, EmbeddingSettings):
     @property
     def llm(self) -> LLMSettings:
         return LLMSettings(**self.model_dump())
@@ -44,6 +50,10 @@ class ProjectSettings(LLMSettings, LangfuseSettings, QdrantSettings):
     @property
     def langfuse(self) -> LangfuseSettings:
         return LangfuseSettings(**self.model_dump())
+
+    @property
+    def embedding(self) -> EmbeddingSettings:
+        return EmbeddingSettings(**self.model_dump())
 
 
 settings = ProjectSettings()
