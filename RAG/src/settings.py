@@ -33,20 +33,28 @@ class LangfuseSettings(ProjectBaseSettings):
 class QdrantSettings(ProjectBaseSettings):
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str | None = None
-    qdrant_collection_name: str = "qdrant-deepeval"
+    qdrant_collection_name: str = "wikipedia-collection"
 
 
-class EmbeddingSettings(ProjectBaseSettings):
+class SentenceTransformerEmbeddingSettings(ProjectBaseSettings):
     embedding_model_name: str = "all-MiniLM-L6-v2"
     embedding_dimensions: int = 384
     embedding_batch_size: int = 1
+
+
+class OpenAIEmbeddingSettings(ProjectBaseSettings):
+    embedding_base_url: str = "http://127.0.0.1:1234/v1"
+    embedding_api_key: str = "empty"
+    embedding_model_id: str = "text-embedding-all-minilm-l6-v2-embedding"
+    embedding_dimensions: int = 384
 
 
 class ProjectSettings(
     LLMSettings,
     LangfuseSettings,
     QdrantSettings,
-    EmbeddingSettings,
+    SentenceTransformerEmbeddingSettings,
+    OpenAIEmbeddingSettings,
     ConfidentSettings,
 ):
     @property
@@ -62,8 +70,12 @@ class ProjectSettings(
         return LangfuseSettings(**self.model_dump())
 
     @property
-    def embedding(self) -> EmbeddingSettings:
-        return EmbeddingSettings(**self.model_dump())
+    def sentence_transformer_embedding(self) -> SentenceTransformerEmbeddingSettings:
+        return SentenceTransformerEmbeddingSettings(**self.model_dump())
+
+    @property
+    def openai_embedding(self) -> OpenAIEmbeddingSettings:
+        return OpenAIEmbeddingSettings(**self.model_dump())
 
     @property
     def confident(self) -> ConfidentSettings:
