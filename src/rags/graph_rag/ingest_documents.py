@@ -7,7 +7,7 @@ from src.rags.document_loader.docling_loader import load_and_chunk_document
 
 
 async def ingest(
-    file_path: str,
+    file_paths: list[str],
     clear_existing_graphdb_data: bool = False,
     tokenizer_name: str = "sentence-transformers/all-MiniLM-L6-v2",
     max_tokens: int = 1024,
@@ -18,13 +18,17 @@ async def ingest(
         max_coroutines=1,
     )
 
-    logger.info(f"Loading and chunking document: {file_path}")
-    json_chunks = load_and_chunk_document(
-        file_path,
-        tokenizer_name=tokenizer_name,
-        max_tokens=max_tokens,
-        output_dir=output_dir,
-    )
+    json_chunks: list[dict] = []
+    for file_path in file_paths:
+        logger.info(f"Loading and chunking document: {file_path}")
+        json_chunks.extend(
+            load_and_chunk_document(
+                file_path,
+                tokenizer_name=tokenizer_name,
+                max_tokens=max_tokens,
+                output_dir=output_dir,
+            )
+        )
 
     try:
         for json_chunk in json_chunks:
@@ -75,13 +79,12 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     file_paths = [str(file_path) for file_path in Path(args.file_dir).glob("**/*.md")]
-    for file_path in file_paths:
-        asyncio.run(
-            ingest(
-                file_path=file_path,
-                clear_existing_graphdb_data=args.clear_existing_graphdb_data,
-                tokenizer_name=args.tokenizer_name,
-                max_tokens=args.max_tokens,
-                output_dir=args.output_dir,
-            )
+    asyncio.run(
+        ingest(
+            file_paths=file_paths,
+            clear_existing_graphdb_data=args.clear_existing_graphdb_data,
+            tokenizer_name=args.tokenizer_name,
+            max_tokens=args.max_tokens,
+            output_dir=args.output_dir,
         )
+    )

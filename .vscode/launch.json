@@ -11,6 +11,20 @@
             "module": "RAG.src.core.synthesize",
             "console": "integratedTerminal",
             "justMyCode": false
+        },
+        {
+            "name": "Ingestion",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.rags.graph_rag.ingest_documents",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--file_dir",
+                "data/wikipedia/documents",
+                "--output_dir",
+                "data/wikipedia/chunks",
+            ]
         }
     ]
 }

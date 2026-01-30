@@ -2,10 +2,13 @@ services:
   neo4j:
     image: neo4j:latest
     environment:
-      NEO4J_AUTH: neo4j/phungpx100196
+      NEO4J_AUTH: neo4j/aisac_kg
       NEO4JLABS_PLUGINS: '["apoc","graph-data-science"]'
       NEO4J_dbms_security_procedures_unrestricted: 'gds.*,apoc.*'
       NEO4J_dbms_security_procedures_allowlist: 'gds.*,apoc.*'
+      # Allow browser UI access from outside container
+      NEO4J_server_http_listen__address: 0.0.0.0:7474
+      NEO4J_server_bolt_listen__address: 0.0.0.0:7687
     ports:
       - "7474:7474"
       - "7687:7687"

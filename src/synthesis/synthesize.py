@@ -13,15 +13,15 @@ from deepeval.synthesizer import Synthesizer, Evolution
 from .utils import save_goldens_to_files
 
 model = GPTModel(
-    model=settings.llm.llm_model,
-    api_key=settings.llm.llm_api_key,
-    base_url=settings.llm.llm_base_url,
+    model=settings.llm_model,
+    api_key=settings.llm_api_key,
+    base_url=settings.llm_base_url,
     cost_per_input_token=0.3 * 10**-6,
     cost_per_output_token=2.5 * 10**-6,
 )
 
 embeder = LocalEmbeddingModel(
-    model=settings.embedding_model_name,
+    model=settings.embedding_model,
     base_url=settings.embedding_base_url,
     api_key=settings.embedding_api_key,
 )
