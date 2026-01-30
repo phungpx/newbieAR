@@ -79,12 +79,12 @@ class GraphRetrieval:
                     ],
                     reranker=NodeReranker.rrf,
                 ),
-                # episode_config=EpisodeSearchConfig(
-                #     search_methods=[
-                #         EpisodeSearchMethod.bm25,
-                #     ],
-                #     reranker=EpisodeReranker.cross_encoder,
-                # ),
+                episode_config=EpisodeSearchConfig(
+                    search_methods=[
+                        EpisodeSearchMethod.bm25,
+                    ],
+                    reranker=EpisodeReranker.rrf,
+                ),
                 limit=num_results,
             )
             results = await self.graphiti._search(query, config)
@@ -214,7 +214,7 @@ async def main_async():
                 if query.lower() in ["exit", "quit"]:
                     break
 
-                contexts, response = await retrieval.generate(query, num_results=20)
+                contexts, response = await retrieval.generate(query, num_results=5)
                 display_results(query, contexts, response)
             except Exception as e:
                 console.print(f"[bold red]Error: {e}[/bold red]")
