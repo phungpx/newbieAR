@@ -19,8 +19,7 @@ from graphiti_core.search.search_config import (
 )
 
 from src.settings import settings
-from src.deps import OpenAILLMClient
-from src.rags.graph_rag.graphiti_client import GraphitiClient
+from src.deps import OpenAILLMClient, GraphitiClient
 
 # Initialize Rich Console
 console = Console()
