@@ -4,7 +4,7 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 
 from src.settings import settings
-from src.deps import LLMClient, OpenAIEmbedding, QdrantVectorStore
+from src.deps import OpenAILLMClient, OpenAIEmbeddingClient, QdrantVectorStore
 
 # Initialize Rich Console
 console = Console()
@@ -13,26 +13,33 @@ console = Console()
 class Retrieval:
     def __init__(self):
         self.vector_store = QdrantVectorStore(
-            uri=settings.qdrant_url,
+            uri=settings.qdrant_uri,
             api_key=settings.qdrant_api_key,
         )
-        self.embedding_client = OpenAIEmbedding(
+        self.embedding_client = OpenAIEmbeddingClient(
             base_url=settings.embedding_base_url,
             api_key=settings.embedding_api_key,
-            model_id=settings.embedding_model_id,
+            model_id=settings.embedding_model,
         )
-        self.llm_client = LLMClient(
+        self.llm_client = OpenAILLMClient(
             base_url=settings.llm_base_url,
             api_keys=settings.llm_api_key,
             model_id=settings.llm_model,
         )
 
-    def generate(self, query: str, limit: int = 5) -> tuple[list[str], str]:
+    def generate(
+        self, query: str, collection_name: str = None, limit: int = 5
+    ) -> tuple[list[str], str]:
         # 1. Embedding & Retrieval
-        with console.status("[bold green]Searching knowledge base...", spinner="dots"):
-            embedding = self.embedding_client.embed([query])
+        if collection_name is None:
+            collection_name = settings.qdrant_collection_name
+
+        with console.status(
+            f"[bold green]Searching knowledge base {collection_name}...", spinner="dots"
+        ):
+            embedding = self.embedding_client.embed_texts([query])
             retrieved_documents = self.vector_store.query(
-                collection_name=settings.qdrant_collection_name,
+                collection_name=collection_name,
                 query_vector=embedding[0],
                 top_k=limit,
             )
@@ -42,9 +49,11 @@ class Retrieval:
         raw_contexts_for_prompt = []
 
         for doc in retrieved_documents.points:
-            content = doc.payload.get("content", "")
-            source = doc.payload.get("sources", "Unknown")
+            content = doc.payload.get("text", "")
+            filename = doc.payload.get("filename", "Unknown")
+            chunk_id = doc.payload.get("chunk_id", "Unknown")
             score = getattr(doc, "score", 0.0)  # Qdrant usually returns a score
+            source = f"{filename} - Chunk #{chunk_id}"
 
             contexts_data.append({"content": content, "source": source, "score": score})
             raw_contexts_for_prompt.append(f"document: {content}, source: {source}")
@@ -118,6 +127,13 @@ def display_results(query: str, contexts: list[dict], response: str):
 
 
 if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--collection_name", type=str, required=True)
+    parser.add_argument("--limit", type=int, default=10)
+    args = parser.parse_args()
+
     retrieval = Retrieval()
     console.print(Panel.fit("RAG Evaluation CLI Mode", style="bold cyan"))
 
@@ -129,7 +145,11 @@ if __name__ == "__main__":
             if query.lower() in ["exit", "quit"]:
                 break
 
-            contexts, response = retrieval.generate(query, limit=5)
+            contexts, response = retrieval.generate(
+                query,
+                collection_name=args.collection_name,
+                limit=args.limit,
+            )
             display_results(query, contexts, response)
 
         except KeyboardInterrupt:

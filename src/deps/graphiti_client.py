@@ -7,7 +7,7 @@ from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerCli
 
 from loguru import logger
 from src.settings import settings
-from src.deps import OpenAIClient as OpenAILLMClientWrapper
+from .openai_client_wrapper import OpenAIClient as OpenAILLMClientWrapper
 
 
 class GraphitiClient:

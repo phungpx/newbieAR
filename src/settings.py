@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from abc import ABC
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -55,6 +56,13 @@ class Neo4jGraphDBSettings(ProjectBaseSettings):
     graph_db_password: str
 
 
+class MinIOSettings(ProjectBaseSettings):
+    minio_endpoint: str = "localhost:9000"
+    minio_access_key: str | None = None
+    minio_secret_key: str | None = None
+    minio_secure: bool = False
+
+
 class ProjectSettings(
     OpenAILLMSettings,
     LangfuseSettings,
@@ -63,6 +71,7 @@ class ProjectSettings(
     ConfidentSettings,
     RerankerSettings,
     Neo4jGraphDBSettings,
+    MinIOSettings,
 ):
     @property
     def openai_llm(self) -> OpenAILLMSettings:
@@ -91,6 +100,10 @@ class ProjectSettings(
     @property
     def neo4j_graph_db(self) -> Neo4jGraphDBSettings:
         return Neo4jGraphDBSettings(**self.model_dump())
+
+    @property
+    def minio(self) -> MinIOSettings:
+        return MinIOSettings(**self.model_dump())
 
 
 settings = ProjectSettings()
