@@ -2,8 +2,8 @@ import asyncio
 from loguru import logger
 from datetime import datetime, timezone
 from graphiti_core.nodes import EpisodeType
-from src.rags.graph_rag.graphiti_client import GraphitiClient
-from src.rags.document_loader.docling_loader import load_and_chunk_document
+from src.deps import GraphitiClient
+from src.ingestion.chunk_document import DocChunker
 
 
 async def ingest(
@@ -13,6 +13,12 @@ async def ingest(
     max_tokens: int = 1024,
     output_dir: str | None = None,
 ):
+    doc_chunker = DocChunker(
+        tokenizer_name=tokenizer_name,
+        max_tokens=max_tokens,
+        output_dir=output_dir,
+    )
+
     graphiti = await GraphitiClient().create_client(
         clear_existing_graphdb_data=clear_existing_graphdb_data,
         max_coroutines=1,
@@ -21,14 +27,8 @@ async def ingest(
     json_chunks: list[dict] = []
     for file_path in file_paths:
         logger.info(f"Loading and chunking document: {file_path}")
-        json_chunks.extend(
-            load_and_chunk_document(
-                file_path,
-                tokenizer_name=tokenizer_name,
-                max_tokens=max_tokens,
-                output_dir=output_dir,
-            )
-        )
+        chunks, _ = doc_chunker.chunk_document(file_path)
+        json_chunks.extend(chunks)
 
     try:
         for json_chunk in json_chunks:
@@ -78,7 +78,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    file_paths = [str(file_path) for file_path in Path(args.file_dir).glob("**/*.md")]
+    file_paths = [str(file_path) for file_path in Path(args.file_dir).glob("**/*.pdf")]
     asyncio.run(
         ingest(
             file_paths=file_paths,

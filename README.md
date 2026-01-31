@@ -1,35 +1,24 @@
-Indexing Database
+Features
 
-```bash
-https://huggingface.co/datasets/atitaarora/qdrant_doc
-```
+- Ingestion Pipeline
+    - Pipeline Orchestration: Airflow
+    - Storage: minIO & S3
+    - VectorDB: qdrant & milvus
+    - GraphDB: neo4J
+    - Feature Store: feats
+    - Embedding: OpenAI compatible (vLLM hosting)
+    - LLM: OpenAI compatible (third-party APIs)
 
-## Usage
+- Retrieval Pipeline
+    - Embedding: OpenAI compatible (vLLM hosting)
+    - LLM: OpenAI compatible (third-party APIs)
+    - Observability: Langfuse
 
+- Synthetic data generation Pipeline
+    - DeepEval
 
-Run Docker Compose (Qdrant Service)
+- Evaluation Metrics
+    - DeepEval
+    - Ragas
 
-```shell
-docker compose -f docker
-```
-
-
-## Resource
-
-```python
-import datasets
-
-ingestion_dataset = datasets.load("atitaarora/qdrant_doc")
-```
-
-Retrieval Database
-
-```bash
-https://huggingface.co/datasets/atitaarora/qdrant_doc_qna
-```
-
-```python
-import datasets
-
-QnA_dataset = datasets.load("atitaarora/qdrant_doc_qna")
-```
+- UI: NotebookLM

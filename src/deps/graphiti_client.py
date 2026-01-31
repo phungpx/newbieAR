@@ -7,14 +7,12 @@ from graphiti_core.cross_encoder.openai_reranker_client import OpenAIRerankerCli
 
 from loguru import logger
 from src.settings import settings
-from src.rags.graph_rag.open_ai_client_wrapper import (
-    OpenAIClient as OpenAIClientWrapper,
-)
+from .openai_client_wrapper import OpenAIClient as OpenAILLMClientWrapper
 
 
 class GraphitiClient:
     def __init__(self):
-        self.llm = OpenAIClientWrapper(
+        self.llm = OpenAILLMClientWrapper(
             config=LLMConfig(
                 api_key=settings.llm_api_key,
                 model=settings.llm_model,
