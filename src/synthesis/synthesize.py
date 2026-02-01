@@ -11,6 +11,9 @@ from deepeval.synthesizer.config import (
 from src.settings import settings
 from deepeval.synthesizer import Synthesizer, Evolution
 from .utils import save_goldens_to_files
+from .config import STYLING_CONFIG
+
+TOPIC = "research_paper"
 
 model = GPTModel(
     model=settings.llm_model,
@@ -47,21 +50,10 @@ evolution_config = EvolutionConfig(
 
 # Apply for generating the first query from retrieved context
 styling_config = StylingConfig(
-    input_format="Natural language questions",
-    expected_output_format=(
-        "Detailed paragraph responses and short structured bios. Include key facts "
-        "(roles, affiliations, notable works, awards), a concise timeline of major events, "
-        "and a short bullet list of notable contributions. Provide plain-language explanations "
-        "for general audiences and optional technical depth when requested."
-    ),
-    task="Knowledge retrieval and concise biographical summaries for individuals",
-    scenario=(
-        "Users asking about people such as entrepreneurs, scientists, researchers, engineers, "
-        "and other professionals seeking background information, achievements, affiliations, "
-        "research contributions, patents, publications, company roles, and notable awards. "
-        "Responses should be factual, neutral in tone, organized for quick scanning, and "
-        "reference retrieved context where available."
-    ),
+    input_format=STYLING_CONFIG[TOPIC]["input_format"],
+    expected_output_format=STYLING_CONFIG[TOPIC]["expected_output_format"],
+    task=STYLING_CONFIG[TOPIC]["task"],
+    scenario=STYLING_CONFIG[TOPIC]["scenario"],
 )
 
 # Settings for building RAG
@@ -69,8 +61,8 @@ context_construction_config = ContextConstructionConfig(
     embedder=embeder,
     critic_model=model,
     encoding="utf-8",
-    chunk_size=512,
-    chunk_overlap=10,
+    chunk_size=1024,
+    chunk_overlap=20,
     max_contexts_per_document=3,
     min_contexts_per_document=1,
     max_context_length=3,
@@ -87,7 +79,7 @@ synthesizer = Synthesizer(
     cost_tracking=True,
 )
 
-file_dir = Path("data/wikipedia")
+file_dir = Path("data/papers/files")
 file_paths = list(file_dir.glob("**/*.*"))
 logger.info(f"Found {len(file_paths)} files in {file_dir}")
 

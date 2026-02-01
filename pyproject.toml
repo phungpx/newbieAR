@@ -6,12 +6,18 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "apache-airflow>=3.1.6",
+    "chromadb>=1.4.1",
     "deepeval>=3.7.9",
     "docling>=2.70.0",
     "graphiti-core==0.24.1",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.2.7",
+    "langchain-text-splitters>=1.1.0",
     "loguru>=0.7.3",
     "minio>=7.2.0",
     "pydantic-ai>=1.42.0",
+    "pydpf>=1.1.1",
+    "pypdf>=6.6.2",
     "qdrant-client>=1.16.2",
     "sentence-transformers>=5.2.2",
     "transformers>=4.57.6",
