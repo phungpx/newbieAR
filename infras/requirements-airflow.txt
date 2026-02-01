@@ -1,0 +1,8 @@
+docling>=2.70.0
+loguru>=0.7.3
+minio>=7.2.0
+pydantic-ai>=1.42.0
+qdrant-client>=1.16.2
+transformers>=4.57.6
+pydantic-settings>=2.0.0
+graphiti-core>=0.24.1

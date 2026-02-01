@@ -1,16 +1,15 @@
 from datetime import datetime, timedelta
-from airflow import DAG
-from airflow.sdk import task
+from airflow.sdk import dag, task
 from airflow.providers.standard.operators.empty import EmptyOperator
 from airflow.task.trigger_rule import TriggerRule
+from constants.dag_id import DagId
+from constants.vectordb_ingestion_tasks import VectordbIngestionTasks
 from tasks.ingest_vectordb import (
     store_uploaded_file_to_minio_task,
     chunk_document_task,
     embed_and_store_task,
     convert_to_markdown_task,
 )
-from constants.dag_id import DagId
-from constants.vectordb_ingestion_tasks import VectordbIngestionTasks
 
 # Default arguments for all tasks
 default_args = {
@@ -23,7 +22,7 @@ default_args = {
 }
 
 
-@DAG(
+@dag(
     dag_id=DagId.VECTORDB_INGESTION.value,
     default_args=default_args,
     description="RAG Ingestion: Upload -> Raw Chunking -> Vector Store",

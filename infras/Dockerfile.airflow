@@ -1,0 +1,23 @@
+# Dockerfile for custom Airflow image with project dependencies
+FROM apache/airflow:3.1.6
+
+# Switch to root to install packages
+USER root
+
+# Install system dependencies if needed
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Switch back to airflow user
+USER airflow
+
+# Copy requirements file (we'll create this)
+COPY --chown=airflow:root requirements-airflow.txt /requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r /requirements.txt
+
+# Note: src/ directory is mounted as a volume in docker-compose.yaml
+# so we don't need to copy it here. This allows for live code changes during development.
