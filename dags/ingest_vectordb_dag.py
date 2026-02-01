@@ -1,8 +1,7 @@
 from datetime import datetime, timedelta
 from airflow import DAG
 from airflow.sdk import task
-from airflow.operators.empty import EmptyOperator
-from airflow.utils.trigger_rule import TriggerRule
+from airflow.providers.standard.operators.empty import EmptyOperator
 from .tasks.ingest_vectordb import (
     store_uploaded_file_to_minio_task,
     chunk_document_task,
@@ -34,7 +33,7 @@ default_args = {
 )
 def ingest_vectordb_dag():
     start = EmptyOperator(task_id="start")
-    end = EmptyOperator(task_id="end", trigger_rule=TriggerRule.NONE_FAILED)
+    end = EmptyOperator(task_id="end")
 
     @task(task_id=VectordbIngestionTasks.UPLOAD_RAW_FILE.value)
     def upload_file(**context):
