@@ -1,7 +1,9 @@
+import json
 import deepeval
 from tqdm import tqdm
 from loguru import logger
-from datasets import load_dataset
+from typing import Any
+from pathlib import Path
 from deepeval.metrics import (
     AnswerRelevancyMetric,
     FaithfulnessMetric,
@@ -10,110 +12,43 @@ from deepeval.metrics import (
     ContextualRelevancyMetric,
 )
 from deepeval.test_case import LLMTestCase
-from deepeval.models.llms import GPTModel
+from src.evals.bedrock_model import BedrockModelWrapper
 from deepeval.evaluate.configs import AsyncConfig
 
+from src.retrieval.rag import Retrieval
 from src.settings import settings
-from src.deps.llms import LLMClient
-from src.deps.vector_stores import QdrantVectorStore
-from src.deps.embeddings import EmbeddingClient
-
-llm_client = LLMClient(
-    base_url=settings.llm_base_url,
-    api_keys=settings.llm_api_key,
-    model_id=settings.llm_model,
-)
-
-vector_store = QdrantVectorStore(
-    uri=settings.qdrant_url,
-    api_key=settings.qdrant_api_key,
-)
-
-embedding_client = EmbeddingClient(
-    model_name=settings.embedding_model_name,
-    batch_size=settings.embedding_batch_size,
-    model_dim=settings.embedding_dimensions,
-)
 
 
-def generate_response(query: str, limit: int = 5) -> tuple[list[str], str]:
-    embedding = embedding_client.embed([query])
-    retrieved_documents = vector_store.query(
-        collection_name=settings.qdrant_collection_name,
-        query_vector=embedding[0],
-        top_k=limit,
-    )
-    contexts = [
-        "document: "
-        + document.payload["content"]
-        + ",source: "
-        + document.payload["sources"]
-        for document in retrieved_documents.points
-    ]
-
-    prompt_start = """
-    # ROLE
-    You are a precise Technical Support Assistant. Your goal is to answer questions based strictly on the provided documentation context.
-
-    # RULES OF ENGAGEMENT
-    1. **Greeting Logic:** If the user provides a general greeting (e.g., "Hi", "Hello"), respond with a friendly greeting and do not reference the documentation.
-    2. **Contextual Fidelity:** Only answer using the provided Context. If the answer is not contained within the Context, respond exactly with: "I don't know."
-    3. **Citation Requirement:** For every specific claim or instruction you provide, you MUST cite the source. Use the format: [Source Name, Page X].
-    4. **Tone:** Maintain a professional, helpful, and concise tone. Avoid fluff or repetitive introductory phrases.
-
-    # RESPONSE FORMAT
-    - Use bullet points for steps or lists.
-    - Bold key terms for readability.
-    - Place citations at the end of the relevant sentence or paragraph.
-
-    # CONTEXT:
-    """
-
-    # Joining contexts with clear markers
-    context_block = "\n---\n".join(contexts)
-
-    prompt_end = f"""
-    ---
-    # USER QUESTION: 
-    {query}
-
-    # ANSWER:
-    """
-
-    # prompt = prompt_start + context_block + prompt_end
-
-    response = llm_client.chat_completion(
-        messages=[
-            {"role": "user", "content": prompt_start},
-            {"role": "user", "content": context_block},
-            {"role": "user", "content": prompt_end},
-        ],
-        temperature=settings.llm_temperature,
-        max_tokens=settings.llm_max_tokens,
-    )
-
-    return contexts, response
+def load_json(file_path: str) -> list[dict]:
+    with open(file_path, "r") as f:
+        return json.load(f)
 
 
 def create_deepeval_dataset(
-    evaluation_samples: int, retrieval_window_size: int
+    evaluation_samples: list[dict[str, Any]],
+    retrieval_window_size: int,
+    collection_name: str,
 ) -> list[LLMTestCase]:
-    dataset = load_dataset("atitaarora/qdrant_doc_qna", split="train")
-    logger.info(f"Loaded {len(dataset)} questions")
+    logger.info(f"Loaded {len(evaluation_samples)} questions")
 
     test_cases = []
-    for i in tqdm(range(evaluation_samples)):
-        sample = dataset[i]
-        input_question = sample["question"]
-        expected_output = sample["answer"]
-        context, actual_output = generate_response(
-            input_question, retrieval_window_size
+    for sample in tqdm(evaluation_samples):
+        input_question = sample["input"]
+        expected_output = sample["expectedOutput"]
+        context = sample["context"]
+        retrieval_contexts, actual_output = Retrieval().generate(
+            query=input_question,
+            limit=retrieval_window_size,
+            collection_name=collection_name,
         )
         test_case = LLMTestCase(
             input=input_question,
             actual_output=actual_output,
             expected_output=expected_output,
-            retrieval_context=context,
+            context=context,
+            retrieval_context=[
+                retrieval_context["content"] for retrieval_context in retrieval_contexts
+            ],
         )
         test_cases.append(test_case)
 
@@ -122,15 +57,30 @@ def create_deepeval_dataset(
     return test_cases
 
 
+retrieval_window_size = 5
+file_dirs = [
+    "data/goldens/docling",
+    "data/goldens/deepseek-ocrv2",
+]
+evaluation_samples = []
+for file_dir in file_dirs:
+    for file_path in Path(file_dir).glob("*.json"):
+        evaluation_samples.append(load_json(file_path))
+
 test_cases = create_deepeval_dataset(
-    evaluation_samples=10,
-    retrieval_window_size=3,
+    evaluation_samples=evaluation_samples,
+    retrieval_window_size=retrieval_window_size,
+    collection_name=settings.qdrant_collection_name,
 )
 
-evaluator = GPTModel(
-    model=settings.llm_model,
-    api_key=settings.llm_api_key,
-    base_url=settings.llm_base_url,
+# evaluator = GPTModel(
+#     model=settings.llm_model,
+#     api_key=settings.llm_api_key,
+#     base_url=settings.llm_base_url,
+# )
+evaluator = BedrockModelWrapper(
+    model_id="apac.anthropic.claude-sonnet-4-20250514-v1:0",
+    region_name="ap-southeast-1",
 )
 
 deepeval.login(settings.confident_api_key)
