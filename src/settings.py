@@ -62,6 +62,11 @@ class MinIOSettings(ProjectBaseSettings):
     minio_secure: bool = False
 
 
+class CritiqueModelSettings(ProjectBaseSettings):
+    critique_model_name: str
+    critique_model_region_name: str
+
+
 class ProjectSettings(
     OpenAILLMSettings,
     LangfuseSettings,
@@ -71,6 +76,7 @@ class ProjectSettings(
     RerankerSettings,
     Neo4jGraphDBSettings,
     MinIOSettings,
+    CritiqueModelSettings,
 ):
     @property
     def openai_llm(self) -> OpenAILLMSettings:
@@ -104,8 +110,14 @@ class ProjectSettings(
     def minio(self) -> MinIOSettings:
         return MinIOSettings(**self.model_dump())
 
+    @property
+    def critique_model(self) -> CritiqueModelSettings:
+        return CritiqueModelSettings(**self.model_dump())
+
 
 settings = ProjectSettings()
 os.environ["LANGFUSE_PUBLIC_KEY"] = settings.langfuse.langfuse_public_key
 os.environ["LANGFUSE_SECRET_KEY"] = settings.langfuse.langfuse_secret_key
 os.environ["LANGFUSE_BASE_URL"] = settings.langfuse.langfuse_base_url
+
+os.environ["CONFIDENT_METRIC_LOGGING_FLUSH"] = "1"

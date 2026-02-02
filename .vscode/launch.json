@@ -25,6 +25,14 @@
                 "--output_dir",
                 "data/wikipedia/chunks",
             ]
+        },
+        {
+            "name": "Evaluation",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.evals.evaluate",
+            "console": "integratedTerminal",
+            "justMyCode": false,
         }
     ]
 }
