@@ -18,12 +18,12 @@ from deepeval.test_case import LLMTestCase
 
 from src.settings import settings
 from src.retrieval.rag import Retrieval
-from src.evals.bedrock_llm_wrapper import BedrockModelWrapper
+from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
 from src.evals.base_metric_wrapper import BaseMetricWrapper
 
 deepeval.login(settings.confident_api_key)
 
-critique_model = BedrockModelWrapper(
+critique_model = BedrockLLMWrapper(
     model=settings.critique_model_name,
     region_name=settings.critique_model_region_name,
 )
@@ -132,17 +132,31 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     for file_path in Path(args.file_dir).glob("*.json"):
-        test_case, sample = create_llm_test_case(
-            file_path=file_path,
-            retrieval_window_size=args.retrieval_window_size,
-            collection_name=args.collection_name,
-        )
-        metrics_result = evaluate_llm_test_case_on_metrics(
-            test_case=test_case,
-            metrics=rag_metric_wrappers,
-        )
-        sample["metrics"] = metrics_result
-        with open(file=file_path, mode="w", encoding="utf-8") as f:
-            json.dump(sample, f, indent=4)
+        with open(file=file_path, mode="r", encoding="utf-8") as f:
+            sample = json.load(f)
 
-        logger.info(f"Results for {file_path}: {metrics_result}")
+        if (
+            sample.get("actual_output") is not None
+            and sample.get("retrieval_contexts") is not None
+            and sample.get("metrics") is not None
+        ):
+            continue
+
+        try:
+            test_case, sample = create_llm_test_case(
+                file_path=file_path,
+                retrieval_window_size=args.retrieval_window_size,
+                collection_name=args.collection_name,
+            )
+            metrics_result = evaluate_llm_test_case_on_metrics(
+                test_case=test_case,
+                metrics=rag_metric_wrappers,
+            )
+            sample["metrics"] = metrics_result
+            with open(file=file_path, mode="w", encoding="utf-8") as f:
+                json.dump(sample, f, indent=4)
+
+            logger.info(f"Results for {file_path}: {metrics_result}")
+        except Exception as e:
+            logger.error(f"Error evaluating {file_path}: {e}")
+            continue

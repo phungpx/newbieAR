@@ -9,11 +9,13 @@ from deepeval.synthesizer.config import (
     ContextConstructionConfig,
 )
 from src.settings import settings
+
+# from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
 from deepeval.synthesizer import Synthesizer, Evolution
 from .utils import save_goldens_to_files
 from .config import STYLING_CONFIG
 
-TOPIC = "research_paper"
+TOPIC = "wikipedia_article"
 
 model = GPTModel(
     model=settings.llm_model,
@@ -22,6 +24,12 @@ model = GPTModel(
     cost_per_input_token=0.3 * 10**-6,
     cost_per_output_token=2.5 * 10**-6,
 )
+
+# model = BedrockLLMWrapper(
+#     model=settings.critique_model_name,
+#     region_name=settings.critique_model_region_name,
+# )
+
 
 embeder = LocalEmbeddingModel(
     model=settings.embedding_model,
@@ -40,10 +48,13 @@ filtration_config = FiltrationConfig(
 # Apply for evolving query by combining the original query and retrieved context
 evolution_config = EvolutionConfig(
     evolutions={
-        Evolution.MULTICONTEXT: 0.25,
-        Evolution.CONCRETIZING: 0.25,
-        Evolution.CONSTRAINED: 0.25,
-        Evolution.COMPARATIVE: 0.25,
+        Evolution.MULTICONTEXT: 1 / 7,
+        Evolution.CONCRETIZING: 1 / 7,
+        Evolution.CONSTRAINED: 1 / 7,
+        Evolution.COMPARATIVE: 1 / 7,
+        Evolution.HYPOTHETICAL: 1 / 7,
+        Evolution.IN_BREADTH: 1 / 7,
+        Evolution.REASONING: 1 / 7,
     },
     num_evolutions=2,
 )
@@ -79,7 +90,8 @@ synthesizer = Synthesizer(
     cost_tracking=True,
 )
 
-file_dir = Path("data/papers/files")
+
+file_dir = Path("data/wikipedia/files")
 file_paths = list(file_dir.glob("**/*.*"))
 logger.info(f"Found {len(file_paths)} files in {file_dir}")
 
@@ -93,7 +105,7 @@ for file_path in file_paths:
         document_paths=[str(file_path)],
         include_expected_output=True,
         context_construction_config=context_construction_config,
-        max_goldens_per_context=2,
+        max_goldens_per_context=5,
     )
     logger.info(f"Synthesis cost: {synthesizer.synthesis_cost}")
     save_goldens_to_files(goldens, output_dir)
