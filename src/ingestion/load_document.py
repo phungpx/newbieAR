@@ -16,23 +16,23 @@ class DocLoader:
             markdown path
         """
         try:
-            logger.info(f"Converting {file_path.name} to markdown...")
+            logger.info(f"Converting {file_path} to markdown...")
 
             # Convert document
-            result = self.converter.convert(source=str(file_path))
+            result = self.converter.convert(source=file_path)
             markdown = result.document.export_to_markdown()
 
             # Save markdown file
             markdown_path = self._save_markdown(file_path, markdown)
 
-            logger.info(f"Converted {file_path.name} successfully")
+            logger.info(f"Converted {file_path} successfully")
             logger.info(f"Output: {markdown_path}")
             logger.info(f"Length: {len(markdown)} characters")
 
             return markdown_path
 
         except Exception as e:
-            logger.error(f"✗ Failed to convert {file_path.name}: {e}")
+            logger.error(f"✗ Failed to convert {file_path}: {e}")
             raise e
 
     def _save_markdown(self, file_path: str, markdown: str) -> str:

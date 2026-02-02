@@ -1,4 +1,3 @@
-from sentence_transformers import SentenceTransformer
 import openai
 from tqdm import tqdm
 from typing import Generator
@@ -19,6 +18,8 @@ class SentenceTransformerEmbedding:
         batch_size: int = 32,
         model_dim: int = 1024,
     ):
+        from sentence_transformers import SentenceTransformer
+
         self.model = SentenceTransformer(model_name)
         self.batch_size = batch_size
         self.model_dim = model_dim
@@ -48,9 +49,6 @@ class OpenAIEmbeddingClient:
 
 if __name__ == "__main__":
     text = "Hello World!"
-    # embed = SentenceTransformerEmbedding(model_name="thenlper/gte-base").embed_texts([text])
-    # print(len(embed[0]))
-
     embed = OpenAIEmbeddingClient(
         base_url="http://127.0.0.1:1234/v1",
         api_key="empty",

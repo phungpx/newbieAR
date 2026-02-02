@@ -10,10 +10,11 @@ from deepeval.metrics import (
     ContextualRecallMetric,
     ContextualRelevancyMetric,
 )
-from deepeval.evaluate import evaluate
+
+# from deepeval.evaluate import evaluate
+# from deepeval.evaluate.configs import AsyncConfig
+# from deepeval.evaluate.types import EvaluationResult
 from deepeval.test_case import LLMTestCase
-from deepeval.evaluate.configs import AsyncConfig
-from deepeval.evaluate.types import EvaluationResult
 
 from src.settings import settings
 from src.retrieval.rag import Retrieval
@@ -120,24 +121,28 @@ def evaluate_llm_test_case_on_metrics(
 
 
 if __name__ == "__main__":
-    retrieval_window_size = 5
-    file_dirs = [
-        "data/goldens/docling",
-        # "data/goldens/deepseek-ocrv2",
-    ]
-    for file_dir in file_dirs:
-        for file_path in Path(file_dir).glob("*.json"):
-            test_case, sample = create_llm_test_case(
-                file_path=file_path,
-                retrieval_window_size=retrieval_window_size,
-                collection_name=settings.qdrant_collection_name,
-            )
-            metrics_result = evaluate_llm_test_case_on_metrics(
-                test_case=test_case,
-                metrics=rag_metric_wrappers,
-            )
-            sample["metrics"] = metrics_result
-            with open(file=file_path, mode="w", encoding="utf-8") as f:
-                json.dump(sample, f, indent=4)
+    import argparse
 
-            logger.info(f"Results for {file_path}: {metrics_result}")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--file_dir", type=str, required=True)
+    parser.add_argument("--retrieval_window_size", type=int, default=5)
+    parser.add_argument(
+        "--collection_name", type=str, default=settings.qdrant_collection_name
+    )
+    args = parser.parse_args()
+
+    for file_path in Path(args.file_dir).glob("*.json"):
+        test_case, sample = create_llm_test_case(
+            file_path=file_path,
+            retrieval_window_size=args.retrieval_window_size,
+            collection_name=args.collection_name,
+        )
+        metrics_result = evaluate_llm_test_case_on_metrics(
+            test_case=test_case,
+            metrics=rag_metric_wrappers,
+        )
+        sample["metrics"] = metrics_result
+        with open(file=file_path, mode="w", encoding="utf-8") as f:
+            json.dump(sample, f, indent=4)
+
+        logger.info(f"Results for {file_path}: {metrics_result}")

@@ -1,0 +1,857 @@
+[
+    {
+        "chunk_id": 0,
+        "text": "Haoran Wei, Yaofeng Sun, Yukun Li\nDeepSeek-AI",
+        "text_tokens": 17,
+        "contextualized_text": "DeepSeek-OCR 2: Visual Causal Flow\nHaoran Wei, Yaofeng Sun, Yukun Li\nDeepSeek-AI",
+        "contextualized_tokens": 28,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 1,
+        "text": "We present DeepSeek-OCR 2 to investigate the feasibility of a novel encoder-DeepEncoder V2-capable of dynamically reordering visual tokens upon image semantics. Conventional vision-language models (VLMs) invariably process visual tokens in a rigid raster-scan order (top-left to bottom-right) with fixed positional encoding when fed into LLMs. However, this contradicts human visual perception, which follows flexible yet semantically coherent scanning patterns driven by inherent logical structures. Particularly for images with complex layouts, human vision exhibits causally-informed sequential processing. Inspired by this cognitive mechanism, DeepEncoder V2 is designed to endow the encoder with causal reasoning capabilities, enabling it to intelligently reorder visual tokens prior to LLM-based content interpretation. This work explores a novel paradigm: whether 2D image understanding can be effectively achieved through two-cascaded 1D causal reasoning structures, thereby offering a new architectural approach with the potential to achieve genuine 2D reasoning. Codes and model weights are publicly accessible at http://github.com/deepseek-ai/DeepSeek-OCR-2 .",
+        "text_tokens": 247,
+        "contextualized_text": "Abstract\nWe present DeepSeek-OCR 2 to investigate the feasibility of a novel encoder-DeepEncoder V2-capable of dynamically reordering visual tokens upon image semantics. Conventional vision-language models (VLMs) invariably process visual tokens in a rigid raster-scan order (top-left to bottom-right) with fixed positional encoding when fed into LLMs. However, this contradicts human visual perception, which follows flexible yet semantically coherent scanning patterns driven by inherent logical structures. Particularly for images with complex layouts, human vision exhibits causally-informed sequential processing. Inspired by this cognitive mechanism, DeepEncoder V2 is designed to endow the encoder with causal reasoning capabilities, enabling it to intelligently reorder visual tokens prior to LLM-based content interpretation. This work explores a novel paradigm: whether 2D image understanding can be effectively achieved through two-cascaded 1D causal reasoning structures, thereby offering a new architectural approach with the potential to achieve genuine 2D reasoning. Codes and model weights are publicly accessible at http://github.com/deepseek-ai/DeepSeek-OCR-2 .",
+        "contextualized_tokens": 248,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 2,
+        "text": "Figure 1 | We substitute the CLIP component in DeepEncoder with an LLM-style architecture. By customizing the attention mask, visual tokens utilize bidirectional attention while learnable queries adopt causal attention. Each query token can thus attend to all visual tokens and preceding queries, allowing progressive causal reordering over visual information.",
+        "text_tokens": 72,
+        "contextualized_text": "Abstract\nFigure 1 | We substitute the CLIP component in DeepEncoder with an LLM-style architecture. By customizing the attention mask, visual tokens utilize bidirectional attention while learnable queries adopt causal attention. Each query token can thus attend to all visual tokens and preceding queries, allowing progressive causal reordering over visual information.",
+        "contextualized_tokens": 73,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 3,
+        "text": "2, 1 Introduction = Related Works. 2, 1 Introduction = Related Works. 2, 3 = 4. , 1 Introduction = 2.1. , 1 Introduction = Parallelized Queries in Decoder . . . . . .. , 3 = 4. , 1 Introduction = 2.2. , 1 Introduction = Parallelized Queries in Projector . . . . .. , 3 = 4. , 1 Introduction = 2.3. , 1 Introduction = LLM-based Multimodal Initialization . .. , 3 = 4. 3 Methodology, 1 Introduction = . 3 Methodology, 1 Introduction = . 3 Methodology, 3 = 5. , 1 Introduction = 3.1 Architecture . . . .. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2 DeepEncoder V2 . . . .. , 1 Introduction = . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2.1. , 1 Introduction = Vision tokenizer . . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2.2. , 1 Introduction =",
+        "text_tokens": 255,
+        "contextualized_text": "Contents\n2, 1 Introduction = Related Works. 2, 1 Introduction = Related Works. 2, 3 = 4. , 1 Introduction = 2.1. , 1 Introduction = Parallelized Queries in Decoder . . . . . .. , 3 = 4. , 1 Introduction = 2.2. , 1 Introduction = Parallelized Queries in Projector . . . . .. , 3 = 4. , 1 Introduction = 2.3. , 1 Introduction = LLM-based Multimodal Initialization . .. , 3 = 4. 3 Methodology, 1 Introduction = . 3 Methodology, 1 Introduction = . 3 Methodology, 3 = 5. , 1 Introduction = 3.1 Architecture . . . .. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2 DeepEncoder V2 . . . .. , 1 Introduction = . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2.1. , 1 Introduction = Vision tokenizer . . . . . . . . . . .. , 3 = 5. , 1 Introduction = 3.2.2. , 1 Introduction =",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 4,
+        "text": "Language model as vision encoder. , 3 = 6. , 1 Introduction = 3.2.3. , 1 Introduction = Causal flow query . . . . . . . . .. , 3 = 6. , 1 Introduction = 3.2.4. , 1 Introduction = Attention mask . . . . . . . . . . .. , 3 = 7. 3.3, 1 Introduction = . 3.3, 1 Introduction = DeepSeek-MoE Decoder . . . . . . . . . .. 3.3, 3 = 7. 4 Experimental Settings, 1 Introduction = 4 Experimental Settings. 4 Experimental Settings, 1 Introduction = 4 Experimental Settings. 4 Experimental Settings, 3 = 8. , 1 Introduction = 4.1 Data Engine . .. , 1 Introduction = . . . . . . . . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2 Training Pipelines .. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2.1. , 1 Introduction = Training DeepEncoder V2 . . . . .. , 3 = 8. , 1",
+        "text_tokens": 255,
+        "contextualized_text": "Contents\nLanguage model as vision encoder. , 3 = 6. , 1 Introduction = 3.2.3. , 1 Introduction = Causal flow query . . . . . . . . .. , 3 = 6. , 1 Introduction = 3.2.4. , 1 Introduction = Attention mask . . . . . . . . . . .. , 3 = 7. 3.3, 1 Introduction = . 3.3, 1 Introduction = DeepSeek-MoE Decoder . . . . . . . . . .. 3.3, 3 = 7. 4 Experimental Settings, 1 Introduction = 4 Experimental Settings. 4 Experimental Settings, 1 Introduction = 4 Experimental Settings. 4 Experimental Settings, 3 = 8. , 1 Introduction = 4.1 Data Engine . .. , 1 Introduction = . . . . . . . . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2 Training Pipelines .. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2.1. , 1 Introduction = Training DeepEncoder V2 . . . . .. , 3 = 8. , 1",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 5,
+        "text": "Introduction = 4.2.2. , 1 Introduction = Query enhancement . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2.3. , 1 Introduction = Continue-training LLM . . . . . .. , 3 = 8. 5, 1 Introduction = Evaluation. 5, 1 Introduction = Evaluation. 5, 3 = 9. , 1 Introduction = 5.1 Main Results .. , 1 Introduction = . . . . . . . . . . . . . . . .. , 3 = 9. , 1 Introduction = 5.2. , 1 Introduction = Improvement Headroom . . . . . . . . . .. , 3 = 10. , 1 Introduction = 5.3 Practical Readiness. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 10. 6, 1 Introduction = Discussion and Future Works. 6, 1 Introduction = Discussion and Future Works. 6, 3 = 11. , 1 Introduction = . , 1 Introduction = . . . . .. , 3 = 11. , 1 Introduction = 6.1 Towards Genuine 2D Reasoning 6.2 Towards Native Multimodality. , 1 Introduction = . . . .",
+        "text_tokens": 255,
+        "contextualized_text": "Contents\nIntroduction = 4.2.2. , 1 Introduction = Query enhancement . . . . . . . .. , 3 = 8. , 1 Introduction = 4.2.3. , 1 Introduction = Continue-training LLM . . . . . .. , 3 = 8. 5, 1 Introduction = Evaluation. 5, 1 Introduction = Evaluation. 5, 3 = 9. , 1 Introduction = 5.1 Main Results .. , 1 Introduction = . . . . . . . . . . . . . . . .. , 3 = 9. , 1 Introduction = 5.2. , 1 Introduction = Improvement Headroom . . . . . . . . . .. , 3 = 10. , 1 Introduction = 5.3 Practical Readiness. , 1 Introduction = . . . . . . . . . . . . .. , 3 = 10. 6, 1 Introduction = Discussion and Future Works. 6, 1 Introduction = Discussion and Future Works. 6, 3 = 11. , 1 Introduction = . , 1 Introduction = . . . . .. , 3 = 11. , 1 Introduction = 6.1 Towards Genuine 2D Reasoning 6.2 Towards Native Multimodality. , 1 Introduction = . . . .",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 6,
+        "text": ". .. , 3 = 11. 7, 1 Introduction = Conclusion. 7, 1 Introduction = Conclusion. 7, 3 = 11",
+        "text_tokens": 27,
+        "contextualized_text": "Contents\n. .. , 3 = 11. 7, 1 Introduction = Conclusion. 7, 1 Introduction = Conclusion. 7, 3 = 11",
+        "contextualized_tokens": 28,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 7,
+        "text": "The human visual system closely mirrors transformer-based vision encoders [14, 16]: foveal fixations function as visual tokens, locally sharp yet globally aware. However, unlike existing encoders that rigidly scan tokens from top-left to bottom-right, human vision follows a causallydriven flow guided by semantic understanding. Consider tracing a spiral-our eye movements follow inherent logic where each subsequent fixation causally depends on previous ones. By analogy, visual tokens in models should be selectively processed with ordering highly contingent on visual semantics rather than spatial coordinates.",
+        "text_tokens": 121,
+        "contextualized_text": "1. Introduction\nThe human visual system closely mirrors transformer-based vision encoders [14, 16]: foveal fixations function as visual tokens, locally sharp yet globally aware. However, unlike existing encoders that rigidly scan tokens from top-left to bottom-right, human vision follows a causallydriven flow guided by semantic understanding. Consider tracing a spiral-our eye movements follow inherent logic where each subsequent fixation causally depends on previous ones. By analogy, visual tokens in models should be selectively processed with ordering highly contingent on visual semantics rather than spatial coordinates.",
+        "contextualized_tokens": 124,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 8,
+        "text": "This insight motivates us to fundamentally reconsider the architectural design of visionlanguage models (VLMs), particularly the encoder component. LLMs are inherently trained on 1D sequential data, while images are 2D structures. Directly flattening image patches in a predefined raster-scan order introduces unwarranted inductive bias that ignores semantic relationships. To address this, we present DeepSeek-OCR 2 with a novel encoder design-DeepEncoder V2-to advance toward more human-like visual encoding. Following DeepSeek-OCR [54], we adopt document reading as our primary experimental testbed. Documents present rich challenges including complex layout orders, intricate formulas, and tables. These structured elements inherently carry causal visual logic, demanding sophisticated reasoning capabilities that make document OCR an ideal platform for validating our approach.",
+        "text_tokens": 183,
+        "contextualized_text": "1. Introduction\nThis insight motivates us to fundamentally reconsider the architectural design of visionlanguage models (VLMs), particularly the encoder component. LLMs are inherently trained on 1D sequential data, while images are 2D structures. Directly flattening image patches in a predefined raster-scan order introduces unwarranted inductive bias that ignores semantic relationships. To address this, we present DeepSeek-OCR 2 with a novel encoder design-DeepEncoder V2-to advance toward more human-like visual encoding. Following DeepSeek-OCR [54], we adopt document reading as our primary experimental testbed. Documents present rich challenges including complex layout orders, intricate formulas, and tables. These structured elements inherently carry causal visual logic, demanding sophisticated reasoning capabilities that make document OCR an ideal platform for validating our approach.",
+        "contextualized_tokens": 186,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 9,
+        "text": "First, we present DeepEncoder V2, featuring several key innovations: (1) we replace the CLIP [37] component in DeepEncoder [54] with a compact LLM [48] architecture, as illustrated in Figure 1, to achieve visual causal flow; (2) to enable parallelized processing, we introduce learnable queries [10], termed causal flow tokens, with visual tokens prepended as a prefix-through a customized attention mask, visual tokens maintain global receptive fields, while causal flow tokens can obtain visual token reordering ability; (3) we maintain equal cardinality between causal and visual tokens (with redundancy such as padding and borders) to provide sufficient capacity for re-fixation; (4) only the causal flow tokens-the latter half of the encoder outputs-are fed to the LLM [24] decoder, enabling cascade causal-aware visual understanding.",
+        "text_tokens": 197,
+        "contextualized_text": "Our main contributions are threefold:\nFirst, we present DeepEncoder V2, featuring several key innovations: (1) we replace the CLIP [37] component in DeepEncoder [54] with a compact LLM [48] architecture, as illustrated in Figure 1, to achieve visual causal flow; (2) to enable parallelized processing, we introduce learnable queries [10], termed causal flow tokens, with visual tokens prepended as a prefix-through a customized attention mask, visual tokens maintain global receptive fields, while causal flow tokens can obtain visual token reordering ability; (3) we maintain equal cardinality between causal and visual tokens (with redundancy such as padding and borders) to provide sufficient capacity for re-fixation; (4) only the causal flow tokens-the latter half of the encoder outputs-are fed to the LLM [24] decoder, enabling cascade causal-aware visual understanding.",
+        "contextualized_tokens": 204,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 10,
+        "text": "Second, leveraging DeepEncoder V2, we present DeepSeek-OCR 2, which preserves the image compression ratio and decoding efficiency of DeepSeek-OCR while achieving substantial performance improvements. We constrain visual tokens fed to the LLM between 256 and 1120. The lower bound (256) corresponds to DeepSeek-OCR's tokenization of 1024 × 1024 images, while the upper bound (1120) matches Gemini-3 pro's [44] maximum visual token budget. This design positions DeepSeek-OCR 2 as both a novel VLM architecture for research exploration and a practical tool for generating high-quality training data for LLM pretraining.",
+        "text_tokens": 149,
+        "contextualized_text": "Our main contributions are threefold:\nSecond, leveraging DeepEncoder V2, we present DeepSeek-OCR 2, which preserves the image compression ratio and decoding efficiency of DeepSeek-OCR while achieving substantial performance improvements. We constrain visual tokens fed to the LLM between 256 and 1120. The lower bound (256) corresponds to DeepSeek-OCR's tokenization of 1024 × 1024 images, while the upper bound (1120) matches Gemini-3 pro's [44] maximum visual token budget. This design positions DeepSeek-OCR 2 as both a novel VLM architecture for research exploration and a practical tool for generating high-quality training data for LLM pretraining.",
+        "contextualized_tokens": 156,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 11,
+        "text": "Finally, we provide preliminary validation for employing language model architectures as VLMencoders-a promising pathway toward unified omni-modal encoding. This framework enables feature extraction and token compression across diverse modalities (images, audio, text [28]) by simply configuring modality-specific learnable queries. Crucially, it naturally succeeds to advanced infrastructure optimizations from the LLM community, including Mixtureof-Experts (MoE) architectures, efficient attention mechanisms [26], and so on.\nIn summary, we propose DeepEncoder V2 for DeepSeek-OCR 2, employing specialized attention mechanisms to effectively model the causal visual flow of document reading. Compared to the DeepSeek-OCR baseline, DeepSeek-OCR 2 achieves 3.73% performance gains on OmniDocBench v1.5 [34] and yields considerable advances in visual reading logic.",
+        "text_tokens": 192,
+        "contextualized_text": "Our main contributions are threefold:\nFinally, we provide preliminary validation for employing language model architectures as VLMencoders-a promising pathway toward unified omni-modal encoding. This framework enables feature extraction and token compression across diverse modalities (images, audio, text [28]) by simply configuring modality-specific learnable queries. Crucially, it naturally succeeds to advanced infrastructure optimizations from the LLM community, including Mixtureof-Experts (MoE) architectures, efficient attention mechanisms [26], and so on.\nIn summary, we propose DeepEncoder V2 for DeepSeek-OCR 2, employing specialized attention mechanisms to effectively model the causal visual flow of document reading. Compared to the DeepSeek-OCR baseline, DeepSeek-OCR 2 achieves 3.73% performance gains on OmniDocBench v1.5 [34] and yields considerable advances in visual reading logic.",
+        "contextualized_tokens": 199,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 12,
+        "text": "Figure 2 | This figure shows two computer vision models with parallelized queries: DETR's decoder [10] for object detection and BLIP2's Q-former [22] for visual token compression. Both employ bidirectional self-attention among queries.",
+        "text_tokens": 58,
+        "contextualized_text": "Our main contributions are threefold:\nFigure 2 | This figure shows two computer vision models with parallelized queries: DETR's decoder [10] for object detection and BLIP2's Q-former [22] for visual token compression. Both employ bidirectional self-attention among queries.",
+        "contextualized_tokens": 65,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 13,
+        "text": "DETR [10] pioneered the integration of transformer architecture into object detection, fundamentally breaking away from traditional detection paradigms [38, 40]. To overcome the efficiency limitations of serial decoding in transformer blocks, DETR introduced preset parallelized learnable queries-a set of 100 object queries that encode object priors such as shape and position through training. These queries interact with feature maps [18] via cross-attention mechanisms, while simultaneously engaging in bidirectional information exchange among themselves through self-attention. DETR established a foundational paradigm that enables transformers to handle parallelized tokens. The object query design has since become the de facto standard architectural component in subsequent transformer-based detection methods [29, 56].",
+        "text_tokens": 154,
+        "contextualized_text": "2.1. Parallelized Queries in Decoder\nDETR [10] pioneered the integration of transformer architecture into object detection, fundamentally breaking away from traditional detection paradigms [38, 40]. To overcome the efficiency limitations of serial decoding in transformer blocks, DETR introduced preset parallelized learnable queries-a set of 100 object queries that encode object priors such as shape and position through training. These queries interact with feature maps [18] via cross-attention mechanisms, while simultaneously engaging in bidirectional information exchange among themselves through self-attention. DETR established a foundational paradigm that enables transformers to handle parallelized tokens. The object query design has since become the de facto standard architectural component in subsequent transformer-based detection methods [29, 56].",
+        "contextualized_tokens": 165,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 14,
+        "text": "In recent years, vision-language models [7, 9, 22, 50] have developed rapidly, with architectures converging toward the encoder-projector-LLM paradigm. The projector aligns visual tokens with the LLM's embedding space, serving as a critical bridge that enables LLMs to understand visual content. Q-former, introduced in BLIP-2 [22], exemplifies an effective projector design that employs learnable queries for visual token compression. Adopting a BERT-like [15] architecture and drawing inspiration from DETR's object queries [10], Q-former utilizes 32 learnable queries that interact with hundreds of CLIP [37] visual tokens through cross-attention. These compressed query representations are subsequently fed into the LLM, achieving effective mapping from visual to language space. The success of Q-former demonstrates that parallelized learnable queries are effective not only for feature decoding in detection tasks but also for token compression in multimodal alignment.",
+        "text_tokens": 214,
+        "contextualized_text": "2.2. Parallelized Queries in Projector\nIn recent years, vision-language models [7, 9, 22, 50] have developed rapidly, with architectures converging toward the encoder-projector-LLM paradigm. The projector aligns visual tokens with the LLM's embedding space, serving as a critical bridge that enables LLMs to understand visual content. Q-former, introduced in BLIP-2 [22], exemplifies an effective projector design that employs learnable queries for visual token compression. Adopting a BERT-like [15] architecture and drawing inspiration from DETR's object queries [10], Q-former utilizes 32 learnable queries that interact with hundreds of CLIP [37] visual tokens through cross-attention. These compressed query representations are subsequently fed into the LLM, achieving effective mapping from visual to language space. The success of Q-former demonstrates that parallelized learnable queries are effective not only for feature decoding in detection tasks but also for token compression in multimodal alignment.",
+        "contextualized_tokens": 225,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 15,
+        "text": "LLMs trained on large-scale internet data have proven effective as initialization for multimodal models. Pang et al. [35] demonstrated that frozen LLM transformer layers enhance visual discriminative tasks. Moreover, encoder-free or lightweight-encoder models such as Fuyu [5] and Chameleon [43] in vision, as well as VALL-E [47] in speech, further validate the potential of LLM pretrained weights for multimodal initialization.\nFigure 3 | DeepSeek-OCR 2 adopts the visual token compression mechanism from DeepEncoder, employing an 80M-parameter image compressor that reduces visual tokens by a factor of 16. DeepEncoder V2 differs by replacing DeepEncoder's CLIP module with a compact language model architecture. Through customized attention masks, this LM-style vision encoder acquires CLIP's knowledge compression capabilities while initiating causal modeling of visual sequences.",
+        "text_tokens": 203,
+        "contextualized_text": "2.3. LLM-based Multimodal Initialization\nLLMs trained on large-scale internet data have proven effective as initialization for multimodal models. Pang et al. [35] demonstrated that frozen LLM transformer layers enhance visual discriminative tasks. Moreover, encoder-free or lightweight-encoder models such as Fuyu [5] and Chameleon [43] in vision, as well as VALL-E [47] in speech, further validate the potential of LLM pretrained weights for multimodal initialization.\nFigure 3 | DeepSeek-OCR 2 adopts the visual token compression mechanism from DeepEncoder, employing an 80M-parameter image compressor that reduces visual tokens by a factor of 16. DeepEncoder V2 differs by replacing DeepEncoder's CLIP module with a compact language model architecture. Through customized attention masks, this LM-style vision encoder acquires CLIP's knowledge compression capabilities while initiating causal modeling of visual sequences.",
+        "contextualized_tokens": 216,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 16,
+        "text": "As shown in Figure 3, DeepSeek-OCR 2 inherits the overall architecture of DeepSeek-OCR, which consists of an encoder and a decoder. The encoder discretizes images into visual tokens, while the decoder generates outputs conditioned on these visual tokens and text prompts. The key distinction lies in the encoder: we upgrade DeepEncoder to DeepEncoder V2, which retains all capabilities of its predecessor while introducing causal reasoning through a novel architectural design. We elaborate on the details of DeepSeek-OCR 2 in the following sections.",
+        "text_tokens": 127,
+        "contextualized_text": "3.1. Architecture\nAs shown in Figure 3, DeepSeek-OCR 2 inherits the overall architecture of DeepSeek-OCR, which consists of an encoder and a decoder. The encoder discretizes images into visual tokens, while the decoder generates outputs conditioned on these visual tokens and text prompts. The key distinction lies in the encoder: we upgrade DeepEncoder to DeepEncoder V2, which retains all capabilities of its predecessor while introducing causal reasoning through a novel architectural design. We elaborate on the details of DeepSeek-OCR 2 in the following sections.",
+        "contextualized_tokens": 132,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 17,
+        "text": "The vanilla encoder serves as an important component that extracts and compresses image features through attention mechanisms, where each token attends to all others, achieving fullimage receptive fields analogous to human foveal and peripheral vision. However, flattening 2D image patches into a 1D sequence imposes a rigid ordering bias through text-oriented positional encodings (e.g., RoPE [42]). This contradicts natural visual reading patterns, especially nonlinear layouts in optical texts, forms and tables.",
+        "text_tokens": 107,
+        "contextualized_text": "3.2. DeepEncoder V2\nThe vanilla encoder serves as an important component that extracts and compresses image features through attention mechanisms, where each token attends to all others, achieving fullimage receptive fields analogous to human foveal and peripheral vision. However, flattening 2D image patches into a 1D sequence imposes a rigid ordering bias through text-oriented positional encodings (e.g., RoPE [42]). This contradicts natural visual reading patterns, especially nonlinear layouts in optical texts, forms and tables.",
+        "contextualized_tokens": 117,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 18,
+        "text": "The first component of DeepEncoder V2 is a vision tokenizer. Following DeepEncoder, we employ an architecture combining an 80M-parameter SAM-base [21] along with two convolutional layers [50]. The output dimension of the final convolutional layer is reduced from 1024 in DeepEncoder to 896 to align with the subsequent pipeline. Note that this compression-based tokenizer is not mandatory and can be replaced with simple patch embedding. We retain it because it achieves 16 × token compression [19, 46, 51, 52] through window attention with minimal parameters, significantly reducing both computational cost and activation memory for the subsequent global attention module. Moreover, its parameter count ( 80M) remains comparable to the typical 100M parameters used for text input embeddings in LLMs.\nH:1024\n. H•768.\nB=0~6\nW:1024",
+        "text_tokens": 195,
+        "contextualized_text": "3.2.1. Vision tokenizer\nThe first component of DeepEncoder V2 is a vision tokenizer. Following DeepEncoder, we employ an architecture combining an 80M-parameter SAM-base [21] along with two convolutional layers [50]. The output dimension of the final convolutional layer is reduced from 1024 in DeepEncoder to 896 to align with the subsequent pipeline. Note that this compression-based tokenizer is not mandatory and can be replaced with simple patch embedding. We retain it because it achieves 16 × token compression [19, 46, 51, 52] through window attention with minimal parameters, significantly reducing both computational cost and activation memory for the subsequent global attention module. Moreover, its parameter count ( 80M) remains comparable to the typical 100M parameters used for text input embeddings in LLMs.\nH:1024\n. H•768.\nB=0~6\nW:1024",
+        "contextualized_tokens": 204,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 19,
+        "text": "Figure 4 | Token count calculation in DeepEncoder V2. DeepEncoder V2 outputs 256 -1120 tokens per image using a multi-crop strategy with 0 -6 local views. With 0 local views, only the global view produces 256 tokens; with 6 local views, the count reaches 1120 (6 × 144+256).",
+        "text_tokens": 74,
+        "contextualized_text": "3.2.1. Vision tokenizer\nFigure 4 | Token count calculation in DeepEncoder V2. DeepEncoder V2 outputs 256 -1120 tokens per image using a multi-crop strategy with 0 -6 local views. With 0 local views, only the global view produces 256 tokens; with 6 local views, the count reaches 1120 (6 × 144+256).",
+        "contextualized_tokens": 83,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 20,
+        "text": "In DeepEncoder, a CLIP ViT follows the vision tokenizer to compress visual knowledge. DeepEncoder V2 redesigns this component into an LLM-style architecture with a dual-stream attention mechanism. Visual tokens utilize bidirectional attention to preserve CLIP's global modeling capability, while newly introduced causal flow queries employ causal attention. These learnable queries are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries. By maintaining equal cardinality between queries and visual tokens, this design imposes semantic ordering and distilling on visual features without altering token count. Finally, only the causal query outputs are fed to the LLM decoder.",
+        "text_tokens": 152,
+        "contextualized_text": "3.2.2. Language model as vision encoder\nIn DeepEncoder, a CLIP ViT follows the vision tokenizer to compress visual knowledge. DeepEncoder V2 redesigns this component into an LLM-style architecture with a dual-stream attention mechanism. Visual tokens utilize bidirectional attention to preserve CLIP's global modeling capability, while newly introduced causal flow queries employ causal attention. These learnable queries are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries. By maintaining equal cardinality between queries and visual tokens, this design imposes semantic ordering and distilling on visual features without altering token count. Finally, only the causal query outputs are fed to the LLM decoder.",
+        "contextualized_tokens": 165,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 21,
+        "text": "We instantiate this architecture using Qwen2-0.5B [48], whose 500M parameters are comparable to CLIP ViT (300M) without introducing excessive computational overhead. The decoderonly architecture with prefix-concatenation of visual tokens proves crucial: extra experiments with cross-attention in an mBART-style [30] encoder-decoder structure fail to converge. We hypothesize this failure stems from insufficient visual token interaction when isolated in a separate encoder. In contrast, the prefix design keeps visual tokens active throughout all layers, fostering effective visual information exchange with causal queries.\nThis architecture actually establishes two-stage cascade causal reasoning: the encoder semantically reorders visual tokens through learnable queries, while the LLM decoder performs autoregressive reasoning over the ordered sequence. Unlike vanilla encoders that impose rigid spatial ordering through positional encodings, our causally-ordered queries adapt to smooth visual semantics while naturally aligning with the LLM's unidirectional attention pattern. This design may bridge the gap between 2D spatial structure and 1D causal language modeling.",
+        "text_tokens": 242,
+        "contextualized_text": "3.2.2. Language model as vision encoder\nWe instantiate this architecture using Qwen2-0.5B [48], whose 500M parameters are comparable to CLIP ViT (300M) without introducing excessive computational overhead. The decoderonly architecture with prefix-concatenation of visual tokens proves crucial: extra experiments with cross-attention in an mBART-style [30] encoder-decoder structure fail to converge. We hypothesize this failure stems from insufficient visual token interaction when isolated in a separate encoder. In contrast, the prefix design keeps visual tokens active throughout all layers, fostering effective visual information exchange with causal queries.\nThis architecture actually establishes two-stage cascade causal reasoning: the encoder semantically reorders visual tokens through learnable queries, while the LLM decoder performs autoregressive reasoning over the ordered sequence. Unlike vanilla encoders that impose rigid spatial ordering through positional encodings, our causally-ordered queries adapt to smooth visual semantics while naturally aligning with the LLM's unidirectional attention pattern. This design may bridge the gap between 2D spatial structure and 1D causal language modeling.",
+        "contextualized_tokens": 255,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 22,
+        "text": "As aforementioned, the number of causal query tokens equals the number of visual tokens, computed as 𝑊 × 𝐻 16 2 × 16 , where 𝑊 and 𝐻 denote the width and height of the image input to the encoder. To avoid maintaining multiple query sets for different resolutions, we adopt a multicrop strategy with fixed query configurations at predefined resolutions.\nSpecifically, the global view uses a resolution of 1024 × 1024, corresponding to 256 query embeddings denoted as query global . Local crops adopt a resolution of 768 × 768, with the\nFigure 5 | Attention mask architecture of DeepEncoder V2. Concatenation of bidirectional mask (vision tokens, ViT-like) and causal triangular mask (flow tokens, LLM decoder-style).",
+        "text_tokens": 167,
+        "contextualized_text": "3.2.3. Causal flow query\nAs aforementioned, the number of causal query tokens equals the number of visual tokens, computed as 𝑊 × 𝐻 16 2 × 16 , where 𝑊 and 𝐻 denote the width and height of the image input to the encoder. To avoid maintaining multiple query sets for different resolutions, we adopt a multicrop strategy with fixed query configurations at predefined resolutions.\nSpecifically, the global view uses a resolution of 1024 × 1024, corresponding to 256 query embeddings denoted as query global . Local crops adopt a resolution of 768 × 768, with the\nFigure 5 | Attention mask architecture of DeepEncoder V2. Concatenation of bidirectional mask (vision tokens, ViT-like) and causal triangular mask (flow tokens, LLM decoder-style).",
+        "contextualized_tokens": 176,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 23,
+        "text": "number of crops 𝑘 ranging from 0 to 6 (no cropping is applied when both image dimensions are smaller than 768). All local views share a unified set of 144 query embeddings, denoted as query local . Therefore, the total number of reordered visual tokens fed to the LLM is 𝑘 × 144 + 256, ranging from [ 256, 1120 ] . This maximum token count (1120) is lower than DeepSeek-OCR's 1156 (Gundam mode) and matches Gemini-3-Pro's maximum visual token budget.",
+        "text_tokens": 118,
+        "contextualized_text": "3.2.3. Causal flow query\nnumber of crops 𝑘 ranging from 0 to 6 (no cropping is applied when both image dimensions are smaller than 768). All local views share a unified set of 144 query embeddings, denoted as query local . Therefore, the total number of reordered visual tokens fed to the LLM is 𝑘 × 144 + 256, ranging from [ 256, 1120 ] . This maximum token count (1120) is lower than DeepSeek-OCR's 1156 (Gundam mode) and matches Gemini-3-Pro's maximum visual token budget.",
+        "contextualized_tokens": 127,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 24,
+        "text": "To better illustrate the attention mechanism of DeepEncoder V2, we visualize the attention mask in Figure 5. The attention mask is composed of two distinct regions. The left region applies bidirectional attention (similar to ViT) to original visual tokens, allowing full token-to-token visibility. The right region employs causal attention (triangular mask, identical to decoder-only LLMs) for causal flow tokens, where each token attends only to previous tokens. These two components are concatenated along the sequence dimension to construct DeepEncoder V2's attention mask (M), as follows:\n<!-- formula-not-decoded -->\nwhere 𝑛 is the number of causal query tokens, 𝑚 represents vanilla visual tokens number, and LowerTri denotes a lower triangular matrix (with ones on and below the diagonal, zeros above).",
+        "text_tokens": 183,
+        "contextualized_text": "3.2.4. Attention mask\nTo better illustrate the attention mechanism of DeepEncoder V2, we visualize the attention mask in Figure 5. The attention mask is composed of two distinct regions. The left region applies bidirectional attention (similar to ViT) to original visual tokens, allowing full token-to-token visibility. The right region employs causal attention (triangular mask, identical to decoder-only LLMs) for causal flow tokens, where each token attends only to previous tokens. These two components are concatenated along the sequence dimension to construct DeepEncoder V2's attention mask (M), as follows:\n<!-- formula-not-decoded -->\nwhere 𝑛 is the number of causal query tokens, 𝑚 represents vanilla visual tokens number, and LowerTri denotes a lower triangular matrix (with ones on and below the diagonal, zeros above).",
+        "contextualized_tokens": 191,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 25,
+        "text": "Since DeepSeek-OCR 2 primarily focuses on encoder improvements, we do not upgrade the decoder component. Following this design principle, we retain DeepSeek-OCR's decoder -a 3B-parameter MoE structure with about 500M active parameters. The core forward pass of DeepSeek-OCR 2 can be formulated as:\n<!-- formula-not-decoded -->\nwhere I ∈ R 𝐻 × 𝑊 × 3 is the input image, E is the vision tokenizer mapping images to 𝑚 visual tokens V ∈ R 𝑚 × 𝑑 , Q 0 ∈ R 𝑛 × 𝑑 are learnable causal query embeddings, ⊕ denotes sequence concatenation, T 𝐿 represents an 𝐿 -layer Transformer with masked attention, M ∈ { 0, 1 } 2 𝑛 × 2 𝑛 is the block causal attention mask defined in Equation 1, 𝜋𝑄 is the projection operator that extracts the last 𝑛 tokens (i.e., Z = X 𝑚 + 1: 𝑚 + 𝑛 ), D is the language decoder, and O ∈ R 𝑛 ×|V| is the output logits over LLM vocabulary.",
+        "text_tokens": 237,
+        "contextualized_text": "3.3. DeepSeek-MoE Decoder\nSince DeepSeek-OCR 2 primarily focuses on encoder improvements, we do not upgrade the decoder component. Following this design principle, we retain DeepSeek-OCR's decoder -a 3B-parameter MoE structure with about 500M active parameters. The core forward pass of DeepSeek-OCR 2 can be formulated as:\n<!-- formula-not-decoded -->\nwhere I ∈ R 𝐻 × 𝑊 × 3 is the input image, E is the vision tokenizer mapping images to 𝑚 visual tokens V ∈ R 𝑚 × 𝑑 , Q 0 ∈ R 𝑛 × 𝑑 are learnable causal query embeddings, ⊕ denotes sequence concatenation, T 𝐿 represents an 𝐿 -layer Transformer with masked attention, M ∈ { 0, 1 } 2 𝑛 × 2 𝑛 is the block causal attention mask defined in Equation 1, 𝜋𝑄 is the projection operator that extracts the last 𝑛 tokens (i.e., Z = X 𝑚 + 1: 𝑚 + 𝑛 ), D is the language decoder, and O ∈ R 𝑛 ×|V| is the output logits over LLM vocabulary.",
+        "contextualized_tokens": 248,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 26,
+        "text": "DeepSeek-OCR 2 employs the same data sources as DeepSeek-OCR, comprising OCR 1.0, OCR 2.0 [11, 27, 53], and general vision data [54], with OCR data constituting 80% of the training mixture. We also introduce two modifications: (1) a more balanced sampling strategy for OCR 1.0 data, partitioning pages by content type (text, formulas, tables) with a 3:1:1 ratio, and (2) label refinement for layout detection by merging semantically similar categories (e.g., unifying \"figure caption\" and \"figure title\"). Given these minimal differences, we consider DeepSeek-OCR a valid baseline for comparison.",
+        "text_tokens": 161,
+        "contextualized_text": "4.1. Data Engine\nDeepSeek-OCR 2 employs the same data sources as DeepSeek-OCR, comprising OCR 1.0, OCR 2.0 [11, 27, 53], and general vision data [54], with OCR data constituting 80% of the training mixture. We also introduce two modifications: (1) a more balanced sampling strategy for OCR 1.0 data, partitioning pages by content type (text, formulas, tables) with a 3:1:1 ratio, and (2) label refinement for layout detection by merging semantically similar categories (e.g., unifying \"figure caption\" and \"figure title\"). Given these minimal differences, we consider DeepSeek-OCR a valid baseline for comparison.",
+        "contextualized_tokens": 167,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 27,
+        "text": "We train DeepSeek-OCR 2 in three stages: (1) encoder pretraining, (2) query enhancement, and (3) decoder specialization. The stage-1 enables the vision tokenizer and LLM-style encoder to acquire fundamental capabilities in feature extraction, token compression, and token reordering capabilities. The stage-2 further strengthens the token reordering capability of the encoder while enhancing visual knowledge compression. The stage-3 freezes the encoder parameters and optimizes only the decoder, enabling higher data throughput under the same FLOPs.",
+        "text_tokens": 127,
+        "contextualized_text": "4.2. Training Pipelines\nWe train DeepSeek-OCR 2 in three stages: (1) encoder pretraining, (2) query enhancement, and (3) decoder specialization. The stage-1 enables the vision tokenizer and LLM-style encoder to acquire fundamental capabilities in feature extraction, token compression, and token reordering capabilities. The stage-2 further strengthens the token reordering capability of the encoder while enhancing visual knowledge compression. The stage-3 freezes the encoder parameters and optimizes only the decoder, enabling higher data throughput under the same FLOPs.",
+        "contextualized_tokens": 134,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 28,
+        "text": "Following DeepSeek-OCR and Vary [50], we train DeepEncoder V2 using a language modeling objective, coupling the encoder with a lightweight decoder [20] for joint optimization via next token prediction. We employ two dataloaders at resolutions of 768 × 768 and 1024 × 1024. The vision tokenizer is initialized from DeepEncoder, and the LLM-like encoder from Qwen2-0.5Bbase [48]. After pretraining, only the encoder parameters are retained for subsequent stages. We use the AdamW [32] optimizer with cosine learning rate decay from 1e-4 to 1e-6, training on 160 A100 GPUs (20 nodes × 8 GPUs) with batch size 640 for 40k iterations (with sequence packing at 8K length, about 100M image-text pair samples).",
+        "text_tokens": 194,
+        "contextualized_text": "4.2.1. Training DeepEncoder V2\nFollowing DeepSeek-OCR and Vary [50], we train DeepEncoder V2 using a language modeling objective, coupling the encoder with a lightweight decoder [20] for joint optimization via next token prediction. We employ two dataloaders at resolutions of 768 × 768 and 1024 × 1024. The vision tokenizer is initialized from DeepEncoder, and the LLM-like encoder from Qwen2-0.5Bbase [48]. After pretraining, only the encoder parameters are retained for subsequent stages. We use the AdamW [32] optimizer with cosine learning rate decay from 1e-4 to 1e-6, training on 160 A100 GPUs (20 nodes × 8 GPUs) with batch size 640 for 40k iterations (with sequence packing at 8K length, about 100M image-text pair samples).",
+        "contextualized_tokens": 207,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 29,
+        "text": "After DeepEncoder V2 pretraining, we integrate it with DeepSeek-3B-A500M [24, 25] as our final pipeline. We freeze the visual tokenizer (SAM-conv structure) while jointly optimizing the LLM encoder and LLM decoder to enhance query representations. At this stage, we unify the two resolutions into a single dataloader via multi-crop strategy. We adopt 4-stage pipeline parallelism: vision tokenizer (PP0), LLM-style encoder (PP1), and DeepSeek-LLM layers (6 layers per stage on PP2-3). With 160 GPUs (40GB/per-GPU), we configure 40 data parallel replicas (4 GPUs per replica) and train with global batch size 1280 using the same optimizer and learning rate decay from 5e-5 to 1e-6 over 15k iterations.",
+        "text_tokens": 205,
+        "contextualized_text": "4.2.2. Query enhancement\nAfter DeepEncoder V2 pretraining, we integrate it with DeepSeek-3B-A500M [24, 25] as our final pipeline. We freeze the visual tokenizer (SAM-conv structure) while jointly optimizing the LLM encoder and LLM decoder to enhance query representations. At this stage, we unify the two resolutions into a single dataloader via multi-crop strategy. We adopt 4-stage pipeline parallelism: vision tokenizer (PP0), LLM-style encoder (PP1), and DeepSeek-LLM layers (6 layers per stage on PP2-3). With 160 GPUs (40GB/per-GPU), we configure 40 data parallel replicas (4 GPUs per replica) and train with global batch size 1280 using the same optimizer and learning rate decay from 5e-5 to 1e-6 over 15k iterations.",
+        "contextualized_tokens": 213,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 30,
+        "text": "To rapidly consume training data, we freeze all DeepEncoder V2 parameters in this stage and only update the DeepSeek-LLM parameters. This stage accelerates training (more than doubles the training speed under the same global batch size) while helping the LLM better understand DeepEncoder V2's reordered visual tokens. Continuing from stage-2, we perform another learning rate decay from 1e-6 to 5e-8 training for 20k iterations in this stage.\n\nTable 1 | Comprehensive evaluation of document reading on OmniDocBench v1.5. V-token 𝑚𝑎𝑥 represents the maximum number of visual tokens used per page in this benchmark. R-order denotes reading order. Except for DeepSeek OCR and DeepSeek OCR 2, all other model results in this table are sourced from the OmniDocBench repository.",
+        "text_tokens": 185,
+        "contextualized_text": "4.2.3. Continue-training LLM\nTo rapidly consume training data, we freeze all DeepEncoder V2 parameters in this stage and only update the DeepSeek-LLM parameters. This stage accelerates training (more than doubles the training speed under the same global batch size) while helping the LLM better understand DeepEncoder V2's reordered visual tokens. Continuing from stage-2, we perform another learning rate decay from 1e-6 to 5e-8 training for 20k iterations in this stage.\n\nTable 1 | Comprehensive evaluation of document reading on OmniDocBench v1.5. V-token 𝑚𝑎𝑥 represents the maximum number of visual tokens used per page in this benchmark. R-order denotes reading order. Except for DeepSeek OCR and DeepSeek OCR 2, all other model results in this table are sourced from the OmniDocBench repository.",
+        "contextualized_tokens": 196,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 31,
+        "text": "Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nPipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Pipline, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = Pipline. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 32,
+        "text": "Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.30. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.206. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.66. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 57.88. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.17. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nFormula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.30. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.206. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.66. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 57.88. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.17. Marker-1.8.2 [1], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 33,
+        "text": "𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.250. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.51. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.209. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.55. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 70.90. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.250. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 71.51. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.209. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.55. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 70.90. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 34,
+        "text": "↑ = 79.11. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.225. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.67. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.125. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 67.85. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.70. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\n↑ = 79.11. MinerU2-pp [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.225. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.67. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.125. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 67.85. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.70. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 35,
+        "text": "R-order 𝐸𝑑𝑖𝑡 ↑ = 77.77. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.124. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.21. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.092. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.78. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 78.06. Dolphin-1.5",
+        "text_tokens": 244,
+        "contextualized_text": "4.2.3. Continue-training LLM\nR-order 𝐸𝑑𝑖𝑡 ↑ = 77.77. Dolphin [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.124. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.21. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.092. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.78. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 78.06. Dolphin-1.5",
+        "contextualized_tokens": 255,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 36,
+        "text": "[17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.10. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.080. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.73. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.79. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n[17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.10. Dolphin-1.5 [17], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.080. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.73. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.79. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 37,
+        "text": "Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.68. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.48. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.96. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.084. MonkeyOCR-pro-1.2B",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\nText 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.68. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.48. PP-StructureV3 [13], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.96. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.084. MonkeyOCR-pro-1.2B",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 38,
+        "text": "[23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.02. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.24. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.02. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.130. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.13.",
+        "text_tokens": 244,
+        "contextualized_text": "4.2.3. Continue-training LLM\n[23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.02. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.24. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.02. MonkeyOCR-pro-1.2B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.130. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.13.",
+        "contextualized_tokens": 255,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 39,
+        "text": "MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.45. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.39. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.92. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.129. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -.",
+        "text_tokens": 241,
+        "contextualized_text": "4.2.3. Continue-training LLM\nMonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.45. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.39. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.92. MonkeyOCR-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.129. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -.",
+        "contextualized_tokens": 252,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 40,
+        "text": "MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.85. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.25. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.78. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.63. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\nMonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.85. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.25. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.78. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.63. MonkeyOCR-pro-3B [23], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 41,
+        "text": "R-order 𝐸𝑑𝑖𝑡 ↑ = 0.128. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.67. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.047. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.46. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.22. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.38.",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\nR-order 𝐸𝑑𝑖𝑡 ↑ = 0.128. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.67. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.047. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.46. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.22. MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.38.",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 42,
+        "text": "MinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.044. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.86. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.035. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 91.22. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.89. PaddleOCR-VL",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nMinerU2.5 [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.044. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.86. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.035. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 91.22. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.89. PaddleOCR-VL",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 43,
+        "text": "[12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 94.76. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.043. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n[12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 94.76. PaddleOCR-VL [12], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.043. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 44,
+        "text": "𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.82. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.193. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. End-to-end Model, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = End-to-end Model. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.82. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.193. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 45,
+        "text": "𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.03. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.75. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.23. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.202. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.02. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.217.",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.03. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.75. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.23. OCRFlux [4], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.202. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.02. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.217.",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 46,
+        "text": "GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 79.70. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 67.07. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.09. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.148. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.33. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nGPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 79.70. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 67.07. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 76.09. GPT-4o [33], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.148. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.33. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 47,
+        "text": "Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.131. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.42. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 70.64. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 77.74. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.113. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nOverall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.131. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.42. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 70.64. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 77.74. InternVL3 [55], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.113. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 48,
+        "text": "= 80.98. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.134. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 79.20. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 77.13. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.66. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.145. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n= 80.98. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.134. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 79.20. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 77.13. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.66. POINTS-Reader [31], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.145. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 49,
+        "text": "↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.79. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.096. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.04. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.92. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.77. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.121. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ =",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\n↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.79. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.096. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.04. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 68.92. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 74.77. olmOCR [36], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.121. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ =",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 50,
+        "text": ">7000. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 82.67. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.142. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.23. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.00. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.28. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n>7000. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 82.67. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.142. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.23. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 75.00. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 81.28. InternVL3.5-241B [49], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 51,
+        "text": "Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.125. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.56. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.078. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.95. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.54. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nTable 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.125. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.56. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.078. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.95. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.54. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 52,
+        "text": "𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.66. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.086. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.59. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.093. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.90. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.66. MinerU2-VLM [45], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.086. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >7000. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.59. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.093. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.90. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 53,
+        "text": "↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.14. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.57. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.108. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.02. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.094. Qwen2.5-VL-72B",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\n↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 80.14. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.57. Nanonets-OCR-s [2], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.108. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.02. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.094. Qwen2.5-VL-72B",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 54,
+        "text": "[9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.27. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 82.15. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.22. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.102. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ =",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\n[9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.27. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 82.15. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.22. Qwen2.5-VL-72B [9], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.102. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = -. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ =",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 55,
+        "text": "88.03. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.82. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.71. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.29. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.097. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000.",
+        "text_tokens": 243,
+        "contextualized_text": "4.2.3. Continue-training LLM\n88.03. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.075. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.82. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.71. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.29. Gemini-2.5 Pro[6], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.097. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000.",
+        "contextualized_tokens": 254,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 56,
+        "text": "dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.41. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.048. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.22. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.78. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.62. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.053. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\ndots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.41. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.048. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 83.22. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.78. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.62. dots.ocr [39], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.053. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 57,
+        "text": "𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.56. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.058. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.91. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.55. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.45. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.071.",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.56. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.058. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.91. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.55. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.45. OCRVerse [3], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.071.",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 58,
+        "text": "Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.15. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.069. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.14. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.21. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\nQwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = >6000. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.15. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.069. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 88.14. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 86.21. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 59,
+        "text": "𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.55. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.068. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 1156. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.36. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.14. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.55. Qwen3-VL-235B [8], V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.068. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 1156. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.36. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.073. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 84.14. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 60,
+        "text": "𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.25. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.01. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.085. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 1120. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 91.09. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.048. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑",
+        "text_tokens": 245,
+        "contextualized_text": "4.2.3. Continue-training LLM\n𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 85.25. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 89.01. DeepSeek-OCR (9-crops), V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.085. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 1120. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 91.09. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.048. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 61,
+        "text": "Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.31. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.75. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.06. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.057",
+        "text_tokens": 128,
+        "contextualized_text": "4.2.3. Continue-training LLM\nTable 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 90.31. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 87.75. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 92.06. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ Overall ↑ Text 𝐸𝑑𝑖𝑡 ↓ Formula 𝐶𝐷𝑀 ↑ Table 𝑇𝐸𝐷𝑠 ↑ Table 𝑇𝐸𝐷𝑆 𝑠 ↑ R-order 𝐸𝑑𝑖𝑡 ↑ = 0.057",
+        "contextualized_tokens": 139,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 62,
+        "text": "We select OmniDocBench v1.5 [34] as our primary benchmark for evaluation. This benchmark comprises 1,355 document pages spanning 9 major categories (including magazines, academic papers, research reports, and so on) in both Chinese and English. With its diverse test samples and robust evaluation criteria, OmniDocBench provides an effective framework for validating the performance of DeepSeek-OCR 2, particularly the effectiveness of DeepEncoder V2.",
+        "text_tokens": 101,
+        "contextualized_text": "5. Evaluation\nWe select OmniDocBench v1.5 [34] as our primary benchmark for evaluation. This benchmark comprises 1,355 document pages spanning 9 major categories (including magazines, academic papers, research reports, and so on) in both Chinese and English. With its diverse test samples and robust evaluation criteria, OmniDocBench provides an effective framework for validating the performance of DeepSeek-OCR 2, particularly the effectiveness of DeepEncoder V2.",
+        "contextualized_tokens": 104,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 63,
+        "text": "As shown in Table 1, DeepSeek-OCR 2 achieves advanced performance of 91.09% while using the smallest upper limit of visual tokens (V-token 𝑚𝑎𝑥 ). Compared to the DeepSeek-OCR baseline, it demonstrates a 3.73% improvement under similar train data sources, validating the effectiveness of our newly designed architecture. Beyond the overall improvement, the Edit Distance (ED) for reading order (R-order) has also significantly decreased (from 0.085 to 0.057), indicating that the new DeepEncoder V2 can effectively select and arrange initial visual tokens based on image information. As illustrated in Table 2, DeepSeek-OCR 2 (0.100) achieves lower ED in document\n\nTable 2 | Edit Distances for different categories of document-elements in OmniDocBench v1.5. V-token 𝑚𝑎𝑥 denotes the lowest maximum number of visual tokens.",
+        "text_tokens": 196,
+        "contextualized_text": "5.1. Main Results\nAs shown in Table 1, DeepSeek-OCR 2 achieves advanced performance of 91.09% while using the smallest upper limit of visual tokens (V-token 𝑚𝑎𝑥 ). Compared to the DeepSeek-OCR baseline, it demonstrates a 3.73% improvement under similar train data sources, validating the effectiveness of our newly designed architecture. Beyond the overall improvement, the Edit Distance (ED) for reading order (R-order) has also significantly decreased (from 0.085 to 0.057), indicating that the new DeepEncoder V2 can effectively select and arrange initial visual tokens based on image information. As illustrated in Table 2, DeepSeek-OCR 2 (0.100) achieves lower ED in document\n\nTable 2 | Edit Distances for different categories of document-elements in OmniDocBench v1.5. V-token 𝑚𝑎𝑥 denotes the lowest maximum number of visual tokens.",
+        "contextualized_tokens": 202,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 64,
+        "text": "Gemini-3 pro [44], V-token 𝑚𝑎𝑥 ↓ = 1120. Gemini-3 pro [44], Text 𝐸𝑑𝑖𝑡 = -. Gemini-3 pro [44], Formula 𝐸𝑑𝑖𝑡 ↓ = -. Gemini-3 pro [44], Table 𝐸𝑑𝑖𝑡 = -. Gemini-3 pro [44], R-order 𝐸𝑑𝑖𝑡 ↓ = -. Gemini-3 pro [44], Overall 𝐸𝑑𝑖𝑡 ↓ = 0.115. Seed-1.8 [41], V-token 𝑚𝑎𝑥 ↓ = 5120. Seed-1.8 [41], Text 𝐸𝑑𝑖𝑡 = -. Seed-1.8 [41], Formula 𝐸𝑑𝑖𝑡 ↓ = -. Seed-1.8 [41], Table 𝐸𝑑𝑖𝑡 = -. Seed-1.8 [41], R-order 𝐸𝑑𝑖𝑡 ↓ = -. Seed-1.8 [41], Overall 𝐸𝑑𝑖𝑡 ↓ = 0.106. DeepSeek-OCR, V-token 𝑚𝑎𝑥 ↓ = 1156. DeepSeek-OCR, Text 𝐸𝑑𝑖𝑡 = 0.073. DeepSeek-OCR, Formula 𝐸𝑑𝑖𝑡 ↓ = 0.236. DeepSeek-OCR, Table 𝐸𝑑𝑖𝑡 = 0.123.",
+        "text_tokens": 244,
+        "contextualized_text": "5.1. Main Results\nGemini-3 pro [44], V-token 𝑚𝑎𝑥 ↓ = 1120. Gemini-3 pro [44], Text 𝐸𝑑𝑖𝑡 = -. Gemini-3 pro [44], Formula 𝐸𝑑𝑖𝑡 ↓ = -. Gemini-3 pro [44], Table 𝐸𝑑𝑖𝑡 = -. Gemini-3 pro [44], R-order 𝐸𝑑𝑖𝑡 ↓ = -. Gemini-3 pro [44], Overall 𝐸𝑑𝑖𝑡 ↓ = 0.115. Seed-1.8 [41], V-token 𝑚𝑎𝑥 ↓ = 5120. Seed-1.8 [41], Text 𝐸𝑑𝑖𝑡 = -. Seed-1.8 [41], Formula 𝐸𝑑𝑖𝑡 ↓ = -. Seed-1.8 [41], Table 𝐸𝑑𝑖𝑡 = -. Seed-1.8 [41], R-order 𝐸𝑑𝑖𝑡 ↓ = -. Seed-1.8 [41], Overall 𝐸𝑑𝑖𝑡 ↓ = 0.106. DeepSeek-OCR, V-token 𝑚𝑎𝑥 ↓ = 1156. DeepSeek-OCR, Text 𝐸𝑑𝑖𝑡 = 0.073. DeepSeek-OCR, Formula 𝐸𝑑𝑖𝑡 ↓ = 0.236. DeepSeek-OCR, Table 𝐸𝑑𝑖𝑡 = 0.123.",
+        "contextualized_tokens": 250,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 65,
+        "text": "DeepSeek-OCR, R-order 𝐸𝑑𝑖𝑡 ↓ = 0.085. DeepSeek-OCR, Overall 𝐸𝑑𝑖𝑡 ↓ = 0.129. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ = 1120. DeepSeek-OCR 2, Text 𝐸𝑑𝑖𝑡 = 0.048. DeepSeek-OCR 2, Formula 𝐸𝑑𝑖𝑡 ↓ = 0.198. DeepSeek-OCR 2, Table 𝐸𝑑𝑖𝑡 = 0.096. DeepSeek-OCR 2, R-order 𝐸𝑑𝑖𝑡 ↓ = 0.057. DeepSeek-OCR 2, Overall 𝐸𝑑𝑖𝑡 ↓ = 0.100\nparsing compared to Gemini-3 Pro (0.115) under a similar visual token budget (1120), further demonstrating that our new model maintains high compression rates of visual tokens while ensuring superior performance, with exceptionally high potential.",
+        "text_tokens": 180,
+        "contextualized_text": "5.1. Main Results\nDeepSeek-OCR, R-order 𝐸𝑑𝑖𝑡 ↓ = 0.085. DeepSeek-OCR, Overall 𝐸𝑑𝑖𝑡 ↓ = 0.129. DeepSeek-OCR 2, V-token 𝑚𝑎𝑥 ↓ = 1120. DeepSeek-OCR 2, Text 𝐸𝑑𝑖𝑡 = 0.048. DeepSeek-OCR 2, Formula 𝐸𝑑𝑖𝑡 ↓ = 0.198. DeepSeek-OCR 2, Table 𝐸𝑑𝑖𝑡 = 0.096. DeepSeek-OCR 2, R-order 𝐸𝑑𝑖𝑡 ↓ = 0.057. DeepSeek-OCR 2, Overall 𝐸𝑑𝑖𝑡 ↓ = 0.100\nparsing compared to Gemini-3 Pro (0.115) under a similar visual token budget (1120), further demonstrating that our new model maintains high compression rates of visual tokens while ensuring superior performance, with exceptionally high potential.",
+        "contextualized_tokens": 186,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 66,
+        "text": "We conduct a detailed performance comparison between DeepSeek-OCR and DeepSeek-OCR 2 across 9 document types and found that DeepSeek-OCR 2 still has considerable room for improvement, as shown in Table 3. For text recognition Edit Distance (ED), DeepSeek-OCR 2 outperforms DeepSeek-OCR in most cases, but there are also notable weaknesses, such as newspapers, where it performs > 0.13 ED. We believe there are two main reasons: (1) the lower upper limit of visual tokens may affect the recognition of text-super-rich newspapers, which can be simply addressed in the future by increasing the number of local crops; (2) insufficient newspaper data -our training data contains only 250k relevant samples, which is inadequate for training DeepEncoder V2 for this class. Of course, for the reading order (R-order) metric, DeepSeek-OCR 2 consistently outperforms DeepSeek-OCR across the board, further validating the effectiveness of our visual causal flow encoder design.\n",
+        "text_tokens": 226,
+        "contextualized_text": "5.2. Improvement Headroom\nWe conduct a detailed performance comparison between DeepSeek-OCR and DeepSeek-OCR 2 across 9 document types and found that DeepSeek-OCR 2 still has considerable room for improvement, as shown in Table 3. For text recognition Edit Distance (ED), DeepSeek-OCR 2 outperforms DeepSeek-OCR in most cases, but there are also notable weaknesses, such as newspapers, where it performs > 0.13 ED. We believe there are two main reasons: (1) the lower upper limit of visual tokens may affect the recognition of text-super-rich newspapers, which can be simply addressed in the future by increasing the number of local crops; (2) insufficient newspaper data -our training data contains only 250k relevant samples, which is inadequate for training DeepEncoder V2 for this class. Of course, for the reading order (R-order) metric, DeepSeek-OCR 2 consistently outperforms DeepSeek-OCR across the board, further validating the effectiveness of our visual causal flow encoder design.\n",
+        "contextualized_tokens": 233,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 67,
+        "text": "Table 3 | Detailed comparison between DeepSeek-OCR 2 and DeepSeek-OCR across 9 document types. R-order denotes reading order. All metrics are Edit Distances, where lower is better.",
+        "text_tokens": 44,
+        "contextualized_text": "5.2. Improvement Headroom\nTable 3 | Detailed comparison between DeepSeek-OCR 2 and DeepSeek-OCR across 9 document types. R-order denotes reading order. All metrics are Edit Distances, where lower is better.",
+        "contextualized_tokens": 51,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 68,
+        "text": "DS-OCR, Edit ↓ = Text. DS-OCR, PPT = 0.052. DS-OCR, Academic Paper = 0.028. DS-OCR, Book = 0.022. DS-OCR, Colorful Textbook = 0.130. DS-OCR, Exam Paper = 0.074. DS-OCR, Magazine Newspaper Note = 0.049. DS-OCR, Magazine Newspaper Note = 0.131. DS-OCR, Magazine Newspaper Note = 0.145. DS-OCR, Research Report = 0.015. DS-OCR, Edit ↓ = R-order. DS-OCR, PPT = 0.052. DS-OCR, Academic Paper = 0.021. DS-OCR, Book = 0.040. DS-OCR, Colorful Textbook = 0.125. DS-OCR, Exam Paper = 0.083. DS-OCR, Magazine Newspaper Note = 0.101. DS-OCR, Magazine Newspaper Note = 0.217. DS-OCR, Magazine Newspaper Note = 0.089. DS-OCR, Research Report =",
+        "text_tokens": 249,
+        "contextualized_text": "5.2. Improvement Headroom\nDS-OCR, Edit ↓ = Text. DS-OCR, PPT = 0.052. DS-OCR, Academic Paper = 0.028. DS-OCR, Book = 0.022. DS-OCR, Colorful Textbook = 0.130. DS-OCR, Exam Paper = 0.074. DS-OCR, Magazine Newspaper Note = 0.049. DS-OCR, Magazine Newspaper Note = 0.131. DS-OCR, Magazine Newspaper Note = 0.145. DS-OCR, Research Report = 0.015. DS-OCR, Edit ↓ = R-order. DS-OCR, PPT = 0.052. DS-OCR, Academic Paper = 0.021. DS-OCR, Book = 0.040. DS-OCR, Colorful Textbook = 0.125. DS-OCR, Exam Paper = 0.083. DS-OCR, Magazine Newspaper Note = 0.101. DS-OCR, Magazine Newspaper Note = 0.217. DS-OCR, Magazine Newspaper Note = 0.089. DS-OCR, Research Report =",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 69,
+        "text": "0.016. DS-OCR 2, Edit ↓ = Text. DS-OCR 2, PPT = 0.031. DS-OCR 2, Academic Paper = 0.013. DS-OCR 2, Book = 0.033. DS-OCR 2, Colorful Textbook = 0.053. DS-OCR 2, Exam Paper = 0.047. DS-OCR 2, Magazine Newspaper Note = 0.026. DS-OCR 2, Magazine Newspaper Note = 0.139. DS-OCR 2, Magazine Newspaper Note = 0.068. DS-OCR 2, Research Report = 0.008. DS-OCR 2, Edit ↓ = R-order. DS-OCR 2, PPT = 0.025. DS-OCR 2, Academic Paper = 0.013. DS-OCR 2, Book = 0.027. DS-OCR 2, Colorful Textbook = 0.066. DS-OCR 2, Exam Paper = 0.048. DS-OCR 2, Magazine Newspaper Note = 0.100. DS-OCR 2, Magazine Newspaper Note =",
+        "text_tokens": 249,
+        "contextualized_text": "5.2. Improvement Headroom\n0.016. DS-OCR 2, Edit ↓ = Text. DS-OCR 2, PPT = 0.031. DS-OCR 2, Academic Paper = 0.013. DS-OCR 2, Book = 0.033. DS-OCR 2, Colorful Textbook = 0.053. DS-OCR 2, Exam Paper = 0.047. DS-OCR 2, Magazine Newspaper Note = 0.026. DS-OCR 2, Magazine Newspaper Note = 0.139. DS-OCR 2, Magazine Newspaper Note = 0.068. DS-OCR 2, Research Report = 0.008. DS-OCR 2, Edit ↓ = R-order. DS-OCR 2, PPT = 0.025. DS-OCR 2, Academic Paper = 0.013. DS-OCR 2, Book = 0.027. DS-OCR 2, Colorful Textbook = 0.066. DS-OCR 2, Exam Paper = 0.048. DS-OCR 2, Magazine Newspaper Note = 0.100. DS-OCR 2, Magazine Newspaper Note =",
+        "contextualized_tokens": 256,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 70,
+        "text": "0.176. DS-OCR 2, Magazine Newspaper Note = 0.035. DS-OCR 2, Research Report = 0.011",
+        "text_tokens": 32,
+        "contextualized_text": "5.2. Improvement Headroom\n0.176. DS-OCR 2, Magazine Newspaper Note = 0.035. DS-OCR 2, Research Report = 0.011",
+        "contextualized_tokens": 39,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 71,
+        "text": "DeepSeek-OCR serves two primary production use cases: an online OCR service that reads image/documents for DeepSeek-LLMs, and a pretraining data pipeline that performs batch PDF processing. We compare the production performance between DeepSeek-OCR 2 and DeepSeekOCR. Since ground truth is unavailable in production environments, we focus primarily on repetition rate as our key metric. As shown in Table 4, DeepSeek-OCR 2 demonstrates markedly improved practical readiness compared to its predecessor (DeepSeek-OCR), reducing the repetition rate from 6.25% to 4.17% for online user-log images, and from 3.69% to 2.88% for PDF data production. These results further validate the effectiveness of the DeepSeek-OCR 2 architecture, particularly its logical visual comprehension capabilities.",
+        "text_tokens": 176,
+        "contextualized_text": "5.3. Practical Readiness\nDeepSeek-OCR serves two primary production use cases: an online OCR service that reads image/documents for DeepSeek-LLMs, and a pretraining data pipeline that performs batch PDF processing. We compare the production performance between DeepSeek-OCR 2 and DeepSeekOCR. Since ground truth is unavailable in production environments, we focus primarily on repetition rate as our key metric. As shown in Table 4, DeepSeek-OCR 2 demonstrates markedly improved practical readiness compared to its predecessor (DeepSeek-OCR), reducing the repetition rate from 6.25% to 4.17% for online user-log images, and from 3.69% to 2.88% for PDF data production. These results further validate the effectiveness of the DeepSeek-OCR 2 architecture, particularly its logical visual comprehension capabilities.",
+        "contextualized_tokens": 182,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 72,
+        "text": "Table 4 | Production performance comparison between DeepSeek-OCR and DeepSeek-OCR 2. For OCR models serving LLM pipelines, ground truth is not accessible in production environments. Therefore, Repetition rate constitutes the primary observable quality metric.\n\nDeepSeek-OCR, Metric = Repeat ↓. DeepSeek-OCR, online-user-logs (image) = 6.25%. DeepSeek-OCR, pretrain-data (PDF) = 3.69%. DeepSeek-OCR 2, Metric = . DeepSeek-OCR 2, online-user-logs (image) = 4.17% ↓ 2.08%. DeepSeek-OCR 2, pretrain-data (PDF) = 2.88% ↓ 0.81%",
+        "text_tokens": 170,
+        "contextualized_text": "5.3. Practical Readiness\nTable 4 | Production performance comparison between DeepSeek-OCR and DeepSeek-OCR 2. For OCR models serving LLM pipelines, ground truth is not accessible in production environments. Therefore, Repetition rate constitutes the primary observable quality metric.\n\nDeepSeek-OCR, Metric = Repeat ↓. DeepSeek-OCR, online-user-logs (image) = 6.25%. DeepSeek-OCR, pretrain-data (PDF) = 3.69%. DeepSeek-OCR 2, Metric = . DeepSeek-OCR 2, online-user-logs (image) = 4.17% ↓ 2.08%. DeepSeek-OCR 2, pretrain-data (PDF) = 2.88% ↓ 0.81%",
+        "contextualized_tokens": 176,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 73,
+        "text": "DeepSeek-OCR 2 presents a novel architectural paradigm with an LLM-style encoder cascaded with an LLM decoder. This cascade of two 1D causal reasoners holds promise for genuine 2D reasoning: the encoder performs reading logic reasoning (causally reordering visual information through query tokens), while the decoder executes visual task reasoning over these causallyordered representations. Decomposing 2D understanding into two complementary/orthogonal 1D causal reasoning subtasks may represent a breakthrough toward genuine 2D reasoning. Of course, achieving this goal remains a long journey. For instance, to enable multiple reexaminations and multi-hop reordering of visual content, we may need substantially longer causal flow tokens than the original visual token sequence. We will continue to refine this architecture and explore its effectiveness on general visual reasoning tasks in future work.",
+        "text_tokens": 180,
+        "contextualized_text": "6.1. Towards Genuine 2D Reasoning\nDeepSeek-OCR 2 presents a novel architectural paradigm with an LLM-style encoder cascaded with an LLM decoder. This cascade of two 1D causal reasoners holds promise for genuine 2D reasoning: the encoder performs reading logic reasoning (causally reordering visual information through query tokens), while the decoder executes visual task reasoning over these causallyordered representations. Decomposing 2D understanding into two complementary/orthogonal 1D causal reasoning subtasks may represent a breakthrough toward genuine 2D reasoning. Of course, achieving this goal remains a long journey. For instance, to enable multiple reexaminations and multi-hop reordering of visual content, we may need substantially longer causal flow tokens than the original visual token sequence. We will continue to refine this architecture and explore its effectiveness on general visual reasoning tasks in future work.",
+        "contextualized_tokens": 188,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 74,
+        "text": "DeepEncoder V2 provides initial validation of the LLM-style encoder's viability for visual tasks. More importantly, this architecture enjoys the potential to evolve into a unified omni-modal encoder: a single encoder with shared 𝑊𝑘 , 𝑊𝑣 projections, attention mechanisms, and FFNs can process multiple modalities through modality-specific learnable query embeddings. Such an encoder could compress text, extract speech features, and reorganize visual content within the same parameter space, differing only in the learned weights of their query embeddings. DeepSeek-OCR's optical compression represents an initial exploration toward native multimodality, while we believe DeepSeek-OCR 2's LLM-style encoder architecture marks our further step in this direction. We will also continue exploring the integration of additional modalities through this shared encoder framework in the future.",
+        "text_tokens": 198,
+        "contextualized_text": "6.2. Towards Native Multimodality\nDeepEncoder V2 provides initial validation of the LLM-style encoder's viability for visual tasks. More importantly, this architecture enjoys the potential to evolve into a unified omni-modal encoder: a single encoder with shared 𝑊𝑘 , 𝑊𝑣 projections, attention mechanisms, and FFNs can process multiple modalities through modality-specific learnable query embeddings. Such an encoder could compress text, extract speech features, and reorganize visual content within the same parameter space, differing only in the learned weights of their query embeddings. DeepSeek-OCR's optical compression represents an initial exploration toward native multimodality, while we believe DeepSeek-OCR 2's LLM-style encoder architecture marks our further step in this direction. We will also continue exploring the integration of additional modalities through this shared encoder framework in the future.",
+        "contextualized_tokens": 208,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 75,
+        "text": "In this technical report, we present DeepSeek-OCR 2, a significant upgrade to DeepSeek-OCR, that maintains high visual token compression while achieving meaningfully performance improvements. This advancement is powered by the newly proposed DeepEncoder V2, which implicitly distills causal understanding of the visual world through the integration of both bidirectional and causal attention mechanisms, leading to causal reasoning capabilities in the vision encoder and, consequently, marked lifts in visual reading logic.\nWhile optical text reading, particularly document parsing, represents one of the most practical vision tasks in the LLM era, it constitutes only a small part of the broader visual understanding landscape. Looking ahead, we will refine and adapt this architecture to more diverse scenarios, seeking deeper toward a more comprehensive vision of multimodal intelligence.",
+        "text_tokens": 168,
+        "contextualized_text": "7. Conclusion\nIn this technical report, we present DeepSeek-OCR 2, a significant upgrade to DeepSeek-OCR, that maintains high visual token compression while achieving meaningfully performance improvements. This advancement is powered by the newly proposed DeepEncoder V2, which implicitly distills causal understanding of the visual world through the integration of both bidirectional and causal attention mechanisms, leading to causal reasoning capabilities in the vision encoder and, consequently, marked lifts in visual reading logic.\nWhile optical text reading, particularly document parsing, represents one of the most practical vision tasks in the LLM era, it constitutes only a small part of the broader visual understanding landscape. Looking ahead, we will refine and adapt this architecture to more diverse scenarios, seeking deeper toward a more comprehensive vision of multimodal intelligence.",
+        "contextualized_tokens": 171,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 76,
+        "text": "- [1] Marker. URL https://github.com/datalab-to/marker .\n- [2] Nanonets-ocr-s, 2025. URL https://huggingface.co/nanonets/Nanonets-OCR-s .\n- [3] Ocrverse, 2025. URL https://github.com/DocTron-hub/OCRVerse .\n- [4] Ocrflux, 2025. URL https://github.com/chatdoc-com/OCRFlux .\n- [5] Adept. Fuyu-8b. https://huggingface.co/adept/fuyu-8b , 2023.\n- [6] G. AI. Gemini 2.5-pro, 2025. URL https://gemini.google.com/ .",
+        "text_tokens": 192,
+        "contextualized_text": "References\n- [1] Marker. URL https://github.com/datalab-to/marker .\n- [2] Nanonets-ocr-s, 2025. URL https://huggingface.co/nanonets/Nanonets-OCR-s .\n- [3] Ocrverse, 2025. URL https://github.com/DocTron-hub/OCRVerse .\n- [4] Ocrflux, 2025. URL https://github.com/chatdoc-com/OCRFlux .\n- [5] Adept. Fuyu-8b. https://huggingface.co/adept/fuyu-8b , 2023.\n- [6] G. AI. Gemini 2.5-pro, 2025. URL https://gemini.google.com/ .",
+        "contextualized_tokens": 193,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 77,
+        "text": "- [7] J. Bai, S. Bai, S. Yang, S. Wang, S. Tan, P. Wang, J. Lin, C. Zhou, and J. Zhou. Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond. arXiv preprint arXiv:2308.12966, 2023.\n- [8] S. Bai, Y. Cai, R. Chen, et al. Qwen3-vl technical report. arXiv preprint arXiv:2511.21631, 2025. URL https://arxiv.org/abs/2511.21631 .",
+        "text_tokens": 151,
+        "contextualized_text": "References\n- [7] J. Bai, S. Bai, S. Yang, S. Wang, S. Tan, P. Wang, J. Lin, C. Zhou, and J. Zhou. Qwen-vl: A versatile vision-language model for understanding, localization, text reading, and beyond. arXiv preprint arXiv:2308.12966, 2023.\n- [8] S. Bai, Y. Cai, R. Chen, et al. Qwen3-vl technical report. arXiv preprint arXiv:2511.21631, 2025. URL https://arxiv.org/abs/2511.21631 .",
+        "contextualized_tokens": 152,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 78,
+        "text": "- [9] S. Bai, K. Chen, X. Liu, J. Wang, W. Ge, S. Song, K. Dang, P. Wang, S. Wang, J. Tang, H. Zhong, Y. Zhu, M. Yang, Z. Li, J. Wan, P. Wang, W. Ding, Z. Fu, Y. Xu, J. Ye, X. Zhang, T. Xie, Z. Cheng, H. Zhang, Z. Yang, H. Xu, and J. Lin. Qwen2.5-vl technical report. arXiv preprint arXiv:2502.13923, 2025.\n- [10] N. Carion, F. Massa, G. Synnaeve, N. Usunier, A. Kirillov, and S. Zagoruyko. End-to-end object detection with transformers. In European conference on computer vision, pages 213-229. Springer, 2020.",
+        "text_tokens": 212,
+        "contextualized_text": "References\n- [9] S. Bai, K. Chen, X. Liu, J. Wang, W. Ge, S. Song, K. Dang, P. Wang, S. Wang, J. Tang, H. Zhong, Y. Zhu, M. Yang, Z. Li, J. Wan, P. Wang, W. Ding, Z. Fu, Y. Xu, J. Ye, X. Zhang, T. Xie, Z. Cheng, H. Zhang, Z. Yang, H. Xu, and J. Lin. Qwen2.5-vl technical report. arXiv preprint arXiv:2502.13923, 2025.\n- [10] N. Carion, F. Massa, G. Synnaeve, N. Usunier, A. Kirillov, and S. Zagoruyko. End-to-end object detection with transformers. In European conference on computer vision, pages 213-229. Springer, 2020.",
+        "contextualized_tokens": 213,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 79,
+        "text": "- [11] J. Chen, L. Kong, H. Wei, C. Liu, Z. Ge, L. Zhao, J. Sun, C. Han, and X. Zhang. Onechart: Purify the chart structural extraction via one auxiliary token. In Proceedings of the 32nd ACMInternational Conference on Multimedia, pages 147-155, 2024.\n- [12] C. Cui, T. Sun, S. Liang, et al. Paddleocr-vl: Boosting multilingual document parsing via a 0.9 b ultra-compact vision-language model. arXiv preprint arXiv:2510.14528, 2025.\n- [13] C. Cui, T. Sun, M. Lin, T. Gao, Y. Zhang, J. Liu, X. Wang, Z. Zhang, C. Zhou, H. Liu, et al. Paddleocr 3.0 technical report. arXiv preprint arXiv:2507.05595, 2025.",
+        "text_tokens": 224,
+        "contextualized_text": "References\n- [11] J. Chen, L. Kong, H. Wei, C. Liu, Z. Ge, L. Zhao, J. Sun, C. Han, and X. Zhang. Onechart: Purify the chart structural extraction via one auxiliary token. In Proceedings of the 32nd ACMInternational Conference on Multimedia, pages 147-155, 2024.\n- [12] C. Cui, T. Sun, S. Liang, et al. Paddleocr-vl: Boosting multilingual document parsing via a 0.9 b ultra-compact vision-language model. arXiv preprint arXiv:2510.14528, 2025.\n- [13] C. Cui, T. Sun, M. Lin, T. Gao, Y. Zhang, J. Liu, X. Wang, Z. Zhang, C. Zhou, H. Liu, et al. Paddleocr 3.0 technical report. arXiv preprint arXiv:2507.05595, 2025.",
+        "contextualized_tokens": 225,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 80,
+        "text": "- [14] M. Dehghani, J. Djolonga, B. Mustafa, P. Padlewski, J. Heek, J. Gilmer, A. Steiner, M. Caron, R. Geirhos, I. Alabdulmohsin, et al. Patch n' pack: Navit, a vision transformer for any aspect ratio and resolution. Advances in Neural Information Processing Systems, 36:3632-3656, 2023.\n- [15] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), pages 4171-4186, 2019.\n- [16] A. Dosovitskiy. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv preprint arXiv:2010.11929, 2020.",
+        "text_tokens": 228,
+        "contextualized_text": "References\n- [14] M. Dehghani, J. Djolonga, B. Mustafa, P. Padlewski, J. Heek, J. Gilmer, A. Steiner, M. Caron, R. Geirhos, I. Alabdulmohsin, et al. Patch n' pack: Navit, a vision transformer for any aspect ratio and resolution. Advances in Neural Information Processing Systems, 36:3632-3656, 2023.\n- [15] J. Devlin, M.-W. Chang, K. Lee, and K. Toutanova. Bert: Pre-training of deep bidirectional transformers for language understanding. In Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers), pages 4171-4186, 2019.\n- [16] A. Dosovitskiy. An image is worth 16x16 words: Transformers for image recognition at scale. arXiv preprint arXiv:2010.11929, 2020.",
+        "contextualized_tokens": 229,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 81,
+        "text": "- [17] H. Feng, S. Wei, X. Fei, W. Shi, Y. Han, L. Liao, J. Lu, B. Wu, Q. Liu, C. Lin, et al. Dolphin: Document image parsing via heterogeneous anchor prompting. arXiv preprint arXiv:2505.14059, 2025.",
+        "text_tokens": 81,
+        "contextualized_text": "References\n- [17] H. Feng, S. Wei, X. Fei, W. Shi, Y. Han, L. Liao, J. Lu, B. Wu, Q. Liu, C. Lin, et al. Dolphin: Document image parsing via heterogeneous anchor prompting. arXiv preprint arXiv:2505.14059, 2025.",
+        "contextualized_tokens": 82,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 82,
+        "text": "- [18] K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770-778, 2016.\n- [19] A. Huang, C. Yao, C. Han, F. Wan, H. Guo, H. Lv, H. Zhou, J. Wang, J. Zhou, J. Sun, et al. Step3-vl-10b technical report. arXiv preprint arXiv:2601.09668, 2026.\n- [20] S. Iyer, X. V . Lin, R. Pasunuru, T. Mihaylov, D. Simig, P. Yu, K. Shuster, T. Wang, Q. Liu, P. S. Koura, et al. Opt-iml: Scaling language model instruction meta learning through the lens of generalization. arXiv preprint arXiv:2212.12017, 2022.",
+        "text_tokens": 224,
+        "contextualized_text": "References\n- [18] K. He, X. Zhang, S. Ren, and J. Sun. Deep residual learning for image recognition. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 770-778, 2016.\n- [19] A. Huang, C. Yao, C. Han, F. Wan, H. Guo, H. Lv, H. Zhou, J. Wang, J. Zhou, J. Sun, et al. Step3-vl-10b technical report. arXiv preprint arXiv:2601.09668, 2026.\n- [20] S. Iyer, X. V . Lin, R. Pasunuru, T. Mihaylov, D. Simig, P. Yu, K. Shuster, T. Wang, Q. Liu, P. S. Koura, et al. Opt-iml: Scaling language model instruction meta learning through the lens of generalization. arXiv preprint arXiv:2212.12017, 2022.",
+        "contextualized_tokens": 225,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 83,
+        "text": "- [21] A. Kirillov, E. Mintun, N. Ravi, H. Mao, C. Rolland, L. Gustafson, T. Xiao, S. Whitehead, A. C. Berg, W.-Y. Lo, et al. Segment anything. arXiv preprint arXiv:2304.02643, 2023.\n- [22] J. Li, D. Li, S. Savarese, and S. Hoi. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. In International conference on machine learning, pages 19730-19742. PMLR, 2023.\n- [23] Z. Li, Y. Liu, Q. Liu, Z. Ma, Z. Zhang, S. Zhang, Z. Guo, J. Zhang, X. Wang, and X. Bai. Monkeyocr: Document parsing with a structure-recognition-relation triplet paradigm. arXiv preprint arXiv:2506.05218, 2025.",
+        "text_tokens": 233,
+        "contextualized_text": "References\n- [21] A. Kirillov, E. Mintun, N. Ravi, H. Mao, C. Rolland, L. Gustafson, T. Xiao, S. Whitehead, A. C. Berg, W.-Y. Lo, et al. Segment anything. arXiv preprint arXiv:2304.02643, 2023.\n- [22] J. Li, D. Li, S. Savarese, and S. Hoi. Blip-2: Bootstrapping language-image pre-training with frozen image encoders and large language models. In International conference on machine learning, pages 19730-19742. PMLR, 2023.\n- [23] Z. Li, Y. Liu, Q. Liu, Z. Ma, Z. Zhang, S. Zhang, Z. Guo, J. Zhang, X. Wang, and X. Bai. Monkeyocr: Document parsing with a structure-recognition-relation triplet paradigm. arXiv preprint arXiv:2506.05218, 2025.",
+        "contextualized_tokens": 234,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 84,
+        "text": "- [24] A. Liu, B. Feng, B. Wang, B. Wang, B. Liu, C. Zhao, C. Dengr, C. Ruan, D. Dai, D. Guo, et al. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model. arXiv preprint arXiv:2405.04434, 2024.\n- [25] A. Liu, B. Feng, B. Xue, B. Wang, B. Wu, C. Lu, C. Zhao, C. Deng, C. Zhang, C. Ruan, et al. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024.\n- [26] A. Liu, A. Mei, B. Lin, B. Xue, B. Wang, B. Xu, B. Wu, B. Zhang, C. Lin, C. Dong, et al. Deepseek-v3. 2: Pushing the frontier of open large language models. arXiv preprint arXiv:2512.02556, 2025.",
+        "text_tokens": 254,
+        "contextualized_text": "References\n- [24] A. Liu, B. Feng, B. Wang, B. Wang, B. Liu, C. Zhao, C. Dengr, C. Ruan, D. Dai, D. Guo, et al. Deepseek-v2: A strong, economical, and efficient mixture-of-experts language model. arXiv preprint arXiv:2405.04434, 2024.\n- [25] A. Liu, B. Feng, B. Xue, B. Wang, B. Wu, C. Lu, C. Zhao, C. Deng, C. Zhang, C. Ruan, et al. Deepseek-v3 technical report. arXiv preprint arXiv:2412.19437, 2024.\n- [26] A. Liu, A. Mei, B. Lin, B. Xue, B. Wang, B. Xu, B. Wu, B. Zhang, C. Lin, C. Dong, et al. Deepseek-v3. 2: Pushing the frontier of open large language models. arXiv preprint arXiv:2512.02556, 2025.",
+        "contextualized_tokens": 255,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 85,
+        "text": "- [27] C. Liu, H. Wei, J. Chen, L. Kong, Z. Ge, Z. Zhu, L. Zhao, J. Sun, C. Han, and X. Zhang. Focus anywhere for fine-grained multi-page document understanding. arXiv preprint arXiv:2405.14295, 2024.\n- [28] F. Liu and H. Qiu. Context cascade compression: Exploring the upper limits of text compression. arXiv preprint arXiv:2511.15244, 2025.\n- [29] F. Liu, H. Wei, W. Zhao, G. Li, J. Peng, and Z. Li. Wb-detr: Transformer-based detector without backbone. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 2979-2987, 2021.",
+        "text_tokens": 187,
+        "contextualized_text": "References\n- [27] C. Liu, H. Wei, J. Chen, L. Kong, Z. Ge, Z. Zhu, L. Zhao, J. Sun, C. Han, and X. Zhang. Focus anywhere for fine-grained multi-page document understanding. arXiv preprint arXiv:2405.14295, 2024.\n- [28] F. Liu and H. Qiu. Context cascade compression: Exploring the upper limits of text compression. arXiv preprint arXiv:2511.15244, 2025.\n- [29] F. Liu, H. Wei, W. Zhao, G. Li, J. Peng, and Z. Li. Wb-detr: Transformer-based detector without backbone. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 2979-2987, 2021.",
+        "contextualized_tokens": 188,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 86,
+        "text": "- [30] Y. Liu, J. Gu, N. Goyal, X. Li, S. Edunov, M. Ghazvininejad, M. Lewis, and L. Zettlemoyer. Multilingual denoising pre-training for neural machine translation. Transactions of the Association for Computational Linguistics, 8:726-742, 2020.\n- [31] Y. Liu, Z. Zhao, L. Tian, et al. Points-reader: Distillation-free adaptation of vision-language models for document conversion. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 1576-1601, November 2025.\n- [32] I. Loshchilov and F. Hutter. Decoupled weight decay regularization. In ICLR, 2019.\n- [33] OpenAI. Gpt-4 technical report, 2023.",
+        "text_tokens": 191,
+        "contextualized_text": "References\n- [30] Y. Liu, J. Gu, N. Goyal, X. Li, S. Edunov, M. Ghazvininejad, M. Lewis, and L. Zettlemoyer. Multilingual denoising pre-training for neural machine translation. Transactions of the Association for Computational Linguistics, 8:726-742, 2020.\n- [31] Y. Liu, Z. Zhao, L. Tian, et al. Points-reader: Distillation-free adaptation of vision-language models for document conversion. In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, pages 1576-1601, November 2025.\n- [32] I. Loshchilov and F. Hutter. Decoupled weight decay regularization. In ICLR, 2019.\n- [33] OpenAI. Gpt-4 technical report, 2023.",
+        "contextualized_tokens": 192,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 87,
+        "text": "- [34] L. Ouyang, Y. Qu, H. Zhou, J. Zhu, R. Zhang, Q. Lin, B. Wang, Z. Zhao, M. Jiang, X. Zhao, et al. Omnidocbench: Benchmarking diverse pdf document parsing with comprehensive annotations. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 24838-24848, 2025.\n- [35] Z. Pang, Z. Xie, Y. Man, and Y.-X. Wang. Frozen transformers in language models are effective visual encoder layers. arXiv preprint arXiv:2310.12973, 2023.\n- [36] J. Poznanski, A. Rangapur, J. Borchardt, J. Dunkelberger, R. Huff, D. Lin, C. Wilhelm, K. Lo, and L. Soldaini. olmocr: Unlocking trillions of tokens in pdfs with vision language models. arXiv preprint arXiv:2502.18443, 2025.",
+        "text_tokens": 237,
+        "contextualized_text": "References\n- [34] L. Ouyang, Y. Qu, H. Zhou, J. Zhu, R. Zhang, Q. Lin, B. Wang, Z. Zhao, M. Jiang, X. Zhao, et al. Omnidocbench: Benchmarking diverse pdf document parsing with comprehensive annotations. In Proceedings of the Computer Vision and Pattern Recognition Conference, pages 24838-24848, 2025.\n- [35] Z. Pang, Z. Xie, Y. Man, and Y.-X. Wang. Frozen transformers in language models are effective visual encoder layers. arXiv preprint arXiv:2310.12973, 2023.\n- [36] J. Poznanski, A. Rangapur, J. Borchardt, J. Dunkelberger, R. Huff, D. Lin, C. Wilhelm, K. Lo, and L. Soldaini. olmocr: Unlocking trillions of tokens in pdfs with vision language models. arXiv preprint arXiv:2502.18443, 2025.",
+        "contextualized_tokens": 238,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 88,
+        "text": "- [37] A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agarwal, G. Sastry, A. Askell, P. Mishkin, J. Clark, et al. Learning transferable visual models from natural language supervision. In International conference on machine learning, pages 8748-8763. PMLR, 2021.\n- [38] J. Redmon and A. Farhadi. Yolo9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 7263-7271, 2017.\n- [39] Rednote. dots.ocr, 2025. URL https://github.com/rednote-hilab/dots.ocr .\n- [40] S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in neural information processing systems, pages 91-99, 2015.",
+        "text_tokens": 233,
+        "contextualized_text": "References\n- [37] A. Radford, J. W. Kim, C. Hallacy, A. Ramesh, G. Goh, S. Agarwal, G. Sastry, A. Askell, P. Mishkin, J. Clark, et al. Learning transferable visual models from natural language supervision. In International conference on machine learning, pages 8748-8763. PMLR, 2021.\n- [38] J. Redmon and A. Farhadi. Yolo9000: better, faster, stronger. In Proceedings of the IEEE conference on computer vision and pattern recognition, pages 7263-7271, 2017.\n- [39] Rednote. dots.ocr, 2025. URL https://github.com/rednote-hilab/dots.ocr .\n- [40] S. Ren, K. He, R. Girshick, and J. Sun. Faster r-cnn: Towards real-time object detection with region proposal networks. In Advances in neural information processing systems, pages 91-99, 2015.",
+        "contextualized_tokens": 234,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 89,
+        "text": "- [41] B. Seed. Seed1. 8 model card: Towards generalized real-world agency, 2025.\n- [42] J. Su, Y. Lu, S. Pan, B. Wen, and Y. Liu. Roformer: Enhanced transformer with rotary position embedding. arXiv preprint arXiv:2104.09864, 2021.\n- [43] C. Team. Chameleon: Mixed-modal early-fusion foundation models. arXiv preprint arXiv:2405.09818, 2024.\n- [44] G. Team, R. Anil, S. Borgeaud, J.-B. Alayrac, J. Yu, R. Soricut, J. Schalkwyk, A. M. Dai, A. Hauth, K. Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+        "text_tokens": 223,
+        "contextualized_text": "References\n- [41] B. Seed. Seed1. 8 model card: Towards generalized real-world agency, 2025.\n- [42] J. Su, Y. Lu, S. Pan, B. Wen, and Y. Liu. Roformer: Enhanced transformer with rotary position embedding. arXiv preprint arXiv:2104.09864, 2021.\n- [43] C. Team. Chameleon: Mixed-modal early-fusion foundation models. arXiv preprint arXiv:2405.09818, 2024.\n- [44] G. Team, R. Anil, S. Borgeaud, J.-B. Alayrac, J. Yu, R. Soricut, J. Schalkwyk, A. M. Dai, A. Hauth, K. Millican, et al. Gemini: a family of highly capable multimodal models. arXiv preprint arXiv:2312.11805, 2023.",
+        "contextualized_tokens": 224,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 90,
+        "text": "- [45] B. Wang, C. Xu, X. Zhao, L. Ouyang, F. Wu, Z. Zhao, R. Xu, K. Liu, Y. Qu, F. Shang, et al. Mineru: An open-source solution for precise document content extraction. arXiv preprint arXiv:2409.18839, 2024.\n- [46] B. Wang, B. Wang, C. Wan, G. Huang, H. Hu, H. Jia, H. Nie, M. Li, N. Chen, S. Chen, et al. Step-3 is large yet affordable: Model-system co-design for cost-effective decoding. arXiv preprint arXiv:2507.19427, 2025.\n- [47] C. Wang, S. Chen, Y. Wu, Z. Zhang, L. Zhou, S. Liu, Z. Chen, Y. Liu, H. Wang, J. Li, et al. Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023.",
+        "text_tokens": 250,
+        "contextualized_text": "References\n- [45] B. Wang, C. Xu, X. Zhao, L. Ouyang, F. Wu, Z. Zhao, R. Xu, K. Liu, Y. Qu, F. Shang, et al. Mineru: An open-source solution for precise document content extraction. arXiv preprint arXiv:2409.18839, 2024.\n- [46] B. Wang, B. Wang, C. Wan, G. Huang, H. Hu, H. Jia, H. Nie, M. Li, N. Chen, S. Chen, et al. Step-3 is large yet affordable: Model-system co-design for cost-effective decoding. arXiv preprint arXiv:2507.19427, 2025.\n- [47] C. Wang, S. Chen, Y. Wu, Z. Zhang, L. Zhou, S. Liu, Z. Chen, Y. Liu, H. Wang, J. Li, et al. Neural codec language models are zero-shot text to speech synthesizers. arXiv preprint arXiv:2301.02111, 2023.",
+        "contextualized_tokens": 251,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 91,
+        "text": "- [48] P. Wang, S. Bai, S. Tan, S. Wang, Z. Fan, J. Bai, K. Chen, X. Liu, J. Wang, W. Ge, et al. Qwen2-vl: Enhancing vision-language model's perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024.",
+        "text_tokens": 89,
+        "contextualized_text": "References\n- [48] P. Wang, S. Bai, S. Tan, S. Wang, Z. Fan, J. Bai, K. Chen, X. Liu, J. Wang, W. Ge, et al. Qwen2-vl: Enhancing vision-language model's perception of the world at any resolution. arXiv preprint arXiv:2409.12191, 2024.",
+        "contextualized_tokens": 90,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 92,
+        "text": "- [49] W. Wang, Z. Gao, L. Gu, et al. Internvl3.5: Advancing open-source multimodal models in versatility, reasoning, and efficiency. arXiv preprint arXiv:2508.18265, 2025.\n- [50] H. Wei, L. Kong, J. Chen, L. Zhao, Z. Ge, J. Yang, J. Sun, C. Han, and X. Zhang. Vary: Scaling up the vision vocabulary for large vision-language model. In European Conference on Computer Vision, pages 408-424. Springer, 2024.\n- [51] H. Wei, L. Kong, J. Chen, L. Zhao, Z. Ge, E. Yu, J. Sun, C. Han, and X. Zhang. Small language model meets with reinforced vision vocabulary. arXiv preprint arXiv:2401.12503, 2024.",
+        "text_tokens": 206,
+        "contextualized_text": "References\n- [49] W. Wang, Z. Gao, L. Gu, et al. Internvl3.5: Advancing open-source multimodal models in versatility, reasoning, and efficiency. arXiv preprint arXiv:2508.18265, 2025.\n- [50] H. Wei, L. Kong, J. Chen, L. Zhao, Z. Ge, J. Yang, J. Sun, C. Han, and X. Zhang. Vary: Scaling up the vision vocabulary for large vision-language model. In European Conference on Computer Vision, pages 408-424. Springer, 2024.\n- [51] H. Wei, L. Kong, J. Chen, L. Zhao, Z. Ge, E. Yu, J. Sun, C. Han, and X. Zhang. Small language model meets with reinforced vision vocabulary. arXiv preprint arXiv:2401.12503, 2024.",
+        "contextualized_tokens": 207,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 93,
+        "text": "- [52] H. Wei, C. Liu, J. Chen, J. Wang, L. Kong, Y. Xu, Z. Ge, L. Zhao, J. Sun, Y. Peng, et al. General ocr theory: Towards ocr-2.0 via a unified end-to-end model. arXiv preprint arXiv:2409.01704, 2024.\n- [53] H. Wei, Y. Yin, Y. Li, J. Wang, L. Zhao, J. Sun, Z. Ge, X. Zhang, and D. Jiang. Slow perception: Let's perceive geometric figures step-by-step. arXiv preprint arXiv:2412.20631, 2024.\n- [54] H. Wei, Y. Sun, and Y. Li. Deepseek-ocr: Contexts optical compression. arXiv preprint arXiv:2510.18234, 2025.",
+        "text_tokens": 211,
+        "contextualized_text": "References\n- [52] H. Wei, C. Liu, J. Chen, J. Wang, L. Kong, Y. Xu, Z. Ge, L. Zhao, J. Sun, Y. Peng, et al. General ocr theory: Towards ocr-2.0 via a unified end-to-end model. arXiv preprint arXiv:2409.01704, 2024.\n- [53] H. Wei, Y. Yin, Y. Li, J. Wang, L. Zhao, J. Sun, Z. Ge, X. Zhang, and D. Jiang. Slow perception: Let's perceive geometric figures step-by-step. arXiv preprint arXiv:2412.20631, 2024.\n- [54] H. Wei, Y. Sun, and Y. Li. Deepseek-ocr: Contexts optical compression. arXiv preprint arXiv:2510.18234, 2025.",
+        "contextualized_tokens": 212,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    },
+    {
+        "chunk_id": 94,
+        "text": "- [55] J. Zhu, W. Wang, Z. Chen, Z. Liu, S. Ye, L. Gu, H. Tian, Y. Duan, W. Su, J. Shao, et al. Internvl3: Exploring advanced training and test-time recipes for open-source multimodal models. arXiv preprint arXiv:2504.10479, 2025.\n- [56] X. Zhu, W. Su, L. Lu, B. Li, X. Wang, and J. Dai. Deformable detr: Deformable transformers for end-to-end object detection. arXiv preprint arXiv:2010.04159, 2020.",
+        "text_tokens": 157,
+        "contextualized_text": "References\n- [55] J. Zhu, W. Wang, Z. Chen, Z. Liu, S. Ye, L. Gu, H. Tian, Y. Duan, W. Su, J. Shao, et al. Internvl3: Exploring advanced training and test-time recipes for open-source multimodal models. arXiv preprint arXiv:2504.10479, 2025.\n- [56] X. Zhu, W. Su, L. Lu, B. Li, X. Wang, and J. Dai. Deformable detr: Deformable transformers for end-to-end object detection. arXiv preprint arXiv:2010.04159, 2020.",
+        "contextualized_tokens": 158,
+        "filename": "deepseek-ocrv2.pdf",
+        "mimetype": "application/pdf"
+    }
+]
