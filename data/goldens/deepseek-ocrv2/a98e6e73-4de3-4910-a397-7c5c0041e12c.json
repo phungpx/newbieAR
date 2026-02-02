@@ -15,43 +15,43 @@
         "context_quality": 0.9125
     },
     "sourceFile": "data/papers/files/deepseek-ocrv2.pdf",
-    "actual_output": "I don't know.",
+    "actual_output": "DeepEncoder V2 contrasts with DeepEncoder in the following ways:\n\n*   **LM-encoder**: DeepEncoder V2 replaces the **CLIP ViT** component found in DeepEncoder with a **compact LLM architecture** [deepseek-ocrv2.pdf - Chunk #9, deepseek-ocrv2.pdf - Chunk #20]. This LLM-style encoder is initialized from **Qwen2-0.5Bbase** [deepseek-ocrv2.pdf - Chunk #28].\n*   **Causal flow**: DeepEncoder V2 introduces **learnable queries**, termed **causal flow tokens**, which employ **causal attention** [deepseek-ocrv2.pdf - Chunk #9, deepseek-ocrv2.pdf - Chunk #20]. These tokens are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries [deepseek-ocrv2.pdf - Chunk #20]. Only these causal flow tokens (the latter half of the encoder outputs) are fed to the LLM decoder [deepseek-ocrv2.pdf - Chunk #9, deepseek-ocrv2.pdf - Chunk #20].\n*   **16x compression tokenizer**: Both DeepEncoder V2 and DeepEncoder utilize a vision tokenizer combining an **80M-parameter SAM-base** with two convolutional layers, which achieves **16x token compression** [deepseek-ocrv2.pdf - Chunk #18]. However, DeepEncoder V2 reduces the output dimension of the final convolutional layer from 1024 (in DeepEncoder) to **896** to align with the subsequent pipeline [deepseek-ocrv2.pdf - Chunk #18].",
     "retrieval_contexts": [
         {
-            "content": "Docling is quickly evolving into a mainstream package for document conversion. The support for PDF, MS Office formats, Images, HTML, and more makes it a universal choice for downstream applications. Users appreciate the intuitiveness of the library, the high-quality, richly structured conversion output, as well as the permissive MIT license, and the possibility of running entirely locally on commodity hardware.\nAmong the integrations created by the Docling team and the growing community, a few are worth mentioning as depicted in Figure 6. For popular generative AI application patterns, we provide native integration within LangChain (Chase 2022) and LlamaIndex (Liu 2022) for reading documents and chunking. Processing and transforming documents at scale for building large-scale multi-modal training datasets are enabled by the integration in the open IBM data-prep-kit (Wood et al. 2024). Agentic workloads can leverage the integration with the Bee framework (IBM Research 2024). For the fine-tuning of language models, Docling is integrated in InstructLab (Sudalairaj et al. 2024),",
-            "source": "docling.pdf - Chunk #37",
-            "score": 0.33774728
+            "content": "First, we present DeepEncoder V2, featuring several key innovations: (1) we replace the CLIP [37] component in DeepEncoder [54] with a compact LLM [48] architecture, as illustrated in Figure 1, to achieve visual causal flow; (2) to enable parallelized processing, we introduce learnable queries [10], termed causal flow tokens, with visual tokens prepended as a prefix-through a customized attention mask, visual tokens maintain global receptive fields, while causal flow tokens can obtain visual token reordering ability; (3) we maintain equal cardinality between causal and visual tokens (with redundancy such as padding and borders) to provide sufficient capacity for re-fixation; (4) only the causal flow tokens-the latter half of the encoder outputs-are fed to the LLM [24] decoder, enabling cascade causal-aware visual understanding.",
+            "source": "deepseek-ocrv2.pdf - Chunk #9",
+            "score": 0.698787
         },
         {
-            "content": "Nassar, A.; Livathinos, N.; Lysak, M.; and Staar, P. 2022. Tableformer: Table structure understanding with transformers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , 4614-4623.\n1 https://github.com/DS4SD/docling/discussions/categories/ roadmap\nOuyang, L.; Qu, Y.; Zhou, H.; Zhu, J.; Zhang, R.; Lin, Q.; Wang, B.; Zhao, Z.; Jiang, M.; Zhao, X.; Shi, J.; Wu, F.; Chu, P.; Liu, M.; Li, Z.; Xu, C.; Zhang, B.; Shi, B.; Tu, Z.; and He, C. 2024. OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations. arXiv:2412.07626.",
-            "source": "docling.pdf - Chunk #45",
-            "score": 0.33443245
+            "content": "The first component of DeepEncoder V2 is a vision tokenizer. Following DeepEncoder, we employ an architecture combining an 80M-parameter SAM-base [21] along with two convolutional layers [50]. The output dimension of the final convolutional layer is reduced from 1024 in DeepEncoder to 896 to align with the subsequent pipeline. Note that this compression-based tokenizer is not mandatory and can be replaced with simple patch embedding. We retain it because it achieves 16 \u00d7 token compression [19, 46, 51, 52] through window attention with minimal parameters, significantly reducing both computational cost and activation memory for the subsequent global attention module. Moreover, its parameter count ( 80M) remains comparable to the typical 100M parameters used for text input embeddings in LLMs.\nH:1024\n. H\u2022768.\nB=0~6\nW:1024",
+            "source": "deepseek-ocrv2.pdf - Chunk #18",
+            "score": 0.64922035
         },
         {
-            "content": "Wood, D.; Lublinsky, B.; Roytman, A.; Singh, S.; Adam, C.; Adebayo, A.; An, S.; Chang, Y. C.; Dang, X.-H.; Desai, N.; Dolfi, M.; Emami-Gohari, H.; Eres, R.; Goto, T.; Joshi, D.; Koyfman, Y.; Nassar, M.; Patel, H.; Selvam, P.; Shah, Y.; Surendran, S.; Tsuzuku, D.; Zerfos, P.; and Daijavad, S. 2024. Data-Prep-Kit: getting your data ready for LLM application development. arXiv:2409.18164.\nZhao, Y.; Lv, W.; Xu, S.; Wei, J.; Wang, G.; Dang, Q.; Liu, Y.; and Chen, J. 2023. DETRs Beat YOLOs on Real-time Object Detection. arXiv:2304.08069.",
-            "source": "docling.pdf - Chunk #50",
-            "score": 0.33053255
+            "content": "After DeepEncoder V2 pretraining, we integrate it with DeepSeek-3B-A500M [24, 25] as our final pipeline. We freeze the visual tokenizer (SAM-conv structure) while jointly optimizing the LLM encoder and LLM decoder to enhance query representations. At this stage, we unify the two resolutions into a single dataloader via multi-crop strategy. We adopt 4-stage pipeline parallelism: vision tokenizer (PP0), LLM-style encoder (PP1), and DeepSeek-LLM layers (6 layers per stage on PP2-3). With 160 GPUs (40GB/per-GPU), we configure 40 data parallel replicas (4 GPUs per replica) and train with global batch size 1280 using the same optimizer and learning rate decay from 5e-5 to 1e-6 over 15k iterations.",
+            "source": "deepseek-ocrv2.pdf - Chunk #29",
+            "score": 0.6076082
         },
         {
-            "content": "- Parses common document formats (PDF, Images, MS Office formats, HTML) and exports to Markdown, JSON, and HTML.\n- Applies advanced AI for document understanding, including detailed page layout, OCR, reading order, figure extraction, and table structure recognition.\n- Establishes a unified DoclingDocument data model for rich document representation and operations.\n- Provides fully local execution capabilities making it suitable for sensitive data and air-gapped environments.\n- Has an ecosystem of plug-and-play integrations with prominent generative AI development frameworks, including LangChain and LlamaIndex.\n- Can leverage hardware accelerators such as GPUs.",
-            "source": "docling.pdf - Chunk #5",
-            "score": 0.3281151
+            "content": "In DeepEncoder, a CLIP ViT follows the vision tokenizer to compress visual knowledge. DeepEncoder V2 redesigns this component into an LLM-style architecture with a dual-stream attention mechanism. Visual tokens utilize bidirectional attention to preserve CLIP's global modeling capability, while newly introduced causal flow queries employ causal attention. These learnable queries are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries. By maintaining equal cardinality between queries and visual tokens, this design imposes semantic ordering and distilling on visual features without altering token count. Finally, only the causal query outputs are fed to the LLM decoder.",
+            "source": "deepseek-ocrv2.pdf - Chunk #20",
+            "score": 0.6052028
         },
         {
-            "content": "As far as RAG is concerned, users can leverage existing Docling extensions for popular frameworks like LlamaIndex and then harness framework capabilities for RAG components like embedding models, vector stores, etc. These Docling extensions typically provide two modes of operation: one using a lossy export, e.g., to Markdown, and one using lossless serialization via JSON. The former provides a simple starting point, upon which any text-based chunking method may be applied (e.g., also drawing from the framework library), while the latter, which uses a swappable Docling chunker type, can be the more powerful one, as it can provide document-native RAG grounding via rich metadata such as the page number and the bounding box of the supporting context. For usage outside of these frameworks, users can still employ Docling chunkers to accelerate and simplify the development of their custom pipelines. Besides strict RAG pipelines for Q&A, Docling can naturally be utilized in the context of broader agentic workflows for which it can provide document-based knowledge for agents to decide and act on.",
-            "source": "docling.pdf - Chunk #35",
-            "score": 0.3274528
+            "content": "Following DeepSeek-OCR and Vary [50], we train DeepEncoder V2 using a language modeling objective, coupling the encoder with a lightweight decoder [20] for joint optimization via next token prediction. We employ two dataloaders at resolutions of 768 \u00d7 768 and 1024 \u00d7 1024. The vision tokenizer is initialized from DeepEncoder, and the LLM-like encoder from Qwen2-0.5Bbase [48]. After pretraining, only the encoder parameters are retained for subsequent stages. We use the AdamW [32] optimizer with cosine learning rate decay from 1e-4 to 1e-6, training on 160 A100 GPUs (20 nodes \u00d7 8 GPUs) with batch size 640 for 40k iterations (with sequence packing at 8K length, about 100M image-text pair samples).",
+            "source": "deepseek-ocrv2.pdf - Chunk #28",
+            "score": 0.59955
         }
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the response 'I don't know' provides absolutely no information about the technical comparison requested between DeepEncoder V2's specific features (LM-encoder, causal flow, and 16x compression tokenizer) and the original DeepEncoder, making it completely irrelevant to addressing the input.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the output perfectly addresses the input's request to contrast DeepEncoder V2's specific features (LM-encoder, causal flow, and 16x compression tokenizer) with the original DeepEncoder, with no irrelevant statements identified!",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 348,
-                "completion_tokens": 84,
+                "prompt_tokens": 284,
+                "completion_tokens": 72,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +60,12 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is completely faithful to the retrieval context.",
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness and alignment with the source information.",
             "threshold": 0.5,
             "is_successful": true,
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 46,
+                "completion_tokens": 48,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -73,13 +73,13 @@
             }
         },
         "Contextual Precision": {
-            "score": 0,
-            "reason": "The score is 0.00 because all retrieved nodes are completely irrelevant to the query. The first node discusses 'Docling' document conversion package, the second node contains academic references about 'Tableformer' and 'OmniDocBench', the third node covers 'Data-Prep-Kit' and 'DETRs Beat YOLOs', the fourth node describes document parsing capabilities for 'PDF, Images, MS Office formats', and the fifth node discusses RAG frameworks and 'LlamaIndex'. None of these nodes address DeepEncoder V2's LM-encoder, causal flow, or 16x compression tokenizer, making the entire retrieval context unhelpful for the comparison requested.",
+            "score": 0.9166666666666666,
+            "reason": "The score is 0.92 because the retrieval contexts are well-ordered with most relevant nodes ranked highly. The first, second, and fourth nodes in retrieval contexts directly address the key architectural differences - the first node 'directly addresses all three key components' including LM-encoder and causal flow, the second node 'specifically addresses the 16x compression tokenizer' with technical details, and the fourth node 'directly contrasts the encoder architectures' between versions. However, the score isn't perfect due to the third node being ranked higher than the fourth node, where the third node 'discusses implementation details about training and pipeline integration but does not provide meaningful contrasts' while the fourth node provides more direct architectural comparisons. The fifth node appropriately ranks last as it 'focuses on training methodology and optimization details rather than contrasting the core architectural differences.'",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 799,
-                "completion_tokens": 173,
+                "prompt_tokens": 856,
+                "completion_tokens": 194,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +87,13 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the expected output discusses DeepEncoder V2's technical architecture, vision encoders, causal visual reasoning, and token compression mechanisms, but none of the nodes in retrieval context contain any information about DeepEncoder - they only focus on Docling document processing capabilities, creating a complete mismatch between the technical content needed and what was retrieved.",
+            "score": 0.8181818181818182,
+            "reason": "The score is 0.82 because most statements are well-supported by nodes in retrieval context, with nodes 1, 2, and 4 providing strong evidence for the LM-style vision encoder replacement (sentences 1-2), causal visual reasoning mechanisms (sentences 3-4), and 16x token compression details (sentences 5-7). However, some technical details about DeepEncoder's rigid ordering bias and complete structural specifications lack explicit support in the retrieval context, preventing a perfect score.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1262,
-                "completion_tokens": 92,
+                "prompt_tokens": 1495,
+                "completion_tokens": 127,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +101,13 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the entire retrieval context discusses 'Docling', a document conversion package with features like 'MIT license', 'running entirely locally on commodity hardware', and 'native integration within LangChain and LlamaIndex', which has absolutely nothing to do with contrasting DeepEncoder V2's LM-encoder, causal flow, and 16x compression tokenizer with DeepEncoder. No relevant statements were found in the context.",
+            "score": 0.7692307692307693,
+            "reason": "The score is 0.77 because while the retrieval context contains comprehensive information about DeepEncoder V2's key components - including details about the 'LLM-style architecture with dual-stream attention mechanism,' the 'causal flow tokens' implementation, and the '16x token compression through window attention' - there are significant portions of irrelevant content. The context includes 'formatting artifacts or dimension specifications,' detailed 'training configuration' parameters, and 'dataloader' information that 'do not provide meaningful comparison information between DeepEncoder V2's components and DeepEncoder,' reducing the overall relevance despite the presence of valuable comparative details.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1411,
-                "completion_tokens": 115,
+                "prompt_tokens": 1333,
+                "completion_tokens": 151,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

@@ -15,43 +15,43 @@
         "context_quality": 0.9375
     },
     "sourceFile": "data/papers/files/deepseek-ocrv2.pdf",
-    "actual_output": "I don't know.",
+    "actual_output": "DETR's 100 object queries for object detection and BLIP2 Q-former's 32 learnable queries for visual token compression differ in their cross-attention mechanisms and the entities they interact with, while both employ bidirectional self-attention among queries.\n\n*   **Number of Queries:**\n    *   DETR utilizes 100 **preset parallelized learnable queries** [deepseek-ocrv2.pdf - Chunk #13].\n    *   BLIP-2's Q-former employs 32 **learnable queries** [deepseek-ocrv2.pdf - Chunk #14].\n\n*   **Cross-Attention Mechanisms:**\n    *   DETR's queries interact with **feature maps** via cross-attention mechanisms [deepseek-ocrv2.pdf - Chunk #13].\n    *   Q-former's queries interact with hundreds of **CLIP visual tokens** through cross-attention [deepseek-ocrv2.pdf - Chunk #14].\n\n*   **Bidirectional Self-Attention Mechanisms:**\n    *   Both DETR's decoder and BLIP2's Q-former employ **bidirectional self-attention among queries** [deepseek-ocrv2.pdf - Chunk #12].\n    *   DETR's queries engage in bidirectional information exchange among themselves through self-attention [deepseek-ocrv2.pdf - Chunk #13].",
     "retrieval_contexts": [
         {
-            "content": "Wood, D.; Lublinsky, B.; Roytman, A.; Singh, S.; Adam, C.; Adebayo, A.; An, S.; Chang, Y. C.; Dang, X.-H.; Desai, N.; Dolfi, M.; Emami-Gohari, H.; Eres, R.; Goto, T.; Joshi, D.; Koyfman, Y.; Nassar, M.; Patel, H.; Selvam, P.; Shah, Y.; Surendran, S.; Tsuzuku, D.; Zerfos, P.; and Daijavad, S. 2024. Data-Prep-Kit: getting your data ready for LLM application development. arXiv:2409.18164.\nZhao, Y.; Lv, W.; Xu, S.; Wei, J.; Wang, G.; Dang, Q.; Liu, Y.; and Chen, J. 2023. DETRs Beat YOLOs on Real-time Object Detection. arXiv:2304.08069.",
-            "source": "docling.pdf - Chunk #50",
-            "score": 0.4727273
+            "content": "Figure 2 | This figure shows two computer vision models with parallelized queries: DETR's decoder [10] for object detection and BLIP2's Q-former [22] for visual token compression. Both employ bidirectional self-attention among queries.",
+            "source": "deepseek-ocrv2.pdf - Chunk #12",
+            "score": 0.797703
         },
         {
-            "content": "Layout Analysis Model Our layout analysis model is an object detector which predicts the bounding-boxes and classes of various elements on the image of a given page. Its architecture is derived from RT-DETR (Zhao et al. 2023) and re-trained on DocLayNet (Pfitzmann et al. 2022), our popular human-annotated dataset for document-layout analysis, among other proprietary datasets. For inference, our implementation relies on the Hugging Face transformers (Wolf et al. 2020) library and the Safetensors file format. All predicted bounding-box proposals for document elements are post-processed to remove overlapping proposals based on confidence and size, and then intersected with the text tokens in the PDF to group them into meaningful and complete units such as paragraphs, section titles, list items, captions, figures, or tables.",
-            "source": "docling.pdf - Chunk #20",
-            "score": 0.38155353
+            "content": "DETR [10] pioneered the integration of transformer architecture into object detection, fundamentally breaking away from traditional detection paradigms [38, 40]. To overcome the efficiency limitations of serial decoding in transformer blocks, DETR introduced preset parallelized learnable queries-a set of 100 object queries that encode object priors such as shape and position through training. These queries interact with feature maps [18] via cross-attention mechanisms, while simultaneously engaging in bidirectional information exchange among themselves through self-attention. DETR established a foundational paradigm that enables transformers to handle parallelized tokens. The object query design has since become the de facto standard architectural component in subsequent transformer-based detection methods [29, 56].",
+            "source": "deepseek-ocrv2.pdf - Chunk #13",
+            "score": 0.68046105
         },
         {
-            "content": "Figure 4: Contributions of PDF backend and AI models to the conversion time of a page (in seconds per page). Lower is better. Left: Ranges of time contributions for each model to pages it was applied on (i.e., OCR was applied only on pages with bitmaps, table structure was applied only on pages with tables). Right: Average time contribution to a page in the benchmark dataset (factoring in zero-time contribution for OCR and table structure models on pages without bitmaps or tables) .\nFigure 5: Conversion time in seconds per page on our dataset in three scenarios, across all assets and system configurations. Lower bars are better. The configuration includes OCR and table structure recognition ( fast table option on Docling and MinerU, hi res in unstructured, as shown in table 1).\nwhere it supports the enhancement of the knowledge taxonomy.\nDocling is also available and officially maintained as a system package in the Red Hat \u00ae Enterprise Linux \u00ae AI (RHEL AI) distribution, which seamlessly allows to develop, test, and run the Granite family of large language models for enterprise applications.",
-            "source": "docling.pdf - Chunk #38",
-            "score": 0.35852396
+            "content": "In recent years, vision-language models [7, 9, 22, 50] have developed rapidly, with architectures converging toward the encoder-projector-LLM paradigm. The projector aligns visual tokens with the LLM's embedding space, serving as a critical bridge that enables LLMs to understand visual content. Q-former, introduced in BLIP-2 [22], exemplifies an effective projector design that employs learnable queries for visual token compression. Adopting a BERT-like [15] architecture and drawing inspiration from DETR's object queries [10], Q-former utilizes 32 learnable queries that interact with hundreds of CLIP [37] visual tokens through cross-attention. These compressed query representations are subsequently fed into the LLM, achieving effective mapping from visual to language space. The success of Q-former demonstrates that parallelized learnable queries are effective not only for feature decoding in detection tasks but also for token compression in multimodal alignment.",
+            "source": "deepseek-ocrv2.pdf - Chunk #14",
+            "score": 0.6654954
         },
         {
-            "content": "Nassar, A.; Livathinos, N.; Lysak, M.; and Staar, P. 2022. Tableformer: Table structure understanding with transformers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , 4614-4623.\n1 https://github.com/DS4SD/docling/discussions/categories/ roadmap\nOuyang, L.; Qu, Y.; Zhou, H.; Zhu, J.; Zhang, R.; Lin, Q.; Wang, B.; Zhao, Z.; Jiang, M.; Zhao, X.; Shi, J.; Wu, F.; Chu, P.; Liu, M.; Li, Z.; Xu, C.; Zhang, B.; Shi, B.; Tu, Z.; and He, C. 2024. OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations. arXiv:2412.07626.",
-            "source": "docling.pdf - Chunk #45",
-            "score": 0.350545
+            "content": "Figure 1 | We substitute the CLIP component in DeepEncoder with an LLM-style architecture. By customizing the attention mask, visual tokens utilize bidirectional attention while learnable queries adopt causal attention. Each query token can thus attend to all visual tokens and preceding queries, allowing progressive causal reordering over visual information.",
+            "source": "deepseek-ocrv2.pdf - Chunk #2",
+            "score": 0.62102705
         },
         {
-            "content": "Disabling OCR saves 60% of runtime on the x86 CPU and the M3 Max SoC, and 50% on the L4 GPU. Turning off table structure recognition saves 16% of runtime on the x86 CPU and the M3 Max SoC, and 24% on the L4 GPU. Disabling both OCR and table structure recognition saves around 75% of runtime on all system configurations.\nProfiling Docling's AI Pipeline We analyzed the contributions of Docling's PDF backend and all AI models in the PDF pipeline to the total conversion time. The results are shown in Figure 4. On average, processing a page took 481 ms on the L4 GPU, 3.1 s on the x86 CPU and 1.26 s on the M3 Max SoC.",
-            "source": "docling.pdf - Chunk #30",
-            "score": 0.34641123
+            "content": "In DeepEncoder, a CLIP ViT follows the vision tokenizer to compress visual knowledge. DeepEncoder V2 redesigns this component into an LLM-style architecture with a dual-stream attention mechanism. Visual tokens utilize bidirectional attention to preserve CLIP's global modeling capability, while newly introduced causal flow queries employ causal attention. These learnable queries are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries. By maintaining equal cardinality between queries and visual tokens, this design imposes semantic ordering and distilling on visual features without altering token count. Finally, only the causal query outputs are fed to the LLM decoder.",
+            "source": "deepseek-ocrv2.pdf - Chunk #20",
+            "score": 0.5851368
         }
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the actual output simply states 'I don't know' without providing any information about DETR's object queries, BLIP2 Q-former's learnable queries, or their attention mechanisms, making it completely irrelevant to the technical question about the differences between these two architectures' attention mechanisms.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the technical question about the differences between DETR's object queries and BLIP2 Q-former's learnable queries, with no irrelevant content detected. Great job staying focused on the specific architectural mechanisms!",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 356,
-                "completion_tokens": 85,
+                "prompt_tokens": 304,
+                "completion_tokens": 70,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +60,12 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is completely faithful to and well-supported by the retrieval context.",
             "threshold": 0.5,
             "is_successful": true,
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 45,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -73,13 +73,13 @@
             }
         },
         "Contextual Precision": {
-            "score": 0,
-            "reason": "The score is 0.00 because all five nodes in the retrieval contexts are irrelevant to the input query. The first node mentions 'DETRs Beat YOLOs on Real-time Object Detection' and references RT-DETR, but provides no information about DETR's 100 object queries, cross-attention mechanisms, or bidirectional self-attention. The second node discusses 'layout analysis model' and mentions RT-DETR architecture, but does not provide any information about DETR's 100 object queries, cross-attention mechanisms, bidirectional self-attention, or anything about BLIP2 Q-former's queries and mechanisms. The third node focuses on 'conversion time' performance metrics and system configurations for document processing, with no mention of DETR's object queries, BLIP2 Q-former's learnable queries, cross-attention, or bidirectional self-attention mechanisms. The fourth node mentions 'Tableformer: Table structure understanding with transformers' and various references, but contains no information about DETR's 100 object queries, BLIP2 Q-former's 32 learnable queries, or their respective attention mechanisms. The fifth node discusses runtime performance optimizations like 'Disabling OCR saves 60% of runtime' and processing times, but provides no information about DETR's object queries, BLIP2 Q-former's learnable queries, cross-attention, or bidirectional self-attention mechanisms. Since no relevant nodes exist to be ranked higher than irrelevant ones, contextual precision is at its lowest possible value.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first three nodes in the retrieval contexts directly address DETR's 100 object queries, BLIP2 Q-former's 32 learnable queries, and their respective attention mechanisms, while the fourth and fifth nodes discussing DeepEncoder systems are appropriately ranked lower since they focus on different architectures not relevant to the DETR vs BLIP2 comparison.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 881,
-                "completion_tokens": 365,
+                "prompt_tokens": 907,
+                "completion_tokens": 112,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +87,13 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because none of the information in the expected output can be attributed to any nodes in retrieval context. The retrieval context lacks coverage of key concepts including DETR's 100 object queries and their encoding mechanisms, BLIP2 Q-former's 32 learnable queries for visual token compression, comparative analysis of query numbers and purposes, cross-attention mechanisms for both models, and bidirectional self-attention implementations.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the nodes in retrieval context. Key details like DETR's 100 object queries and BLIP2's 32 learnable queries are directly found in nodes 2 and 3 respectively, while technical mechanisms such as bidirectional self-attention and cross-attention interactions are well-documented across nodes 1-3. Great alignment!",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1114,
-                "completion_tokens": 109,
+                "prompt_tokens": 1121,
+                "completion_tokens": 106,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +101,13 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.058823529411764705,
-            "reason": "The score is 0.06 because the retrieval context is almost entirely irrelevant, containing content about 'Data-Prep-Kit', 'document processing workflows', 'Docling' system performance metrics, and 'runtime optimization' which have nothing to do with DETR's object queries or BLIP2 Q-former's attention mechanisms. The only relevant content is a single citation 'DETRs Beat YOLOs on Real-time Object Detection' which mentions DETR but doesn't address the specific question about cross-attention and bidirectional self-attention mechanisms.",
+            "score": 0.5833333333333334,
+            "reason": "The score is 0.58 because while the retrieval context contains valuable relevant information about 'DETR's 100 object queries' and 'BLIP2 Q-former's 32 learnable queries' and their attention mechanisms, a significant portion discusses irrelevant topics like 'DeepEncoder' and 'CLIP component' substitution, and provides general background about 'vision-language models' that doesn't address the specific comparison requested.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1279,
-                "completion_tokens": 142,
+                "prompt_tokens": 1173,
+                "completion_tokens": 113,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

@@ -15,43 +15,43 @@
         "context_quality": 0.75
     },
     "sourceFile": "data/papers/files/deepseek-ocrv2.pdf",
-    "actual_output": "I don't know.",
+    "actual_output": "DeepSeek-OCR 2 achieves 2D reasoning and improves performance through its novel LLM-style encoder-decoder cascade:\n\n*   **2D Reasoning:**\n    *   It employs an LLM-style encoder cascaded with an LLM decoder, which are two 1D causal reasoners [deepseek-ocrv2.pdf - Chunk #73].\n    *   The **encoder** (DeepEncoder V2) performs **reading logic reasoning** by causally reordering visual information through query tokens [deepseek-ocrv2.pdf - Chunk #73]. This intelligent reordering of visual tokens happens prior to LLM-based content interpretation, inspired by human visual perception's flexible scanning patterns [deepseek-ocrv2.pdf - Chunk #1].\n    *   The **decoder** then executes **visual task reasoning** over these causally-ordered representations [deepseek-ocrv2.pdf - Chunk #73].\n    *   This decomposition of 2D understanding into two complementary 1D causal reasoning subtasks offers a new architectural approach for genuine 2D reasoning [deepseek-ocrv2.pdf - Chunk #73, deepseek-ocrv2.pdf - Chunk #1].\n\n*   **Performance Improvement:**\n    *   The advancement is powered by the **DeepEncoder V2**, which integrates both bidirectional and causal attention mechanisms to distill causal understanding of the visual world [deepseek-ocrv2.pdf - Chunk #75].\n    *   This leads to causal reasoning capabilities in the vision encoder and significant improvements in **visual reading logic** [deepseek-ocrv2.pdf - Chunk #75].\n    *   DeepSeek-OCR 2 achieves **3.73% performance gains** on OmniDocBench v1.5 compared to the DeepSeek-OCR baseline [deepseek-ocrv2.pdf - Chunk #11].",
     "retrieval_contexts": [
         {
-            "content": "OCR Docling utilizes OCR to convert scanned PDFs and extract content from bitmaps images embedded in a page. Currently, we provide integration with EasyOCR (eas 2024), a popular third-party OCR library with support for many languages, and Tesseract as a widely available alternative. While EasyOCR delivers reasonable transcription quality, we observe that it runs fairly slow on CPU (see section 5), making it the biggest compute expense in the pipeline.\nAssembly In the final pipeline stage, Docling assembles all prediction results produced on each page into the DoclingDocument representation, as defined in the auxiliary Python package docling-core . The generated document object is passed through a post-processing model which leverages several algorithms to augment features, such as correcting the reading order or matching figures with captions.",
-            "source": "docling.pdf - Chunk #22",
-            "score": 0.48053122
+            "content": "DeepSeek-OCR 2 presents a novel architectural paradigm with an LLM-style encoder cascaded with an LLM decoder. This cascade of two 1D causal reasoners holds promise for genuine 2D reasoning: the encoder performs reading logic reasoning (causally reordering visual information through query tokens), while the decoder executes visual task reasoning over these causallyordered representations. Decomposing 2D understanding into two complementary/orthogonal 1D causal reasoning subtasks may represent a breakthrough toward genuine 2D reasoning. Of course, achieving this goal remains a long journey. For instance, to enable multiple reexaminations and multi-hop reordering of visual content, we may need substantially longer causal flow tokens than the original visual token sequence. We will continue to refine this architecture and explore its effectiveness on general visual reasoning tasks in future work.",
+            "source": "deepseek-ocrv2.pdf - Chunk #73",
+            "score": 0.78387314
         },
         {
-            "content": "- Parses common document formats (PDF, Images, MS Office formats, HTML) and exports to Markdown, JSON, and HTML.\n- Applies advanced AI for document understanding, including detailed page layout, OCR, reading order, figure extraction, and table structure recognition.\n- Establishes a unified DoclingDocument data model for rich document representation and operations.\n- Provides fully local execution capabilities making it suitable for sensitive data and air-gapped environments.\n- Has an ecosystem of plug-and-play integrations with prominent generative AI development frameworks, including LangChain and LlamaIndex.\n- Can leverage hardware accelerators such as GPUs.",
-            "source": "docling.pdf - Chunk #5",
-            "score": 0.45367783
+            "content": "In this technical report, we present DeepSeek-OCR 2, a significant upgrade to DeepSeek-OCR, that maintains high visual token compression while achieving meaningfully performance improvements. This advancement is powered by the newly proposed DeepEncoder V2, which implicitly distills causal understanding of the visual world through the integration of both bidirectional and causal attention mechanisms, leading to causal reasoning capabilities in the vision encoder and, consequently, marked lifts in visual reading logic.\nWhile optical text reading, particularly document parsing, represents one of the most practical vision tasks in the LLM era, it constitutes only a small part of the broader visual understanding landscape. Looking ahead, we will refine and adapt this architecture to more diverse scenarios, seeking deeper toward a more comprehensive vision of multimodal intelligence.",
+            "source": "deepseek-ocrv2.pdf - Chunk #75",
+            "score": 0.7229937
         },
         {
-            "content": "Converting documents back into a unified machineprocessable format has been a major challenge for decades due to their huge variability in formats, weak standardization and printing-optimized characteristic, which often discards structural features and metadata. With the advent of LLMs and popular application patterns such as retrieval-augmented generation (RAG), leveraging the rich content embedded in PDFs, Office documents, and scanned document images has become ever more relevant. In the past decade, several powerful document understanding solutions have emerged on the market, most of which are commercial software, SaaS offerings on hyperscalers (Auer et al. 2022) and most recently, multimodal vision-language models. Typically, they incur a cost (e.g., for licensing or LLM inference) and cannot be run easily on local hardware. Meanwhile, only a handful of different open-source tools cover PDF, MS Word, MS PowerPoint, Images, or HTML conversion, leaving a significant feature and quality gap to proprietary solutions.\n* These authors contributed equally.\nCopyright \u00a9 2025, Association for the Advancement of Artificial Intelligence (www.aaai.org). All rights reserved.",
-            "source": "docling.pdf - Chunk #3",
-            "score": 0.4500333
+            "content": "We present DeepSeek-OCR 2 to investigate the feasibility of a novel encoder-DeepEncoder V2-capable of dynamically reordering visual tokens upon image semantics. Conventional vision-language models (VLMs) invariably process visual tokens in a rigid raster-scan order (top-left to bottom-right) with fixed positional encoding when fed into LLMs. However, this contradicts human visual perception, which follows flexible yet semantically coherent scanning patterns driven by inherent logical structures. Particularly for images with complex layouts, human vision exhibits causally-informed sequential processing. Inspired by this cognitive mechanism, DeepEncoder V2 is designed to endow the encoder with causal reasoning capabilities, enabling it to intelligently reorder visual tokens prior to LLM-based content interpretation. This work explores a novel paradigm: whether 2D image understanding can be effectively achieved through two-cascaded 1D causal reasoning structures, thereby offering a new architectural approach with the potential to achieve genuine 2D reasoning. Codes and model weights are publicly accessible at http://github.com/deepseek-ai/DeepSeek-OCR-2 .",
+            "source": "deepseek-ocrv2.pdf - Chunk #1",
+            "score": 0.7165825
         },
         {
-            "content": "Figure 4: Contributions of PDF backend and AI models to the conversion time of a page (in seconds per page). Lower is better. Left: Ranges of time contributions for each model to pages it was applied on (i.e., OCR was applied only on pages with bitmaps, table structure was applied only on pages with tables). Right: Average time contribution to a page in the benchmark dataset (factoring in zero-time contribution for OCR and table structure models on pages without bitmaps or tables) .\nFigure 5: Conversion time in seconds per page on our dataset in three scenarios, across all assets and system configurations. Lower bars are better. The configuration includes OCR and table structure recognition ( fast table option on Docling and MinerU, hi res in unstructured, as shown in table 1).\nwhere it supports the enhancement of the knowledge taxonomy.\nDocling is also available and officially maintained as a system package in the Red Hat \u00ae Enterprise Linux \u00ae AI (RHEL AI) distribution, which seamlessly allows to develop, test, and run the Granite family of large language models for enterprise applications.",
-            "source": "docling.pdf - Chunk #38",
-            "score": 0.42341322
+            "content": "As shown in Figure 3, DeepSeek-OCR 2 inherits the overall architecture of DeepSeek-OCR, which consists of an encoder and a decoder. The encoder discretizes images into visual tokens, while the decoder generates outputs conditioned on these visual tokens and text prompts. The key distinction lies in the encoder: we upgrade DeepEncoder to DeepEncoder V2, which retains all capabilities of its predecessor while introducing causal reasoning through a novel architectural design. We elaborate on the details of DeepSeek-OCR 2 in the following sections.",
+            "source": "deepseek-ocrv2.pdf - Chunk #16",
+            "score": 0.71597266
         },
         {
-            "content": "Docling is quickly evolving into a mainstream package for document conversion. The support for PDF, MS Office formats, Images, HTML, and more makes it a universal choice for downstream applications. Users appreciate the intuitiveness of the library, the high-quality, richly structured conversion output, as well as the permissive MIT license, and the possibility of running entirely locally on commodity hardware.\nAmong the integrations created by the Docling team and the growing community, a few are worth mentioning as depicted in Figure 6. For popular generative AI application patterns, we provide native integration within LangChain (Chase 2022) and LlamaIndex (Liu 2022) for reading documents and chunking. Processing and transforming documents at scale for building large-scale multi-modal training datasets are enabled by the integration in the open IBM data-prep-kit (Wood et al. 2024). Agentic workloads can leverage the integration with the Bee framework (IBM Research 2024). For the fine-tuning of language models, Docling is integrated in InstructLab (Sudalairaj et al. 2024),",
-            "source": "docling.pdf - Chunk #37",
-            "score": 0.4176286
+            "content": "Finally, we provide preliminary validation for employing language model architectures as VLMencoders-a promising pathway toward unified omni-modal encoding. This framework enables feature extraction and token compression across diverse modalities (images, audio, text [28]) by simply configuring modality-specific learnable queries. Crucially, it naturally succeeds to advanced infrastructure optimizations from the LLM community, including Mixtureof-Experts (MoE) architectures, efficient attention mechanisms [26], and so on.\nIn summary, we propose DeepEncoder V2 for DeepSeek-OCR 2, employing specialized attention mechanisms to effectively model the causal visual flow of document reading. Compared to the DeepSeek-OCR baseline, DeepSeek-OCR 2 achieves 3.73% performance gains on OmniDocBench v1.5 [34] and yields considerable advances in visual reading logic.",
+            "source": "deepseek-ocrv2.pdf - Chunk #11",
+            "score": 0.71021616
         }
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the response 'I don't know' completely fails to address the technical question about DeepSeek-OCR 2's architecture, providing zero relevant information about the LLM-style encoder/decoder cascade, 2D reasoning capabilities, or performance improvements that were specifically asked about.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the question with no irrelevant statements! The output stays completely focused on explaining how DeepSeek-OCR 2's LLM-style encoder/decoder cascade achieves 2D reasoning and performance improvements, providing exactly what was asked for.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 341,
-                "completion_tokens": 81,
+                "prompt_tokens": 285,
+                "completion_tokens": 78,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,7 +60,7 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source information.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to the retrieval context with all information properly aligned.",
             "threshold": 0.5,
             "is_successful": true,
             "token_usage": {
@@ -73,13 +73,13 @@
             }
         },
         "Contextual Precision": {
-            "score": 0,
-            "reason": "The score is 0.00 because none of the retrieved nodes contain relevant information about DeepSeek-OCR 2's LLM-style encoder/decoder cascade or 2D reasoning capabilities. The first node discusses OCR Docling using third-party libraries like EasyOCR and Tesseract, the second node covers general document parsing capabilities, the third node mentions multimodal vision-language models without specifics, the fourth node focuses on performance benchmarks and conversion times, and the fifth node describes Docling as a document conversion package. All nodes in the retrieval contexts are irrelevant to the specific query about DeepSeek-OCR 2's architecture and methodology.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because all retrieved nodes are relevant to the query and properly ranked! The first node excellently explains the core mechanism through 'Decomposing 2D understanding into two complementary/orthogonal 1D causal reasoning subtasks', followed by nodes that progressively add architectural details and performance context, creating a comprehensive and well-ordered response.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 806,
-                "completion_tokens": 162,
+                "prompt_tokens": 876,
+                "completion_tokens": 92,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +87,13 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because sentence 1 in the expected output discusses DeepSeek-OCR 2's specific architectural approach with LLM-style encoder/decoder cascade and 2D reasoning decomposition, but none of the nodes in retrieval context contain information about DeepSeek-OCR 2, as they focus entirely on different OCR tools like Docling, EasyOCR, and Tesseract instead.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the sentence is fully supported by node 1 in retrieval context, which directly describes DeepSeek-OCR 2's novel LLM-style encoder/decoder cascade architecture and explains how it decomposes 2D understanding into complementary 1D causal reasoning subtasks. Perfect match!",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1461,
-                "completion_tokens": 110,
+                "prompt_tokens": 1458,
+                "completion_tokens": 86,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +101,13 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the retrieval context exclusively discusses 'OCR Docling', 'EasyOCR', 'Tesseract', and general document parsing tools, with no statements addressing DeepSeek-OCR 2's LLM-style encoder/decoder cascade architecture or its 2D reasoning capabilities, making it completely irrelevant to the input query.",
+            "score": 0.8636363636363636,
+            "reason": "The score is 0.86 because the retrieval context contains highly relevant information explaining how the LLM-style enc/dec cascade achieves 2D reasoning through 'two 1D causal reasoners' where 'the encoder performs reading logic reasoning (causally reordering visual information through query tokens), while the decoder executes visual task reasoning over these causally-ordered representations.' However, some peripheral statements about the broader vision landscape, future plans, and code availability are not directly relevant to the specific technical mechanism asked about.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1583,
-                "completion_tokens": 99,
+                "prompt_tokens": 1257,
+                "completion_tokens": 125,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

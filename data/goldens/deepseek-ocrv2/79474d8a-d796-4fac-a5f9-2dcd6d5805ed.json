@@ -15,43 +15,43 @@
         "context_quality": 0.9125
     },
     "sourceFile": "data/papers/files/deepseek-ocrv2.pdf",
-    "actual_output": "I don't know.",
+    "actual_output": "DeepEncoder V2's attention mask combines bidirectional and causal attention for visual and causal flow tokens [deepseek-ocrv2.pdf - Chunk #24, deepseek-ocrv2.pdf - Chunk #20].\n\nHere's how it works:\n*   **Bidirectional Attention (Left Region):**\n    *   Applies to **original visual tokens** [deepseek-ocrv2.pdf - Chunk #24].\n    *   Allows **full token-to-token visibility** among visual tokens, similar to ViT [deepseek-ocrv2.pdf - Chunk #24, deepseek-ocrv2.pdf - Chunk #20]. This preserves CLIP's global modeling capability [deepseek-ocrv2.pdf - Chunk #20].\n*   **Causal Attention (Right Region):**\n    *   Employs a **triangular mask** (identical to decoder-only LLMs) for **causal flow tokens** [deepseek-ocrv2.pdf - Chunk #24].\n    *   Each causal flow token attends **only to previous tokens** [deepseek-ocrv2.pdf - Chunk #24].\n    *   Additionally, each causal query token can attend to **all visual tokens and preceding queries** [deepseek-ocrv2.pdf - Chunk #2, deepseek-ocrv2.pdf - Chunk #20]. This enables progressive causal reordering over visual information [deepseek-ocrv2.pdf - Chunk #2].\n\nThese two components are concatenated along the sequence dimension to construct DeepEncoder V2's attention mask [deepseek-ocrv2.pdf - Chunk #24]. Visual tokens are prepended as a prefix, and learnable causal flow queries are appended after visual tokens as a suffix [deepseek-ocrv2.pdf - Chunk #9, deepseek-ocrv2.pdf - Chunk #20].",
     "retrieval_contexts": [
         {
-            "content": "Nassar, A.; Livathinos, N.; Lysak, M.; and Staar, P. 2022. Tableformer: Table structure understanding with transformers. In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition , 4614-4623.\n1 https://github.com/DS4SD/docling/discussions/categories/ roadmap\nOuyang, L.; Qu, Y.; Zhou, H.; Zhu, J.; Zhang, R.; Lin, Q.; Wang, B.; Zhao, Z.; Jiang, M.; Zhao, X.; Shi, J.; Wu, F.; Chu, P.; Liu, M.; Li, Z.; Xu, C.; Zhang, B.; Shi, B.; Tu, Z.; and He, C. 2024. OmniDocBench: Benchmarking Diverse PDF Document Parsing with Comprehensive Annotations. arXiv:2412.07626.",
-            "source": "docling.pdf - Chunk #45",
-            "score": 0.34047988
+            "content": "To better illustrate the attention mechanism of DeepEncoder V2, we visualize the attention mask in Figure 5. The attention mask is composed of two distinct regions. The left region applies bidirectional attention (similar to ViT) to original visual tokens, allowing full token-to-token visibility. The right region employs causal attention (triangular mask, identical to decoder-only LLMs) for causal flow tokens, where each token attends only to previous tokens. These two components are concatenated along the sequence dimension to construct DeepEncoder V2's attention mask (M), as follows:\n<!-- formula-not-decoded -->\nwhere \ud835\udc5b is the number of causal query tokens, \ud835\udc5a represents vanilla visual tokens number, and LowerTri denotes a lower triangular matrix (with ones on and below the diagonal, zeros above).",
+            "source": "deepseek-ocrv2.pdf - Chunk #24",
+            "score": 0.7115221
         },
         {
-            "content": "Wood, D.; Lublinsky, B.; Roytman, A.; Singh, S.; Adam, C.; Adebayo, A.; An, S.; Chang, Y. C.; Dang, X.-H.; Desai, N.; Dolfi, M.; Emami-Gohari, H.; Eres, R.; Goto, T.; Joshi, D.; Koyfman, Y.; Nassar, M.; Patel, H.; Selvam, P.; Shah, Y.; Surendran, S.; Tsuzuku, D.; Zerfos, P.; and Daijavad, S. 2024. Data-Prep-Kit: getting your data ready for LLM application development. arXiv:2409.18164.\nZhao, Y.; Lv, W.; Xu, S.; Wei, J.; Wang, G.; Dang, Q.; Liu, Y.; and Chen, J. 2023. DETRs Beat YOLOs on Real-time Object Detection. arXiv:2304.08069.",
-            "source": "docling.pdf - Chunk #50",
-            "score": 0.30475223
+            "content": "Figure 1 | We substitute the CLIP component in DeepEncoder with an LLM-style architecture. By customizing the attention mask, visual tokens utilize bidirectional attention while learnable queries adopt causal attention. Each query token can thus attend to all visual tokens and preceding queries, allowing progressive causal reordering over visual information.",
+            "source": "deepseek-ocrv2.pdf - Chunk #2",
+            "score": 0.60134166
         },
         {
-            "content": "Wolf, T.; Debut, L.; Sanh, V.; Chaumond, J.; Delangue, C.; Moi, A.; Cistac, P.; Rault, T.; Louf, R.; Funtowicz, M.; Davison, J.; Shleifer, S.; von Platen, P.; Ma, C.; Jernite, Y .; Plu, J.; Xu, C.; Scao, T. L.; Gugger, S.; Drame, M.; Lhoest, Q.; and Rush, A. M. 2020. HuggingFace's Transformers: Stateof-the-art Natural Language Processing. arXiv:1910.03771.",
-            "source": "docling.pdf - Chunk #49",
-            "score": 0.2873614
+            "content": "In DeepEncoder, a CLIP ViT follows the vision tokenizer to compress visual knowledge. DeepEncoder V2 redesigns this component into an LLM-style architecture with a dual-stream attention mechanism. Visual tokens utilize bidirectional attention to preserve CLIP's global modeling capability, while newly introduced causal flow queries employ causal attention. These learnable queries are appended after visual tokens as a suffix, where each query attends to all visual tokens and preceding queries. By maintaining equal cardinality between queries and visual tokens, this design imposes semantic ordering and distilling on visual features without altering token count. Finally, only the causal query outputs are fed to the LLM decoder.",
+            "source": "deepseek-ocrv2.pdf - Chunk #20",
+            "score": 0.54508984
         },
         {
-            "content": "Livathinos, N.; Berrospi, C.; Lysak, M.; Kuropiatnyk, V.; Nassar, A.; Carvalho, A.; Dolfi, M.; Auer, C.; Dinkla, K.; and Staar, P. 2021. Robust PDF Document Conversion using Recurrent Neural Networks. Proceedings of the AAAI Conference on Artificial Intelligence , 35(17): 15137-15145. Lysak, M.; Nassar, A.; Livathinos, N.; Auer, C.; and Staar, P. 2023. Optimized Table Tokenization for Table Structure Recognition. In Document Analysis and Recognition - ICDAR 2023: 17th International Conference, San Jos\u00b4 e, CA, USA, August 21-26, 2023, Proceedings, Part II , 3750. Berlin, Heidelberg: Springer-Verlag. ISBN 978-3-03141678-1.\nMing, F. 2019-2024. Marko: A markdown parser with high extensibility. https://github.com/frostming/marko.",
-            "source": "docling.pdf - Chunk #44",
-            "score": 0.28623497
+            "content": "First, we present DeepEncoder V2, featuring several key innovations: (1) we replace the CLIP [37] component in DeepEncoder [54] with a compact LLM [48] architecture, as illustrated in Figure 1, to achieve visual causal flow; (2) to enable parallelized processing, we introduce learnable queries [10], termed causal flow tokens, with visual tokens prepended as a prefix-through a customized attention mask, visual tokens maintain global receptive fields, while causal flow tokens can obtain visual token reordering ability; (3) we maintain equal cardinality between causal and visual tokens (with redundancy such as padding and borders) to provide sufficient capacity for re-fixation; (4) only the causal flow tokens-the latter half of the encoder outputs-are fed to the LLM [24] decoder, enabling cascade causal-aware visual understanding.",
+            "source": "deepseek-ocrv2.pdf - Chunk #9",
+            "score": 0.5323706
         },
         {
-            "content": "Figure 3: Distribution of conversion times for all documents, ordered by number of pages in a document, on all system configurations. Every dot represents one document. Log/log scale is used to even the spacing, since both number of pages and conversion times have long-tail distributions.\nRuntime Characteristics To analyze Docling's runtime characteristics, we begin by exploring the relationship between document length (in pages) and conversion time. As shown in Figure 3, this relationship is not strictly linear, as documents differ in their frequency of tables and bitmap elements (i.e., scanned content). This requires OCR or table structure recognition models to engage dynamically when layout analysis has detected such elements.",
-            "source": "docling.pdf - Chunk #28",
-            "score": 0.28193584
+            "content": "Figure 2 | This figure shows two computer vision models with parallelized queries: DETR's decoder [10] for object detection and BLIP2's Q-former [22] for visual token compression. Both employ bidirectional self-attention among queries.",
+            "source": "deepseek-ocrv2.pdf - Chunk #12",
+            "score": 0.5228962
         }
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the response completely fails to address the technical question about DE V2's mask mechanism. Instead of explaining how bidirectional and causal attention are combined for V/F tokens or detailing visibility patterns, the output simply states 'I don't know', providing zero relevant information to answer the specific technical inquiry.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the input question with no irrelevant statements! The output stays completely focused on explaining DE V2's mask combining bidirectional and causal attention for V/F tokens and provides detailed visibility information as requested.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 332,
-                "completion_tokens": 84,
+                "prompt_tokens": 280,
+                "completion_tokens": 68,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +60,12 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions present, indicating that the actual output is completely faithful to the retrieval context with all information accurately aligned.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to the retrieval context with all information accurately represented.",
             "threshold": 0.5,
             "is_successful": true,
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 47,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -73,13 +73,13 @@
             }
         },
         "Contextual Precision": {
-            "score": 0,
-            "reason": "The score is 0.00 because all five nodes in the retrieval contexts are irrelevant to the input query. The first node contains only bibliographic references about table structure understanding and document parsing without any information about DE V2's attention mechanisms. The second node similarly lists references on data preparation and object detection but lacks details on DE V2's bidirectional and causal attention architecture. The third node only references HuggingFace's Transformers documentation without specific information about DE V2's mask combining approach. The fourth node focuses on PDF document conversion and table tokenization references, providing no relevant details about DE V2's attention mask mechanisms. The fifth node discusses document conversion runtime characteristics, which is completely unrelated to DE V2's visual and flow token attention visibility. Since no relevant nodes exist to be ranked higher than irrelevant ones, the contextual precision is at its lowest possible score.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because all relevant nodes that directly explain DE V2's mask combining bidirectional and causal attention are perfectly ranked at the top! The first four nodes provide comprehensive coverage of the attention mask mechanism, visibility rules, and architectural details, while the fifth node discussing other models' attention mechanisms is appropriately ranked last.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 792,
-                "completion_tokens": 200,
+                "prompt_tokens": 902,
+                "completion_tokens": 83,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +87,13 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because none of the key information in the expected output can be attributed to the nodes in retrieval context. The retrieval context lacks fundamental definitions (visual tokens, causal flow tokens, bidirectional/causal attention), DeepEncoder V2's methodology details (attention mask construction, block matrices, visibility rules), and the specific citations (Figure 5, Section 3.2.4, Equation 1) that comprise the entire expected response.",
+            "score": 0.875,
+            "reason": "The score is 0.88 because most sentences (1-4, 6-13) are well-supported by nodes in retrieval context, particularly node 1 which provides the attention mask formula and describes bidirectional/causal attention mechanisms, and nodes 3-4 which explain causal flow tokens. However, sentence 5's reference to 'four sub-matrices' and sentence 11's explicit statement about visual tokens not attending to causal flow tokens lack direct support in the retrieval context, slightly reducing the overall attribution score.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 1574,
-                "completion_tokens": 113,
+                "prompt_tokens": 1718,
+                "completion_tokens": 128,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +101,13 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.0,
-            "reason": "The score is 0.00 because the retrieval context contains only irrelevant citations and references about topics like 'Tableformer', 'OmniDocBench', 'DETRs Beat YOLOs', document conversion times, and OCR models, with no statements relevant to DE V2's mask combining bidirectional and causal attention for V/F tokens as indicated by the empty relevant statements list.",
+            "score": 0.8571428571428571,
+            "reason": "The score is 0.86 because while the retrieval context contains comprehensive and detailed information about DE V2's mask combining bidirectional and causal attention for V/F tokens with excellent visibility details (including 'The left region applies bidirectional attention to original visual tokens, allowing full token-to-token visibility' and 'The right region employs causal attention for causal flow tokens'), some statements discuss irrelevant topics like 'the original DeepEncoder architecture', 'DETR's decoder for object detection', and 'BLIP2's Q-former' which don't relate to the specific V2 mask mechanism being queried.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
             "token_usage": {
-                "prompt_tokens": 836,
-                "completion_tokens": 105,
+                "prompt_tokens": 986,
+                "completion_tokens": 153,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
