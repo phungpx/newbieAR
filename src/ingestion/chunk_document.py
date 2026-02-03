@@ -17,6 +17,17 @@ from src.models import ChunkInfo
 
 MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 MAX_CHUNKED_TOKENS = 1024
+VALID_STRATEGIES = {"hybrid", "hierarchical"}
+
+
+class ImgPlaceholderSerializerProvider(ChunkingSerializerProvider):
+    """Serializer provider for hierarchical chunking with image placeholders."""
+
+    def get_serializer(self, doc):
+        return ChunkingDocSerializer(
+            doc=doc,
+            params=MarkdownParams(image_placeholder="<!-- image -->"),
+        )
 
 
 class DocChunker:
