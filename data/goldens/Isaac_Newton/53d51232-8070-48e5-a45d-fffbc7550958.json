@@ -1,0 +1,547 @@
+{
+    "input": "Can you detail Newton's role in the Royal Society's calculus dispute, including his authorship of the study's concluding remarks?",
+    "expectedOutput": "Isaac Newton played a central and controversial role in the Royal Society's calculus dispute with Gottfried Wilhelm Leibniz. The conflict escalated when mathematician John Keill accused Leibniz of plagiarism in a Royal Society journal in 1708. The dispute reached its peak in 1711 when the Royal Society conducted a study and officially declared Newton as the true discoverer of calculus, labeling Leibniz a fraud. Crucially, it was later revealed that Newton himself authored the study's concluding remarks concerning Leibniz, effectively acting as both a party to the dispute and a judge in the Royal Society's official pronouncement. This direct involvement fueled a bitter controversy that continued to affect both men until Leibniz's death in 1716.",
+    "context": [
+        " Articles, the basis of Church of England doctrine. By 1675 the issue could not be avoided, and his unconventional views stood in the way.\nHis academic work impressed the Lucasian Professor Isaac Barrow, who was anxious to develop his own religious and administrative potential (he became master of Trinity College two years later); in 1669, Newton succeeded him, only one year after receiving his MA. Newton argued that this should exempt him from the ordination requirement, and King Charles II, whose permission was needed, accepted this argument; thus, a conflict between Newton's religious views and Anglican orthodoxy was averted. He was appointed at the age of 26.\nAs accomplished as Newton was as a theoretician, he was less effective as a teacher; his classes were almost always empty. Humphrey Newton, his sizar (assistant), noted that Newton would arrive on time and, if the room was empty, he would reduce his lecture time in half from 30 to 15 minutes, talk to the walls, then retreat to his experiments, thus fulfilling his contractual obligations. For his part Newton enjoyed neither teaching nor students. Over his career he was only assigned three students to tutor and none were noteworthy.\nNewton was elected a Fellow of the Royal Society (FRS) in 1672.\n\nRevision of Geographia Generalis\nThe Lucasian Professor of Mathematics at Cambridge position included the responsibility of instructing geography. In 1672, and again in 1681, Newton published a revised, corrected, and amended edition of the Geographia Generalis, a geography textbook first published in 1650 by the then-deceased Bernhardus Varenius. In the Geographia Generalis, Varenius attempted to create a theoretical foundation linking scientific principles to classical concepts in geography, and considered geography to be a mix between science and pure mathematics applied to quantifying features of the Earth. While it is unclear if Newton ever lectured in geography, the 1733 Dugdale and Shaw English translation of the book stated Newton published the book to be read by students while he lectured on the subject. The Geographia Generalis is viewed by some as the dividing line between ancient and modern traditions in the history of geography, and Newton's involvement in the subsequent editions is thought to be a large part of the reason for this enduring legacy.\n\nScientific studies\nMathematics\nNewton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669, was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\". \nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.\n\nThe historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . . had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"\nHis work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.\n\nNewton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.\nNewton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared"
+    ],
+    "additionalMetadata": {
+        "evolutions": [
+            "In-Breadth",
+            "Constrained"
+        ],
+        "synthetic_input_quality": 1.0,
+        "context_quality": 0.925
+    },
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "The dispute over calculus broke out in full force in 1711 when the Royal Society declared in a study that **Newton** was the true discoverer and labeled **Leibniz** a fraud. It was later discovered that **Newton** himself wrote the study's concluding remarks on **Leibniz** [Isaac_Newton.md - Chunk #19].",
+    "retrieval_contexts": [
+        {
+            "content": "The historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . .",
+            "source": "Isaac_Newton.md - Chunk #16",
+            "score": 0.65090996
+        },
+        {
+            "content": "Newton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.",
+            "source": "Isaac_Newton.md - Chunk #19",
+            "score": 0.63156307
+        },
+        {
+            "content": "was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\".\nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.",
+            "source": "Isaac_Newton.md - Chunk #15",
+            "score": 0.6304551
+        },
+        {
+            "content": "Newton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669,",
+            "source": "Isaac_Newton.md - Chunk #14",
+            "score": 0.5895102
+        },
+        {
+            "content": "Source: https://en.wikipedia.org/wiki/Isaac_Newton\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+            "source": "Isaac_Newton.md - Chunk #0",
+            "score": 0.56346005
+        },
+        {
+            "content": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+            "source": "Isaac_Newton.md - Chunk #20",
+            "score": 0.5515718
+        },
+        {
+            "content": "On one assessment there should be no doubt: Newton was the greatest creative genius physics has ever seen. None of the other candidates for the superlative (Einstein, Maxwell, Boltzmann, Gibbs, and Feynman) has matched Newton's combined achievements as theoretician, experimentalist, and mathematician.Albert Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and of James Clerk Maxwell. Einstein stated that Newton's creation of calculus in relation to his laws of motion was \"perhaps the greatest advance in thought that a single individual was ever privileged to make.\" He also noted the influence of Newton, stating that:The whole evolution of our ideas about the processes of nature, with which we have been concerned so far, might be regarded as an organic development of Newton's ideas.In 1999, an opinion poll of 100 of the day's leading physicists voted Einstein the \"greatest physicist ever,\" with Newton the runner-up, while a parallel survey of rank-and-file physicists ranked Newton as the greatest. In 2005, a dual survey of the public and members of Britain's Royal Society asked two questions: who made the bigger overall contributions to science and who made the bigger positive contributions to",
+            "source": "Isaac_Newton.md - Chunk #84",
+            "score": 0.5513713
+        },
+        {
+            "content": "function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.",
+            "source": "Isaac_Newton.md - Chunk #4",
+            "score": 0.54450727
+        },
+        {
+            "content": "\"Hitherto I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses, for whatever is not deduced from the phenomena is to be called an hypothesis; and hypotheses, whether metaphysical or physical, whether of occult qualities or mechanical, have no place in experimental philosophy. In this philosophy particular propositions are inferred from the phenomena, and afterwards rendered general by induction\".\nNewton contributed to and refined the scientific method. In his work on the properties of light in the 1670s, he showed his rigorous method, which was conducting experiments, taking detailed notes, making measurements, conducting more experiments that grew out of the initial ones, he formulated a theory, created more experiments to test it, and finally described the entire process so other scientists could replicate every step.",
+            "source": "Isaac_Newton.md - Chunk #50",
+            "score": 0.5344113
+        },
+        {
+            "content": "William Stukeley wrote of Newton\u2019s diligence in reading and studying the Bible:No man in England read the Bible more carefully than he did, none study\u2019d it more, as appears by his printed works, by many pieces he left which are not printed, and even by the Bible which he commonly used, thumbd over, as they call it, in an extraordinary degree, with frequency of use.By 1672, he had started to record his theological researches in notebooks which he showed to no one and which have only been available for public examination since 1972. Over half of what Newton wrote concerned theology and alchemy, and most has never been printed. His writings show extensive knowledge of early Church texts and reveal that he sided with Arius, who rejected the conventional view of the Trinity and was the losing party in the conflict with Athanasius over the Creed. Newton \"recognized Christ as a divine mediator between God and man, who was subordinate to the Father who created him.\" He was especially interested in prophecy, but for him, \"the great apostasy was trinitarianism.\"",
+            "source": "Isaac_Newton.md - Chunk #64",
+            "score": 0.532124
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the question with no irrelevant statements! It stays completely focused on Newton's role in the Royal Society's calculus dispute and his authorship of the study's concluding remarks, providing exactly what was asked for.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "idk",
+                    "reason": "Provides temporal context for the dispute but doesn't directly address Newton's role in the Royal Society's study or his authorship of concluding remarks"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 282,
+                "completion_tokens": 69,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 46,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 0.5,
+            "reason": "The score is 0.50 because only one relevant node exists among the retrieval contexts, but it is ranked second instead of first. The first node in the retrieval contexts discusses historical consensus that 'Newton was master of the essential techniques of the calculus by the end of 1666' and mentions the dispute generally, but does not specifically address Newton's role in the Royal Society's official study or his authorship of concluding remarks. This irrelevant node is ranked higher than the second node, which directly addresses the question by stating 'The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer' and 'it was later found that Newton wrote the study's concluding remarks on Leibniz.' The remaining nodes (third through tenth) are all irrelevant as they either provide only general mentions of the dispute or focus on unrelated aspects of Newton's work.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses the historical consensus that 'Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz' and mentions the dispute, but does not specifically address Newton's role in the Royal Society's official study or his authorship of concluding remarks."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document directly addresses the key points of the question, stating 'The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal' and 'The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document mentions that 'Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus' but does not provide details about the Royal Society's role or Newton's authorship of concluding remarks."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on Newton's early development of calculus techniques and mathematical work, stating he 'had already developed the calculus to the point where he could compute the tangent and the curvature' but does not address the Royal Society dispute or concluding remarks."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This is a general biographical introduction mentioning that Newton 'shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz' but does not discuss the specific Royal Society dispute details."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document describes Newton's various mathematical discoveries like 'the generalised binomial theorem' and 'Newton's identities' but does not mention the calculus dispute with Leibniz or the Royal Society's involvement."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document contains praise for Newton as a physicist and Einstein's assessment, stating 'Newton's creation of calculus in relation to his laws of motion was perhaps the greatest advance in thought' but does not address the Royal Society dispute or authorship of concluding remarks."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's mathematical contributions like 'Newton\u2013Cotes formulas' and mentions he 'initiated the field of calculus of variations' but does not address the specific dispute with Leibniz or the Royal Society's role."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on Newton's scientific methodology and experimental approach, discussing his work 'on the properties of light in the 1670s' but does not mention the calculus dispute or Royal Society involvement."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's theological interests and Bible study, mentioning 'Over half of what Newton wrote concerned theology and alchemy' but is completely unrelated to the calculus dispute or Royal Society matters."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1178,
+                "completion_tokens": 214,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by node 2 in the retrieval context, which comprehensively covers Newton's central role in the calculus dispute, Keill's 1708 plagiarism accusation, the Royal Society's 1711 declaration, Newton's authorship of the study's concluding remarks, and the bitter controversy continuing until Leibniz's death in 1716. Perfect alignment achieved!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node states 'Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus' which supports Newton's central role in the calculus dispute."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node explicitly states 'The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node states 'The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node states 'it was later found that Newton wrote the study's concluding remarks on Leibniz' which directly supports Newton's authorship of the study's concluding remarks."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node states 'Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716' which supports the continuing controversy until Leibniz's death."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 777,
+                "completion_tokens": 113,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.3148148148148148,
+            "reason": "The score is 0.31 because while the retrieval context contains some relevant information about 'the Royal Society proclaimed in a study that it was Newton who was the true discoverer' and 'Newton wrote the study's concluding remarks on Leibniz,' the majority of the content focuses on Newton's general mathematical achievements, religious beliefs, and broad historical significance rather than specifically addressing his role in the Royal Society's calculus dispute and authorship of concluding remarks.",
+            "threshold": 0.5,
+            "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "The historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written a publishable exposition of it as early as 1671, is certainly borne out by copious evidence.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Leibniz and some of his friends sought to belittle Newton's case, but the truth has not been seriously in doubt for the last 250 years.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In Principia, Newton was able to formulate and resolve problems by the integration of differential equations and anticipated many results that later exponents of the calculus regarded as their own novel achievements.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's work 'in Principia' and his mathematical techniques does not address Newton's specific role in the Royal Society's calculus dispute or his authorship of the study's concluding remarks."
+                        },
+                        {
+                            "statement": "Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton well before 1690.",
+                            "verdict": "no",
+                            "reason": "This statement about Newton's 'rapid development of calculus' and the incomplete reference to 'well before 1690' does not provide information about Newton's role in the Royal Society's calculus dispute or his authorship of concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had been reluctant to publish his calculus because he feared controversy and criticism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was close to the Swiss mathematician Nicolas Fatio de Duillier.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Starting in 1699, Duillier accused Leibniz of plagiarism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "It was later found that Newton wrote the study's concluding remarks on Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was identified by Barrow in a letter sent to Collins that August as the work 'of an extraordinary genius and proficiency in these things'",
+                            "verdict": "no",
+                            "reason": "The statement about 'Barrow in a letter sent to Collins' is not relevant to Newton's role in the Royal Society's calculus dispute or his authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Both are now credited with independently developing calculus, though with very different mathematical notations",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "It is established that Newton came to develop calculus much earlier than Leibniz",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians",
+                            "verdict": "no",
+                            "reason": "The information about 'notation of Leibniz being more convenient' and 'adopted by continental European mathematicians, and after 1820, by British mathematicians' is not relevant to Newton's role in the Royal Society's dispute or his authorship of concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's work has been said to distinctly advance every branch of mathematics then studied",
+                            "verdict": "no",
+                            "reason": "The statement 'to distinctly advance every branch of mathematics then studied' is about Newton's general mathematical contributions, not specifically about his role in the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton's work on calculus began in 1664 and by May 1665 he had developed calculus to compute tangent and curvature at any point of a continuous curve",
+                            "verdict": "no",
+                            "reason": "The information about Newton's early calculus development 'began in 1664' and 'by 20 May 1665' describes his personal mathematical work timeline, not his role in the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton's 1665 work amounted to a systematic calculus that unified differentiation and integration, applied to dynamic analysis of curves",
+                            "verdict": "no",
+                            "reason": "The details about Newton's '1665 work amounted to a systematic calculus' and its applications describe his mathematical methods, not his involvement in the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton recorded calculus work in his 'Waste Book' and was self-taught in mathematics, doing research without help",
+                            "verdict": "no",
+                            "reason": "The information about Newton being 'self-taught in mathematics' and working in his 'Waste Book' relates to his personal study methods, not to the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton's work De analysi per aequationes numero terminorum infinitas was sent by Isaac Barrow to John Collins in June 1669",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's work being 'sent by Isaac Barrow to John Collins in June 1669' describes early circulation of his work, not his role in the Royal Society's calculus dispute."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Sir Isaac Newton was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor.",
+                            "verdict": "no",
+                            "reason": "The statement describes Newton's general roles and occupations but does not address 'Newton's role in the Royal Society's calculus dispute' or 'his authorship of the study's concluding remarks'."
+                        },
+                        {
+                            "statement": "He was a key figure in the Scientific Revolution and the Enlightenment that followed.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'a key figure in the Scientific Revolution and the Enlightenment' is general historical context that doesn't relate to the Royal Society's calculus dispute or the study's concluding remarks."
+                        },
+                        {
+                            "statement": "His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Philosophi\u00e6 Naturalis Principia Mathematica' and its achievements in physics does not address the Royal Society's calculus dispute or Newton's authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's contributions to 'the scientific method' and influence on 'modern science' is general and doesn't address the specific Royal Society calculus dispute or authorship of concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called 'one of the most powerful and significant in the whole of mathematics.'",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton's first major mathematical discovery was the generalised binomial theorem' is not relevant to his role in the Royal Society's calculus dispute or his authorship of study concluding remarks."
+                        },
+                        {
+                            "statement": "He discovered Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves.",
+                            "verdict": "no",
+                            "reason": "The information about 'Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves' does not address his role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences.",
+                            "verdict": "no",
+                            "reason": "The details about 'theory of Cremona transformations' and 'theory of finite differences' are not related to the Royal Society's calculus dispute or his authorship of study concluding remarks."
+                        },
+                        {
+                            "statement": "He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations.",
+                            "verdict": "no",
+                            "reason": "The information about 'B\u00e9zout's theorem', 'fractional indices' and 'coordinate geometry to derive solutions to Diophantine equations' does not relate to the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "He approximated partial sums of the harmonic series by logarithms and was the first to use power series with confidence and to revert power series.",
+                            "verdict": "no",
+                            "reason": "The details about 'partial sums of the harmonic series by logarithms' and 'power series' are not relevant to his role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "He introduced the Puisseux series and provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft.",
+                            "verdict": "no",
+                            "reason": "The information about 'Puisseux series' and 'general Taylor series' does not address the Royal Society's calculus dispute or his authorship of study concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was the greatest creative genius physics has ever seen, with combined achievements as theoretician, experimentalist, and mathematician that surpassed other candidates like Einstein, Maxwell, Boltzmann, Gibbs, and Feynman.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's general greatness as a physicist but contains no information about 'Newton's role in the Royal Society's calculus dispute' or 'his authorship of the study's concluding remarks.'"
+                        },
+                        {
+                            "statement": "Albert Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and James Clerk Maxwell, and praised Newton's creation of calculus in relation to his laws of motion as perhaps the greatest advance in thought.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Einstein's admiration for Newton and mentions calculus creation, but does not address 'Newton's role in the Royal Society's calculus dispute' or 'his authorship of the study's concluding remarks.'"
+                        },
+                        {
+                            "statement": "Einstein noted that the whole evolution of ideas about natural processes might be regarded as an organic development of Newton's ideas.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Einstein's view on Newton's influence on physics but contains no information about 'Newton's role in the Royal Society's calculus dispute' or 'his authorship of the study's concluding remarks.'"
+                        },
+                        {
+                            "statement": "In opinion polls from 1999 and 2005, Newton was consistently ranked among the greatest physicists, with leading physicists voting Einstein first and Newton second, while rank-and-file physicists ranked Newton as the greatest.",
+                            "verdict": "no",
+                            "reason": "The statement discusses opinion poll rankings of Newton versus other physicists but contains no information about 'Newton's role in the Royal Society's calculus dispute' or 'his authorship of the study's concluding remarks.'"
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton originated the Newton\u2013Cotes formulas used for numerical integration",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Newton\u2013Cotes formulas used for numerical integration' which is about mathematical formulas, not about Newton's role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton produced the earliest explicit enunciation of the general Taylor series",
+                            "verdict": "no",
+                            "reason": "The statement about 'earliest explicit enunciation of the general Taylor series' relates to mathematical contributions, not to Newton's role in the Royal Society's calculus dispute or authorship of study concluding remarks."
+                        },
+                        {
+                            "statement": "Newton initiated the field of calculus of variations",
+                            "verdict": "no",
+                            "reason": "The statement about Newton initiating 'the field of calculus of variations' is about mathematical field development, not about his role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton formulated and solved the earliest problem in geometric probability",
+                            "verdict": "no",
+                            "reason": "The statement about 'earliest problem in geometric probability' is about mathematical achievements, not about Newton's role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton devised the earliest form of linear regression",
+                            "verdict": "no",
+                            "reason": "The statement about 'earliest form of linear regression' relates to statistical methods, not to Newton's role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        },
+                        {
+                            "statement": "Newton was a pioneer of vector analysis",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'a pioneer of vector analysis' is about mathematical contributions, not about his role in the Royal Society's calculus dispute or authorship of concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's quote about not discovering the cause of gravity and framing no hypotheses in experimental philosophy",
+                            "verdict": "no",
+                            "reason": "The quote 'Hitherto I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses' discusses Newton's views on gravity and scientific method but has nothing to do with the Royal Society's calculus dispute or his authorship of study concluding remarks."
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method through his work on properties of light in the 1670s, conducting experiments, taking notes, making measurements, formulating theories, and describing processes for replication",
+                            "verdict": "no",
+                            "reason": "This statement about Newton's 'work on the properties of light in the 1670s' and his general contributions to scientific method is unrelated to the Royal Society's calculus dispute or his authorship of concluding remarks."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "William Stukeley wrote of Newton's diligence in reading and studying the Bible, noting that no man in England read the Bible more carefully than he did.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton's diligence in reading and studying the Bible' and 'no man in England read the Bible more carefully than he did' is irrelevant to Newton's role in the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "By 1672, Newton had started to record his theological researches in notebooks which he showed to no one and which have only been available for public examination since 1972.",
+                            "verdict": "no",
+                            "reason": "The information about 'theological researches in notebooks' is not related to the Royal Society's calculus dispute or its concluding remarks."
+                        },
+                        {
+                            "statement": "Over half of what Newton wrote concerned theology and alchemy, and most has never been printed.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's writings concerning 'theology and alchemy' is irrelevant to the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton's writings show extensive knowledge of early Church texts and reveal that he sided with Arius, who rejected the conventional view of the Trinity.",
+                            "verdict": "no",
+                            "reason": "The information about 'early Church texts', 'Arius', and 'the conventional view of the Trinity' has nothing to do with Newton's role in the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton recognized Christ as a divine mediator between God and man, who was subordinate to the Father who created him.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's religious beliefs regarding 'Christ as a divine mediator between God and man' is completely unrelated to the Royal Society's calculus dispute."
+                        },
+                        {
+                            "statement": "Newton was especially interested in prophecy, but for him, the great apostasy was trinitarianism.",
+                            "verdict": "no",
+                            "reason": "The information about Newton's interest in 'prophecy' and views on 'trinitarianism' is irrelevant to the Royal Society's calculus dispute and its concluding remarks."
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2459,
+                "completion_tokens": 110,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
+}

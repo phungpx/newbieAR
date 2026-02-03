@@ -42,7 +42,7 @@ class BedrockLLMClient:
         return self._current_turn_tokens
 
 
-class BedrockModelWrapper(DeepEvalBaseLLM):
+class BedrockLLMWrapper(DeepEvalBaseLLM):
     def __init__(self, model: str, region_name: str):
         self.name = model
         self.region_name = region_name

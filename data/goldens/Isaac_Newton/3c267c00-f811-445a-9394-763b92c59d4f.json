@@ -1,0 +1,639 @@
+{
+    "input": "How did Isaac Newton's work on calculus contribute to his development of Principia?",
+    "expectedOutput": "Newton's pioneering work on calculus, which he referred to as fluxions, was fundamental to the development of his *Philosophi\u00e6 Naturalis Principia Mathematica* (Principia). His systematic calculus, developed by 1665, unified differentiation and integration, directly informing his theory of central-force orbits presented in the *Principia*. In this seminal work, Newton extensively applied calculus, often in a geometric form known as \"the method of first and last ratios,\" to formulate and resolve problems through the integration of differential equations. The *Principia* is described as \"a book dense with the theory and application of the infinitesimal calculus,\" demonstrating how his mathematical innovations were crucial for establishing classical mechanics and deriving the laws of motion and universal gravitation.",
+    "context": [
+        " Articles, the basis of Church of England doctrine. By 1675 the issue could not be avoided, and his unconventional views stood in the way.\nHis academic work impressed the Lucasian Professor Isaac Barrow, who was anxious to develop his own religious and administrative potential (he became master of Trinity College two years later); in 1669, Newton succeeded him, only one year after receiving his MA. Newton argued that this should exempt him from the ordination requirement, and King Charles II, whose permission was needed, accepted this argument; thus, a conflict between Newton's religious views and Anglican orthodoxy was averted. He was appointed at the age of 26.\nAs accomplished as Newton was as a theoretician, he was less effective as a teacher; his classes were almost always empty. Humphrey Newton, his sizar (assistant), noted that Newton would arrive on time and, if the room was empty, he would reduce his lecture time in half from 30 to 15 minutes, talk to the walls, then retreat to his experiments, thus fulfilling his contractual obligations. For his part Newton enjoyed neither teaching nor students. Over his career he was only assigned three students to tutor and none were noteworthy.\nNewton was elected a Fellow of the Royal Society (FRS) in 1672.\n\nRevision of Geographia Generalis\nThe Lucasian Professor of Mathematics at Cambridge position included the responsibility of instructing geography. In 1672, and again in 1681, Newton published a revised, corrected, and amended edition of the Geographia Generalis, a geography textbook first published in 1650 by the then-deceased Bernhardus Varenius. In the Geographia Generalis, Varenius attempted to create a theoretical foundation linking scientific principles to classical concepts in geography, and considered geography to be a mix between science and pure mathematics applied to quantifying features of the Earth. While it is unclear if Newton ever lectured in geography, the 1733 Dugdale and Shaw English translation of the book stated Newton published the book to be read by students while he lectured on the subject. The Geographia Generalis is viewed by some as the dividing line between ancient and modern traditions in the history of geography, and Newton's involvement in the subsequent editions is thought to be a large part of the reason for this enduring legacy.\n\nScientific studies\nMathematics\nNewton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669, was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\". \nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.\n\nThe historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . . had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"\nHis work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.\n\nNewton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.\nNewton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared"
+    ],
+    "additionalMetadata": {
+        "evolutions": [
+            "Reasoning",
+            "Multi-context"
+        ],
+        "synthetic_input_quality": 0.0,
+        "context_quality": 0.925
+    },
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "Isaac Newton's work on calculus significantly contributed to the development of his *Principia* in several ways:\n\n*   His systematic calculus, which unified differentiation and integration, directly informed the theory of **central-force orbits** presented in the *Principia* [Isaac_Newton.md - Chunk #14].\n*   The *Principia* extensively uses calculus in a geometric form, based on **limiting values of the ratios of vanishingly small quantities**, which Newton called \"the method of first and last ratios\" [Isaac_Newton.md - Chunk #18].\n*   In the *Principia*, Newton was able to **formulate and resolve problems by the integration of differential equations** [Isaac_Newton.md - Chunk #16].\n*   His use of methods involving \"one or more orders of the infinitesimally small\" was present in his *De motu corporum in gyrum* (1684), which served as the nucleus for the *Principia* [Isaac_Newton.md - Chunk #18, Isaac_Newton.md - Chunk #38].\n*   Newton used his mathematical description of gravity, underpinned by calculus, to **derive Kepler's laws of planetary motion**, account for tides, the trajectories of comets, and the precession of the equinoxes [Isaac_Newton.md - Chunk #1].\n*   It is noted that \"nearly all\" of the *Principia* is composed of this calculus [Isaac_Newton.md - Chunk #18].",
+    "retrieval_contexts": [
+        {
+            "content": "The historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . .",
+            "source": "Isaac_Newton.md - Chunk #16",
+            "score": 0.65305454
+        },
+        {
+            "content": "Newton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669,",
+            "source": "Isaac_Newton.md - Chunk #14",
+            "score": 0.6394315
+        },
+        {
+            "content": "His work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.",
+            "source": "Isaac_Newton.md - Chunk #18",
+            "score": 0.60354286
+        },
+        {
+            "content": "The Principia was published on 5 July 1687 with encouragement and financial help from Halley. In this work, Newton stated the three universal laws of motion. Together, these laws describe the relationship between any object, the forces acting upon it and the resulting motion, laying the foundation for classical mechanics. They contributed to numerous advances during the Industrial Revolution and were not improved upon for more than 200 years. Many of these advances still underpin non-relativistic technologies today. Newton used the Latin word gravitas (weight) for the effect that would become known as gravity, and formulated the law of universal gravitation. His work achieved the first great unification in physics. He solved the two-body problem, and introduced the three-body problem.",
+            "source": "Isaac_Newton.md - Chunk #39",
+            "score": 0.5947544
+        },
+        {
+            "content": "Philosophi\u00e6 Naturalis Principia Mathematica\nNewton had been developing his theory of gravitation as far back as 1665. In 1679, he returned to his work on celestial mechanics by considering gravitation and its effect on the orbits of planets with reference to Kepler's laws of planetary motion. Newton's reawakening interest in astronomical matters received further stimulus by the appearance of a comet in the winter of 1680\u20131681, on which he corresponded with John Flamsteed. After the exchanges with Hooke, Newton worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector. He shared his results with Edmond Halley and the Royal Society in De motu corporum in gyrum, a tract written on about nine sheets which was copied into the Royal Society's Register Book in December 1684. As part of this work, Newton also coined the term centripetal force. This tract contained the nucleus that Newton developed and expanded to form the Principia.",
+            "source": "Isaac_Newton.md - Chunk #38",
+            "score": 0.572111
+        },
+        {
+            "content": "function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.",
+            "source": "Isaac_Newton.md - Chunk #4",
+            "score": 0.56659645
+        },
+        {
+            "content": "The historian of science James Gleick noted that Newton \"discovered more of the essential core of human knowledge than anyone before or after\", and wrote further:He was chief architect of the modern world. He answered the ancient philosophical riddles of light and motion, and he effectively discovered gravity. He showed how to predict the courses of heavenly bodies and so established our place in the cosmos. He made knowledge a thing of substance: quantitative and exact. He established principles, and they are called his laws.\nThe physicist Ludwig Boltzmann called Newton's Principia \"the first and greatest work ever written about theoretical physics\". Physicist Stephen Hawking similarly called Principia \"probably the most important single work ever published in the physical sciences\". The mathematician and physicist Joseph-Louis Lagrange called Principia \"the greatest production of the human mind\", and noted that \"he felt dazed at such an illustration of what man's intellect might be capable\".",
+            "source": "Isaac_Newton.md - Chunk #80",
+            "score": 0.56134623
+        },
+        {
+            "content": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+            "source": "Isaac_Newton.md - Chunk #20",
+            "score": 0.5611645
+        },
+        {
+            "content": "was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\".\nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.",
+            "source": "Isaac_Newton.md - Chunk #15",
+            "score": 0.55873257
+        },
+        {
+            "content": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to",
+            "source": "Isaac_Newton.md - Chunk #1",
+            "score": 0.5539993
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the question with no irrelevant statements. Every part of the answer directly relates to how Newton's calculus work contributed to developing Principia - excellent focus and relevance!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this describes Newton's calculus work, it doesn't explain how it specifically contributed to the Principia's development"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 273,
+                "completion_tokens": 61,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect alignment and faithfulness to the source material.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not provide information about whether Newton's calculus directly informed the theory of central-force orbits in the Principia, so this claim cannot be verified."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention 'the method of first and last ratios' or describe the geometric form of calculus used in the Principia."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not provide information about Newton formulating and resolving problems by integration of differential equations in the Principia."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton using 'one or more orders of the infinitesimally small' in De motu corporum in gyrum, nor does it describe the mathematical methods used in that work."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context confirms Newton used his mathematical description of gravity to derive Kepler's laws, it does not mention his work on tides, comet trajectories, or precession of the equinoxes, nor does it explicitly state that calculus underpinned this work."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not provide information about the composition of the Principia in terms of calculus content."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 48,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first three nodes provide excellent coverage of how Newton's calculus mastery by 1665-1666 directly enabled him to 'formulate and resolve problems by the integration of differential equations' in Principia, how his systematic calculus 'directly informed the theory of central-force orbits in the Principia,' and how he 'extensively uses calculus in geometric form' through 'the method of first and last ratios.' All irrelevant nodes (ranks 4-10) are properly positioned below, despite containing information about Principia's publication, gravitational theory, and general mathematical contributions that don't specifically address the calculus-Principia connection.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context describes Newton's early mastery of calculus by 1666 and specifically states that in Principia, Newton was able to 'formulate and resolve problems by the integration of differential equations' and 'anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements,' directly addressing how calculus contributed to Principia."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly explains how Newton's calculus work 'by 1665 amounted to a systematic calculus that unified differentiation and integration' and 'later directly informed the theory of central-force orbits in the Principia,' providing crucial information about the connection between his calculus development and Principia."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context extensively describes how Newton 'extensively uses calculus in geometric form' in Principia through 'the method of first and last ratios' and explains that 'the Principia has been called a book dense with the theory and application of the infinitesimal calculus,' directly addressing how calculus was applied in Principia."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context provides information about when Principia was published and its scientific achievements, it does not specifically address how Newton's work on calculus contributed to its development."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's development of gravitational theory and the background of Principia, but does not specifically address how his calculus work contributed to the development of Principia."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context mentions Newton's mathematical contributions including calculus-related work, it does not specifically address how his calculus work contributed to the development of Principia."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context provides general praise for Newton's work and Principia but does not specifically address how his calculus work contributed to Principia's development."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's various mathematical discoveries but does not specifically connect his calculus work to the development of Principia."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context mentions the calculus priority dispute with Leibniz and establishes Newton's earlier development of calculus, it does not specifically address how calculus contributed to Principia's development."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context describes the scientific achievements and applications of Principia but does not specifically address how Newton's calculus work contributed to its development."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1041,
+                "completion_tokens": 174,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all sentences in the expected output are well-supported by nodes in the retrieval context! Sentence 1 is backed by node 2's confirmation of Newton's 'fluxions' terminology and its fundamental role in developing the Principia. Sentence 2 is supported by node 2's details about his 1665 systematic calculus unifying differentiation and integration. Sentence 3 finds strong support in node 3's explicit mention of Newton's geometric calculus methods and 'the method of first and last ratios.' Finally, sentence 4 is directly validated by node 3's quote describing the Principia as 'a book dense with the theory and application of the infinitesimal calculus.' Excellent retrieval coverage!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node confirms Newton referred to calculus as 'fluxions' and that his work was 'fundamental to the development of' the Principia, stating his systematic calculus 'directly informed the theory of central-force orbits in the Principia'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd node states 'His work by 1665 amounted to a systematic calculus that unified differentiation and integration' and that this 'directly informed the theory of central-force orbits in the Principia'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 3rd node explicitly states Newton used calculus 'in geometric form' and gave demonstration 'under the name of \"the method of first and last ratios\"' and that he could 'formulate and resolve problems by the integration of differential equations'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 3rd node directly quotes that 'the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\"' confirming how mathematical innovations were crucial for classical mechanics."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 774,
+                "completion_tokens": 182,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.6935483870967742,
+            "reason": "The score is 0.69 because while the retrieval context contains valuable relevant information such as 'In Principia, Newton was able to formulate and resolve problems by the integration of differential equations' and descriptions of how his calculus work 'later directly informed the theory of central-force orbits in the Principia', it also includes substantial irrelevant content like 'Leibniz deserves credit for his independent formulation of calculus', publication details about manuscripts being 'sent by Isaac Barrow to John Collins', and general praise calling Principia 'the greatest production of the human mind' without explaining calculus's specific contributions.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In Principia, Newton was able to formulate and resolve problems by the integration of differential equations",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Leibniz deserves credit for his independent formulation of calculus",
+                            "verdict": "no",
+                            "reason": "The statement 'Leibniz deserves credit for his independent formulation of calculus' is about Leibniz's achievements rather than how Newton's calculus work contributed to Principia."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's work has been said 'to distinctly advance every branch of mathematics then studied'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 Newton 'had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described as 'radically novel, indeed unprecedented' and which later directly informed the theory of central-force orbits in the Principia.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Another manuscript of October 1666, is now published among Newton's mathematical papers.",
+                            "verdict": "no",
+                            "reason": "The statement 'Another manuscript of October 1666, is now published among Newton's mathematical papers' provides only publication information without explaining how this manuscript relates to calculus or its contribution to Principia."
+                        },
+                        {
+                            "statement": "Newton recorded a definitive tract of calculus in what is called his 'Waste Book'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was self-taught in mathematics and did his research without help, as Newton carried out his education in mathematics and his program of research entirely on his own.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'self-taught in mathematics and did his research without help' describes his learning method but does not explain how calculus specifically contributed to the development of Principia."
+                        },
+                        {
+                            "statement": "His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669.",
+                            "verdict": "no",
+                            "reason": "The statement 'His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669' only mentions correspondence details without explaining how this work contributed to Principia's development."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities in the Principia, demonstrated under the name of 'the method of first and last ratios'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The Principia has been called 'a book dense with the theory and application of the infinitesimal calculus' in modern times and 'nearly all of it is of this calculus' in Newton's time",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's use of methods involving 'one or more orders of the infinitesimally small' was present in his De motu corporum in gyrum of 1684 and in his papers on motion during the two decades preceding 1684",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "It has been argued that Newton had an imprecise or limited understanding of limits",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Mathematician Bruce Pourciau contends that in his Principia, Newton demonstrated a more sophisticated understanding of limits than generally credited, including being the first to present an epsilon argument",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "The Principia was published on 5 July 1687 with encouragement and financial help from Halley.",
+                            "verdict": "no",
+                            "reason": "The statement mentions publication details including 'published on 5 July 1687 with encouragement and financial help from Halley' which is about publication circumstances, not about how Newton's work on calculus contributed to developing Principia."
+                        },
+                        {
+                            "statement": "In this work, Newton stated the three universal laws of motion.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Together, these laws describe the relationship between any object, the forces acting upon it and the resulting motion, laying the foundation for classical mechanics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "They contributed to numerous advances during the Industrial Revolution and were not improved upon for more than 200 years.",
+                            "verdict": "no",
+                            "reason": "The statement about 'contributed to numerous advances during the Industrial Revolution and were not improved upon for more than 200 years' describes the historical impact of the laws rather than how calculus contributed to developing Principia."
+                        },
+                        {
+                            "statement": "Many of these advances still underpin non-relativistic technologies today.",
+                            "verdict": "no",
+                            "reason": "The statement 'Many of these advances still underpin non-relativistic technologies today' discusses modern applications rather than how calculus contributed to developing Principia."
+                        },
+                        {
+                            "statement": "Newton used the Latin word gravitas (weight) for the effect that would become known as gravity, and formulated the law of universal gravitation.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work achieved the first great unification in physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He solved the two-body problem, and introduced the three-body problem.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had been developing his theory of gravitation as far back as 1665.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1679, he returned to his work on celestial mechanics by considering gravitation and its effect on the orbits of planets with reference to Kepler's laws of planetary motion.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's reawakening interest in astronomical matters received further stimulus by the appearance of a comet in the winter of 1680\u20131681, on which he corresponded with John Flamsteed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "After the exchanges with Hooke, Newton worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He shared his results with Edmond Halley and the Royal Society in De motu corporum in gyrum, a tract written on about nine sheets which was copied into the Royal Society's Register Book in December 1684.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "As part of this work, Newton also coined the term centripetal force.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This tract contained the nucleus that Newton developed and expanded to form the Principia.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton originated the Newton\u2013Cotes formulas used for numerical integration",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton produced the earliest explicit enunciation of the general Taylor series",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton initiated the field of calculus of variations",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton formulated and solved the earliest problem in geometric probability",
+                            "verdict": "no",
+                            "reason": "The statement 'formulated and solved the earliest problem in geometric probability' is not directly related to calculus work or its contribution to Principia development."
+                        },
+                        {
+                            "statement": "Newton devised the earliest form of linear regression",
+                            "verdict": "no",
+                            "reason": "The statement 'devised the earliest form of linear regression' is not directly related to calculus work or its contribution to Principia development."
+                        },
+                        {
+                            "statement": "Newton was a pioneer of vector analysis",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton discovered more of the essential core of human knowledge than anyone before or after and was chief architect of the modern world",
+                            "verdict": "no",
+                            "reason": "This statement about Newton being 'chief architect of the modern world' and discovering 'more of the essential core of human knowledge than anyone before or after' does not specifically address how his work on calculus contributed to developing Principia."
+                        },
+                        {
+                            "statement": "Newton answered the ancient philosophical riddles of light and motion, effectively discovered gravity, showed how to predict the courses of heavenly bodies, and made knowledge quantitative and exact",
+                            "verdict": "no",
+                            "reason": "This statement describes Newton's general scientific achievements in 'light and motion' and gravity but does not explain how his work on calculus specifically contributed to developing Principia."
+                        },
+                        {
+                            "statement": "Ludwig Boltzmann called Newton's Principia 'the first and greatest work ever written about theoretical physics'",
+                            "verdict": "no",
+                            "reason": "This statement is merely a quote praising Principia as 'the first and greatest work ever written about theoretical physics' but does not address how calculus contributed to its development."
+                        },
+                        {
+                            "statement": "Stephen Hawking called Principia 'probably the most important single work ever published in the physical sciences'",
+                            "verdict": "no",
+                            "reason": "This statement is just a quote describing Principia as 'the most important single work ever published in the physical sciences' but does not explain how calculus contributed to its development."
+                        },
+                        {
+                            "statement": "Joseph-Louis Lagrange called Principia 'the greatest production of the human mind' and noted that he felt dazed at what man's intellect might be capable",
+                            "verdict": "no",
+                            "reason": "This statement contains praise calling Principia 'the greatest production of the human mind' but does not address how Newton's work on calculus contributed to developing Principia."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called 'one of the most powerful and significant in the whole of mathematics.'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He discovered Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He approximated partial sums of the harmonic series by logarithms and was the first to use power series with confidence and to revert power series.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He introduced the Puisseux series.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was identified by Barrow in a letter sent to Collins that August as the work 'of an extraordinary genius and proficiency in these things'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Both Newton and Leibniz are now credited with independently developing calculus, though with very different mathematical notations",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "It is established that Newton came to develop calculus much earlier than Leibniz",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians",
+                            "verdict": "no",
+                            "reason": "The information about 'Leibniz notation being more convenient and adopted by continental European mathematicians, and after 1820, by British mathematicians' does not directly address how Newton's calculus work contributed to developing Principia."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity.",
+                            "verdict": "no",
+                            "reason": "This statement discusses the historical impact and later supersession by relativity theory, which is not relevant to how calculus contributed to developing the Principia."
+                        },
+                        {
+                            "statement": "Newton's laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds and weak gravitational fields.",
+                            "verdict": "no",
+                            "reason": "This statement about the modern applicability of Newton's laws 'serve as excellent approximations for the vast majority of physical phenomena involving low speeds and weak gravitational fields' does not address how calculus contributed to developing the Principia."
+                        },
+                        {
+                            "statement": "He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton solved the two-body problem and introduced the three-body problem.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's inference that the Earth is an oblate spheroid was later confirmed by geodetic measurements, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems.",
+                            "verdict": "no",
+                            "reason": "The part about 'later confirmed by geodetic measurements, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems' discusses later confirmation and acceptance rather than how calculus contributed to the Principia's development."
+                        },
+                        {
+                            "statement": "He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel.",
+                            "verdict": "no",
+                            "reason": "This statement about calculating 'the age of Earth by experiment, and described a precursor to the modern wind tunnel' is not relevant to how calculus contributed to developing the Principia."
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2427,
+                "completion_tokens": 151,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
+}

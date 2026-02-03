@@ -1,0 +1,618 @@
+{
+    "input": "What were Isaac Newton's contributions to the corpuscular theory, particularly regarding its anticipation of wave-particle duality and its optical implications?",
+    "expectedOutput": "Sir Isaac Newton was an English polymath, a key figure in the Scientific Revolution, known for his work as a mathematician, physicist, astronomer, alchemist, theologian, author, and inventor. He served as the second Lucasian Professor of Mathematics at Cambridge, Warden and Master of the Royal Mint, and President of the Royal Society. Knighted by Queen Anne in 1705, his seminal works include *Philosophi\u00e6 Naturalis Principia Mathematica* and *Opticks*.\n\nNewton's contributions to the corpuscular theory of light were foundational, particularly in anticipating wave-particle duality and shaping optical understanding. He argued that light is composed of particles, or corpuscles, which are refracted by accelerating into a denser medium. While primarily advocating for this particle theory, he also noted in his work *Opticks* that light exhibited both particle-like and wave-like properties. He was the first to attempt to reconcile these two seemingly contradictory theories, thereby anticipating the modern understanding of light known as wave-particle duality. This insight led physicist David Finkelstein to call Newton \"the first quantum physicist.\" Newton also explored sound-like waves to explain the repeated patterns of reflection and transmission by thin films, though he maintained his theory of 'fits' to describe how corpuscles were disposed to be reflected or transmitted.\n\nThe optical implications of Newton's work were extensive. He developed Newton's theory of color, demonstrating that colored light does not change its properties and that color is the result of objects interacting with already-colored light, rather than objects generating color themselves. His 1672 paper on white light and colors became the basis for all subsequent work on color and color vision. From this, he deduced that refracting telescopes would suffer from chromatic aberration (the dispersion of light into colors). To overcome this, he constructed the first known functional reflecting telescope, today called a Newtonian telescope, using mirrors instead of lenses. Newton also introduced prisms as beam expanders and multiple-prism arrays, which later became integral to the development of tunable lasers. He contributed to the study of astigmatism by discovering that oblique pencils of light create two distinct image points upon refraction. Furthermore, he was the first to propose and provide both experimental and theoretical explanations for the Goos\u2013H\u00e4nchen effect, an optical phenomenon where linearly polarized light undergoes a small lateral shift during total internal reflection. His idea in *Opticks* that optical reflection and refraction arise from interactions across the entire surface is considered a precursor to the field theory of the electric force.\n\n**Timeline of Major Events:**\n*   **1668:** Constructed the first functional reflecting telescope.\n*   **1671:** Demonstrated his reflecting telescope to the Royal Society.\n*   **1672:** Published his paper \"Of Colours,\" which laid the groundwork for his theory of color.\n*   **1704:** Published *Opticks*, detailing his corpuscular theory of light, introducing prisms as beam expanders, and proposing the Goos\u2013H\u00e4nchen effect.\n\n**Notable Contributions:**\n*   Proposed the corpuscular theory of light, suggesting light is composed of particles.\n*   Anticipated wave-particle duality by noting and attempting to reconcile both particle-like and wave-like properties of light.\n*   Developed Newton's theory of color, explaining that objects interact with existing colored light.\n*   Invented the first functional reflecting telescope (Newtonian telescope) to address chromatic aberration.\n*   Introduced prisms as beam expanders and multiple-prism arrays, which were later crucial for tunable lasers.\n*   Contributed to the mathematical understanding of astigmatism.\n*   First to propose and explain the Goos\u2013H\u00e4nchen effect.",
+    "context": [
+        "he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring\", in effect introducing a now standard method for reducing noise in measurements, and which does not appear elsewhere at the time. He extended his \"error-slaying method\" to studies of equinoxes in 1700, which was described as an \"altogether unprecedented method\" but differed in that here \"Newton required good values for each of the original equinoctial times, and so he devised a method that allowed them to, as it were, self-correct.\" Newton \"invented a certain technique known today as linear regression analysis\", as he wrote the first of the two 'normal equations' known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer, the person originally thought to be the oldest to do so, and he also summed the residuals to zero, forcing the regression line through the average point. He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.\nHe showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour. Thus, he observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour. His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.\n\nFrom this work, he concluded that the lens of any refracting telescope would suffer from the dispersion of light into colours (chromatic aberration). As a proof of the concept, he constructed a telescope using reflective mirrors instead of lenses as the objective to bypass that problem. Building the design, the first known functional reflecting telescope, today known as a Newtonian telescope, involved solving the problem of a suitable mirror material and shaping technique. Previous designs for the reflecting telescope were never put into practice or ended in failure, thereby making Newton's telescope the first one truly created. Newton grounded his own mirrors out of a custom composition of highly reflective speculum metal, using Newton's rings to judge the quality of the optics for his telescopes. In late 1668, he was able to produce this first reflecting telescope. It was about eight inches long and it gave a clearer and larger image. Newton reported that he could see the four Galilean moons of Jupiter and the crescent phase of Venus with his new reflecting telescope. In 1671, he was asked for a demonstration of his reflecting telescope by the Royal Society. Their interest encouraged him to publish his notes, Of Colours, which he later expanded into the work Opticks. When Robert Hooke criticised some of Newton's ideas, Newton was so offended that he withdrew from public debate. However, the two had brief exchanges in 1679\u201380, when Hooke, who had been appointed Secretary of the Royal Society, opened a correspondence intended to elicit contributions from Newton to Royal Society transactions, which had the effect of stimulating Newton to work out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.\nIn astronomy, Newton is further credited with the realisation that high-altitude sites are superior for observation because they provide the \"most serene and quiet Air\" above the dense, turbulent atmosphere (\"grosser Clouds\"), thereby reducing star twinkling.\n\nNewton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium. He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13). Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction. Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light. The physicist David Finkelstein called Newton \"the first quantum physicist\" as a result.\nIn his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.\nIn 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions. In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating \"Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?\" Query 6 introduced the concept of a black body. Opticks has been referred to as one of the \"earliest exemplars of experimental procedure\".\nIn 1699, Newton presented an improved version of his reflecting quadrant, or octant, that he had previously designed to the Royal Society. His design was probably built as early as 1677. It is notable for being the first quadrant to use two mirrors, which greatly improved the accuracy of measurements since it provided a stable view of both the horizon and the celestial body at the same time. His quadrant was built but appears to have not survived to the present. John Hadley would later construct his own double-reflecting quadrant that was nearly identical to the one invented by Newton. However, Hadley likely did not know of Newton's original invention, causing confusion regarding originality.\nIn 1704, Newton constructed and presented a burning mirror to the Royal Society. It consisted of seven concave glass mirrors, each about one foot in diameter. It is estimated that it reached a maximum possible radiant energy of 460 W cm\u207b\u00b2, which has been described as \"certainly brighter thermally than a thousand Suns (1,000 \u00d7 0.065 W cm\u207b\u00b2)\" based on estimating that the intensity of the Sun's radiation in London in May of 1704 was 0.065 W cm\u207b\u00b2. As a result of the maximum radiant intensity possibly achieved with his mirror he \"may have produced the greatest intensity of radiation brought about by human agency before the arrival of nuclear weapons in 1945.\" David Gregory reported that it caused metals to smoke, boiled gold and brought about the vitrification of slate. William Derham thought it be to the most powerful burning mirror in Europe at the time.\nNewton also made early studies into electricity, as he constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur, which had previously been used by scientists such as Otto von Guericke to construct their globes. He detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts \"light bodies\" to the opposite side. He interpreted this as evidence that electric forces could pass through glass. Newton also reported to the Royal Society that glass was effective for generating static electricity, classifying it as a \"good electric\" decades before this property was widely known. His idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force. He also recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light. He proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function. His theory of nervous transmission had an immense influence on the work of Luigi Galvani, as Newton's theory focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time. He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system. Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum.\nIn Opticks, Newton introduced prisms as Beam expanders and multiple-prism arrays, prismatic configurations that nearly 278 years later were incorporated into tunable lasers, where multiple-prism beam expanders became central to the development of narrow-linewidth systems. The use of these prismatic beam expanders led to the multiple-prism dispersion theory.\nNewton was also the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected. He provided both experimental and theoretical explanations for the effect using a mechanical model.\nScience came to realise the difference between perception of colour and mathematisable optics. The German poet"
+    ],
+    "additionalMetadata": {
+        "evolutions": [
+            "Multi-context",
+            "In-Breadth"
+        ],
+        "synthetic_input_quality": 1.0,
+        "context_quality": 0.925
+    },
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "Isaac Newton's contributions to the corpuscular theory, particularly regarding its anticipation of wave-particle duality and its optical implications, include:\n\n*   **Corpuscular Theory Foundation**: Newton argued that light is composed of **particles or corpuscles**, which are refracted by accelerating into a denser medium [Isaac_Newton.md - Chunk #30]. He expounded this **corpuscular theory of light** in his book *Opticks*, published in 1704 [Isaac_Newton.md - Chunk #32].\n*   **Anticipation of Wave-Particle Duality**: Despite his preference for a particle theory, Newton noted that light exhibited both **particle-like and wave-like properties** in *Opticks*. He was the first to attempt to reconcile these two theories, thereby anticipating the modern understanding of **wave-particle duality** [Isaac_Newton.md - Chunk #30]. This led physicist David Finkelstein to call him \"the first quantum physicist\" [Isaac_Newton.md - Chunk #30]. He also anticipated the **wave\u2013particle duality of light** and was the first to theorize the Goos\u2013H\u00e4nchen effect [Isaac_Newton.md - Chunk #3].\n*   **Optical Implications**:\n    *   He used his theory of 'fits' to explain the repeated pattern of **reflection and transmission** by thin films [Isaac_Newton.md - Chunk #30].\n    *   He developed a sophisticated **theory of colour** based on the observation that a prism separates white light into the colours of the visible spectrum, concluding that colour is an intrinsic property of light [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #25].\n    *   In *Opticks*, he introduced **prisms as beam expanders** and multiple-prism arrays, which later became integral to the development of tunable lasers [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #37].\n    *   He was the first to propose and provide both experimental and theoretical explanations for the **Goos\u2013H\u00e4nchen effect**, an optical phenomenon where linearly polarised light undergoes a small lateral shift during total internal reflection [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #37].\n    *   His idea in *Opticks* that optical reflection and refraction arise from interactions across the entire surface is considered a precursor to the field theory of the electric force [Isaac_Newton.md - Chunk #35].",
+    "retrieval_contexts": [
+        {
+            "content": "Newton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium. He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13). Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction. Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light. The physicist David Finkelstein called Newton \"the first quantum physicist\" as a result.",
+            "source": "Isaac_Newton.md - Chunk #30",
+            "score": 0.66021925
+        },
+        {
+            "content": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+            "source": "Isaac_Newton.md - Chunk #3",
+            "score": 0.55037
+        },
+        {
+            "content": "In 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions. In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating \"Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?\" Query 6 introduced the concept of a black body. Opticks has been referred to as one of the \"earliest exemplars of experimental procedure\".",
+            "source": "Isaac_Newton.md - Chunk #32",
+            "score": 0.5381324
+        },
+        {
+            "content": "Optics\nIn 1666, Newton observed that the spectrum of colours exiting a prism in the position of minimum deviation is oblong, even when the light ray entering the prism is circular, which is to say, the prism refracts different colours by different angles. This led him to conclude that colour is a property intrinsic to light \u2013 a point which had, until then, been a matter of debate.\nFrom 1670 to 1672, Newton lectured on optics. During this period he investigated the refraction of light, demonstrating that the multicoloured image produced by a prism, which he named a spectrum, could be recomposed into white light by a lens and a second prism. Modern scholarship has revealed that Newton's analysis and resynthesis of white light owes a debt to corpuscular alchemy.",
+            "source": "Isaac_Newton.md - Chunk #25",
+            "score": 0.5162744
+        },
+        {
+            "content": "In his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.",
+            "source": "Isaac_Newton.md - Chunk #31",
+            "score": 0.51134884
+        },
+        {
+            "content": "focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time. He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system. Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum.",
+            "source": "Isaac_Newton.md - Chunk #36",
+            "score": 0.4963413
+        },
+        {
+            "content": "In Opticks, Newton introduced prisms as Beam expanders and multiple-prism arrays, prismatic configurations that nearly 278 years later were incorporated into tunable lasers, where multiple-prism beam expanders became central to the development of narrow-linewidth systems. The use of these prismatic beam expanders led to the multiple-prism dispersion theory.\nNewton was also the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected. He provided both experimental and theoretical explanations for the effect using a mechanical model.\nScience came to realise the difference between perception of colour and mathematisable optics. The German poet and scientist Johann Wolfgang von Goethe could not shake the Newtonian foundation but \"one hole Goethe did find in Newton's armour, ... Newton had committed himself to the doctrine that refraction without colour was impossible. He, therefore, thought that the object-glasses of telescopes must forever remain imperfect, achromatism and refraction being incompatible. This inference was proved by Dollond to be wrong.\"",
+            "source": "Isaac_Newton.md - Chunk #37",
+            "score": 0.49436313
+        },
+        {
+            "content": "He showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour. Thus, he observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour. His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.",
+            "source": "Isaac_Newton.md - Chunk #27",
+            "score": 0.48755366
+        },
+        {
+            "content": "formulated the linear relation between viscous resistance and velocity gradient that now defines a Newtonian fluid, despite his experiments giving little direct insight into viscosity. Newton also discussed the circular motion of fluids and was the first to analyse Couette flow, initially in Proposition 51 for a single rotating cylinder and extended in Corollary 2 to the flow between two concentric cylinders. Further, he was the first to analyse the resistance of axisymmetric bodies moving through a rarefied medium.\nIn Principia, Newton provided the first quantitative estimate of the solar mass, with later editions incorporating more accurate measurements, bringing his Sun-to-Earth mass ratio calculation close to the modern value. He further determined the masses and densities of Jupiter and Saturn, putting all four celestial bodies (Sun, Earth, Jupiter, and Saturn) on the same comparative scale. This achievement by Newton has been called \"a supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe\".",
+            "source": "Isaac_Newton.md - Chunk #43",
+            "score": 0.45990968
+        },
+        {
+            "content": "Newton also made early studies into electricity, as he constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur, which had previously been used by scientists such as Otto von Guericke to construct their globes. He detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts \"light bodies\" to the opposite side. He interpreted this as evidence that electric forces could pass through glass. Newton also reported to the Royal Society that glass was effective for generating static electricity, classifying it as a \"good electric\" decades before this property was widely known. His idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force. He also recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light. He proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function. His theory of nervous transmission had an immense influence on the work of Luigi Galvani, as Newton's theory",
+            "source": "Isaac_Newton.md - Chunk #35",
+            "score": 0.44375962
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses all aspects of the question with no irrelevant statements! It comprehensively covers Newton's contributions to corpuscular theory, explains how his work anticipated wave-particle duality concepts, and thoroughly discusses the optical implications - exactly what was asked for.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this quote about Newton being called 'the first quantum physicist' relates to wave-particle duality concepts, it's more of a modern interpretation/opinion rather than a direct description of Newton's actual contributions to corpuscular theory"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this mentions Newton's work in Opticks with prisms, the connection to tunable laser development is a much later application that doesn't directly address Newton's contributions to corpuscular theory or wave-particle duality"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "This is a definition of the Goos-H\u00e4nchen effect rather than a description of Newton's contribution to it, providing background information but not directly addressing Newton's work"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 284,
+                "completion_tokens": 76,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly aligned with the retrieval context and maintains complete faithfulness to the source information.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context confirms Newton was first to propose the Goos\u2013H\u00e4nchen effect, there is no information about Newton anticipating wave\u2013particle duality beyond noting he observed both particle-like and wave-like properties."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's theory of 'fits' or his explanation of reflection and transmission by thin films."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton introducing prisms as beam expanders, multiple-prism arrays, or their connection to tunable laser development."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context confirms Newton was first to propose the Goos\u2013H\u00e4nchen effect, it does not specify that he provided both experimental and theoretical explanations for it."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's ideas about optical reflection and refraction arising from surface interactions or their connection to field theory of electric force."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 50,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all relevant nodes discussing Newton's corpuscular theory, wave-particle duality anticipation, and optical implications are perfectly ranked above irrelevant ones! The first eight nodes comprehensively cover Newton's particle theory of light, his pioneering insights on wave-particle duality in Opticks, and his various optical contributions including color theory and prisms. The ninth and tenth nodes about fluid mechanics and electrical studies are appropriately ranked last since they don't address the corpuscular theory question.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses Newton's corpuscular theory contributions, stating 'Newton argued that light is composed of particles or corpuscles' and specifically mentions his anticipation of wave-particle duality: 'Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides relevant information about Newton's optical work, mentioning 'Newton built the first reflecting telescope and developed a sophisticated theory of colour' and 'He originated prisms as beam expanders and multiple-prism arrays' and 'He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is relevant as it discusses Newton's publication of Opticks and his corpuscular theory: 'In 1704, Newton published Opticks, in which he expounded his corpuscular theory of light'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context addresses Newton's optical work and color theory, stating 'Newton observed that the spectrum of colours exiting a prism' and 'This led him to conclude that colour is a property intrinsic to light' and mentions his work from '1670 to 1672, Newton lectured on optics'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context mentions Newton's contribution to astigmatism studies: 'Newton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context discusses Newton's mass-dispersion model and refraction theory: 'Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction' which relates to optical implications"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses optical implications, mentioning 'Newton introduced prisms as Beam expanders and multiple-prism arrays' and 'Newton was also the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon' with experimental and theoretical explanations"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is highly relevant to Newton's color theory contributions: 'He showed that coloured light does not change its properties' and 'colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses fluid mechanics and celestial mechanics, mentioning 'formulated the linear relation between viscous resistance and velocity gradient that now defines a Newtonian fluid' and solar mass calculations, which are not related to corpuscular theory or optical work"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context focuses on Newton's electrical studies and theories: 'Newton also made early studies into electricity' and discusses his work with electrostatic generators and electrical phenomena, which while mentioning some optical connections is not directly about corpuscular theory contributions"
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1214,
+                "completion_tokens": 122,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 0.6666666666666666,
+            "reason": "The score is 0.67 because while most technical content about Newton's optical work is well-supported by nodes in retrieval context (node 1 supports corpuscular theory and wave-particle duality claims, node 8 supports color theory explanations, and nodes 2 and 7 support various optical contributions), the biographical information in sentence 1 and specific timeline dates cannot be attributed to any retrieval context nodes.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "no",
+                    "reason": "The sentence describes Newton as an English polymath and lists his various roles and achievements, but none of these biographical details can be found in the retrieval contexts provided."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'Newton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium.' This directly supports the sentence about Newton's corpuscular theory contributions."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'Newton noted that light had both particle-like and wave-like properties in Opticks' and 'was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality' and mentions 'David Finkelstein called Newton \"the first quantum physicist\"'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "8th node states 'colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour' and 'His 1672 paper on the nature of white light and colours forms the basis for all work that followed...'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The timeline events are mentioned across nodes: 2nd node mentions 'Newton built the first reflecting telescope', but specific dates like 1668, 1671 are not found in the retrieval contexts."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The notable contributions list summarizes information found across multiple nodes: 1st node mentions corpuscular theory, 1st node mentions wave-particle duality, 2nd and 7th nodes mention prisms as beam expanders, 7th node mentions Goos-H\u00e4nchen effect, etc."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1554,
+                "completion_tokens": 104,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.5849056603773585,
+            "reason": "The score is 0.58 because while the retrieval context contains highly relevant information about Newton's corpuscular theory, wave-particle duality anticipation, and optical work (such as 'Newton argued that light is composed of particles or corpuscles' and 'was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality'), it also includes substantial irrelevant content including 'empirical law of cooling', 'heat transfer formulation', 'Magnus effect', 'Couette flow', mathematical contributions like 'calculus' and 'binomial theorem', and topics on 'electricity generation' and 'nervous transmission' that don't address the specific query about corpuscular theory and optical implications.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13).",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The physicist David Finkelstein called Newton 'the first quantum physicist' as a result.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work on light was collected in his book Opticks, published in 1704.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body.",
+                            "verdict": "no",
+                            "reason": "The information about 'empirical law of cooling', 'heat transfer formulation', 'speed of sound calculation', 'Newtonian fluid', and 'black body' are not related to corpuscular theory, wave-particle duality, or optical implications."
+                        },
+                        {
+                            "statement": "He was also the first to explain the Magnus effect.",
+                            "verdict": "no",
+                            "reason": "The information about 'Magnus effect' is not related to corpuscular theory, wave-particle duality, or optical implications."
+                        },
+                        {
+                            "statement": "Moreover, he was the first to analyse Couette flow.",
+                            "verdict": "no",
+                            "reason": "The information about 'Couette flow' is not related to corpuscular theory, wave-particle duality, or optical implications."
+                        },
+                        {
+                            "statement": "In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+                            "verdict": "no",
+                            "reason": "The information about 'creation of calculus', 'binomial theorem', 'Puiseux series', 'B\u00e9zout's theorem', 'cubic plane curves', 'Cremona transformations', and 'approximating roots' are mathematical contributions not related to corpuscular theory, wave-particle duality, or optical implications."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating 'Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Query 6 introduced the concept of a black body.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Opticks has been referred to as one of the 'earliest exemplars of experimental procedure'.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1666, Newton observed that the spectrum of colours exiting a prism in the position of minimum deviation is oblong, even when the light ray entering the prism is circular, which is to say, the prism refracts different colours by different angles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This led him to conclude that colour is a property intrinsic to light \u2013 a point which had, until then, been a matter of debate.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "From 1670 to 1672, Newton lectured on optics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "During this period he investigated the refraction of light, demonstrating that the multicoloured image produced by a prism, which he named a spectrum, could be recomposed into white light by a lens and a second prism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Modern scholarship has revealed that Newton's analysis and resynthesis of white light owes a debt to corpuscular alchemy.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy.",
+                            "verdict": "no",
+                            "reason": "The information about 'The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy' is not relevant to Newton's contributions to corpuscular theory or its optical implications."
+                        },
+                        {
+                            "statement": "He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His contributions to science cannot be isolated from his interest in alchemy.",
+                            "verdict": "no",
+                            "reason": "The statement 'His contributions to science cannot be isolated from his interest in alchemy' is a general comment about Newton's work but does not address his specific contributions to corpuscular theory or optical implications."
+                        },
+                        {
+                            "statement": "This was at a time when there was no clear distinction between alchemy and science.",
+                            "verdict": "no",
+                            "reason": "The information 'This was at a time when there was no clear distinction between alchemy and science' provides historical context but is not relevant to Newton's specific contributions to corpuscular theory or optical implications."
+                        },
+                        {
+                            "statement": "Newton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This would later stimulate the work of Thomas Young.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'electricity as a possible mediator of nervous transmission' and 'Cartesian hydraulic theory' which are not related to Newton's contributions to corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'electrical and chemical mechanisms' working 'in the nervous system' which has nothing to do with corpuscular theory, wave-particle duality, or optical implications."
+                        },
+                        {
+                            "statement": "Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In Opticks, Newton introduced prisms as beam expanders and multiple-prism arrays, prismatic configurations that were later incorporated into tunable lasers and led to multiple-prism dispersion theory.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton was the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected, providing both experimental and theoretical explanations using a mechanical model.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Science came to realise the difference between perception of colour and mathematisable optics, and Goethe found that Newton had committed himself to the doctrine that refraction without colour was impossible, thinking telescope object-glasses must forever remain imperfect, which Dollond proved wrong.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Science came to realise the difference between perception of colour and mathematisable optics' and 'Goethe found that Newton had committed himself to the doctrine that refraction without colour was impossible' does not directly address Newton's contributions to corpuscular theory or wave-particle duality anticipation."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "He showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This is known as Newton's theory of colour.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton formulated the linear relation between viscous resistance and velocity gradient that now defines a Newtonian fluid, despite his experiments giving little direct insight into viscosity.",
+                            "verdict": "no",
+                            "reason": "The statement about 'viscous resistance and velocity gradient that now defines a Newtonian fluid' is about fluid dynamics, not the corpuscular theory or optical implications."
+                        },
+                        {
+                            "statement": "Newton discussed the circular motion of fluids and was the first to analyse Couette flow, initially in Proposition 51 for a single rotating cylinder and extended in Corollary 2 to the flow between two concentric cylinders.",
+                            "verdict": "no",
+                            "reason": "The information about 'circular motion of fluids' and 'Couette flow' relates to fluid mechanics, not to corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton was the first to analyse the resistance of axisymmetric bodies moving through a rarefied medium.",
+                            "verdict": "no",
+                            "reason": "The statement about 'resistance of axisymmetric bodies moving through a rarefied medium' concerns mechanics and resistance, not corpuscular theory or optical implications."
+                        },
+                        {
+                            "statement": "In Principia, Newton provided the first quantitative estimate of the solar mass, with later editions incorporating more accurate measurements, bringing his Sun-to-Earth mass ratio calculation close to the modern value.",
+                            "verdict": "no",
+                            "reason": "The information about 'quantitative estimate of the solar mass' and 'Sun-to-Earth mass ratio calculation' relates to celestial mechanics, not to corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton determined the masses and densities of Jupiter and Saturn, putting all four celestial bodies (Sun, Earth, Jupiter, and Saturn) on the same comparative scale.",
+                            "verdict": "no",
+                            "reason": "The statement about 'masses and densities of Jupiter and Saturn' and 'celestial bodies' concerns astronomical calculations, not corpuscular theory or optical implications."
+                        },
+                        {
+                            "statement": "This achievement by Newton has been called 'a supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe'.",
+                            "verdict": "no",
+                            "reason": "This statement about 'one set of physical concepts and principles applies to all bodies' refers to universal gravitation principles, not to corpuscular theory or wave-particle duality."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton 'constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur' is not relevant to his contributions to corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts 'light bodies' to the opposite side.",
+                            "verdict": "no",
+                            "reason": "The information about Newton's '1675 experiment with glass sheet rubbed to create electric charge' relates to electricity rather than corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton interpreted electric charge attraction as evidence that electric forces could pass through glass.",
+                            "verdict": "no",
+                            "reason": "Newton's interpretation that 'electric forces could pass through glass' is about electricity, not about corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton reported to the Royal Society that glass was effective for generating static electricity, classifying it as a 'good electric' decades before this property was widely known.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton classifying glass 'as a good electric' relates to electricity generation rather than corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton's idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function.",
+                            "verdict": "no",
+                            "reason": "The statement about electricity being 'involved in human body sensations, affecting muscle movement to brain function' is not relevant to corpuscular theory or wave-particle duality."
+                        },
+                        {
+                            "statement": "Newton's theory of nervous transmission had an immense influence on the work of Luigi Galvani.",
+                            "verdict": "no",
+                            "reason": "The information about Newton's 'theory of nervous transmission' and its 'influence on Luigi Galvani' is not related to corpuscular theory or wave-particle duality."
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2364,
+                "completion_tokens": 175,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
+}

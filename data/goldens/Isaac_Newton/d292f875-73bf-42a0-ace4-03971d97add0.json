@@ -1,0 +1,621 @@
+{
+    "input": "What were Isaac Newton's contributions to the development of linear regression and error-slaying methods?",
+    "expectedOutput": "Sir Isaac Newton made pioneering contributions to both error reduction methods and the foundational development of linear regression analysis. He introduced an \"error-slaying method\" by averaging differences in measurements and then calculating the deviation from the average to a specific value, a technique that became a standard for reducing noise. This method was notably extended to studies of equinoxes in 1700, where he devised a self-correcting approach to ensure the accuracy of original equinoctial times. Furthermore, Newton is credited with inventing what is now known as linear regression analysis. He formulated the first of the two 'normal equations' used in ordinary least squares, averaged a set of data 50 years before Tobias Mayer, and ensured the regression line passed through the average point by summing the residuals to zero. He also differentiated between uneven data sets and considered optimal solutions regarding bias, thereby laying crucial groundwork for modern statistical analysis.\n\n**Short Structured Bio**\nSir Isaac Newton was an English polymath, mathematician, physicist, and inventor, recognized as a key figure in the Scientific Revolution. His extensive work laid foundational principles for modern science, including significant advancements in mathematics and data analysis methods.\n\n**Concise Timeline of Major Events**\n*   **Before 1750s:** Developed the earliest form of linear regression analysis, including the first normal equation and averaging data sets.\n*   **1700:** Extended his \"error-slaying method\" to studies of equinoxes, devising a self-correcting approach for original equinoctial times.\n\n**Notable Contributions**\n*   **Error-Slaying Method:** Introduced a now-standard method for reducing noise in measurements by averaging differences and calculating deviations.\n*   **Equinox Studies:** Applied his noise reduction method to equinoxes, creating an \"altogether unprecedented method\" for self-correction of original equinoctial times.\n*   **Linear Regression Analysis:** Invented an early form of linear regression, writing the first 'normal equation' of ordinary least squares.\n*   **Data Averaging:** Averaged data sets 50 years before Tobias Mayer, a practice now fundamental to statistical analysis.\n*   **Residuals to Zero:** Forced regression lines through the average point by summing residuals to zero.\n*   **Bias Consideration:** Differentiated between uneven data sets and considered optimal solutions regarding bias.",
+    "context": [
+        "he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring\", in effect introducing a now standard method for reducing noise in measurements, and which does not appear elsewhere at the time. He extended his \"error-slaying method\" to studies of equinoxes in 1700, which was described as an \"altogether unprecedented method\" but differed in that here \"Newton required good values for each of the original equinoctial times, and so he devised a method that allowed them to, as it were, self-correct.\" Newton \"invented a certain technique known today as linear regression analysis\", as he wrote the first of the two 'normal equations' known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer, the person originally thought to be the oldest to do so, and he also summed the residuals to zero, forcing the regression line through the average point. He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.\nHe showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour. Thus, he observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour. His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.\n\nFrom this work, he concluded that the lens of any refracting telescope would suffer from the dispersion of light into colours (chromatic aberration). As a proof of the concept, he constructed a telescope using reflective mirrors instead of lenses as the objective to bypass that problem. Building the design, the first known functional reflecting telescope, today known as a Newtonian telescope, involved solving the problem of a suitable mirror material and shaping technique. Previous designs for the reflecting telescope were never put into practice or ended in failure, thereby making Newton's telescope the first one truly created. Newton grounded his own mirrors out of a custom composition of highly reflective speculum metal, using Newton's rings to judge the quality of the optics for his telescopes. In late 1668, he was able to produce this first reflecting telescope. It was about eight inches long and it gave a clearer and larger image. Newton reported that he could see the four Galilean moons of Jupiter and the crescent phase of Venus with his new reflecting telescope. In 1671, he was asked for a demonstration of his reflecting telescope by the Royal Society. Their interest encouraged him to publish his notes, Of Colours, which he later expanded into the work Opticks. When Robert Hooke criticised some of Newton's ideas, Newton was so offended that he withdrew from public debate. However, the two had brief exchanges in 1679\u201380, when Hooke, who had been appointed Secretary of the Royal Society, opened a correspondence intended to elicit contributions from Newton to Royal Society transactions, which had the effect of stimulating Newton to work out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.\nIn astronomy, Newton is further credited with the realisation that high-altitude sites are superior for observation because they provide the \"most serene and quiet Air\" above the dense, turbulent atmosphere (\"grosser Clouds\"), thereby reducing star twinkling.\n\nNewton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium. He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13). Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction. Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light. The physicist David Finkelstein called Newton \"the first quantum physicist\" as a result.\nIn his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.\nIn 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions. In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating \"Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?\" Query 6 introduced the concept of a black body. Opticks has been referred to as one of the \"earliest exemplars of experimental procedure\".\nIn 1699, Newton presented an improved version of his reflecting quadrant, or octant, that he had previously designed to the Royal Society. His design was probably built as early as 1677. It is notable for being the first quadrant to use two mirrors, which greatly improved the accuracy of measurements since it provided a stable view of both the horizon and the celestial body at the same time. His quadrant was built but appears to have not survived to the present. John Hadley would later construct his own double-reflecting quadrant that was nearly identical to the one invented by Newton. However, Hadley likely did not know of Newton's original invention, causing confusion regarding originality.\nIn 1704, Newton constructed and presented a burning mirror to the Royal Society. It consisted of seven concave glass mirrors, each about one foot in diameter. It is estimated that it reached a maximum possible radiant energy of 460 W cm\u207b\u00b2, which has been described as \"certainly brighter thermally than a thousand Suns (1,000 \u00d7 0.065 W cm\u207b\u00b2)\" based on estimating that the intensity of the Sun's radiation in London in May of 1704 was 0.065 W cm\u207b\u00b2. As a result of the maximum radiant intensity possibly achieved with his mirror he \"may have produced the greatest intensity of radiation brought about by human agency before the arrival of nuclear weapons in 1945.\" David Gregory reported that it caused metals to smoke, boiled gold and brought about the vitrification of slate. William Derham thought it be to the most powerful burning mirror in Europe at the time.\nNewton also made early studies into electricity, as he constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur, which had previously been used by scientists such as Otto von Guericke to construct their globes. He detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts \"light bodies\" to the opposite side. He interpreted this as evidence that electric forces could pass through glass. Newton also reported to the Royal Society that glass was effective for generating static electricity, classifying it as a \"good electric\" decades before this property was widely known. His idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force. He also recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light. He proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function. His theory of nervous transmission had an immense influence on the work of Luigi Galvani, as Newton's theory focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time. He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system. Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum.\nIn Opticks, Newton introduced prisms as Beam expanders and multiple-prism arrays, prismatic configurations that nearly 278 years later were incorporated into tunable lasers, where multiple-prism beam expanders became central to the development of narrow-linewidth systems. The use of these prismatic beam expanders led to the multiple-prism dispersion theory.\nNewton was also the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected. He provided both experimental and theoretical explanations for the effect using a mechanical model.\nScience came to realise the difference between perception of colour and mathematisable optics. The German poet"
+    ],
+    "additionalMetadata": {
+        "evolutions": [
+            "Reasoning",
+            "Comparative"
+        ],
+        "synthetic_input_quality": 1.0,
+        "context_quality": 0.925
+    },
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "Isaac Newton made significant contributions to the development of linear regression and error-slaying methods:\n\n*   **Linear Regression**:\n    *   He devised the earliest form of **linear regression** [Isaac_Newton.md - Chunk #4].\n    *   Newton \"invented a certain technique known today as **linear regression analysis**\" by writing the first of the two 'normal equations' from ordinary least squares. He averaged a set of data 50 years before Tobias Mayer and summed the residuals to zero, which forced the regression line through the average point [Isaac_Newton.md - Chunk #26].\n*   **Error-Slaying Methods**:\n    *   In 1671, during his work on Newton's rings, he introduced a method for **reducing noise in measurements**. This involved averaging all differences and then calculating the difference between the average and the value for the first ring [Isaac_Newton.md - Chunk #26].\n    *   He extended his \"error-slaying method\" to studies of equinoxes in 1700. This method allowed original equinoctial times to \"self-correct\" by requiring good values for each [Isaac_Newton.md - Chunk #26].",
+    "retrieval_contexts": [
+        {
+            "content": "In his work on Newton's rings in 1671, he used a method that was unprecedented in the 17th century, as \"he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring\", in effect introducing a now standard method for reducing noise in measurements, and which does not appear elsewhere at the time. He extended his \"error-slaying method\" to studies of equinoxes in 1700, which was described as an \"altogether unprecedented method\" but differed in that here \"Newton required good values for each of the original equinoctial times, and so he devised a method that allowed them to, as it were, self-correct.\" Newton \"invented a certain technique known today as linear regression analysis\", as he wrote the first of the two 'normal equations' known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer, the person originally thought to be the oldest to do so, and he also summed the residuals to zero, forcing the regression line through the average point. He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.",
+            "source": "Isaac_Newton.md - Chunk #26",
+            "score": 0.69259006
+        },
+        {
+            "content": "function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.",
+            "source": "Isaac_Newton.md - Chunk #4",
+            "score": 0.61895996
+        },
+        {
+            "content": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+            "source": "Isaac_Newton.md - Chunk #20",
+            "score": 0.5453076
+        },
+        {
+            "content": "\"Hitherto I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses, for whatever is not deduced from the phenomena is to be called an hypothesis; and hypotheses, whether metaphysical or physical, whether of occult qualities or mechanical, have no place in experimental philosophy. In this philosophy particular propositions are inferred from the phenomena, and afterwards rendered general by induction\".\nNewton contributed to and refined the scientific method. In his work on the properties of light in the 1670s, he showed his rigorous method, which was conducting experiments, taking detailed notes, making measurements, conducting more experiments that grew out of the initial ones, he formulated a theory, created more experiments to test it, and finally described the entire process so other scientists could replicate every step.",
+            "source": "Isaac_Newton.md - Chunk #50",
+            "score": 0.5175511
+        },
+        {
+            "content": "Source: https://en.wikipedia.org/wiki/Isaac_Newton\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+            "source": "Isaac_Newton.md - Chunk #0",
+            "score": 0.515308
+        },
+        {
+            "content": "Newton was responsible for the modern origin of Gaussian elimination in Europe. In 1669 to 1670, Newton wrote that all the algebra books known to him lacked a lesson for solving simultaneous equations, which he then supplied. His notes lay unpublished for decades, but once released, his textbook became the most influential of its kind, establishing the method of substitution and the key terminology of 'extermination' (now known as elimination).\nIn the 1660s and 1670s, Newton found 72 of the 78 \"species\" of cubic curves and categorised them into four types, systemising his results in later publications. However, a 1690s manuscript later analysed showed that Newton had identified all 78 cubic curves, but chose not to publish the remaining six for unknown reasons. In 1717, and probably with Newton's help, James Stirling proved that every cubic was one of these four types. He claimed that the four types could be obtained by plane projection from one of them, and this was proved in 1731, four years after his death.",
+            "source": "Isaac_Newton.md - Chunk #23",
+            "score": 0.5111586
+        },
+        {
+            "content": "The historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . .",
+            "source": "Isaac_Newton.md - Chunk #16",
+            "score": 0.47592598
+        },
+        {
+            "content": "In his 1687 Principia, he outlined four rules: the first is, 'Admit no more causes of natural things than are both true and sufficient to explain their appearances'; the second is, 'To the same natural effect, assign the same causes'; the third is, 'Qualities of bodies, which are found to belong to all bodies within experiments, are to be esteemed universal'; and lastly, 'Propositions collected from observation of phenomena should be viewed as accurate or very nearly true until contradicted by other phenomena'. These rules have become the basis of the modern approaches to science.\nNewton's scientific method went beyond simple prediction in three critical ways, thereby enriching the basic hypothetico-deductive model. First, it established a richer ideal of empirical success, requiring phenomena to accurately measure theoretical parameters. Second, it transformed theoretical questions into ones empirically solvable by measurement. Third, it used provisionally accepted propositions to guide research, enabling the method of successive approximations where deviations drive the creation of more accurate models. This robust method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains a foundational element in modern physics.",
+            "source": "Isaac_Newton.md - Chunk #51",
+            "score": 0.4650842
+        },
+        {
+            "content": "of his De Quadratura Curvarum. He originated the Newton-Cotes formulas for numerical integration. Newton's work on infinite series was inspired by Simon Stevin's decimals. He also initiated the field of calculus of variations, being the first to formulate and solve a problem in the field, that being Newton's minimal resistance problem, which he posed and solved in 1685, later publishing it in Principia in 1687. It is regarded as one of the most difficult problems tackled by variational methods prior to the twentieth century. He then used calculus of variations in his solving of the brachistochrone curve problem in 1697, which was posed by Johann Bernoulli in 1696, and which he famously solved in a night, thus pioneering the field with his work on the two problems. He was also a pioneer of vector analysis, as he demonstrated how to apply the parallelogram law for adding various physical quantities and realised that these quantities could be broken down into components in any direction. He is credited with introducing the notion of the vector in his Principia, by proposing that physical quantities like velocity, acceleration, momentum, and force be treated as directed quantities, thereby making Newton the \"true originator of",
+            "source": "Isaac_Newton.md - Chunk #21",
+            "score": 0.45899534
+        },
+        {
+            "content": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+            "source": "Isaac_Newton.md - Chunk #3",
+            "score": 0.45504576
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response stayed perfectly on topic with no irrelevant statements detected. Great job maintaining focus and directly addressing the question about Newton's contributions to linear regression and error analysis methods!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 274,
+                "completion_tokens": 56,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to the retrieval context.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context states that Newton wrote the first of the two 'normal equations' known from ordinary least squares 50 years before Tobias Mayer, but does not mention anything about Newton averaging a set of data, summing residuals to zero, or forcing the regression line through the average point."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context confirms Newton worked on Newton's rings in 1671 using an unprecedented method, it does not specify that this method was for reducing noise in measurements."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not provide any details about Newton's specific method for reducing noise in measurements or mention averaging differences and calculating differences between averages and values for rings."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context confirms Newton extended his error-slaying method to studies of equinoxes in 1700, but does not provide details about how the method allowed equinoctial times to 'self-correct' or required good values for each."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 41,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked at the top! The first two nodes in the retrieval contexts directly address Newton's contributions, with the first node providing comprehensive details about how 'he averaged all of the differences' and 'introducing a now standard method for reducing noise in measurements,' and the second node confirming that Newton 'devised the earliest form of linear regression.' All irrelevant nodes discussing his other mathematical work, scientific method, biographical information, calculus controversy, optics, and physics contributions are appropriately ranked lower in positions 3-10.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This document directly addresses Newton's contributions to linear regression and error-slaying methods. It states 'he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring... introducing a now standard method for reducing noise in measurements' and 'He extended his error-slaying method to studies of equinoxes in 1700.' It also mentions 'Newton invented a certain technique known today as linear regression analysis' and describes his work with normal equations and residuals."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document mentions that Newton 'devised the earliest form of linear regression' which directly relates to the input question about his contributions to linear regression development."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's mathematical discoveries including the binomial theorem, Newton's identities, and Newton's method, but does not mention linear regression or error-slaying methods specifically relevant to the question."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on Newton's scientific method and experimental philosophy, stating his approach of 'conducting experiments, taking detailed notes, making measurements' but does not address linear regression or error-slaying methods."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This is a general biographical introduction stating Newton was 'an English polymath who was a mathematician, physicist, astronomer' but contains no specific information about linear regression or error-slaying methods."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's work on Gaussian elimination and cubic curves, mentioning he 'found 72 of the 78 species of cubic curves' but does not address linear regression or error-slaying methods."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on the Newton-Leibniz calculus controversy and Newton's development of calculus, but does not mention linear regression or error-slaying methods."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document outlines Newton's four rules of scientific method from his Principia and describes his approach to empirical success, but does not address linear regression or error-slaying methods specifically."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document mentions Newton's work on calculus of variations and states he was 'a pioneer of vector analysis' but does not specifically address linear regression or error-slaying methods."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on Newton's work in optics, his reflecting telescope, theory of color, and various physics contributions like 'empirical law of cooling' and 'speed of sound,' but does not mention linear regression or error-slaying methods."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1063,
+                "completion_tokens": 136,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 0.9375,
+            "reason": "The score is 0.94 because nearly all content is well-supported by node 1 in retrieval context, which thoroughly documents Newton's error-slaying methods, linear regression contributions, equinox studies from 1700, and statistical innovations. The biographical information is confirmed by node 5. Only the specific timeline formatting ('Before 1750s') lacks direct attribution, though the underlying chronological content is supported.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states Newton 'introduced a now standard method for reducing noise in measurements' and 'invented a certain technique known today as linear regression analysis'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms he 'averaged all of the differences, and he then calculated the difference between the average and the value for the first ring'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'He extended his \"error-slaying method\" to studies of equinoxes in 1700' and 'devised a method that allowed them to, as it were, self-correct'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'Newton \"invented a certain technique known today as linear regression analysis\"'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states he 'wrote the first of the two \"normal equations\" known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms he 'summed the residuals to zero, forcing the regression line through the average point'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node confirms 'Sir Isaac Newton was an English polymath who was a mathematician, physicist...key figure in the Scientific Revolution'..."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The specific timeline format with 'Before 1750s' is not found in the retrieval contexts, though the individual contributions are mentioned."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node mentions 'He extended his \"error-slaying method\" to studies of equinoxes in 1700'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms the 'error-slaying method' as 'a now standard method for reducing noise in measurements'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node describes his equinox work as an 'altogether unprecedented method' for self-correction..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states Newton 'invented a certain technique known today as linear regression analysis' and 'wrote the first of the two \"normal equations\"'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms he 'averaged a set of data, 50 years before Tobias Mayer'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states he 'summed the residuals to zero, forcing the regression line through the average point'..."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias'..."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1409,
+                "completion_tokens": 101,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.15384615384615385,
+            "reason": "The score is 0.15 because while the retrieval context contains some highly relevant statements about Newton's development of 'linear regression analysis', his 'error-slaying method', and his work on 'averaging all differences and calculating the difference between the average and the value', the vast majority of the context discusses unrelated topics such as 'Newton\u2013Cotes formulas used for numerical integration', 'the generalised binomial theorem', 'cubic plane curves', 'calculus of variations', 'Taylor series', optics work, and general scientific methodology - none of which address the specific question about linear regression and error-slaying methods.",
+            "threshold": 0.5,
+            "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In his work on Newton's rings in 1671, Newton used an unprecedented method of averaging all differences and calculating the difference between the average and the value for the first ring, introducing a standard method for reducing noise in measurements.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton extended his 'error-slaying method' to studies of equinoxes in 1700, using an altogether unprecedented method that allowed values to self-correct.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton invented a technique known today as linear regression analysis, writing the first of the two 'normal equations' known from ordinary least squares.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton averaged a set of data 50 years before Tobias Mayer, who was originally thought to be the oldest to do so.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton summed the residuals to zero, forcing the regression line through the average point.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton originated the Newton\u2013Cotes formulas used for numerical integration",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Newton\u2013Cotes formulas used for numerical integration' which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton produced the earliest explicit enunciation of the general Taylor series",
+                            "verdict": "no",
+                            "reason": "The statement about 'the earliest explicit enunciation of the general Taylor series' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton initiated the field of calculus of variations",
+                            "verdict": "no",
+                            "reason": "The statement about Newton initiating 'the field of calculus of variations' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton formulated and solved the earliest problem in geometric probability",
+                            "verdict": "no",
+                            "reason": "The statement about 'the earliest problem in geometric probability' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton devised the earliest form of linear regression",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton was a pioneer of vector analysis",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'a pioneer of vector analysis' is not related to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'the generalised binomial theorem' which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He discovered Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'Newton's identities', 'Newton polygon', and 'cubic plane curves' which are not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton is also a founder of the theory of Cremona transformations",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Cremona transformations' which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He made substantial contributions to the theory of finite differences, with Newton regarded as 'the single most significant contributor to finite difference interpolation'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'B\u00e9zout's theorem', 'fractional indices', and 'Diophantine equations' which are not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula)",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'harmonic series by logarithms' which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He was the first to use power series with confidence and to revert power series. He introduced the Puisseux series",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'power series' and 'Puisseux series' which are not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Taylor series' which is not related to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton advocated for deducing knowledge from phenomena rather than forming hypotheses, stating that hypotheses have no place in experimental philosophy.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's views on 'hypotheses' and 'experimental philosophy' which are not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method through rigorous experimental processes including conducting experiments, taking detailed notes, making measurements, formulating theories, and testing them.",
+                            "verdict": "no",
+                            "reason": "The statement describes Newton's contributions to 'the scientific method' and 'experimental processes' but does not mention linear regression or error-slaying methods specifically."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Sir Isaac Newton was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor.",
+                            "verdict": "no",
+                            "reason": "The statement describes Newton's general roles and professions but does not mention anything about 'linear regression and error-slaying methods' which are the specific contributions asked about in the input."
+                        },
+                        {
+                            "statement": "He was a key figure in the Scientific Revolution and the Enlightenment that followed.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'a key figure in the Scientific Revolution and the Enlightenment' does not address his contributions to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "His book Philosophi\u00e6 Naturalis Principia Mathematica, first published in 1687, achieved the first great unification in physics and established classical mechanics.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Principia Mathematica' and 'classical mechanics' does not mention linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton also made seminal contributions to optics, and shares credit with Gottfried Wilhelm Leibniz for formulating infinitesimal calculus.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's 'contributions to optics' and 'infinitesimal calculus' does not address linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's contributions to 'the scientific method' and 'modern science' does not specifically mention linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was responsible for the modern origin of Gaussian elimination in Europe and developed methods for solving simultaneous equations including substitution and elimination techniques",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'Gaussian elimination' and 'solving simultaneous equations' which are general mathematical methods, not specifically 'linear regression and error-slaying methods' as asked in the input."
+                        },
+                        {
+                            "statement": "In the 1660s and 1670s, Newton found 72 of the 78 species of cubic curves and categorised them into four types, with later work showing he had identified all 78 cubic curves",
+                            "verdict": "no",
+                            "reason": "The statement about 'cubic curves' and their categorization is unrelated to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "In 1717, James Stirling proved that every cubic was one of four types with Newton's help, and showed the four types could be obtained by plane projection",
+                            "verdict": "no",
+                            "reason": "The statement about 'cubic curves', 'four types', and 'plane projection' does not relate to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's development of 'calculus' techniques, which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton was undoubtedly the first to develop calculus independently before Leibniz",
+                            "verdict": "no",
+                            "reason": "The statement is about Newton's development of 'calculus' and priority disputes with Leibniz, which is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "In Principia, Newton was able to formulate and resolve problems by the integration of differential equations",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's work with 'differential equations' in Principia, which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton anticipated many results that later exponents of the calculus regarded as their own novel achievements",
+                            "verdict": "no",
+                            "reason": "The statement refers to Newton's contributions to 'calculus' development, which is not relevant to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In his 1687 Principia, Newton outlined four rules for scientific methodology including admitting only necessary causes, assigning same causes to same effects, treating universal qualities as universal, and viewing propositions from phenomena as accurate until contradicted.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's general scientific methodology rules from 'his 1687 Principia' and 'four rules' for scientific approach, which has nothing to do with linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "These rules have become the basis of the modern approaches to science.",
+                            "verdict": "no",
+                            "reason": "The statement 'These rules have become the basis of the modern approaches to science' refers to general scientific methodology, not linear regression and error-slaying methods specifically."
+                        },
+                        {
+                            "statement": "Newton's scientific method went beyond simple prediction by establishing richer ideals of empirical success, transforming theoretical questions into empirically solvable ones, and using provisionally accepted propositions to guide research through successive approximations.",
+                            "verdict": "no",
+                            "reason": "The statement describes 'Newton's scientific method went beyond simple prediction' and discusses 'empirical success' and 'successive approximations' in general scientific methodology context, not specifically about linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "This robust method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains a foundational element in modern physics.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'theory-mediated measurements' being 'adopted by his successors for extensions of his theory to astronomy' and 'modern physics', which is unrelated to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton originated the Newton-Cotes formulas for numerical integration.",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Newton-Cotes formulas for numerical integration' which is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton's work on infinite series was inspired by Simon Stevin's decimals.",
+                            "verdict": "no",
+                            "reason": "The statement about 'infinite series' and 'Simon Stevin's decimals' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton initiated the field of calculus of variations, formulating and solving Newton's minimal resistance problem in 1685.",
+                            "verdict": "no",
+                            "reason": "The statement about 'calculus of variations' and 'minimal resistance problem' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton used calculus of variations to solve the brachistochrone curve problem in 1697.",
+                            "verdict": "no",
+                            "reason": "The statement about 'calculus of variations' and 'brachistochrone curve problem' is not related to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Newton was a pioneer of vector analysis, demonstrating the parallelogram law for adding physical quantities and introducing the notion of vectors in his Principia.",
+                            "verdict": "no",
+                            "reason": "The statement about 'vector analysis', 'parallelogram law', and 'vectors' is not related to linear regression and error-slaying methods."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "His work on light was collected in his book Opticks, published in 1704.",
+                            "verdict": "no",
+                            "reason": "The statement about 'His work on light was collected in his book Opticks, published in 1704' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers.",
+                            "verdict": "no",
+                            "reason": "The statement about 'He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect.",
+                            "verdict": "no",
+                            "reason": "The statement about 'He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body.",
+                            "verdict": "no",
+                            "reason": "The statement about 'He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He was also the first to explain the Magnus effect.",
+                            "verdict": "no",
+                            "reason": "The statement about 'He was also the first to explain the Magnus effect' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "Moreover, he was the first to analyse Couette flow.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Moreover, he was the first to analyse Couette flow' is not relevant to linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "In addition to his creation of calculus, Newton's work on mathematics was extensive.",
+                            "verdict": "no",
+                            "reason": "The statement about 'In addition to his creation of calculus, Newton's work on mathematics was extensive' does not specifically address linear regression and error-slaying methods."
+                        },
+                        {
+                            "statement": "He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+                            "verdict": "no",
+                            "reason": "The statement about 'He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a' does not address linear regression and error-slaying methods."
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2138,
+                "completion_tokens": 150,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
+}

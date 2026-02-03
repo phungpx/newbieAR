@@ -2,7 +2,7 @@ from loguru import logger
 from deepeval.metrics import BaseMetric
 from deepeval.test_case import LLMTestCase
 from src.models.token_usage import TokenUsage
-from src.evals.bedrock_llm_wrapper import BedrockModelWrapper
+from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
 
 
 class BaseMetricWrapper(BaseMetric):
@@ -41,7 +41,7 @@ class BaseMetricWrapper(BaseMetric):
             TokenUsage with captured tokens or zeros
         """
         try:
-            model: BedrockModelWrapper = self.base_metric.model
+            model: BedrockLLMWrapper = self.base_metric.model
             token_usage = model.token_history[-1]
             if token_usage:
                 logger.debug(

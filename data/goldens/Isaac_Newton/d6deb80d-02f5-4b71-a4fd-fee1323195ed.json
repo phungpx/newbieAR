@@ -1,0 +1,588 @@
+{
+    "input": "How did Newton's early, unpublished calculus, Duillier/Keill's accusations, and RS findings ignite his Leibniz dispute?",
+    "expectedOutput": "The dispute between Isaac Newton and Gottfried Wilhelm Leibniz over the invention of calculus was ignited by Newton's early, yet largely unpublished, development of the mathematical method. Newton had developed calculus, which he called fluxions, as early as 1664-1665, significantly before Leibniz, but was reluctant to publish his findings due to fear of controversy. The conflict escalated when Nicolas Fatio de Duillier, a mathematician close to Newton, began accusing Leibniz of plagiarism in 1699. This was further exacerbated in 1708 when John Keill publicly accused Leibniz of plagiarism in a Royal Society journal. The dispute reached its peak in 1711 when the Royal Society, after conducting a study, officially proclaimed Newton as the true discoverer of calculus and labeled Leibniz a fraud. It was later revealed that Newton himself had written the concluding remarks of this study, solidifying the bitter controversy that lasted until Leibniz's death in 1716.",
+    "context": [
+        " Articles, the basis of Church of England doctrine. By 1675 the issue could not be avoided, and his unconventional views stood in the way.\nHis academic work impressed the Lucasian Professor Isaac Barrow, who was anxious to develop his own religious and administrative potential (he became master of Trinity College two years later); in 1669, Newton succeeded him, only one year after receiving his MA. Newton argued that this should exempt him from the ordination requirement, and King Charles II, whose permission was needed, accepted this argument; thus, a conflict between Newton's religious views and Anglican orthodoxy was averted. He was appointed at the age of 26.\nAs accomplished as Newton was as a theoretician, he was less effective as a teacher; his classes were almost always empty. Humphrey Newton, his sizar (assistant), noted that Newton would arrive on time and, if the room was empty, he would reduce his lecture time in half from 30 to 15 minutes, talk to the walls, then retreat to his experiments, thus fulfilling his contractual obligations. For his part Newton enjoyed neither teaching nor students. Over his career he was only assigned three students to tutor and none were noteworthy.\nNewton was elected a Fellow of the Royal Society (FRS) in 1672.\n\nRevision of Geographia Generalis\nThe Lucasian Professor of Mathematics at Cambridge position included the responsibility of instructing geography. In 1672, and again in 1681, Newton published a revised, corrected, and amended edition of the Geographia Generalis, a geography textbook first published in 1650 by the then-deceased Bernhardus Varenius. In the Geographia Generalis, Varenius attempted to create a theoretical foundation linking scientific principles to classical concepts in geography, and considered geography to be a mix between science and pure mathematics applied to quantifying features of the Earth. While it is unclear if Newton ever lectured in geography, the 1733 Dugdale and Shaw English translation of the book stated Newton published the book to be read by students while he lectured on the subject. The Geographia Generalis is viewed by some as the dividing line between ancient and modern traditions in the history of geography, and Newton's involvement in the subsequent editions is thought to be a large part of the reason for this enduring legacy.\n\nScientific studies\nMathematics\nNewton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669, was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\". \nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.\n\nThe historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . . had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"\nHis work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.\n\nNewton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.\nNewton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared"
+    ],
+    "additionalMetadata": {
+        "evolutions": [
+            "Multi-context",
+            "Constrained"
+        ],
+        "synthetic_input_quality": 1.0,
+        "context_quality": 0.925
+    },
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "The dispute between Newton and Leibniz over the development of calculus was ignited by several factors:\n\n*   **Newton's Early Development and Reluctance to Publish**: Newton developed calculus, referred to as fluxions, starting in 1664, and by May 20, 1665, he had already developed it to the point of computing tangents and curvatures of continuous curves [Isaac_Newton.md - Chunk #14]. He was master of the essential techniques by the end of 1666, almost nine years before Leibniz [Isaac_Newton.md - Chunk #16]. However, Newton was reluctant to publish his calculus due to fear of controversy and criticism [Isaac_Newton.md - Chunk #19].\n*   **Duillier's Accusations**: Starting in 1699, Newton's close friend, the Swiss mathematician Nicolas Fatio de Duillier, accused Leibniz of plagiarism [Isaac_Newton.md - Chunk #19].\n*   **Keill's Accusations**: In 1708, the mathematician John Keill further escalated the situation by accusing Leibniz of plagiarism in the Royal Society journal [Isaac_Newton.md - Chunk #19].\n*   **Royal Society's Findings**: The dispute intensified in 1711 when the Royal Society proclaimed in a study that Newton was the true discoverer and labeled Leibniz a fraud. It was later discovered that Newton himself wrote the study's concluding remarks on Leibniz [Isaac_Newton.md - Chunk #19].\n\nThese events collectively led to the bitter controversy that marred the lives of both men until Leibniz's death in 1716 [Isaac_Newton.md - Chunk #19].",
+    "retrieval_contexts": [
+        {
+            "content": "Newton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.",
+            "source": "Isaac_Newton.md - Chunk #19",
+            "score": 0.7762312
+        },
+        {
+            "content": "The historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . .",
+            "source": "Isaac_Newton.md - Chunk #16",
+            "score": 0.64561677
+        },
+        {
+            "content": "was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\".\nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.",
+            "source": "Isaac_Newton.md - Chunk #15",
+            "score": 0.626824
+        },
+        {
+            "content": "Physicist Edward Andrade stated that Newton \"was capable of greater sustained mental effort than any man, before or since\". He also noted the place of Newton in history, stating:From time to time in the history of mankind a man arises who is of universal significance, whose work changes the current of human thought or of human experience, so that all that comes after him bears evidence of his spirit. Such a man was Shakespeare, such a man was Beethoven, such a man was Newton, and, of the three, his kingdom is the most widespread. The French physicist and mathematician Jean-Baptiste Biot praised Newton's genius, stating that:\nNever was the supremacy of intellect so justly established and so fully confessed . . . In mathematical and in experimental science without an equal and without an example; combining the genius for both in its highest degree.Despite his rivalry with Gottfried Wilhem Leibniz, Leibniz still praised the work of Newton, with him responding to a question at a dinner in 1701 from Sophia Charlotte, the Queen of Prussia, about his view of Newton with:Taking mathematics from the beginning of the world to the time of when Newton lived, what he had done was much the better half.",
+            "source": "Isaac_Newton.md - Chunk #81",
+            "score": 0.5255661
+        },
+        {
+            "content": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+            "source": "Isaac_Newton.md - Chunk #20",
+            "score": 0.5230595
+        },
+        {
+            "content": "Although it was claimed that he was once engaged, Newton never married. Voltaire, who was in London at the time of Newton's funeral, said that he \"was never sensible to any passion, was not subject to the common frailties of mankind, nor had any commerce with women\u2014a circumstance which was assured me by the physician and surgeon who attended him in his last moments.\"\nNewton had a close friendship with the Swiss mathematician Nicolas Fatio de Duillier, whom he met in London around 1689; some of their correspondence has survived. Their relationship came to an abrupt and unexplained end in 1693, and at the same time Newton suffered a nervous breakdown, which included sending wild accusatory letters to his friends Samuel Pepys and John Locke. His note to the latter included the charge that Locke had endeavoured to \"embroil\" him with \"woemen & by other means\".",
+            "source": "Isaac_Newton.md - Chunk #61",
+            "score": 0.52292067
+        },
+        {
+            "content": "Newton's position was defended by his follower Samuel Clarke in a famous correspondence. A century later, Pierre-Simon Laplace's work Celestial Mechanics had a natural explanation for why the planet orbits do not require periodic divine intervention. The contrast between Laplace's mechanistic worldview and Newton's one is the most strident considering the famous answer which the French scientist gave Napoleon, who had criticised him for the absence of the Creator in the M\u00e9canique c\u00e9leste: \"Sire, j'ai pu me passer de cette hypoth\u00e8se\" (\"Sir, I can do without this hypothesis\").\nScholars long debated whether Newton disputed the doctrine of the Trinity. His first biographer, David Brewster, who compiled his manuscripts, interpreted Newton as questioning the veracity of some passages used to support the Trinity, but never denying the doctrine of the Trinity as such. In the twentieth century, encrypted manuscripts written by Newton and bought by John Maynard Keynes (among others) were deciphered and it became known that Newton did indeed reject Trinitarianism.",
+            "source": "Isaac_Newton.md - Chunk #68",
+            "score": 0.5092181
+        },
+        {
+            "content": "Newton was criticised for introducing \"occult agencies\" into science because of his postulate of an invisible force able to act over vast distances. Later, in the second edition of the Principia (1713), Newton firmly rejected such criticisms in a concluding General Scholium, writing that it was enough that the phenomenon implied a gravitational attraction, as they did; but they did not so far indicate its cause, and it was both unnecessary and improper to frame hypotheses of things that were not implied by the phenomenon. (Here he used what became his famous expression \"Hypotheses non fingo\".)\nWith the Principia, Newton became internationally recognised. He acquired a circle of admirers, including the Swiss-born mathematician Nicolas Fatio de Duillier.",
+            "source": "Isaac_Newton.md - Chunk #45",
+            "score": 0.5020799
+        },
+        {
+            "content": "had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"",
+            "source": "Isaac_Newton.md - Chunk #17",
+            "score": 0.4927736
+        },
+        {
+            "content": "Newton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669,",
+            "source": "Isaac_Newton.md - Chunk #14",
+            "score": 0.49229613
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response directly and comprehensively addresses all aspects of the question about how Newton's early unpublished calculus work, the Duillier/Keill accusations, and the Royal Society's findings contributed to igniting the dispute with Leibniz. No irrelevant information was included, making it a perfectly focused and relevant answer.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Provides background on Newton's early calculus development but doesn't directly explain how it ignited the dispute"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Provides timeline details about Newton's early calculus work but doesn't directly connect to how the dispute was ignited"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Provides supporting context about Newton's early development but doesn't directly explain the ignition of the dispute"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 290,
+                "completion_tokens": 92,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully aligned with the retrieval context and maintains complete faithfulness to the source information.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 50,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 0.6,
+            "reason": "The score is 0.60 because while the first node in the retrieval contexts directly addresses all key aspects including Newton's reluctance to publish calculus due to fear of controversy, Duillier's accusations starting in 1699, Keill's accusations in 1708, and the Royal Society's 1711 study, there are numerous irrelevant nodes ranked higher than the second relevant node. The second through ninth nodes contain information that either provides general historical context about Newton developing calculus earlier than Leibniz, discusses Newton's general achievements and rivalry, focuses on his religious views, mentions his friendship with Duillier without connecting it to the dispute, or covers technical aspects of calculus methods without addressing the specific triggering events. Only the tenth node provides relevant context about Newton's early calculus development timeline, but it is ranked much lower than it should be given its relevance to the question about his early unpublished work.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This document directly addresses all key aspects of the question: Newton's reluctance to publish calculus due to fear of controversy, Duillier's accusations starting in 1699, Keill's accusations in 1708, and the Royal Society's 1711 study proclaiming Newton as the true discoverer while labeling Leibniz a fraud. It states 'Newton had been reluctant to publish his calculus because he feared controversy' and 'Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal'."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this provides context about the historical consensus that 'Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz', it doesn't directly address the specific events that ignited the dispute (Duillier/Keill's accusations or RS findings)."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This mentions the dispute generally, stating 'Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus' and that 'Newton came to develop calculus much earlier than Leibniz', but doesn't address the specific triggering events asked about in the question."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document focuses on general praise for Newton's intellect and achievements, mentioning 'Despite his rivalry with Gottfried Wilhem Leibniz', but provides no information about how the dispute was ignited or the specific events mentioned in the question."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's mathematical discoveries including the binomial theorem 'in 1664-5' and various other mathematical contributions, but does not address the dispute with Leibniz or the events that ignited it."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this mentions Newton's 'close friendship with the Swiss mathematician Nicolas Fatio de Duillier' and that 'Their relationship came to an abrupt and unexplained end in 1693', it doesn't address Duillier's role in the Leibniz dispute or his accusations of plagiarism."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Newton's religious views and theological disputes, mentioning 'Newton did indeed reject Trinitarianism', but has no relevance to the calculus dispute with Leibniz or the events that ignited it."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This mentions that 'He acquired a circle of admirers, including the Swiss-born mathematician Nicolas Fatio de Duillier' but doesn't address Duillier's accusations against Leibniz or role in igniting the dispute."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses the technical merits and notation of Newton's vs Leibniz's calculus methods, but doesn't address the specific events that ignited their dispute (Duillier/Keill's accusations or Royal Society findings)."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This provides important context about Newton's early development of calculus, stating 'His work on calculus, usually referred to as fluxions, began in 1664' and 'by 20 May 1665...Newton had already developed the calculus', which supports the timeline mentioned in the expected output about Newton's early unpublished work."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1288,
+                "completion_tokens": 209,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because every sentence in the expected output is fully supported by information found in the nodes in retrieval context. The timeline and key events are well-documented across multiple nodes, with node 1 providing comprehensive details about the escalation from Duillier's 1699 accusations through Keill's 1708 public accusations to the Royal Society's 1711 proclamation, while node 11 confirms Newton's early development of fluxions beginning in 1664, creating complete attribution for the entire narrative.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "3rd node confirms Newton and Leibniz dispute over calculus priority, and 11th node states Newton's work on calculus 'began in 1664' which aligns with the timeframe mentioned."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "11th node states 'His work on calculus, usually referred to as fluxions, began in 1664' and 1st node confirms 'Newton had been reluctant to publish his calculus because he feared controversy...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'Starting in 1699, Duillier accused Leibniz of plagiarism' and confirms Duillier was 'close to' Newton."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node concludes 'Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.'"
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 883,
+                "completion_tokens": 128,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.43137254901960786,
+            "reason": "The score is 0.43 because while the retrieval context contains relevant information about 'Duillier accused Leibniz of plagiarism' starting in 1699, 'John Keill accused Leibniz of plagiarism in 1708', and 'the Royal Society proclaimed in a study that it was Newton who was the true discoverer' in 1711, much of the context consists of irrelevant information including 'Newton's accomplishments in Principia', discussions of 'Trinity doctrine', 'Newton's marital status', and 'modern academic assessments' that do not address how these specific factors ignited the dispute.",
+            "threshold": 0.5,
+            "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had been reluctant to publish his calculus because he feared controversy and criticism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was close to the Swiss mathematician Nicolas Fatio de Duillier.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Starting in 1699, Duillier accused Leibniz of plagiarism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Leibniz and some of his friends sought to belittle Newton's case",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In Principia, Newton was able to formulate and resolve problems by the integration of differential equations and anticipated many results that later exponents of the calculus regarded as their own novel achievements",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's accomplishments 'in Principia' and his anticipation of 'results that later exponents of the calculus regarded as their own novel achievements' describes Newton's mathematical contributions rather than how the dispute with Leibniz was ignited."
+                        },
+                        {
+                            "statement": "Newton had rapid development of calculus in comparison to his contemporaries well before 1690",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was identified by Barrow in a letter sent to Collins that August as the work 'of an extraordinary genius and proficiency in these things'",
+                            "verdict": "no",
+                            "reason": "The statement about Barrow's letter to Collins describing Newton as 'of an extraordinary genius and proficiency in these things' does not address how Newton's early unpublished calculus, Duillier/Keill's accusations, or RS findings specifically ignited the dispute with Leibniz."
+                        },
+                        {
+                            "statement": "Newton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Both are now credited with independently developing calculus, though with very different mathematical notations",
+                            "verdict": "no",
+                            "reason": "The information about 'both being credited with independently developing calculus with different notations' is about the outcome/resolution rather than how the dispute was ignited."
+                        },
+                        {
+                            "statement": "It is established that Newton came to develop calculus much earlier than Leibniz",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians",
+                            "verdict": "no",
+                            "reason": "The information about 'Leibniz's notation being more convenient and adopted by continental European mathematicians, and after 1820, by British mathematicians' describes later historical outcomes rather than how the dispute was ignited."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Physicist Edward Andrade stated that Newton was capable of greater sustained mental effort than any man, before or since, and placed Newton among figures of universal significance like Shakespeare and Beethoven.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton being 'capable of greater sustained mental effort than any man, before or since' and comparing him to 'Shakespeare' and 'Beethoven' does not address how Newton's early calculus, Duillier/Keill's accusations, and RS findings ignited the Leibniz dispute."
+                        },
+                        {
+                            "statement": "Jean-Baptiste Biot praised Newton's genius, stating his supremacy of intellect was justly established and fully confessed, combining genius for both mathematical and experimental science in its highest degree.",
+                            "verdict": "no",
+                            "reason": "The statement about Biot praising Newton's 'supremacy of intellect' and 'combining genius for both mathematical and experimental science' does not explain how the early calculus, accusations, and RS findings led to the dispute with Leibniz."
+                        },
+                        {
+                            "statement": "Despite his rivalry with Gottfried Wilhelm Leibniz, Leibniz praised Newton's work, telling Queen Sophia Charlotte of Prussia in 1701 that Newton's contributions were much the better half of all mathematics from the beginning of the world.",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'rivalry with Gottfried Wilhelm Leibniz' and Leibniz's praise of Newton, but does not explain how 'Newton's early, unpublished calculus, Duillier/Keill's accusations, and RS findings' ignited the dispute."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called 'one of the most powerful and significant in the whole of mathematics.'",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5' is not relevant to the question about how Newton's early unpublished calculus, Duillier/Keill's accusations, and RS findings ignited his dispute with Leibniz."
+                        },
+                        {
+                            "statement": "He discovered Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves.",
+                            "verdict": "no",
+                            "reason": "The information about 'Newton's identities, Newton's method, the Newton polygon, and classified cubic plane curves' does not relate to the Leibniz dispute or the specific elements mentioned in the question."
+                        },
+                        {
+                            "statement": "Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Cremona transformations' and 'theory of finite differences' is not relevant to how the Leibniz dispute was ignited."
+                        },
+                        {
+                            "statement": "He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations.",
+                            "verdict": "no",
+                            "reason": "The information about 'B\u00e9zout's theorem', 'fractional indices' and 'coordinate geometry to derive solutions to Diophantine equations' does not address the question about the Leibniz dispute."
+                        },
+                        {
+                            "statement": "He approximated partial sums of the harmonic series by logarithms and was the first to use power series with confidence and to revert power series.",
+                            "verdict": "no",
+                            "reason": "The statement about 'partial sums of the harmonic series by logarithms' and 'power series' does not relate to the Leibniz dispute or the specific factors that ignited it."
+                        },
+                        {
+                            "statement": "He introduced the Puisseux series and provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft.",
+                            "verdict": "no",
+                            "reason": "The information about 'Puisseux series' and 'Taylor series' does not address how Duillier/Keill's accusations and RS findings ignited Newton's dispute with Leibniz."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton never married and was claimed to have once been engaged.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's marital status 'Newton never married and was claimed to have once been engaged' is not relevant to how his calculus work, Duillier/Keill's accusations, and RS findings ignited his dispute with Leibniz."
+                        },
+                        {
+                            "statement": "Voltaire said Newton was never sensible to any passion and had no commerce with women.",
+                            "verdict": "no",
+                            "reason": "Voltaire's comments about Newton being 'never sensible to any passion' and having 'no commerce with women' are not relevant to the calculus dispute with Leibniz."
+                        },
+                        {
+                            "statement": "Newton had a close friendship with Nicolas Fatio de Duillier, whom he met in London around 1689.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton and Duillier's relationship came to an abrupt and unexplained end in 1693.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton suffered a nervous breakdown in 1693, which included sending wild accusatory letters to Samuel Pepys and John Locke.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton accused Locke of trying to embroil him with women and by other means.",
+                            "verdict": "no",
+                            "reason": "The specific accusation that Locke 'endeavoured to embroil him with woemen & by other means' is not directly relevant to the calculus dispute with Leibniz."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's position was defended by his follower Samuel Clarke in a famous correspondence.",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'Newton's position was defended by his follower Samuel Clarke in a famous correspondence' but does not specify this relates to the Leibniz dispute or mention calculus, Duillier/Keill's accusations, or RS findings."
+                        },
+                        {
+                            "statement": "A century later, Pierre-Simon Laplace's work Celestial Mechanics had a natural explanation for why the planet orbits do not require periodic divine intervention, contrasting with Newton's mechanistic worldview.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Pierre-Simon Laplace's work Celestial Mechanics' and 'planet orbits do not require periodic divine intervention' is unrelated to Newton's calculus, the Leibniz dispute, Duillier/Keill's accusations, or RS findings."
+                        },
+                        {
+                            "statement": "Scholars long debated whether Newton disputed the doctrine of the Trinity.",
+                            "verdict": "no",
+                            "reason": "The statement 'Scholars long debated whether Newton disputed the doctrine of the Trinity' has nothing to do with Newton's calculus, the Leibniz dispute, Duillier/Keill's accusations, or RS findings."
+                        },
+                        {
+                            "statement": "Newton's first biographer, David Brewster, interpreted Newton as questioning the veracity of some passages used to support the Trinity, but never denying the doctrine of the Trinity as such.",
+                            "verdict": "no",
+                            "reason": "The statement about 'David Brewster' and Newton's views on 'the Trinity' is unrelated to Newton's early calculus, the Leibniz dispute, Duillier/Keill's accusations, or RS findings."
+                        },
+                        {
+                            "statement": "In the twentieth century, encrypted manuscripts written by Newton were deciphered and it became known that Newton did indeed reject Trinitarianism.",
+                            "verdict": "no",
+                            "reason": "The statement about 'encrypted manuscripts' and Newton's rejection of 'Trinitarianism' has no connection to Newton's calculus, the Leibniz dispute, Duillier/Keill's accusations, or RS findings."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was criticised for introducing 'occult agencies' into science because of his postulate of an invisible force able to act over vast distances.",
+                            "verdict": "no",
+                            "reason": "The statement discusses criticism of Newton's gravitational theory but has nothing to do with 'Newton's early, unpublished calculus, Duillier/Keill's accusations, and RS findings' that ignited his Leibniz dispute."
+                        },
+                        {
+                            "statement": "In the second edition of the Principia (1713), Newton firmly rejected such criticisms in a concluding General Scholium, writing that it was enough that the phenomenon implied a gravitational attraction, and used his famous expression 'Hypotheses non fingo'.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's response to criticism in the Principia and his famous expression 'Hypotheses non fingo' is unrelated to the Leibniz dispute regarding calculus, Duillier/Keill's accusations, and RS findings."
+                        },
+                        {
+                            "statement": "With the Principia, Newton became internationally recognised and acquired a circle of admirers, including the Swiss-born mathematician Nicolas Fatio de Duillier.",
+                            "verdict": "no",
+                            "reason": "While this mentions 'Nicolas Fatio de Duillier', it only describes him as an admirer of Newton after the Principia publication, not his role in making accusations that ignited the Leibniz dispute."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Despite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics",
+                            "verdict": "no",
+                            "reason": "This statement about 'the convenience of Leibniz's notation' and 'Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics' discusses technical aspects of mathematical notation rather than addressing how the dispute was ignited through early unpublished calculus, accusations, or RS findings."
+                        },
+                        {
+                            "statement": "Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating Newton's geometrical methods are more concise and elegant and reveal deeper principles than formal calculus methods",
+                            "verdict": "no",
+                            "reason": "The statement about 'Some academics have noted the richness and depth of Newton's work' and Roger Penrose's praise of 'Newton's geometrical methods are more concise and elegant' is a modern academic assessment that doesn't address how the historical dispute between Newton and Leibniz was ignited."
+                        },
+                        {
+                            "statement": "The mathematician Vladimir Arnold stated that Newton's original presentation is more modern, more understandable and richer in ideas than the translation of his geometrical ideas into the formal language of Leibniz's calculus",
+                            "verdict": "no",
+                            "reason": "Vladimir Arnold's statement that 'Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz' is a modern mathematician's comparative assessment rather than information about how the dispute was ignited through early unpublished work, accusations, or RS findings."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's work has been said 'to distinctly advance every branch of mathematics then studied'.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton advancing 'every branch of mathematics then studied' is not relevant to the specific question about how early unpublished calculus, Duillier/Keill's accusations, and RS findings ignited the Leibniz dispute."
+                        },
+                        {
+                            "statement": "Newton's work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 he had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton recorded a definitive tract of calculus in what is called his 'Waste Book'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was self-taught in mathematics and did his research without help, as Newton carried out his education in mathematics and his program of research entirely on his own.",
+                            "verdict": "no",
+                            "reason": "The information about Newton being 'self-taught in mathematics and did his research without help' and 'carried out his education in mathematics and his program of research entirely on his own' does not relate to the Leibniz dispute question."
+                        },
+                        {
+                            "statement": "His work De analysi per aequationes numero terminorum infinitas was sent by Isaac Barrow to John Collins in June 1669.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2597,
+                "completion_tokens": 156,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
+}
