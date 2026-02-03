@@ -141,8 +141,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--file_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=True)
+    parser.add_argument(
+        "--strategy",
+        type=str,
+        default="hybrid",
+        choices=["hybrid", "hierarchical"],
+        help="Chunking strategy to use (default: hybrid)"
+    )
     args = parser.parse_args()
 
-    chunker = DocChunker(output_dir=args.output_dir)
+    chunker = DocChunker(strategy=args.strategy, output_dir=args.output_dir)
     chunks, output_path = chunker.chunk_document(args.file_path)
     print(f"{len(chunks)} chunks saved to {output_path}")
