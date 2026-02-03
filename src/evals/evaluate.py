@@ -67,7 +67,6 @@ def create_metrics(
     ]
 
     _metric_wrappers = [BaseMetricWrapper(metric) for metric in _metrics]
-    logger.info(f"RAG metrics: {[metric.__name__ for metric in _metrics]}")
 
     return _metric_wrappers
 
@@ -172,6 +171,13 @@ if __name__ == "__main__":
         async_mode=args.async_mode,
     )
 
+    logger.info(
+        f"Metrics: {[metric.base_metric.__name__ for metric in _metric_wrappers]}"
+    )
+    logger.info(f"[..] Metrics threshold: {args.threshold}")
+    logger.info(f"[..] Metrics include reason: {args.include_reason}")
+    logger.info(f"[..] Metrics async mode: {args.async_mode}")
+
     for file_path in Path(args.file_dir).glob("*.json"):
         with open(file=file_path, mode="r", encoding="utf-8") as f:
             sample = json.load(f)
@@ -197,7 +203,7 @@ if __name__ == "__main__":
             with open(file=file_path, mode="w", encoding="utf-8") as f:
                 json.dump(sample, f, indent=4)
 
-            logger.info(f"Results for {file_path}: {metrics_result}")
+            logger.info(f"Results for {file_path}")
         except Exception as e:
             logger.error(f"Error evaluating {file_path}: {e}")
             continue

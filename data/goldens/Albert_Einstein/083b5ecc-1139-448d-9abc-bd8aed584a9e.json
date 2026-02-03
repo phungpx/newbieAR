@@ -46,12 +46,26 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response was perfectly relevant with no irrelevant statements identified. The answer stayed completely on topic, addressing Einstein's Swiss education relocation and its connection to his German citizenship renunciation for conscription purposes. Great job maintaining focus!",
+            "reason": "The score is 1.00 because the response stayed completely on topic and directly addressed the complex relationship between Einstein's move to Switzerland for education and how this enabled him to renounce his German citizenship to avoid military conscription. No irrelevant information was included - excellent focus!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this statement provides information about Einstein's education in Switzerland, it occurs after his citizenship renunciation and doesn't directly explain how the relocation enabled the renunciation for conscription purposes"
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 274,
-                "completion_tokens": 68,
+                "completion_tokens": 70,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +74,26 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output perfectly aligns with the retrieval context and maintains complete faithfulness to the source information.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly aligned with the retrieval context.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context states that Einstein forsook his German citizenship as a subject of the Kingdom of W\u00fcrttemberg in 1896, but does not specify it was in January or mention his father's approval or that it was specifically to avoid military conscription."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 50,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +102,34 @@
         },
         "Contextual Precision": {
             "score": 0.8333333333333333,
-            "reason": "The score is 0.83 because the first two nodes are correctly ranked with the most relevant node first, which 'directly addresses the question by stating Einstein moved to Switzerland in 1895, forsaking his German citizenship' and mentions his enrollment 'in the mathematics and physics teaching diploma program.' However, the score isn't higher because the second node in retrieval contexts is irrelevant, as it 'does not directly address how his Swiss education enabled his German citizenship renunciation for conscription avoidance' and instead discusses Swiss military service rather than German conscription. The third node, which 'specifically states Einstein renounced his citizenship in order to avoid conscription' and connects his Swiss education with citizenship renunciation, should ideally be ranked higher than the irrelevant second node.",
+            "reason": "The score is 0.83 because while the most relevant nodes are ranked at the top, there are some irrelevant nodes mixed in the middle rankings that should be positioned lower. The first node in retrieval contexts effectively addresses the connection with 'moved to Switzerland in 1895, forsaking his German citizenship (as a subject of the Kingdom of W\u00fcrttemberg) the following year,' and the third node directly explains the conscription avoidance aspect with 'Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service.' However, the second node, which mentions Swiss citizenship acquisition but doesn't directly address the connection between his initial move to Switzerland and his German citizenship renunciation to avoid conscription, is ranked higher than it should be. The fourth and fifth nodes appropriately rank lower as they cover his early childhood education in Germany and his later 1933 citizenship renunciation respectively, which are not directly relevant to the specific 1895-1896 relocation and conscription avoidance question.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This document provides key information about Einstein's move to Switzerland in 1895 and his renunciation of German citizenship 'the following year' (1896), directly addressing the connection between his Swiss relocation and citizenship renunciation. It states he 'moved to Switzerland in 1895, forsaking his German citizenship (as a subject of the Kingdom of W\u00fcrttemberg) the following year.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this document mentions Einstein's Swiss citizenship acquisition and notes that 'the Swiss authorities deemed him medically unfit for military service,' it doesn't directly address the connection between his initial move to Switzerland and his German citizenship renunciation to avoid conscription."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document directly addresses the core question by stating 'In January 1896, with his father's approval, Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service.' It also mentions his educational progress and enrollment 'At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document provides background information about Einstein's birth and early childhood education in Germany, including that he 'was born in Ulm, in the Kingdom of W\u00fcrttemberg' and his early schooling, but does not address his move to Switzerland or citizenship renunciation."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document discusses Einstein's later renunciation of German citizenship in 1933 during the Nazi period, stating he 'immediately went to the German consulate and surrendered his passport, formally renouncing his German citizenship.' However, this is a different event from the 1896 renunciation related to avoiding conscription."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 932,
-                "completion_tokens": 179,
+                "prompt_tokens": 872,
+                "completion_tokens": 233,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +138,30 @@
         },
         "Contextual Recall": {
             "score": 0.75,
-            "reason": "The score is 0.75 because most key claims are well-supported by nodes in retrieval context. The 1st and 3rd nodes effectively support the main narrative about Einstein's 1895 move to Switzerland, his January 1896 citizenship renunciation with father's approval, and the motivation to avoid German military conscription. However, specific educational details mentioned in the expected output, such as his attendance at the Argovian cantonal school in Aarau and 1896 graduation, lack direct attribution to the retrieval context, preventing a perfect score.",
+            "reason": "The score is 0.75 because most key facts are well-supported by nodes in retrieval context, particularly Einstein's 1895 move to Switzerland (node 1) and his January 1896 citizenship renunciation to avoid conscription (node 3), which covers the main claims in sentences 1, 3, and 4. However, sentence 2 contains specific educational details about his initial polytechnic attempt, attendance at Argovian cantonal school in Aarau, and 1896 graduation that are not found in the retrieval context, preventing a perfect score.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'Einstein moved to Switzerland in 1895' and 3rd node confirms 'In January 1896, with his father's approval, Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "1st node mentions 'Einstein moved to Switzerland in 1895' and 'enrolled in the mathematics and physics teaching diploma program at the Swiss federal polytechnic school in Zurich'. However, the specific details about initially attempting to enter in 1895, attending Argovian cantonal school in Aarau, and graduating in 1896 are not found in the retrieval context."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "3rd node directly states 'In January 1896, with his father's approval, Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg' which matches the sentence content."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "3rd node confirms 'Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service' which supports the decision being made to avoid conscription, though the phrase 'facilitated by his physical presence and educational commitments outside of German territory' is not explicitly stated."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 691,
-                "completion_tokens": 135,
+                "prompt_tokens": 787,
+                "completion_tokens": 141,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +169,195 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.32142857142857145,
-            "reason": "The score is 0.32 because while the retrieval context contains key relevant information such as 'Einstein moved to Switzerland in 1895, forsaking his German citizenship (as a subject of the Kingdom of W\u00fcrttemberg) the following year' and 'Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service', the majority of the context consists of irrelevant details about his later life, including 'PhD dissertation to the University of Zurich', 'Adolf Hitler came to power', 'Manhattan project', and biographical information about 'his parents' and early childhood that do not address the specific connection between Swiss education relocation and conscription avoidance.",
+            "score": 0.3125,
+            "reason": "The score is 0.31 because while the retrieval context contains some directly relevant information such as 'Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service' and details about his Swiss education enrollment, the majority of the context consists of irrelevant biographical details including information about his later life in America, work at the patent office, family background, childhood development, and Nazi persecution - none of which directly address how his Swiss education relocation enabled his German citizenship renunciation for conscription purposes.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein moved to Switzerland in 1895 and forsook his German citizenship (as a subject of the Kingdom of W\u00fcrttemberg) the following year in 1896",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1897, at age seventeen, Einstein enrolled in the mathematics and physics teaching diploma program at the Swiss federal polytechnic school in Zurich, graduating in 1900",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein acquired Swiss citizenship in 1901, which he kept for the rest of his life",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein secured a permanent position at the Swiss Patent Office in Bern",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1905, Einstein submitted a successful PhD dissertation to the University of Zurich",
+                            "verdict": "no",
+                            "reason": "The information about Einstein submitting 'a successful PhD dissertation to the University of Zurich' in 1905 is not directly relevant to how his Swiss education relocation enabled his German citizenship renunciation for conscription purposes."
+                        },
+                        {
+                            "statement": "In 1914, Einstein moved to Berlin to join the Prussian Academy of Sciences and became director of the Kaiser Wilhelm Institute for Physics in 1917, also becoming a German citizen again as a subject of the Kingdom of Prussia",
+                            "verdict": "no",
+                            "reason": "The information about Einstein moving 'to Berlin to join the Prussian Academy of Sciences' and becoming 'director of the Kaiser Wilhelm Institute for Physics in 1917' and becoming 'a German citizen again' is not relevant to how his Swiss education relocation enabled his German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "In 1933, Einstein decided to remain in the US due to Nazi persecution and was granted American citizenship in 1940",
+                            "verdict": "no",
+                            "reason": "The information about Einstein deciding 'to remain in the US' in 1933 due to 'Nazi persecution' and being 'granted American citizenship in 1940' is not relevant to how his Swiss education relocation enabled his German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "Einstein endorsed a letter to President Franklin D. Roosevelt about the potential German nuclear weapons program and recommending US research that became the Manhattan Project",
+                            "verdict": "no",
+                            "reason": "The information about Einstein endorsing 'a letter to President Franklin D. Roosevelt alerting him to the potential German nuclear weapons program' and the 'Manhattan' project is not relevant to how his Swiss education relocation enabled his German citizenship renunciation for conscription."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein graduated from the federal polytechnic school in 1900, duly certified as competent to teach mathematics and physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein acquired Swiss citizenship in February 1901.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's acquisition of Swiss citizenship was not followed by conscription as the Swiss authorities deemed him medically unfit for military service.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Swiss schools failed to offer Einstein a teaching position despite almost two years of applications.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Swiss schools failed to offer Einstein a teaching position despite almost two years of applications' is not directly relevant to how his Swiss education relocation enabled German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "Einstein secured a post at the Swiss Patent Office in Bern as an assistant examiner with help from Marcel Grossmann's father.",
+                            "verdict": "no",
+                            "reason": "The information about 'secured a post at the Swiss Patent Office in Bern as an assistant examiner with help from Marcel Grossmann's father' does not relate to how his Swiss education enabled German citizenship renunciation for conscription."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In January 1896, with his father's approval, Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The Matura (graduation for the successful completion of higher secondary schooling), awarded to him in September 1896, acknowledged him to have performed well across most of the curriculum, allotting him a top grade of 6 for history, physics, algebra, geometry, and descriptive geometry.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He befriended fellow student Marcel Grossmann, who would help him there to get by despite his loose study habits, and later to mathematically underpin his revolutionary insights into physics.",
+                            "verdict": "no",
+                            "reason": "The information about befriending Marcel Grossmann and his later help with revolutionary insights into physics is not directly related to how Einstein's Swiss education enabled his German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "Marie Winteler, a year older than him, took up a teaching post in Olsberg, Switzerland.",
+                            "verdict": "no",
+                            "reason": "The information about 'Marie Winteler, a year older than him, took up a teaching post in Olsberg, Switzerland' is not relevant to Einstein's citizenship renunciation or conscription avoidance."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein was born in Ulm, in the Kingdom of W\u00fcrttemberg in the German Empire, on 14 March 1879.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein being 'born in Ulm, in the Kingdom of W\u00fcrttemberg in the German Empire, on 14 March 1879' is not relevant to how his Swiss education relocation enabled German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "His parents, secular Ashkenazi Jews, were Hermann Einstein, a salesman and engineer, and Pauline Koch.",
+                            "verdict": "no",
+                            "reason": "The information about his parents being 'secular Ashkenazi Jews' and their names and occupations is not relevant to the question about Swiss education relocation and German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "In 1880, the family moved to Munich's borough of Ludwigsvorstadt-Isarvorstadt, where Einstein's father and his uncle Jakob founded Elektrotechnische Fabrik J. Einstein & Cie, a company that manufactured electrical equipment based on direct current.",
+                            "verdict": "no",
+                            "reason": "The statement about the family moving 'to Munich's borough of Ludwigsvorstadt-Isarvorstadt' and the founding of 'Elektrotechnische Fabrik J. Einstein & Cie, a company that manufactured electrical equipment' is not relevant to Swiss education relocation and German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "When he was very young, his parents worried that he had a learning disability because he was very slow to learn to talk.",
+                            "verdict": "no",
+                            "reason": "The information about his parents worrying 'that he had a learning disability because he was very slow to learn to talk' is not relevant to the question about Swiss education relocation and German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "When he was five and sick in bed, his father brought him a compass. This sparked his lifelong fascination with electromagnetism.",
+                            "verdict": "no",
+                            "reason": "The story about his father bringing him 'a compass' and it sparking 'his lifelong fascination with electromagnetism' is not relevant to Swiss education relocation and German citizenship renunciation for conscription."
+                        },
+                        {
+                            "statement": "Einstein attended St. Peter's Catholic elementary school in Munich from the age of five.",
+                            "verdict": "no",
+                            "reason": "The information about Einstein attending 'St. Peter's Catholic elementary school in Munich' is not relevant to Swiss education relocation and German citizenship renunciation for conscription as it describes his education in Germany, not Switzerland."
+                        },
+                        {
+                            "statement": "When he was eight, he was transferred to the Luitpold Gymnasium, where he received advanced primary and then secondary school education.",
+                            "verdict": "no",
+                            "reason": "The statement about being 'transferred to the Luitpold Gymnasium' for education is not relevant to the question about Swiss education relocation and German citizenship renunciation for conscription as it describes his German education, not Swiss relocation."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In February 1933, while on a visit to the United States, Einstein knew he could not return to Germany with the rise to power of the Nazis under Germany's new chancellor, Adolf Hitler.",
+                            "verdict": "no",
+                            "reason": "This statement mentions Einstein's realization about not returning to Germany due to Nazi rise to power, but contains no information about 'Swiss education relocation' or 'conscription' as asked in the input."
+                        },
+                        {
+                            "statement": "Einstein undertook his third two-month visiting professorship at the California Institute of Technology in Pasadena in early 1933.",
+                            "verdict": "no",
+                            "reason": "This statement about Einstein's 'visiting professorship at the California Institute of Technology' is unrelated to Swiss education relocation or conscription."
+                        },
+                        {
+                            "statement": "In February and March 1933, the Gestapo repeatedly raided his family's apartment in Berlin.",
+                            "verdict": "no",
+                            "reason": "This statement about 'Gestapo raids' has nothing to do with Swiss education relocation or conscription."
+                        },
+                        {
+                            "statement": "The German Reichstag passed the Enabling Act on 23 March, transforming Hitler's government into a de facto legal dictatorship.",
+                            "verdict": "no",
+                            "reason": "This statement about the 'Enabling Act' and 'Hitler's government' is unrelated to Swiss education relocation or conscription."
+                        },
+                        {
+                            "statement": "The Nazis raided their cottage and confiscated Einstein's personal sailboat.",
+                            "verdict": "no",
+                            "reason": "This statement about 'cottage raids' and 'sailboat confiscation' has nothing to do with Swiss education relocation or conscription."
+                        },
+                        {
+                            "statement": "Upon landing in Antwerp, Belgium on 28 March, Einstein immediately went to the German consulate and surrendered his passport, formally renouncing his German citizenship.",
+                            "verdict": "no",
+                            "reason": "While this statement mentions Einstein's 'renouncing his German citizenship', it occurred in 1933 in Belgium due to Nazi persecution, not due to 'Swiss education relocation' or for 'conscription' reasons as asked in the input."
+                        },
+                        {
+                            "statement": "The Nazis later sold his boat and converted his cottage into a Hitler Youth camp.",
+                            "verdict": "no",
+                            "reason": "This statement about the Nazis 'selling his boat' and 'converting his cottage into a Hitler Youth camp' is unrelated to Swiss education relocation or conscription."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1537,
-                "completion_tokens": 164,
+                "prompt_tokens": 1625,
+                "completion_tokens": 127,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

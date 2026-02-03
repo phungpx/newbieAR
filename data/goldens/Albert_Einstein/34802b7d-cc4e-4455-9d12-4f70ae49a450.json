@@ -15,7 +15,7 @@
         "context_quality": 0.9
     },
     "sourceFile": "data/wikipedia/files/Albert_Einstein.md",
-    "actual_output": "Despite contemporary skepticism about relativity and the particulate nature of light, Einstein was awarded the 1921 Nobel Prize in Physics in 1922 for his discovery of the **law of the photoelectric effect**, which was one of his significant works completed in 1905 [Albert_Einstein.md - Chunk #0, Albert_Einstein.md - Chunk #15, Albert_Einstein.md - Chunk #20, Albert_Einstein.md - Chunk #90].",
+    "actual_output": "Despite contemporary skepticism about relativity and the particulate nature of light, Einstein's 1905 discovery of the **law of the photoelectric effect** earned him the 1921 Nobel Prize in Physics [Albert_Einstein.md - Chunk #0, Albert_Einstein.md - Chunk #15, Albert_Einstein.md - Chunk #20, Albert_Einstein.md - Chunk #90].",
     "retrieval_contexts": [
         {
             "content": "Einstein was elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920, and a Foreign Member of the Royal Society in 1921. In 1922, he was awarded the 1921 Nobel Prize in Physics \"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect\". At this point some physicists still regarded the general theory of relativity skeptically, and the Nobel citation displayed a degree of doubt even about the work on photoelectricity that it acknowledged: it did not assent to Einstein's notion of the particulate nature of light, which only won over the entire scientific community when S. N. Bose derived the Planck spectrum in 1924. That same year, Einstein was elected an International Honorary Member of the American Academy of Arts and Sciences. Britain's closest equivalent of the Nobel award, the Royal Society's Copley Medal, was not hung around Einstein's neck until 1925. He was elected an International Member of the American Philosophical Society in 1930.",
@@ -46,12 +46,26 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant statements. Great job staying completely on topic and providing exactly what was asked for!",
+            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant statements! The answer correctly identified Einstein's photoelectric effect discovery from 1905 as what earned him the Nobel Prize, staying completely on-topic and relevant.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "idk",
+                    "reason": "This statement confirms context mentioned in the question but doesn't answer what discovery earned Einstein the Nobel Prize"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 48,
+                "completion_tokens": 65,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +74,26 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to the retrieval context with all information accurately represented.",
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness to the source information.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context states that Einstein was awarded the 1921 Nobel Prize for his discovery of the law of the photoelectric effect, but it also indicates that Einstein completed work on the photoelectric effect in 1905. However, the context does not explicitly state that Einstein 'discovered' the law of the photoelectric effect in 1905, only that he worked on it."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 46,
+                "completion_tokens": 50,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -73,13 +101,35 @@
             }
         },
         "Contextual Precision": {
-            "score": 0.8875,
-            "reason": "The score is 0.89 because while most relevant nodes are ranked appropriately, the third node discussing 'Einstein's 1905 work on relativity remained controversial for many years' is positioned among highly relevant nodes despite focusing on relativity rather than the photoelectric effect which was the actual reason for his Nobel Prize. This irrelevant node should be ranked lower than the surrounding nodes that directly state 'he was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect' and mention his 'famous papers on the photoelectric effect' from his 'annus mirabilis for physics' year of 1905.",
+            "score": 0.9166666666666666,
+            "reason": "The score is 0.92 because the retrieval contexts are well-ordered overall, with the first, second, and fourth nodes correctly ranked as highly relevant since they directly address Einstein's 1921 Nobel Prize for his discovery of the law of the photoelectric effect and the contemporary skepticism about his theories. However, the score is not perfect because the third node, which discusses Einstein's 1905 work on special relativity and mentions that 'Einstein's 1905 work on relativity remained controversial for many years' but does not mention the photoelectric effect or the Nobel Prize, is ranked higher than the fifth node, which at least mentions Einstein's 'famous papers on the photoelectric effect' from 1905, making it somewhat more relevant to the specific discovery that earned the Nobel Prize.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This document directly addresses all key aspects of the question. It states Einstein 'was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect', mentions that 'some physicists still regarded the general theory of relativity skeptically', and notes 'the Nobel citation displayed a degree of doubt even about the work on photoelectricity that it acknowledged: it did not assent to Einstein's notion of the particulate nature of light, which only won over the entire scientific community when S. N. Bose derived the Planck spectrum in 1924.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document confirms that Einstein 'received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect', directly answering what 1905 discovery earned Einstein the Nobel Prize."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this document discusses Einstein's 1905 work on special relativity and mentions that 'Einstein's 1905 work on relativity remained controversial for many years', it does not mention the photoelectric effect or the Nobel Prize, making it less directly relevant to the specific question asked."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document confirms that Einstein 'was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect', which directly answers the question about which 1905 discovery earned Einstein the Nobel Prize."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This document mentions Einstein's 'famous papers on the photoelectric effect' completed in 1905 and refers to these works from 1905, but does not connect the photoelectric effect to the Nobel Prize or address the skepticism mentioned in the question."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 911,
-                "completion_tokens": 162,
+                "prompt_tokens": 893,
+                "completion_tokens": 180,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +138,26 @@
         },
         "Contextual Recall": {
             "score": 1.0,
-            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the nodes in retrieval context. Excellent work! The timeline, Nobel Prize details, and scientific community's acceptance are all well-documented across multiple nodes.",
+            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the nodes in retrieval context. Sentence 1 is backed by nodes 1 and 5 confirming both the 1905 discovery and 1921 Nobel Prize, sentence 2 is directly supported by node 1 regarding contemporary skepticism and the Nobel committee's recognition, and sentence 3 is confirmed by node 1 about the scientific community's later acceptance through Bose's 1924 work. Perfect alignment achieved!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "The 1st node states 'In 1922, he was awarded the 1921 Nobel Prize in Physics \"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect\"' and the 5th node mentions Einstein's work on the photoelectric effect was completed in 1905, confirming both the 1905 discovery and 1921 Nobel Prize."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 1st node explicitly states 'At this point some physicists still regarded the general theory of relativity skeptically, and the Nobel citation displayed a degree of doubt even about the work on photoelectricity... it did not assent to Einstein's notion of the particulate nature of light' and confirms the Nobel committee recognized 'his services to Theoretical Physics'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 1st node directly states 'Einstein's notion of the particulate nature of light... only won over the entire scientific community when S. N. Bose derived the Planck spectrum in 1924', confirming the later acceptance and Bose's 1924 derivation."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 639,
-                "completion_tokens": 63,
+                "prompt_tokens": 724,
+                "completion_tokens": 128,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +165,140 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.4782608695652174,
-            "reason": "The score is 0.48 because while the retrieval context contains key relevant information stating 'In 1922, he was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect' and mentions that 'the Nobel citation displayed a degree of doubt even about the work on photoelectricity', the majority of the context focuses on irrelevant details such as 'Einstein being elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920' and extensive discussion of 'Einstein's special theory of relativity' which the input explicitly indicates was met with skepticism and is not the Nobel-winning discovery being asked about.",
+            "score": 0.47619047619047616,
+            "reason": "The score is 0.48 because while the retrieval context contains key relevant information stating 'Einstein was awarded the 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect' and mentions 'skepticism about the particulate nature of light', much of the context is cluttered with irrelevant details about 'Foreign Member elections', 'Copley Medal in 1925', 'Einsteinium naming in 1955', and 'doctoral dissertation details' that don't address the specific 1905 Nobel-winning discovery.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein was elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920, and a Foreign Member of the Royal Society in 1921.",
+                            "verdict": "no",
+                            "reason": "The information about Einstein being 'elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920, and a Foreign Member of the Royal Society in 1921' is not relevant to his 1905 discovery that earned him the Nobel Prize."
+                        },
+                        {
+                            "statement": "In 1922, he was awarded the 1921 Nobel Prize in Physics 'for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "At this point some physicists still regarded the general theory of relativity skeptically, and the Nobel citation displayed a degree of doubt even about the work on photoelectricity that it acknowledged: it did not assent to Einstein's notion of the particulate nature of light.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's notion of the particulate nature of light only won over the entire scientific community when S. N. Bose derived the Planck spectrum in 1924.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "That same year, Einstein was elected an International Honorary Member of the American Academy of Arts and Sciences.",
+                            "verdict": "no",
+                            "reason": "The information about Einstein being 'elected an International Honorary Member of the American Academy of Arts and Sciences' is not relevant to his 1905 discovery that earned him the Nobel Prize."
+                        },
+                        {
+                            "statement": "Britain's closest equivalent of the Nobel award, the Royal Society's Copley Medal, was not hung around Einstein's neck until 1925.",
+                            "verdict": "no",
+                            "reason": "The information about 'the Royal Society's Copley Medal' being awarded in 1925 is not relevant to his 1905 discovery that earned him the Nobel Prize."
+                        },
+                        {
+                            "statement": "He was elected an International Member of the American Philosophical Society in 1930.",
+                            "verdict": "no",
+                            "reason": "The information about Einstein being 'elected an International Member of the American Philosophical Society in 1930' is not relevant to his 1905 discovery that earned him the Nobel Prize."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist best known for developing the theory of relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein also made important contributions to quantum theory.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\".",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He received the 1921 Nobel Prize in Physics for \"his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\".",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's 'Zur Elektrodynamik bewegter K\u00f6rper' was received on 30 June 1905 and published 26 September of that same year, reconciling conflicts between Maxwell's equations and Newtonian mechanics.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Einstein's special relativity paper from 1905, but the input specifically asks about 'which 1905 discovery earned Einstein the Nobel' and mentions 'contemporary skepticism about relativity', implying the Nobel-winning discovery was not relativity."
+                        },
+                        {
+                            "statement": "The paper predicted time dilation and length contraction effects, and argued that the luminiferous aether was superfluous.",
+                            "verdict": "no",
+                            "reason": "This statement describes effects and implications of special relativity theory, but does not address 'which 1905 discovery earned Einstein the Nobel' - it only discusses relativity which the input suggests was not the Nobel-winning discovery."
+                        },
+                        {
+                            "statement": "Einstein produced E = mc\u00b2 as a consequence of his special relativity equations in his paper on mass\u2013energy equivalence.",
+                            "verdict": "no",
+                            "reason": "This statement discusses 'E = mc\u00b2' and 'mass\u2013energy equivalence' which are consequences of relativity, but does not identify what 'earned Einstein the Nobel' prize from his 1905 discoveries."
+                        },
+                        {
+                            "statement": "Einstein's 1905 work on relativity remained controversial for many years, but was accepted by leading physicists, starting with Max Planck.",
+                            "verdict": "no",
+                            "reason": "This statement only discusses the 'controversial' reception of 'relativity' work, but does not answer 'which 1905 discovery earned Einstein the Nobel' prize."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein was awarded the 1921 Nobel Prize in Physics in 1922 for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "None of the nominations in 1921 met the criteria set by Alfred Nobel, so the 1921 prize was carried forward and awarded to Einstein in 1922",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death",
+                            "verdict": "no",
+                            "reason": "The statement about 'Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death' is not relevant to Einstein's 1905 discovery that earned him the Nobel Prize."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's first paper on capillarity phenomena was published in Annalen der Physik in 1901, which he later disavowed as worthless",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's 1901 paper on 'capillarity phenomena' and him disavowing it as 'worthless' is not relevant to the 1905 discovery that earned him the Nobel Prize."
+                        },
+                        {
+                            "statement": "Einstein's doctoral dissertation addressed molecular physics, titled 'A New Determination of Molecular Dimensions', completed on 30 April 1905 and he was awarded his PhD on 15 January 1906",
+                            "verdict": "no",
+                            "reason": "The details about Einstein's 'doctoral dissertation', its completion date, and 'PhD award date' are not relevant to identifying which 1905 discovery earned him the Nobel Prize."
+                        },
+                        {
+                            "statement": "Einstein completed four famous papers in 1905 on the photoelectric effect, Brownian motion, special theory of relativity, and the equivalence of mass and energy, making 1905 an annus mirabilis for physics",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1221,
-                "completion_tokens": 166,
+                "prompt_tokens": 1181,
+                "completion_tokens": 135,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

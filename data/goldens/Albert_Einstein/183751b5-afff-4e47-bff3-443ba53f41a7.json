@@ -46,12 +46,26 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response perfectly addresses Einstein's contribution to predicting Mercury's perihelion precession through general relativity and Riemannian geometry, with no irrelevant content detected. Excellent focus on the specific scientific question!",
+            "reason": "The score is 1.00 because the response perfectly addressed Einstein's contribution to predicting Mercury's perihelion precession using Riemannian geometry in general relativity, with no irrelevant statements detected. Great job staying completely on topic!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "This statement provides background information about what perihelion precession is, but doesn't directly address Einstein's specific contribution or use of Riemannian geometry in predicting it"
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 284,
-                "completion_tokens": 67,
+                "completion_tokens": 65,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,9 +74,23 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly faithful to the retrieval context with all information accurately represented.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context mentions that Einstein applied his theory to the precession of the perihelion of Mercury, but does not provide any definition or explanation of what the precession of the perihelion of Mercury actually is. The claim's definition cannot be verified against the given context."
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
                 "completion_tokens": 46,
@@ -74,12 +102,34 @@
         },
         "Contextual Precision": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the most relevant node is perfectly ranked first! The first node directly addresses Einstein's contribution to Mercury's perihelion precession using Riemannian geometry, stating 'By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete, and he applied his new theory not just to the behavior of the Sun as a gravitational lens but also to another astronomical phenomenon, the precession of the perihelion of Mercury.' All subsequent irrelevant nodes are appropriately ranked lower, with the second through fifth nodes containing only general information about relativity, light deflection, equivalence principles, geometric formalism, or biographical content without addressing the specific perihelion precession prediction.",
+            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked above irrelevant ones! The first node in the retrieval contexts directly addresses Einstein's completion of gravitational mathematics using Riemannian geometry and its application to Mercury's perihelion precession by fall 1915, while the remaining four nodes discuss general relativity topics like light deflection, equivalence principles, mathematical formalism, and biographical information without specifically connecting to Mercury's perihelion precession or Riemannian geometry.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This text directly addresses Einstein's contribution to Mercury's perihelion precession prediction, stating 'By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete, and he applied his new theory not just to the behavior of the Sun as a gravitational lens but also to another astronomical phenomenon, the precession of the perihelion of Mercury.' It also explains the progression from equivalence principle to using 'Riemann curvature tensor of a non-Euclidean four-dimensional spacetime.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This text discusses Einstein's work on light deflection but does not mention Mercury's perihelion precession or Riemannian geometry specifically. It focuses on 'the amount of deflection of light by massive bodies' rather than the orbital mechanics question asked."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This text provides general background on general relativity and mentions that it 'was developed by Einstein between 1907 and 1915' and discusses the equivalence principle, but it does not specifically address Mercury's perihelion precession or how Riemannian geometry was used in that prediction."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This text discusses the mathematical formalism development, mentioning that 'Einstein adopted Minkowski's formalism in his 1915 general theory of relativity,' but it does not address Mercury's perihelion precession or Riemannian geometry specifically."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This is a general biographical entry stating 'Albert Einstein...was a German-born theoretical physicist best known for developing the theory of relativity' and mentions his Nobel Prize, but provides no information about Mercury's perihelion precession or Riemannian geometry."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 890,
-                "completion_tokens": 176,
+                "prompt_tokens": 888,
+                "completion_tokens": 119,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +138,34 @@
         },
         "Contextual Recall": {
             "score": 0.6,
-            "reason": "The score is 0.60 because most key information is well-supported by node 1 in retrieval context, which confirms Einstein's completion of general relativity using Riemannian geometry by fall 1915 and his application to Mercury's perihelion precession. However, some claims about Newtonian physics being inadequate and the precise success of Einstein's explanation lack explicit support in the retrieval context, preventing a higher score.",
+            "reason": "The score is 0.60 because while the first 3 sentences of the expected output are well-supported by node 1 in retrieval context (which confirms Einstein's completion of general relativity using Riemannian geometry by fall 1915 and his application to Mercury's perihelion precession), sentences 4 and 5 lack attribution as the node doesn't explicitly state that Mercury's precession was previously unexplained by Newtonian physics or that Einstein's solution was precise and successful in demonstrating his theory's power.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st node: 'By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st node: 'By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st node: 'he applied his new theory...to another astronomical phenomenon, the precession of the perihelion of Mercury (a slow drift in the point in Mercury's elliptical orbit...)'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While Mercury's precession is mentioned in the 1st node, there is no explicit statement that it 'had previously been observed but could not be fully accounted for by Newtonian physics.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The retrieval context mentions Einstein applied his theory to Mercury's precession but does not explicitly state it was 'precise and successful' or that it 'demonstrated the power and accuracy' of the theory."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1165,
-                "completion_tokens": 107,
+                "prompt_tokens": 1178,
+                "completion_tokens": 130,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +173,130 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.42105263157894735,
-            "reason": "The score is 0.42 because while the retrieval context contains some relevant information, such as 'By fall 1915, Einstein's reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete, and he applied his new theory to the behavior of the Sun as a gravitational lens and to the precession of the perihelion of Mercury,' much of the content focuses on unrelated topics like 'deflection of light by massive bodies,' 'mass\u2013energy equivalence formula E = mc2,' and 'the 1921 Nobel Prize in Physics' for 'his discovery of the law of the photoelectric effect,' which do not address Einstein's specific contribution to Mercury's perihelion precession using Riemannian geometry.",
+            "score": 0.2631578947368421,
+            "reason": "The score is 0.26 because while the context contains some relevant information about Einstein's work on Mercury's perihelion precession using Riemannian geometry (such as 'By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete, and he applied his new theory... to the precession of the perihelion of Mercury'), the majority of the content focuses on unrelated topics like 'light bending by the Sun's gravity', 'solar eclipse observations', and 'Einstein's Nobel Prize for the photoelectric effect', which do not address the specific question about Mercury's perihelion precession prediction.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1907, Einstein reached a milestone on his long journey from his special theory of relativity to a new idea of gravitation with the formulation of his equivalence principle, which asserts that an observer in a box falling freely in a gravitational field would be unable to find any evidence that the field exists.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1911, he used the principle to estimate the amount by which a ray of light from a distant star would be bent by the gravitational pull of the Sun as it passed close to the Sun's photosphere.",
+                            "verdict": "no",
+                            "reason": "The statement discusses light bending by the Sun's gravity, which is not related to 'Mercury's perihelion precession using Riemannian geometry'."
+                        },
+                        {
+                            "statement": "He reworked his calculation in 1913, having now found a way to model gravitation with the Riemann curvature tensor of a non-Euclidean four-dimensional spacetime.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "By the fall of 1915, his reimagining of the mathematics of gravitation in terms of Riemannian geometry was complete, and he applied his new theory not just to the behavior of the Sun as a gravitational lens but also to another astronomical phenomenon, the precession of the perihelion of Mercury.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "A total eclipse of the Sun that took place on 29 May 1919 provided an opportunity to put",
+                            "verdict": "no",
+                            "reason": "The statement about 'A total eclipse of the Sun that took place on 29 May 1919' is incomplete and refers to solar eclipse observations rather than Mercury's perihelion precession."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1911, Einstein published another article 'On the Influence of Gravitation on the Propagation of Light' expanding on the 1907 article, in which he estimated the amount of deflection of light by massive bodies.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'the amount of deflection of light by massive bodies' which is about light deflection, not Mercury's perihelion precession using Riemannian geometry."
+                        },
+                        {
+                            "statement": "The theoretical prediction of general relativity could for the first time be tested experimentally.",
+                            "verdict": "no",
+                            "reason": "This statement mentions general relativity being tested experimentally but does not specifically address 'Mercury's perihelion precession using Riemannian geometry'."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "General relativity (GR) is a theory of gravitation that was developed by Einstein between 1907 and 1915, where the observed gravitational attraction between masses results from the warping of spacetime by those masses.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "General relativity has developed into an essential tool in modern astrophysics and provides the foundation for the current understanding of black holes, regions of space where gravitational attraction is so strong that not even light can escape.",
+                            "verdict": "no",
+                            "reason": "The statement about general relativity being 'an essential tool in modern astrophysics' and providing 'foundation for the current understanding of black holes' is not directly relevant to Einstein's specific contribution to Mercury's perihelion precession using Riemannian geometry."
+                        },
+                        {
+                            "statement": "Einstein developed general relativity because the preference of inertial motions within special relativity was unsatisfactory, and he wanted a theory which from the outset prefers no state of motion.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's motivation for developing general relativity due to 'preference of inertial motions within special relativity was unsatisfactory' does not address his contribution to Mercury's perihelion precession prediction using Riemannian geometry."
+                        },
+                        {
+                            "statement": "In 1907, Einstein published an article titled 'On the Relativity Principle and the Conclusions Drawn from It' where he argued that free fall is really inertial motion, and that for a free-falling observer the rules of special relativity must apply, which is called the equivalence principle.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's 1907 article on 'free fall is really inertial motion' and 'equivalence principle' does not specifically address his contribution to predicting Mercury's perihelion precession using Riemannian geometry."
+                        },
+                        {
+                            "statement": "In the same article, Einstein also predicted the phenomena of gravitational time dilation, gravitational redshift and gravitational lensing.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein predicting 'gravitational time dilation, gravitational redshift and gravitational lensing' does not mention Mercury's perihelion precession or the use of Riemannian geometry in this prediction."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein originally framed special relativity in terms of kinematics (the study of moving bodies).",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein originally framed special relativity in terms of kinematics (the study of moving bodies)' is about special relativity and kinematics, not about Mercury's perihelion precession using Riemannian geometry in general relativity."
+                        },
+                        {
+                            "statement": "In 1908, Hermann Minkowski reinterpreted special relativity in geometric terms as a theory of spacetime.",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1908, Hermann Minkowski reinterpreted special relativity in geometric terms as a theory of spacetime' discusses Minkowski's work on special relativity, which is not relevant to Mercury's perihelion precession using Riemannian geometry."
+                        },
+                        {
+                            "statement": "Einstein adopted Minkowski's formalism in his 1915 general theory of relativity.",
+                            "verdict": "no",
+                            "reason": "While the statement 'Einstein adopted Minkowski's formalism in his 1915 general theory of relativity' mentions general relativity from 1915, it discusses Minkowski's formalism rather than Mercury's perihelion precession using Riemannian geometry."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist best known for developing the theory of relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein also made important contributions to quantum theory.",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein also made important contributions to quantum theory' is not relevant to the specific question about Mercury's perihelion precession using Riemannian geometry in general relativity."
+                        },
+                        {
+                            "statement": "His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called 'the world's most famous equation'.",
+                            "verdict": "no",
+                            "reason": "The statement about 'His mass\u2013energy equivalence formula E = mc2, which arises from special relativity' is not relevant to Mercury's perihelion precession prediction using Riemannian geometry in general relativity."
+                        },
+                        {
+                            "statement": "He received the 1921 Nobel Prize in Physics for 'his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect'.",
+                            "verdict": "no",
+                            "reason": "The statement about receiving 'the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect' is not relevant to Mercury's perihelion precession using Riemannian geometry."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1135,
-                "completion_tokens": 178,
+                "prompt_tokens": 1262,
+                "completion_tokens": 159,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

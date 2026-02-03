@@ -46,12 +46,34 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response was perfectly relevant with no irrelevant statements identified. The answer stayed completely focused on addressing the question about Einstein's other 1905 theoretical physics discoveries that could have merited his Nobel Prize, demonstrating excellent relevance and precision!",
+            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant statements! It stayed completely focused on Einstein's 1905 theoretical physics discoveries that could have merited his Nobel Prize, providing relevant and accurate information throughout.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this statement provides context about the relationship between mass-energy equivalence and special relativity, it doesn't directly answer what specific discovery could merit the Nobel Prize"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "This statement about the fame of the equation provides general context but doesn't directly address whether it could merit a Nobel Prize"
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 279,
-                "completion_tokens": 71,
+                "completion_tokens": 64,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +82,26 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect alignment and faithfulness.",
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 49,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +110,34 @@
         },
         "Contextual Precision": {
             "score": 0.4777777777777777,
-            "reason": "The score is 0.48 because the two most relevant nodes are ranked lower (third, fourth, and fifth) while irrelevant nodes occupy the top positions. The first node in retrieval contexts was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect but does not provide information about other 1905 discoveries that could have merited the Nobel Prize, and the second node confirms Einstein received the 1921 Nobel Prize for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect but does not discuss other 1905 theoretical physics discoveries that could have been Nobel-worthy. Meanwhile, the third node mentions Einstein's theory of relativity and specifically states His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called the world's most famous equation, and the fourth and fifth nodes provide comprehensive information about Einstein's 1905 annus mirabilis work including Four other pieces of work that Einstein completed in 1905 and introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent to each other. The ranking should prioritize these later nodes that directly address other 1905 theoretical physics discoveries beyond the photoelectric effect.",
+            "reason": "The score is 0.48 because relevant nodes are mixed with irrelevant ones in the rankings, significantly impacting precision. The first node in retrieval contexts 'provides background about what he actually won the Nobel for, but doesn't address what other 1905 discoveries could have merited the prize,' and the second node 'provides context about the Nobel selection but not identifying other 1905 discoveries that could have been worthy.' These irrelevant nodes are ranked higher than the third node which 'mentions Einstein was best known for developing the theory of relativity' and discusses 'His mass\u2013energy equivalence formula E = mc2.' While the fourth and fifth nodes are properly ranked and contain highly relevant information about 'his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity' and 'four groundbreaking papers' from his 'annus mirabilis,' the early placement of irrelevant nodes prevents a higher contextual precision score.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdict": "no",
+                    "reason": "This context mentions that Einstein 'was awarded the 1921 Nobel Prize in Physics \"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect\"' which provides background about what he actually won the Nobel for, but doesn't address what other 1905 discoveries could have merited the prize."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context explains the Nobel Prize was 'for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect' and mentions skepticism about general relativity at the time, providing context about the Nobel selection but not identifying other 1905 discoveries that could have been worthy."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is highly relevant as it mentions Einstein was 'best known for developing the theory of relativity' and specifically notes 'His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world\\'s most famous equation\"' - both key elements addressed in the expected output about alternative discoveries worthy of the Nobel."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is extremely relevant as it specifically lists Einstein's 1905 works: 'his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy' and describes 1905 as 'annus mirabilis for physics', directly supporting the expected output's discussion of alternative Nobel-worthy discoveries from that year."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses the question by describing 1905 as Einstein's 'annus mirabilis (miracle year)' and listing his 'four groundbreaking papers' including 'introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent to each other' - exactly the discoveries mentioned in the expected output as Nobel-worthy alternatives."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 888,
-                "completion_tokens": 296,
+                "prompt_tokens": 917,
+                "completion_tokens": 221,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +146,30 @@
         },
         "Contextual Recall": {
             "score": 1.0,
-            "reason": "The score is 1.00 because all sentences in the expected output are well-supported by the nodes in retrieval context! Nodes 3, 4, and 5 comprehensively cover Einstein's 1905 annus mirabilis, his special theory of relativity, the famous E=mc\u00b2 equation, and his work on Brownian motion, providing complete attribution for the entire response.",
+            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the nodes in retrieval context. Great job! The nodes comprehensively cover Einstein's 1905 'annus mirabilis' including his photoelectric effect work, special theory of relativity, the famous E=mc\u00b2 equation, and Brownian motion explanation, providing complete attribution for every claim made.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "The 4th and 5th nodes confirm Einstein's 1905 'annus mirabilis' and mention his work on photoelectric effect, special theory of relativity, and mass-energy equivalence, though the Nobel Prize being specifically for photoelectric effect is mentioned in nodes 1-3."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 4th and 5th nodes explicitly mention Einstein's 'special theory of relativity' as one of his 1905 works, with the 5th node stating he 'introduced his special theory of relativity'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 3rd node directly states 'His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\"' and the 5th node mentions 'mass and energy are equivalent to each other'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 4th node mentions 'explained Brownian motion' as one of Einstein's 1905 works, confirming it was a theoretical contribution that year."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 864,
-                "completion_tokens": 99,
+                "prompt_tokens": 815,
+                "completion_tokens": 96,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +177,165 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.5833333333333334,
-            "reason": "The score is 0.58 because while the retrieval context contains relevant information about Einstein's 1905 discoveries including 'papers on the photoelectric effect, Brownian motion, special theory of relativity, and the equivalence of mass and energy' and his Nobel Prize details, it is diluted by substantial irrelevant content about 'Einsteinium being named after Einstein in 1955', his various academy memberships from 1920-1930, and work from 1915-1917 that doesn't address the specific question about other 1905 theoretical physics discoveries beyond the photoelectric effect.",
+            "score": 0.5384615384615384,
+            "reason": "The score is 0.54 because while the retrieval context contains relevant information about 'Einstein completed four other pieces of work in 1905 including papers on the photoelectric effect, Brownian motion, special theory of relativity, and equivalence of mass and energy' and mentions his Nobel Prize for photoelectric effect, much of the context is filled with irrelevant details about honors received in different years (1920, 1924, 1930), work from other periods (1915, 1916, 1917), and biographical information that doesn't address the specific question about other 1905 theoretical physics discoveries.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein received numerous awards and honors, and in 1922, he was awarded the 1921 Nobel Prize in Physics \"for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect\".",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "None of the nominations in 1921 met the criteria set by Alfred Nobel, so the 1921 prize was carried forward and awarded to Einstein in 1922.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death.",
+                            "verdict": "no",
+                            "reason": "The information about 'Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death' is not relevant to the question about Einstein's 1905 theoretical physics discoveries that could merit his 1921 Nobel Prize."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein was elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920, and a Foreign Member of the Royal Society in 1921.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein being 'elected a Foreign Member of the Royal Netherlands Academy of Arts and Sciences in 1920, and a Foreign Member of the Royal Society in 1921' is not relevant to the question about other 1905 theoretical physics discoveries that could merit his Nobel Prize."
+                        },
+                        {
+                            "statement": "In 1922, he was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "At this point some physicists still regarded the general theory of relativity skeptically, and the Nobel citation displayed a degree of doubt even about the work on photoelectricity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The Nobel citation did not assent to Einstein's notion of the particulate nature of light, which only won over the entire scientific community when S. N. Bose derived the Planck spectrum in 1924.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein was elected an International Honorary Member of the American Academy of Arts and Sciences in 1924.",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein was elected an International Honorary Member of the American Academy of Arts and Sciences in 1924' is not relevant to the question about other 1905 theoretical physics discoveries that could merit his Nobel Prize."
+                        },
+                        {
+                            "statement": "Britain's closest equivalent of the Nobel award, the Royal Society's Copley Medal, was not hung around Einstein's neck until 1925.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Britain's closest equivalent of the Nobel award, the Royal Society's Copley Medal, was not hung around Einstein's neck until 1925' is not relevant to the question about other 1905 theoretical physics discoveries."
+                        },
+                        {
+                            "statement": "He was elected an International Member of the American Philosophical Society in 1930.",
+                            "verdict": "no",
+                            "reason": "The statement 'He was elected an International Member of the American Philosophical Society in 1930' is not relevant to the question about other 1905 theoretical physics discoveries that could merit his Nobel Prize."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist best known for developing the theory of relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein also made important contributions to quantum theory.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called 'the world's most famous equation'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He received the 1921 Nobel Prize in Physics for 'his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect'.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's first paper on capillarity phenomena was published in 1901 and he later disavowed it as worthless",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's 1901 paper on 'capillarity phenomena' and him disavowing it as 'worthless' is not relevant to 1905 theoretical physics discoveries that could merit his 1921 Nobel Prize."
+                        },
+                        {
+                            "statement": "Einstein's doctoral dissertation addressed molecular physics and was completed on 30 April 1905",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's 'doctoral dissertation' addressing 'molecular physics' is not about a major theoretical physics discovery that could merit a Nobel Prize."
+                        },
+                        {
+                            "statement": "Einstein was formally awarded his PhD on 15 January 1906",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein was formally awarded his PhD on 15 January 1906' is about his academic degree, not about 1905 theoretical physics discoveries."
+                        },
+                        {
+                            "statement": "Einstein completed four other pieces of work in 1905 including papers on the photoelectric effect, Brownian motion, special theory of relativity, and equivalence of mass and energy",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The year 1905 has been celebrated as an annus mirabilis for physics similar to Newton's miracle year of 1666",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1905, Einstein explained Brownian motion",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1905, Einstein introduced his special theory of relativity",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1905, Einstein demonstrated that if the special theory is correct, mass and energy are equivalent to each other",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1915, he proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation",
+                            "verdict": "no",
+                            "reason": "The statement mentions '1915' which is not relevant to the input asking specifically about 1905 discoveries."
+                        },
+                        {
+                            "statement": "A paper that he published the following year laid out the implications of general relativity for the modeling of the structure and evolution of the universe as a whole",
+                            "verdict": "no",
+                            "reason": "The statement refers to work 'the following year' (1916) which is not relevant to the input asking about 1905 discoveries."
+                        },
+                        {
+                            "statement": "It introduced the cosmological constant and is further regarded as the first step in the field of modern theoretical cosmology",
+                            "verdict": "no",
+                            "reason": "This statement refers to work done after 1905 and is not relevant to the input asking about 1905 discoveries."
+                        },
+                        {
+                            "statement": "In 1917, Einstein wrote a paper which introduced the concepts of spontaneous emission and stimulated emission",
+                            "verdict": "no",
+                            "reason": "The statement mentions '1917' which is not relevant to the input asking specifically about 1905 discoveries."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1198,
-                "completion_tokens": 144,
+                "prompt_tokens": 1248,
+                "completion_tokens": 146,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

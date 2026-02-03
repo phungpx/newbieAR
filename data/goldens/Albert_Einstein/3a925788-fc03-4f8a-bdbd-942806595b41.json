@@ -45,13 +45,87 @@
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.8888888888888888,
-            "reason": "The score is 0.89 because the response largely addresses Einstein's 1905 papers and their significance in defining his 'miracle year,' but includes some irrelevant content about commemorative events from 2005 rather than focusing solely on the historical context and impact of the original papers and Mari\u0107's debated contributions.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response stayed perfectly on topic, addressing Einstein's 1905 miracle year papers, his PhD work, and appropriately acknowledging the debated role of Mari\u0107 without any irrelevant tangents. Great job maintaining focus on all aspects of this complex historical question!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this provides historical context about miracle years, it doesn't directly explain how Einstein's 1905 work defined his miracle year"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Information about 2005 commemorations doesn't explain how the 1905 papers defined Einstein's miracle year"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Information about 2005 commemorations doesn't explain how the 1905 papers defined Einstein's miracle year"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 351,
-                "completion_tokens": 82,
+                "prompt_tokens": 286,
+                "completion_tokens": 77,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,9 +134,47 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to and well-supported by the retrieval context.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "idk",
+                    "reason": "The context states that Einstein's doctoral dissertation was completed on 30 April 1905, but it does not indicate that the dissertation was part of the 1905 publications referred to as annus mirabilis. The context mentions four groundbreaking papers in 1905 and separately mentions the dissertation."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context does not provide any information about Isaac Newton's miracle year in 1666, so this comparison cannot be verified from the retrieval context."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context confirms the title 'Eine neue Bestimmung der Molek\u00fcldimensionen' but does not provide information about the dissertation being 24 pages long."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context does not provide any information about historians being divided on Mileva Mari\u0107's contribution to Einstein's annus mirabilis publications."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context mentions that Einstein and Mari\u0107 became friends and lovers, but does not provide any information about evidence of her scientific influence on Einstein's ideas or scholarly debates about her impact."
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
                 "completion_tokens": 46,
@@ -73,13 +185,35 @@
             }
         },
         "Contextual Precision": {
-            "score": 1.0,
-            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked before any irrelevant ones! The first four nodes in the retrieval contexts directly address Einstein's 1905 miracle year papers, his PhD dissertation, and Mari\u0107's debated contributions, while only the fifth node focuses primarily on his patent office work rather than the specific 1905 achievements that defined his miracle year.",
+            "score": 0.9166666666666666,
+            "reason": "The score is 0.92 because the first, second, and fourth nodes in the retrieval contexts are highly relevant and well-ranked. The first node describes Einstein's doctoral dissertation 'Eine neue Bestimmung der Molek\u00fcldimensionen' completed on 30 April 1905 and mentions the four other pieces of work that led to 1905 being celebrated as an 'annus mirabilis for physics'. The second node directly supports the explanation by stating 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers' and details the specific theories. The fourth node directly addresses Mari\u0107's debated role by noting that 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications'. However, the score is not perfect because the third node, which primarily focuses on comparisons with other physicists and international recognition rather than explaining what defined the miracle year itself, and the fifth node, which mentions Einstein's work at the patent office but does not directly address the 1905 papers or the debated nature of Mari\u0107's contributions, are ranked higher than they should be relative to their relevance.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses key aspects of the question by describing Einstein's doctoral dissertation 'Eine neue Bestimmung der Molek\u00fcldimensionen' ('A New Determination of Molecular Dimensions') completed on 30 April 1905 and approved three months later, and mentions the four other pieces of work that led to 1905 being celebrated as an 'annus mirabilis for physics'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly supports the explanation of the miracle year by stating 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers' and specifically mentions 'a theory of the photoelectric effect, explained Brownian motion, introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent to each other.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context mentions Einstein's 'miracle year' in 1905 and notes that 2005 was declared the 'World Year of Physics' in recognition of it, it primarily focuses on comparisons with other physicists and international recognition rather than explaining what defined the miracle year itself."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses Mari\u0107's debated role by stating 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications' and mentions 'There is at least some evidence that he was influenced by her scientific ideas, but there are scholars who doubt whether her impact on his thought was of any great significance at all.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context mentions Einstein's work at the patent office and formation of the Olympia Academy, and notes that 'Sometimes they were joined by Mari\u0107, who limited her participation in their proceedings to careful listening,' it does not directly address the 1905 papers, his PhD, or the debated nature of Mari\u0107's contributions to his miracle year."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1010,
-                "completion_tokens": 95,
+                "prompt_tokens": 939,
+                "completion_tokens": 281,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +222,46 @@
         },
         "Contextual Recall": {
             "score": 1.0,
-            "reason": "The score is 1.00 because all sentences in the expected output are fully supported by the nodes in retrieval context! Nodes 1 and 2 comprehensively cover Einstein's 1905 annus mirabilis details (sentences 1-7), while node 4 perfectly addresses the Mileva Mari\u0107 discussion (sentences 8-9), creating complete attribution across the entire response.",
+            "reason": "The score is 1.00 because every sentence in the expected output is fully supported by the nodes in retrieval context! All key details about Einstein's 1905 miracle year are perfectly attributed across nodes 1-4, including his PhD dissertation (node 1), the four groundbreaking papers on photoelectric effect, Brownian motion, special relativity, and E=mc\u00b2 (nodes 1-2), and the scholarly debate regarding Mileva Mari\u0107's contributions (node 4).",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 1st and 2nd nodes. The 1st node states 'Four other pieces of work that Einstein completed in 1905...have led to the year being celebrated as an annus mirabilis for physics' and the 2nd node mentions 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 1st node which states 'His 24-page doctoral dissertation also addressed a topic in molecular physics. Titled \"Eine neue Bestimmung der Molek\u00fcldimensionen\" (\"A New Determination of Molecular Dimensions\")...completed on 30 April 1905 and approved by Professor Alfred Kleiner of the University of Zurich three months later. (Einstein was formally awarded his PhD on 15 January 1906.)'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 1st and 2nd nodes. The 1st node mentions 'Four other pieces of work that Einstein completed in 1905' and the 2nd node states 'he published four groundbreaking papers.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 1st and 2nd nodes. The 1st node mentions 'his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy' and the 2nd node describes similar content including 'theory of the photoelectric effect, explained Brownian motion, introduced his special theory of relativity, and demonstrated that...mass and energy are equivalent.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 1st node which states 'The publications deeply impressed'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 4th node which states 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 4th node which mentions 'In his letters to Mari\u0107, Einstein confessed that exploring science with her by his side was much more enjoyable than reading a textbook in solitude' and 'There is at least some evidence that he was influenced by her scientific ideas.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence can be attributed to the 4th node which states 'there are scholars who doubt whether her impact on his thought was of any great significance at all' and discusses the divided nature of historians on this topic."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1830,
-                "completion_tokens": 100,
+                "prompt_tokens": 1894,
+                "completion_tokens": 120,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +269,155 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.6,
-            "reason": "The score is 0.60 because while the context provides relevant information about Einstein's 1905 papers ('Four other pieces of work Einstein completed in 1905 were his papers on the photoelectric effect, Brownian motion, special theory of relativity, and the equivalence of mass and energy') and addresses Mari\u0107's debated role ('Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications'), it includes substantial irrelevant content such as 'Einstein's 1901 paper being disavowed as worthless', work 'In 1917' on 'spontaneous emission', and information about 'gravel sorter and electric typewriter' patents that don't pertain to the 1905 miracle year.",
+            "score": 0.7083333333333334,
+            "reason": "The score is 0.71 because while the context provides strong relevant information about Einstein's 1905 miracle year including his PhD dissertation completion, the four groundbreaking papers on photoelectric effect, Brownian motion, special relativity, and mass-energy equivalence, and historians' debates about Mari\u0107's contributions, it is diluted by substantial irrelevant content about Einstein's 1901 paper being 'disavowed as worthless,' his 1915 general theory of relativity work, post-1915 cosmological research, comparisons with John von Neumann, and details about 'patent applications for a gravel sorter and electric typewriter' that don't directly explain his miracle year achievements.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's first paper 'Folgerungen aus den Capillarit\u00e4tserscheinungen' was published in Annalen der Physik in 1901, which he later disavowed as worthless",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's 1901 paper being 'published in 1901' and 'disavowed as worthless' is not relevant to explaining his 1905 miracle year papers."
+                        },
+                        {
+                            "statement": "Einstein's 24-page doctoral dissertation 'Eine neue Bestimmung der Molek\u00fcldimensionen' was completed on 30 April 1905, approved by Professor Alfred Kleiner, and Einstein was formally awarded his PhD on 15 January 1906",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Four other pieces of work that Einstein completed in 1905 were his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The year 1905 has been celebrated as an annus mirabilis for physics akin to Isaac Newton's miracle year of 1666",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In them, he outlined a theory of the photoelectric effect, explained Brownian motion, introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent to each other.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1915, he proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation.",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1915, he proposed a general theory of relativity' is not relevant to Einstein's 1905 miracle year papers."
+                        },
+                        {
+                            "statement": "A paper that he published the following year laid out the implications of general relativity for the modeling of the structure and evolution of the universe as a whole.",
+                            "verdict": "no",
+                            "reason": "The statement 'A paper that he published the following year laid out the implications of general relativity' refers to work done after 1915, not related to Einstein's 1905 papers."
+                        },
+                        {
+                            "statement": "It introduced the cosmological constant and is further regarded as the first step in the field of modern theoretical cosmology.",
+                            "verdict": "no",
+                            "reason": "The statement about 'cosmological constant' and 'modern theoretical cosmology' relates to post-1915 work, not Einstein's 1905 miracle year papers."
+                        },
+                        {
+                            "statement": "In 1917, Einstein wrote a paper which introduced the concepts of spontaneous emission and stimulated emission, the latter of which is the core mechanism behind the laser and maser, and which contained a trove of information that would be beneficial to developments in physics later on, such as quantum electrodynamics and quantum optics.",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1917, Einstein wrote a paper' refers to work done in 1917, not related to Einstein's 1905 miracle year papers."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Physicist Eugene Wigner noted that while John von Neumann had the quickest and most acute mind he ever knew, it was Einstein who had the more penetrating and original mind of the two.",
+                            "verdict": "no",
+                            "reason": "The statement about 'John von Neumann had the quickest and most acute mind' and comparisons between Einstein and von Neumann are not relevant to explaining Einstein's 1905 papers or his miracle year."
+                        },
+                        {
+                            "statement": "Einstein took an extraordinary pleasure in invention and two of his greatest inventions are the Special and General Theories of Relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The International Union of Pure and Applied Physics declared 2005 the 'World Year of Physics', also known as 'Einstein Year', in recognition of Einstein's 'miracle year' in 1905.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "It was also declared the 'International Year of Physics' by the United Nations.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein and Mileva Mari\u0107 were fellow polytechnic school students who spent years discussing shared interests and learning about physics topics not covered in lectures.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein and Mari\u0107 developed from friends to lovers, with Einstein writing that exploring science with her was more enjoyable than studying alone.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "There is some evidence that Einstein was influenced by Mari\u0107's scientific ideas, but scholars doubt whether her impact was of great significance.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Patent applications that landed on Einstein's desk for his evaluation included ideas for a gravel sorter and an electric typewriter, and his employers made his position permanent in 1903.",
+                            "verdict": "no",
+                            "reason": "The statement about 'patent applications that landed on Einstein's desk for his evaluation included ideas for a gravel sorter and an electric typewriter' and his employment status being made permanent is not directly relevant to explaining his 1905 miracle year papers or his PhD."
+                        },
+                        {
+                            "statement": "His labors at the patent office had a bearing on his development of his special theory of relativity through thought experiments about space, time and light.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1902, Einstein and some friends formed the Olympia Academy group that held regular meetings to discuss science and philosophy.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Sometimes they were joined by Mari\u0107, who limited her participation in their proceedings to careful listening.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The thinkers whose works they reflected upon included Henri Poincar\u00e9, Ernst Mach and David Hume, all of whom significantly influenced Einstein's own subsequent ideas and beliefs.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "First scientific papers (1900\u20131905)",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1202,
-                "completion_tokens": 188,
+                "prompt_tokens": 1164,
+                "completion_tokens": 167,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

@@ -46,12 +46,66 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response perfectly addressed all aspects of the question about Einstein's early academic journey, covering his mathematical and physics aptitude, self-learning habits, Matura examination, and polytechnic entrance exam details without any irrelevant content. Great job staying completely on topic!",
+            "reason": "The score is 1.00 because the response perfectly addressed all aspects of the question about Einstein's early academic journey. It covered his mathematical and physics aptitude, self-learning habits, the Matura examination, and his polytechnic entrance exam experience with relevant details and no irrelevant information. Excellent work on staying completely focused on what was asked!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 284,
-                "completion_tokens": 76,
+                "completion_tokens": 87,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,9 +114,63 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly faithful to the retrieval context with all information accurately represented.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is completely faithful to the retrieval context with all information properly aligned.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Einstein being confident that nature could be understood as a mathematical structure at age twelve."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context mentions Max Talmud was Einstein's family tutor but does not provide details about Talmud's observations regarding Einstein working through a geometry textbook or devoting himself to higher mathematics."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention that Einstein completed his secondary education on the advice of the polytechnic's principal."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
                 "completion_tokens": 46,
@@ -74,12 +182,34 @@
         },
         "Contextual Precision": {
             "score": 0.9166666666666666,
-            "reason": "The score is 0.92 because most relevant nodes are ranked appropriately high, but there's room for improvement. The first two nodes effectively address the Matura results and early math/physics aptitude with specific details about Einstein performing well across the curriculum and teaching himself advanced mathematics before age thirteen. However, the third node in retrieval contexts discusses Einstein's later career at the Swiss Patent Office after graduation, focusing on events after his education rather than the entrance exam details requested, and is ranked higher than the fourth node which specifically addresses the polytechnic entrance exam with details about Einstein failing the general part but performing with distinction in physics and mathematics. The fifth node covers basic biographical information without addressing the requested topics meaningfully.",
+            "reason": "The score is 0.92 because most relevant nodes are ranked appropriately high, but there's room for improvement. The first node about 'The Matura (graduation for the successful completion of higher secondary schooling), awarded to him in September 1896' is perfectly positioned at rank 1, followed by the second node covering 'Einstein excelled at physics and mathematics from an early age' and his self-learning achievements. However, the third node about 'Einstein's later career as an assistant at the Swiss Patent Office from 1902-1909' is an irrelevant node that interrupts the relevant content flow. The fourth node appropriately covers 'In 1895, at the age of sixteen, Einstein sat the entrance examination for the federal polytechnic school' but would ideally be ranked higher than the irrelevant third node. The fifth node about 'Einstein's childhood and early education' without specific details on the requested topics is correctly ranked last among irrelevant nodes.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses the Matura and polytechnic entrance exam aspects of the question. It states 'The Matura (graduation for the successful completion of higher secondary schooling), awarded to him in September 1896, acknowledged him to have performed well across most of the curriculum, allotting him a top grade of 6 for history, physics, algebra, geometry, and descriptive geometry. At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context comprehensively addresses Einstein's early math/physics aptitude and self-learning. It states 'Einstein excelled at physics and mathematics from an early age' and 'He began teaching himself algebra, calculus and Euclidean geometry when he was twelve; he made such rapid progress that he discovered an original proof of the Pythagorean theorem before his thirteenth birthday' and 'Einstein recorded that he had \"mastered integral and differential calculus\" while still just fourteen.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context is about Einstein's later career as an assistant at the Swiss Patent Office from 1902-1909, which is not relevant to the question about his early math/physics aptitude, self-learning, Matura, and polytechnic entrance exam."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context addresses the polytechnic entrance exam specifically, stating 'In 1895, at the age of sixteen, Einstein sat the entrance examination for the federal polytechnic school (later the Eidgen\u00f6ssische Technische Hochschule, ETH) in Zurich, Switzerland. He failed to reach the required standard in the general part of the test, but performed with distinction in physics and mathematics. On the advice of the polytechnic's principal, he completed his secondary education at the Argovian cantonal school (a gymnasium) in Aarau, Switzerland, graduating in 1896.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context covers Einstein's childhood and early education but does not specifically address his math/physics aptitude, self-learning, Matura, or polytechnic entrance exam. It mainly discusses his birth, family background, and elementary school attendance."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 965,
-                "completion_tokens": 159,
+                "prompt_tokens": 995,
+                "completion_tokens": 222,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +218,106 @@
         },
         "Contextual Recall": {
             "score": 1.0,
-            "reason": "The score is 1.00 because every sentence in the expected output is fully supported by information from nodes in retrieval context. All details about Einstein's early mathematical achievements, educational timeline, and academic performance are directly attributable to specific nodes (primarily nodes 1, 2, and 4), with no unsupported claims. Excellent work!",
+            "reason": "The score is 1.00 because every sentence in the expected output can be fully attributed to specific nodes in retrieval context. The comprehensive timeline and achievements are well-supported: sentences 1-2 about early aptitude and self-teaching are confirmed by node 2, sentence 3 about the Pythagorean theorem proof is verified by node 2, sentence 4 about Max Talmud is supported by node 2, sentence 5 about mastering calculus is confirmed by node 2, sentence 6 about mathematical structure belief is backed by node 2, sentence 7 about Kant is supported by node 4, sentences 8-12 covering the 1895 exam, Aarau education, and 1896 graduation are confirmed by nodes 1 and 4, and sentence 13 about polytechnic enrollment is verified by node 1. Perfect attribution achieved!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms Einstein 'excelled at physics and mathematics from an early age, and soon acquired the mathematical expertise normally only found in a child several years his senior'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states 'He began teaching himself algebra, calculus and Euclidean geometry when he was twelve'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms 'he discovered an original proof of the Pythagorean theorem before his thirteenth birthday'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node mentions Max Talmud as 'A family tutor' who observed his rapid progress"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states Einstein 'had mastered integral and differential calculus while still just fourteen'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms 'at twelve, he was already confident that nature could be understood as a mathematical structure'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node states 'At thirteen...Talmud introduced Einstein to Kant's Critique of Pure Reason'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node mentions 'Kant's works...seemed to be clear to him' despite complexity"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node confirms 'In 1895, at the age of sixteen, Einstein sat the entrance examination for the federal polytechnic school...in Zurich'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node states 'He failed to reach the required standard in the general part of the test, but performed with distinction in physics and mathematics'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node mentions 'On the advice of the polytechnic's principal, he completed his secondary education at the Argovian cantonal school...in Aarau, Switzerland'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node mentions 'graduating in 1896' and 1st node specifies 'September 1896'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'acknowledged him to have performed well across most of the curriculum, allotting him a top grade of 6 for history, physics, algebra, geometry, and descriptive geometry'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms he began self-teaching these subjects 'when he was twelve'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states 'he discovered an original proof of the Pythagorean theorem before his thirteenth birthday'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms Einstein 'had mastered integral and differential calculus while still just fourteen'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node confirms the 1895 exam failure in general part but distinction in physics and mathematics"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'The Matura...awarded to him in September 1896'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'At seventeen, he enrolled in the...mathematics and physics teaching diploma program'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms 'he discovered an original proof of the Pythagorean theorem before his thirteenth birthday'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states Einstein 'had mastered integral and differential calculus while still just fourteen'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node confirms 'allotting him a top grade of 6 for history, physics, algebra, geometry, and descriptive geometry'"
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1595,
-                "completion_tokens": 85,
+                "prompt_tokens": 1550,
+                "completion_tokens": 210,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +325,160 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.6153846153846154,
-            "reason": "The score is 0.62 because while the retrieval context contains valuable information about Einstein's early mathematical genius ('he began teaching himself algebra, calculus and Euclidean geometry when he was twelve'), his Matura results ('awarded to him in September 1896... allotting him a top grade of 6 for history, physics, algebra, geometry'), and polytechnic entrance exam details ('Einstein failed to reach the required standard in the general part... but performed with distinction in physics and mathematics'), much of the context includes irrelevant information about 'his citizenship renunciation', 'Marie Winteler taking up a teaching post', and 'his employment at the Swiss Patent Office' that doesn't address the specific academic milestones requested.",
+            "score": 0.6,
+            "reason": "The score is 0.60 because while the retrieval context provides excellent relevant information about Einstein's early math aptitude ('excelled at physics and mathematics from an early age'), self-learning ('began teaching himself algebra, calculus and Euclidean geometry when he was twelve'), Matura ('awarded to him in September 1896...top grade of 6 for history, physics, algebra, geometry'), and polytechnic entrance exam ('sat the entrance examination for the federal polytechnic school...performing with distinction in physics and mathematics'), it also contains substantial irrelevant content about 'renouncing his citizenship', 'Marie Winteler', 'Swiss Patent Office employment', and other biographical details unrelated to his academic achievements.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In January 1896, with his father's approval, Einstein renounced his citizenship of the German Kingdom of W\u00fcrttemberg in order to avoid conscription into military service.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein renouncing his citizenship 'in order to avoid conscription into military service' is not relevant to questions about his early math/physics aptitude, self-learning, Matura, and polytechnic entrance exam."
+                        },
+                        {
+                            "statement": "The Matura (graduation for the successful completion of higher secondary schooling), awarded to him in September 1896, acknowledged him to have performed well across most of the curriculum, allotting him a top grade of 6 for history, physics, algebra, geometry, and descriptive geometry.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "At seventeen, he enrolled in the four-year mathematics and physics teaching diploma program at the federal polytechnic school.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He befriended fellow student Marcel Grossmann, who would help him there to get by despite his loose study habits, and later to mathematically underpin his revolutionary insights into physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Marie Winteler, a year older than him, took up a teaching post in Olsberg, Switzerland.",
+                            "verdict": "no",
+                            "reason": "The information about 'Marie Winteler, a year older than him, took up a teaching post in Olsberg, Switzerland' is not relevant to Einstein's early math/physics aptitude, self-learning, Matura, and polytechnic entrance exam."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein excelled at physics and mathematics from an early age, and soon acquired the mathematical expertise normally only found in a child several years his senior.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He began teaching himself algebra, calculus and Euclidean geometry when he was twelve; he made such rapid progress that he discovered an original proof of the Pythagorean theorem before his thirteenth birthday.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "A family tutor, Max Talmud, said that only a short time after he had given the twelve year old Einstein a geometry textbook, the boy 'had worked through the whole book. He thereupon devoted himself to higher mathematics ... Soon the flight of his mathematical genius was so high I could not follow.'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein recorded that he had 'mastered integral and differential calculus' while still just fourteen.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His love of algebra and geometry was so great that at twelve, he was already confident that nature could be understood as a 'mathematical structure'.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein graduated from the federal polytechnic school in 1900, duly certified as competent to teach mathematics and physics.",
+                            "verdict": "no",
+                            "reason": "The statement mentions Einstein's graduation from polytechnic but does not provide details about his 'entrance exam' to the polytechnic, which was specifically requested in the input."
+                        },
+                        {
+                            "statement": "His successful acquisition of Swiss citizenship in February 1901 was not followed by the usual sequel of conscription; the Swiss authorities deemed him medically unfit for military service.",
+                            "verdict": "no",
+                            "reason": "The information about 'Swiss citizenship' and being 'medically unfit for military service' is not relevant to Einstein's early math/physics aptitude, self-learning, Matura, or polytechnic entrance exam."
+                        },
+                        {
+                            "statement": "He found that Swiss schools too appeared to have no use for him, failing to offer him a teaching position despite the almost two years that he spent applying for one.",
+                            "verdict": "no",
+                            "reason": "The information about 'failing to offer him a teaching position' and 'almost two years that he spent applying' relates to his job search after graduation, not his early aptitude, self-learning, Matura, or polytechnic entrance exam."
+                        },
+                        {
+                            "statement": "Eventually it was with the help of Marcel Grossmann's father that he secured a post in Bern at the Swiss Patent Office, as an assistant examiner \u2013 level III.",
+                            "verdict": "no",
+                            "reason": "The information about securing 'a post in Bern at the Swiss Patent Office' relates to his employment, not his early math/physics aptitude, self-learning, Matura, or polytechnic entrance exam."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "At thirteen, Einstein's range of enthusiasms had broadened to include music and philosophy, and Talmud introduced him to Kant's Critique of Pure Reason, with Kant becoming his favorite philosopher and Kant's works seeming clear to him despite being incomprehensible to ordinary mortals.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1895, at age sixteen, Einstein sat the entrance examination for the federal polytechnic school (later ETH) in Zurich, Switzerland, failing to reach the required standard in the general part but performing with distinction in physics and mathematics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "On the polytechnic principal's advice, Einstein completed his secondary education at the Argovian cantonal school in Aarau, Switzerland, graduating in 1896.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "While lodging in Aarau with the Winteler family, Einstein fell in love with their daughter Marie, and his sister Maja later married their son Paul.",
+                            "verdict": "no",
+                            "reason": "The information about 'Einstein fell in love with their daughter Marie, and his sister Maja later married their son Paul' is about personal relationships and family connections, not about Einstein's early math/physics aptitude, self-learning, Matura, or polytechnic entrance exam."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein was born in Ulm, in the Kingdom of W\u00fcrttemberg in the German Empire, on 14 March 1879.",
+                            "verdict": "no",
+                            "reason": "The statement 'Albert Einstein was born in Ulm, in the Kingdom of W\u00fcrttemberg in the German Empire, on 14 March 1879' provides biographical information about Einstein's birthplace and date, which is not relevant to questions about his early math/physics aptitude, self-learning, Matura, and polytechnic entrance exam."
+                        },
+                        {
+                            "statement": "His parents, secular Ashkenazi Jews, were Hermann Einstein, a salesman and engineer, and Pauline Koch.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's parents being 'secular Ashkenazi Jews, were Hermann Einstein, a salesman and engineer, and Pauline Koch' provides family background information that is not relevant to his early math/physics aptitude, self-learning, Matura, and polytechnic entrance exam."
+                        },
+                        {
+                            "statement": "In 1880, the family moved to Munich's borough of Ludwigsvorstadt-Isarvorstadt, where Einstein's father and his uncle Jakob founded Elektrotechnische Fabrik J. Einstein & Cie, a company that manufactured electrical equipment based on direct current.",
+                            "verdict": "no",
+                            "reason": "The information about 'the family moved to Munich's borough of Ludwigsvorstadt-Isarvorstadt, where Einstein's father and his uncle Jakob founded Elektrotechnische Fabrik J. Einstein & Cie' relates to family relocation and business ventures, not to Einstein's academic aptitude or educational assessments."
+                        },
+                        {
+                            "statement": "When he was very young, his parents worried that he had a learning disability because he was very slow to learn to talk.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "When he was five and sick in bed, his father brought him a compass. This sparked his lifelong fascination with electromagnetism. He realized that 'Something deeply hidden had to be behind things.'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein attended St. Peter's Catholic elementary school in Munich from the age of five.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "When he was eight, he was transferred to the Luitpold Gymnasium, where he received advanced primary and then secondary school education.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1494,
-                "completion_tokens": 173,
+                "prompt_tokens": 1479,
+                "completion_tokens": 169,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

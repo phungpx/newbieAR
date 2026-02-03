@@ -46,12 +46,54 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response perfectly addresses the question with complete relevance! Every part of the answer directly relates to identifying the key scientists who contributed to relativity, quantum mechanics, and the foundations that led to general relativity and unified field theory pursuits. No irrelevant information was included.",
+            "reason": "The score is 1.00 because the response perfectly addressed the question with complete relevance! All content directly focused on identifying the key scientists and their specific contributions to relativity, quantum mechanics, and unified field theory - exactly what was asked for.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 286,
-                "completion_tokens": 77,
+                "completion_tokens": 63,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +102,38 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is fully faithful to the retrieval context with all information accurately represented.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 50,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +142,34 @@
         },
         "Contextual Precision": {
             "score": 1.0,
-            "reason": "The score is 1.00 because all five nodes in the retrieval contexts are relevant to the query about key scientists' foundational work in relativity and unified field theory. Each node contributes valuable information: the first node discusses Einstein's pursuit of unified field theory and his 1950 work on treating gravitation and electromagnetism as a single entity, the second node covers Minkowski's reinterpretation of special relativity and Einstein's adoption of Minkowski's formalism in general relativity, the third node extensively details Einstein's development of general relativity between 1907-1915 including the equivalence principle, the fourth node describes Einstein's contributions to both quantum theory and his attempts at unified field theory, and the fifth node outlines Einstein's foundational 1905 papers and 1915 general relativity proposal. Perfect ranking achieved!",
+            "reason": "The score is 1.00 because all five nodes in the retrieval contexts are relevant to the query about key scientists and their foundational work in relativity and quantum mechanics. The first node covers Einstein's pursuit of a unified field theory, the second node discusses Hermann Minkowski's contributions to special relativity formalism, the third node extensively covers Einstein's development of general relativity between 1907-1915, the fourth node addresses Einstein's quantum theory contributions and unified field theory work, and the fifth node describes Einstein's foundational 1905 special relativity and 1915 general relativity papers. Perfect ranking with no irrelevant nodes!",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses Einstein's pursuit of a unified field theory, stating 'Einstein sought an even more ambitious geometrical theory that would treat gravitation and electromagnetism as aspects of a single entity' and describes his work on unified field theory, which is explicitly mentioned in the question."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context mentions Hermann Minkowski's reinterpretation of special relativity and Einstein's adoption of 'Minkowski's formalism in his 1915 general theory of relativity,' which provides background on the development of general relativity mentioned in the question."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context extensively covers general relativity, explaining that it 'was developed by Einstein between 1907 and 1915' and describes the equivalence principle and Einstein's work on acceleration under special relativity, directly addressing the foundational work for general relativity mentioned in the question."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context describes Einstein's 'important contributions to statistical mechanics and quantum theory' and his work on 'quantum physics of radiation' and attempts to 'devise a unified field theory by generalizing his geometric theory of gravitation to include electromagnetism,' which directly addresses both quantum mechanics work and unified field theory pursuit mentioned in the question."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context describes Einstein's 1905 'annus mirabilis' papers including his 'special theory of relativity' and his 1915 'general theory of relativity that extended his system of mechanics to incorporate gravitation,' providing foundational information about his early work in relativity as mentioned in the question."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 903,
-                "completion_tokens": 194,
+                "prompt_tokens": 851,
+                "completion_tokens": 149,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +177,51 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.36,
-            "reason": "The score is 0.36 because while the nodes in retrieval context strongly support Einstein's scientific contributions (nodes 1, 3, 4, and 5 cover his work on relativity, quantum mechanics, photoelectric effect, and unified field theory), the expected output contains extensive biographical details and timeline information that cannot be attributed to any retrieval context. Most sentences covering Einstein's personal life, citizenship changes, family details, career positions, and specific dates from 1879-1955 lack support in the retrieved nodes, significantly limiting the contextual recall.",
+            "score": 0.6666666666666666,
+            "reason": "The score is 0.67 because while the scientific contributions and theories mentioned in sentences 1 and the Notable Contributions section are well-supported by nodes in retrieval context (particularly nodes 1, 3, 4, and 5 covering relativity, quantum theory, and unified field theory), the Key Facts section and entire Concise Timeline lack support as the retrieval context focuses on Einstein's scientific work rather than biographical details like citizenship, career positions, personal life events, and specific dates.",
             "threshold": 0.5,
-            "is_successful": false,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by multiple nodes. The 1st node mentions Einstein's pursuit of unified field theory, the 3rd node discusses his development of general relativity between 1907-1915, and the 4th node describes his contributions to quantum theory and radiation physics."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This sentence makes claims about Einstein's citizenship, career positions, and biographical details that are not found in any of the retrieval context nodes, which focus primarily on his scientific work rather than biographical information."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "Most facts are not supported by the retrieval context. While the 4th and 5th nodes mention some theories like special/general relativity and photoelectric effect, details about Nobel Prize, Time's Person of the Century, and many biographical facts are missing from the context."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The entire timeline with specific dates and biographical events (birth year, education, marriages, children, etc.) is not present in any of the retrieval context nodes, which focus on scientific contributions rather than biographical timeline."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 2nd and 5th nodes support special relativity and E=mc\u00b2 with '...introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 3rd node supports this with 'General relativity (GR) is a theory of gravitation that was developed by Einstein between 1907 and 1915' and mentions it provides 'foundation for the current understanding of black holes...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 4th and 5th nodes support this with 'his work on the quantum physics of radiation, in which light consists of particles, subsequently called photons' and 'theory of the photoelectric effect...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 4th node supports this with 'With physicist Satyendra Nath Bose, he laid the groundwork for Bose\u2013Einstein statistics' and mentions his contributions to 'statistical mechanics and quantum theory...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The 1st and 4th nodes support this with 'Einstein sought an even more ambitious geometrical theory that would treat gravitation and electromagnetism as aspects of a single entity' and 'attempted to devise a unified field theory by generalizing his geometric theory of gravitation to include electromagnetism...'"
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 2177,
-                "completion_tokens": 130,
+                "prompt_tokens": 1694,
+                "completion_tokens": 118,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +229,165 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.8461538461538461,
-            "reason": "The score is 0.85 because while the retrieval context provides extensive relevant information about Einstein's work on general relativity, unified field theory, and quantum mechanics contributions, it contains some irrelevant details like 'things are named after him, including the element Einsteinium,' 'In 1999, he was named Time's Person of the Century,' and information about 'explained Brownian motion' that don't directly identify key scientists whose early work laid the groundwork for these theories.",
+            "score": 0.7692307692307693,
+            "reason": "The score is 0.77 because while the retrieval context provides substantial relevant information about Einstein's development of general relativity, unified field theory, and quantum contributions, it lacks detail on other key scientists whose early work laid the groundwork. The context mentions Hermann Minkowski's geometric reinterpretation of special relativity and Satyendra Nath Bose's collaboration on Bose-Einstein statistics, but contains irrelevant information about 'other investigations that were unsuccessful and abandoned', Einstein's isolation 'from mainstream modern physics', and honors like 'Time's Person of the Century' that don't address the question about foundational scientific contributors.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein sought an ambitious geometrical theory that would treat gravitation and electromagnetism as aspects of a single entity, describing his unified field theory in a 1950 Scientific American article titled 'On the Generalized Theory of Gravitation'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's unified field theory attempt did not accommodate the strong and weak nuclear forces, which were not well understood until many years after his death",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Most researchers now believe that Einstein's approach to unifying physics was mistaken, but his goal of a theory of everything is one to which his successors still aspire",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein conducted other investigations that were unsuccessful and abandoned, pertaining to force, superconductivity, and other research",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'other investigations that were unsuccessful and abandoned' and 'force, superconductivity, and other research' but these are not specific early works in relativity and quantum mechanics that laid groundwork for general relativity and unified field theory."
+                        },
+                        {
+                            "statement": "Einstein had longtime collaborators Leopold Infeld, Nathan Rosen, Peter Bergmann and others, as well as some one-shot collaborations with various scientists",
+                            "verdict": "no",
+                            "reason": "The statement about 'longtime collaborators Leopold Infeld, Nathan Rosen, Peter Bergmann and others' and 'one-shot collaborations with various scientists' does not identify key scientists whose early work laid the groundwork for general relativity and unified field theory."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein originally framed special relativity in terms of kinematics (the study of moving bodies)",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1908, Hermann Minkowski reinterpreted special relativity in geometric terms as a theory of spacetime",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein adopted Minkowski's formalism in his 1915 general theory of relativity",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "General relativity is a theory of gravitation that was developed by Einstein between 1907 and 1915.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "According to general relativity, the observed gravitational attraction between masses results from the warping of spacetime by those masses.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "General relativity has developed into an essential tool in modern astrophysics and provides the foundation for the current understanding of black holes.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein developed general relativity because the preference of inertial motions within special relativity was unsatisfactory.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1907 Einstein published an article titled 'On the Relativity Principle and the Conclusions Drawn from It' where he argued that free fall is really inertial motion.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's argument that for a free-falling observer the rules of special relativity must apply is called the equivalence principle.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein predicted the phenomena of gravitational time dilation, gravitational redshift and gravitational lensing.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein made important contributions to statistical mechanics and quantum theory, especially notable was his work on the quantum physics of radiation, in which light consists of particles, subsequently called photons.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "With physicist Satyendra Nath Bose, Einstein laid the groundwork for Bose\u2013Einstein statistics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein advocated against quantum theory's introduction of fundamental randomness into science's picture of the world, objecting that 'God does not play dice'.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein attempted to devise a unified field theory by generalizing his geometric theory of gravitation to include electromagnetism.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "As a result, he became increasingly isolated from mainstream modern physics.",
+                            "verdict": "no",
+                            "reason": "The statement 'he became increasingly isolated from mainstream modern physics' describes Einstein's career trajectory but does not identify key scientists whose work laid groundwork for relativity and unified field theory."
+                        },
+                        {
+                            "statement": "Many things are named after him, including the element Einsteinium.",
+                            "verdict": "no",
+                            "reason": "The information 'Many things are named after him, including the element Einsteinium' is about honors and naming conventions, not about scientists whose work laid groundwork for relativity and unified field theory."
+                        },
+                        {
+                            "statement": "In 1999, he was named Time's Person of the Century.",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1999, he was named Time's Person of the Century' is about an award given to Einstein, not about scientists whose early work laid groundwork for relativity and unified field theory."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1905, Einstein published four groundbreaking papers outlining the photoelectric effect, Brownian motion, special theory of relativity, and mass-energy equivalence",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1915, Einstein proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein published a paper in 1916 that laid out the implications of general relativity for modeling the structure and evolution of the universe, introducing the cosmological constant",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1917, Einstein wrote a paper introducing concepts of spontaneous emission and stimulated emission, the core mechanism behind laser and maser",
+                            "verdict": "no",
+                            "reason": "The statement about 'spontaneous emission and stimulated emission' and 'laser and maser' is not directly relevant to the early work in relativity and quantum mechanics that laid groundwork for general relativity and unified field theory."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1146,
-                "completion_tokens": 118,
+                "prompt_tokens": 1205,
+                "completion_tokens": 152,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

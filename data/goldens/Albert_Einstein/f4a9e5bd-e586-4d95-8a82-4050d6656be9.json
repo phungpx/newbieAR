@@ -15,7 +15,7 @@
         "context_quality": 0.9249999999999999
     },
     "sourceFile": "data/wikipedia/files/Albert_Einstein.md",
-    "actual_output": "Historians of physics are divided on the extent to which **Mileva Mari\u0107** contributed to the insights of Einstein's **annus mirabilis** publications. While there is some evidence that Einstein was influenced by her scientific ideas, scholars doubt whether her impact on his thought was of any great significance at all [Albert_Einstein.md - Chunk #9].",
+    "actual_output": "Historians of physics are divided on the extent to which **Mileva Mari\u0107** contributed to the insights of Einstein's **annus mirabilis** publications [Albert_Einstein.md - Chunk #9]. While there is some evidence that Einstein was influenced by her scientific ideas, some scholars doubt whether her impact on his thought was of any great significance [Albert_Einstein.md - Chunk #9].",
     "retrieval_contexts": [
         {
             "content": "The five other polytechnic school freshmen following the same course as Einstein included just one woman, a twenty year old Serbian, Mileva Mari\u0107. Over the next few years, the pair spent many hours discussing their shared interests and learning about topics in physics that the polytechnic school's lectures did not cover. In his letters to Mari\u0107, Einstein confessed that exploring science with her by his side was much more enjoyable than reading a textbook in solitude. Eventually the two students became not only friends but also lovers.\nHistorians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications. There is at least some evidence that he was influenced by her scientific ideas, but there are scholars who doubt whether her impact on his thought was of any great significance at all.",
@@ -46,12 +46,26 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response perfectly addresses the question with no irrelevant content! The output stays completely focused on explaining why Mari\u0107's contributions to Einstein's annus mirabilis papers are disputed, providing relevant historical context and scholarly perspectives without any off-topic statements.",
+            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant statements! The answer stayed completely on topic, focusing specifically on why Mari\u0107's contributions to Einstein's annus mirabilis are disputed, providing clear and relevant explanations throughout.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 275,
-                "completion_tokens": 73,
+                "completion_tokens": 69,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -59,13 +73,27 @@
             }
         },
         "Faithfulness": {
-            "score": 0.6666666666666666,
-            "reason": "The score is 0.67 because the actual output overstates the scholarly consensus by claiming scholars doubt whether Mari\u0107's impact was of 'any great significance at all', when the retrieval context indicates only 'some scholars' have doubts about the 'great significance' of her impact, suggesting a more nuanced and limited skepticism rather than a complete dismissal.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is completely faithful to the retrieval context.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context states that historians are divided on Mari\u0107's contribution to Einstein's publications, but does not provide specific evidence of her influencing Einstein's scientific ideas."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context mentions historians are divided on Mari\u0107's contribution, it does not specifically mention scholars who doubt her significance or impact on Einstein's thought."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 344,
-                "completion_tokens": 92,
+                "prompt_tokens": 277,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +102,34 @@
         },
         "Contextual Precision": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the most relevant node is perfectly positioned at the top! The first node directly addresses both the shared scientific learning and the disputed nature of Mari\u0107's annus mirabilis contributions, while all subsequent irrelevant nodes (discussing Einstein's intellectual abilities, their personal relationship, Einstein's scientific work without mentioning Mari\u0107's role, and an unrelated Newton-Leibniz controversy) are appropriately ranked lower.",
+            "reason": "The score is 1.00 because all relevant nodes are perfectly ranked above irrelevant ones! The first node in the retrieval contexts directly addresses why historians are divided on Mari\u0107's annus mirabilis contributions and explains their shared scientific learning, while all subsequent irrelevant nodes (discussing Einstein's abilities, their personal relationship, Einstein's other work, and an unrelated calculus controversy) are appropriately ranked lower.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses the question by explaining that 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications' and provides details about their shared scientific learning, stating they 'spent many hours discussing their shared interests and learning about topics in physics that the polytechnic school's lectures did not cover.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Einstein's mind and abilities compared to von Neumann's and mentions the 'World Year of Physics' recognition of Einstein's 1905 miracle year, but does not address Mari\u0107's contributions or the dispute about them."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context focuses on Einstein and Mari\u0107's personal relationship, marriage, and children, but does not discuss their scientific collaboration or the disputed nature of her contributions to the annus mirabilis papers."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context describes Einstein's scientific work on critical opalescence and mentions the Annus Mirabilis papers, but does not address Mari\u0107's contributions or why they are disputed."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses the Newton-Leibniz calculus controversy, which is completely unrelated to Einstein, Mari\u0107, or the annus mirabilis contributions."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 773,
-                "completion_tokens": 107,
+                "prompt_tokens": 778,
+                "completion_tokens": 101,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +138,34 @@
         },
         "Contextual Recall": {
             "score": 1.0,
-            "reason": "The score is 1.00 because every sentence in the expected output is fully supported by node 1 in retrieval context, which provides comprehensive information about the historical debate regarding Mileva Mari\u0107's contributions to Einstein's annus mirabilis publications, including evidence of her influence, scholarly skepticism, their collaborative discussions, and Einstein's own testimony about their partnership.",
+            "reason": "The score is 1.00 because every sentence in the expected output is fully supported by information from node 1 in retrieval context, which provides comprehensive coverage of the historical debate about Mileva Mari\u0107's contributions to Einstein's work, including the divided scholarly opinions, evidence of her influence, their collaborative discussions, and Einstein's own acknowledgment of their partnership.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "1st node directly states 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node provides evidence: 'There is at least some evidence that he was influenced by her scientific ideas, but there are scholars who doubt whether her impact on his thought was of any great significance at all.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'the pair spent many hours discussing their shared interests and learning about topics in physics that the polytechnic school's lectures did not cover.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node mentions 'Einstein confessed that exploring science with her by his side was much more enjoyable than reading a textbook in solitude.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node establishes the debate: 'Historians of physics are divided on the question' and mentions scholars who 'doubt whether her impact...was of any great significance,' supporting the characterization of ongoing expert debate."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 714,
-                "completion_tokens": 90,
+                "prompt_tokens": 715,
+                "completion_tokens": 89,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +173,175 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.2,
-            "reason": "The score is 0.20 because while the retrieval context contains some relevant information stating that 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications' and mentions evidence of her scientific influence, the vast majority of the context is irrelevant. Most statements focus on 'personal relationship rather than addressing why Mari\u0107's annus mirabilis contributions are disputed,' Einstein's individual work that 'does not address Mari\u0107's annus mirabilis contributions,' and completely unrelated historical disputes between 'Newton' and 'Leibniz' that have 'nothing to do with Mari\u0107's annus mirabilis contributions.'",
+            "score": 0.25,
+            "reason": "The score is 0.25 because while the retrieval context contains some relevant information stating that 'Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications' and 'there are scholars who doubt whether her impact on his thought was of any great significance at all', the majority of the context consists of irrelevant personal details about their relationship, children, and unrelated historical information about Newton and Leibniz disputes, making most of the retrieved content unhelpful for addressing why Mari\u0107's contributions are specifically disputed.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Mileva Mari\u0107 was a twenty year old Serbian woman who was one of five polytechnic school freshmen following the same course as Einstein",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein and Mari\u0107 spent many hours discussing their shared interests and learning about topics in physics that the polytechnic school's lectures did not cover",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein confessed in letters to Mari\u0107 that exploring science with her was much more enjoyable than reading a textbook in solitude",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The two students became not only friends but also lovers",
+                            "verdict": "no",
+                            "reason": "The information 'became not only friends but also lovers' is about their personal relationship rather than addressing why Mari\u0107's annus mirabilis contributions are disputed."
+                        },
+                        {
+                            "statement": "Historians of physics are divided on the question of the extent to which Mari\u0107 contributed to the insights of Einstein's annus mirabilis publications",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "There is at least some evidence that Einstein was influenced by her scientific ideas, but there are scholars who doubt whether her impact on his thought was of any great significance at all",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Physicist Eugene Wigner noted that while John von Neumann had the quickest and most acute mind he ever knew, it was Einstein who had the more penetrating and original mind of the two, with Einstein's understanding being deeper and his mind more penetrating and original than von Neumann's.",
+                            "verdict": "no",
+                            "reason": "The statement discusses comparisons between Einstein and von Neumann's minds and abilities, which has nothing to do with Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        },
+                        {
+                            "statement": "Einstein took extraordinary pleasure in invention, with two of his greatest inventions being the Special and General Theories of Relativity, which no modern physicist including von Neumann has produced anything so original.",
+                            "verdict": "no",
+                            "reason": "The statement focuses on 'Einstein took extraordinary pleasure in invention' and comparisons with other physicists, which does not address Mari\u0107's annus mirabilis contributions or disputes about them."
+                        },
+                        {
+                            "statement": "The International Union of Pure and Applied Physics declared 2005 the 'World Year of Physics', also known as 'Einstein Year', in recognition of Einstein's 'miracle year' in 1905, and it was also declared the 'International Year of Physics' by the United Nations.",
+                            "verdict": "no",
+                            "reason": "The statement discusses '2005 the World Year of Physics' and 'Einstein Year' recognition, which does not address why Mari\u0107's annus mirabilis contributions are disputed."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Correspondence between Einstein and Mari\u0107, discovered and published in 1987, revealed that in early 1902, while Mari\u0107 was visiting her parents in Novi Sad, she gave birth to a daughter, Lieserl.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'she gave birth to a daughter, Lieserl' which is about their personal relationship and children, not about Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        },
+                        {
+                            "statement": "When Mari\u0107 returned to Switzerland it was without the child, whose fate is uncertain.",
+                            "verdict": "no",
+                            "reason": "The statement about 'the child, whose fate is uncertain' relates to personal family matters, not to Mari\u0107's annus mirabilis contributions or disputes about them."
+                        },
+                        {
+                            "statement": "A letter of Einstein's that he wrote in September 1903 suggests that the girl was either given up for adoption or died of scarlet fever in infancy.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'the girl was either given up for adoption or died of scarlet fever' which concerns their child's fate, not Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        },
+                        {
+                            "statement": "Einstein and Mari\u0107 married in January 1903.",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein and Mari\u0107 married in January 1903' is about their marriage date, not about Mari\u0107's annus mirabilis contributions or disputes about them."
+                        },
+                        {
+                            "statement": "In May 1904, their son Hans Albert was born in Bern, Switzerland.",
+                            "verdict": "no",
+                            "reason": "The statement about 'their son Hans Albert was born' relates to their children, not to Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        },
+                        {
+                            "statement": "Their son Eduard was born in Zurich in July 1910.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Their son Eduard was born' concerns their children, not Mari\u0107's annus mirabilis contributions or disputes about them."
+                        },
+                        {
+                            "statement": "In letters that Einstein wrote to Marie Winteler in the months before Eduard's arrival, he described his love for his wife as 'misguided' and mourned the 'missed life' that he imagined he would have enjoyed if he had married Winteler instead.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Einstein's letters about his 'love for his wife as misguided' and 'missed life', which relates to his personal feelings and marriage troubles, not to Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein returned to the problem of thermodynamic fluctuations, giving a treatment of the density variations in a fluid at its critical point.",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein returned to the problem of thermodynamic fluctuations, giving a treatment of the density variations in a fluid at its critical point' is about Einstein's work on thermodynamic fluctuations, which is not related to Mari\u0107's annus mirabilis contributions or why they are disputed."
+                        },
+                        {
+                            "statement": "Einstein quantitatively derived critical opalescence from a treatment of density fluctuations, and demonstrated how both the effect and Rayleigh scattering originate from the atomistic constitution of matter.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's work on 'critical opalescence' and 'Rayleigh scattering' does not address Mari\u0107's annus mirabilis contributions or disputes about them."
+                        },
+                        {
+                            "statement": "The Annus Mirabilis papers are four articles pertaining to the photoelectric effect, Brownian motion, the special theory of relativity, and E = mc2 that Einstein published in the Annalen der Physik scientific journal in 1905.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "These four works contributed substantially to the foundation of modern physics and changed views on space, time, and matter.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had been reluctant to publish his calculus because he feared controversy and criticism.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton had been reluctant to publish his calculus because he feared controversy and criticism' is not relevant to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "Newton was close to the Swiss mathematician Nicolas Fatio de Duillier.",
+                            "verdict": "no",
+                            "reason": "The information about 'Newton was close to the Swiss mathematician Nicolas Fatio de Duillier' has nothing to do with Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz.",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz' is not related to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed.",
+                            "verdict": "no",
+                            "reason": "The information about 'the relationship between Duillier and Newton deteriorated and the book was never completed' is irrelevant to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "Starting in 1699, Duillier accused Leibniz of plagiarism.",
+                            "verdict": "no",
+                            "reason": "The statement 'Starting in 1699, Duillier accused Leibniz of plagiarism' does not relate to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more.",
+                            "verdict": "no",
+                            "reason": "The information about 'John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal' is not relevant to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz.",
+                            "verdict": "no",
+                            "reason": "The statement about 'the dispute broke out in full force in 1711 when the Royal Society proclaimed Newton was the true discoverer and labelled Leibniz a fraud' is not related to Mari\u0107's annus mirabilis contributions."
+                        },
+                        {
+                            "statement": "Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.",
+                            "verdict": "no",
+                            "reason": "The information about 'the bitter controversy which marred the lives of both men until Leibniz's death in 1716' has nothing to do with Mari\u0107's annus mirabilis contributions."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1279,
-                "completion_tokens": 169,
+                "prompt_tokens": 1441,
+                "completion_tokens": 140,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

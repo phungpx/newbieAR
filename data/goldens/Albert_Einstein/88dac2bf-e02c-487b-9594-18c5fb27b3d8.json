@@ -46,12 +46,50 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response stayed perfectly on topic, directly comparing Einstein's early molecular physics work with his annus mirabilis papers without any irrelevant tangents or unnecessary information. Great job maintaining focus!",
+            "reason": "The score is 1.00 because the response perfectly addresses the input's request to compare Einstein's early molecular physics and annus mirabilis papers with no irrelevant statements whatsoever. Excellent work staying completely on topic!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 272,
-                "completion_tokens": 60,
+                "completion_tokens": 61,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,12 +98,50 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly faithful to the retrieval context with all information accurately represented.",
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 46,
+                "completion_tokens": 45,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +150,34 @@
         },
         "Contextual Precision": {
             "score": 0.95,
-            "reason": "The score is 0.95 because the retrieval contexts are exceptionally well-ranked with relevant nodes in the top positions. The first, second, third, and fifth nodes all provide comprehensive information about both Einstein's early molecular physics work and his annus mirabilis papers, enabling effective comparison between the topics. The only minor issue is that the fourth node, while discussing Einstein's 1905 photoelectric effect paper, primarily focuses on quantum mechanics debates and later developments rather than facilitating the requested comparison between early molecular physics and annus mirabilis papers. This single less-relevant node being ranked in the middle prevents a perfect score.",
+            "reason": "The score is 0.95 because the retrieval contexts are excellently ranked with four highly relevant nodes positioned at ranks 1, 2, 3, and 5, while only one irrelevant node appears at rank 4. The first three nodes in retrieval contexts provide comprehensive coverage of both Einstein's early molecular physics work and annus mirabilis papers, with the first node directly addressing both aspects by mentioning 'Einstein's first paper, \"Folgerungen aus den Capillarit\u00e4tserscheinungen\"' and 'Four other pieces of work that Einstein completed in 1905\u2014his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy\u2014have led to the year being celebrated as an annus mirabilis for physics'. The fourth node focuses primarily on 'Einstein's later objections to quantum mechanics and debates with Bohr' rather than the requested comparison, making it less relevant despite mentioning his 1905 photoelectric effect paper. The score isn't perfect due to this single irrelevant node interrupting an otherwise ideal ranking sequence.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses both aspects of the comparison by stating 'Einstein's first paper, \"Folgerungen aus den Capillarit\u00e4tserscheinungen\"... proposed a model of intermolecular attraction that he afterwards disavowed as worthless' and 'His 24-page doctoral dissertation also addressed a topic in molecular physics. Titled \"Eine neue Bestimmung der Molek\u00fcldimensionen\"'. It also mentions 'Four other pieces of work that Einstein completed in 1905\u2014his famous papers on the photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy\u2014have led to the year being celebrated as an annus mirabilis for physics'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides detailed information about the annus mirabilis papers, stating 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers. In them, he outlined a theory of the photoelectric effect, explained Brownian motion, introduced his special theory of relativity, and demonstrated that if the special theory is correct, mass and energy are equivalent to each other.'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides relevant information about both topics, mentioning 'The Annus Mirabilis papers are four articles pertaining to the photoelectric effect (which gave rise to quantum theory), Brownian motion, the special theory of relativity, and E = mc2 that Einstein published in the Annalen der Physik scientific journal in 1905' and describing how 'These four works contributed substantially to the foundation of modern physics and changed views on space, time, and matter.'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context discusses Einstein's later work with quantum mechanics and mentions 'his 1905 paper on the photoelectric effect', it primarily focuses on Einstein's later objections to quantum mechanics and debates with Bohr, which is not directly relevant to comparing his early molecular physics work with his annus mirabilis papers."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides information about Einstein's early molecular physics work, stating 'Einstein's first paper, submitted in 1900 to Annalen der Physik, was on capillary attraction. It was published in 1901 with the title \"Folgerungen aus den Capillarit\u00e4tserscheinungen\"' and mentions 'Two papers he published in 1902\u20131903 (thermodynamics) attempted to interpret atomic phenomena from a statistical point of view. These papers were the foundation for the 1905 paper on Brownian motion'."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 999,
-                "completion_tokens": 144,
+                "prompt_tokens": 1076,
+                "completion_tokens": 256,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +185,39 @@
             }
         },
         "Contextual Recall": {
-            "score": 1.0,
-            "reason": "The score is 1.00 because all sentences in the expected output are perfectly supported by the nodes in retrieval context! Every detail about Einstein's molecular physics work and annus mirabilis papers is well-documented across nodes 1-5, creating comprehensive coverage of the topic.",
+            "score": 0.8333333333333334,
+            "reason": "The score is 0.83 because most sentences are well-supported by nodes in retrieval context. Sentences 1-5 are strongly attributed to nodes 1, 2, 3, and 5, which provide specific details about Einstein's molecular physics work, his 1901 paper 'Folgerungen aus den Capillarit\u00e4tserscheinungen,' his doctoral dissertation 'Eine neue Bestimmung der Molek\u00fcldimensionen,' and the four annus mirabilis papers including photoelectric effect, Brownian motion, special relativity, and E=mc\u00b2. However, sentence 6's specific contrast between 'microscopic level' molecular physics work versus the broader conceptual impact lacks explicit support in the retrieval context, slightly reducing the overall attribution score.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'His 24-page doctoral dissertation also addressed a topic in molecular physics' and 5th node mentions Einstein's early papers were on 'capillary attraction' and 'atomic phenomena from a statistical point of view'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st and 5th nodes directly mention 'Folgerungen aus den Capillarit\u00e4tserscheinungen' published in 1901 and that 'he proposed a model of intermolecular attraction that he afterwards disavowed as worthless'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st node states 'His 24-page doctoral dissertation also addressed a topic in molecular physics. Titled \"Eine neue Bestimmung der Molek\u00fcldimensionen\"'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st and 2nd nodes mention 1905 as 'annus mirabilis' and describe the four groundbreaking papers that 'marked a significant shift' in physics"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "1st, 2nd, and 3rd nodes detail the four works: 'photoelectric effect, Brownian motion, his special theory of relativity and the equivalence of mass and energy' with E=mc\u00b2 mentioned"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While the retrieval context mentions molecular physics topics and the revolutionary annus mirabilis papers separately, it doesn't explicitly contrast molecular physics as 'microscopic level' work versus the broader conceptual impact described"
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 946,
-                "completion_tokens": 71,
+                "prompt_tokens": 919,
+                "completion_tokens": 182,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -102,12 +226,134 @@
         },
         "Contextual Relevancy": {
             "score": 0.5,
-            "reason": "The score is 0.50 because the retrieval context contains a significant amount of relevant information about Einstein's early molecular physics work (including his 1901 paper on capillary attraction, doctoral dissertation on molecular dimensions, and 1902-1903 thermodynamics papers) and annus mirabilis papers (the four groundbreaking 1905 papers on photoelectric effect, Brownian motion, special relativity, and mass-energy equivalence), but approximately half the content discusses irrelevant later developments such as general relativity work from 1915-1917, quantum mechanics debates after 1925, and Bohr-Einstein philosophical discussions that occurred well beyond the timeframe requested for comparison.",
+            "reason": "The score is 0.50 because while the retrieval context contains relevant information about Einstein's early molecular physics work (including 'his 1901 paper on capillary attraction', '1902-1903 thermodynamics papers', and 'doctoral dissertation on molecular physics completed in 1905') and his annus mirabilis papers ('four groundbreaking papers in 1905 on photoelectric effect, Brownian motion, special relativity, and mass-energy equivalence'), approximately half the context consists of irrelevant biographical details ('dedication to Marcel Grossmann', 'PhD award date') and discussions of his much later work ('1915 general relativity', '1916-1917 papers', and 'quantum mechanics debates').",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's first paper 'Folgerungen aus den Capillarit\u00e4tserscheinungen' was published in 1901 and proposed a model of intermolecular attraction that he later disavowed as worthless.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's 24-page doctoral dissertation 'Eine neue Bestimmung der Molek\u00fcldimensionen' addressed molecular physics and was completed on 30 April 1905.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's dissertation was dedicated to his friend Marcel Grossman and approved by Professor Alfred Kleiner.",
+                            "verdict": "no",
+                            "reason": "The information about the dissertation being 'dedicated \"Meinem Freunde Herr Dr. Marcel Grossmann gewidmet\" (to his friend Marcel Grossman)' and 'approved by Professor Alfred Kleiner of the University of Zurich' are biographical details that don't relate to comparing the topics of his early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "Einstein was formally awarded his PhD on 15 January 1906.",
+                            "verdict": "no",
+                            "reason": "The detail that 'Einstein was formally awarded his PhD on 15 January 1906' is a biographical fact that doesn't contribute to comparing the topics of his early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "Einstein completed four other works in 1905 on the photoelectric effect, Brownian motion, special theory of relativity, and mass-energy equivalence, making 1905 an annus mirabilis for physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The year 1905 is compared to Newton's miracle year of 1666 when he experienced his greatest epiphanies.",
+                            "verdict": "no",
+                            "reason": "The comparison to 'the miracle year of 1666 when Isaac Newton experienced his greatest epiphanies' is about Newton rather than Einstein's work topics and doesn't help compare Einstein's early molecular physics and annus mirabilis papers."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1905, Einstein published four groundbreaking papers including a theory of the photoelectric effect, explanation of Brownian motion, special theory of relativity, and mass-energy equivalence",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1915, Einstein proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1915, Einstein proposed a general theory of relativity' is not relevant as it discusses work from 1915, which is neither early molecular physics nor from the annus mirabilis papers of 1905."
+                        },
+                        {
+                            "statement": "Einstein published a paper in 1916 about general relativity implications for modeling the universe structure and evolution, introducing the cosmological constant",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein's '1916' paper and 'cosmological constant' is not relevant as it discusses work from 1916, which is beyond the scope of early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "In 1917, Einstein wrote a paper introducing concepts of spontaneous emission and stimulated emission",
+                            "verdict": "no",
+                            "reason": "The statement 'In 1917, Einstein wrote a paper' is not relevant as it discusses work from 1917, which is neither early molecular physics nor from the annus mirabilis papers of 1905."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's early molecular physics work included the theory of critical opalescence, which dealt with thermodynamic fluctuations and density variations in fluids at critical points, relating to light scattering and the atomistic constitution of matter.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The Annus Mirabilis papers are four articles published in 1905 pertaining to the photoelectric effect, Brownian motion, the special theory of relativity, and E = mc2, which contributed substantially to the foundation of modern physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein discovered Louis de Broglie's work and supported his ideas, which were received skeptically at first, and observed that de Broglie waves could explain the quantization rules of Bohr and Sommerfeld, inspiring Schr\u00f6dinger's work of 1926.",
+                            "verdict": "no",
+                            "reason": "This statement discusses Einstein's later work on 'matter waves' and 'de Broglie's work' and 'Schr\u00f6dinger's work of 1926', which is not related to comparing topics of his early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "Einstein played a major role in developing quantum theory, beginning with his 1905 paper on the photoelectric effect, but became displeased with modern quantum mechanics as it evolved after 1925.",
+                            "verdict": "no",
+                            "reason": "While this mentions 'his 1905 paper on the photoelectric effect' which is relevant, the focus is on 'modern quantum mechanics as it evolved after 1925' and his later displeasure with it, rather than comparing topics of early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "Einstein was skeptical that the randomness of quantum mechanics was fundamental rather than the result of determinism, stating that God 'is not playing at dice', and continued to maintain that quantum mechanics was incomplete until the end of his life.",
+                            "verdict": "no",
+                            "reason": "This statement discusses Einstein's philosophical objections to 'quantum mechanics' and his belief that 'quantum mechanics was incomplete', which relates to his later views rather than comparing topics of his early molecular physics and annus mirabilis papers."
+                        },
+                        {
+                            "statement": "The Bohr\u2013Einstein debates were a series of public disputes about quantum mechanics between Einstein and Niels Bohr, remembered for their importance to the philosophy of science and influence on later interpretations of quantum mechanics.",
+                            "verdict": "no",
+                            "reason": "This statement is about 'The Bohr\u2013Einstein debates' and 'public disputes about quantum mechanics' and 'later interpretations of quantum mechanics', which does not relate to comparing topics of Einstein's early molecular physics and annus mirabilis papers."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's first paper was submitted in 1900 to Annalen der Physik on capillary attraction and published in 1901 with the title 'Folgerungen aus den Capillarit\u00e4tserscheinungen'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Two papers he published in 1902\u20131903 on thermodynamics attempted to interpret atomic phenomena from a statistical point of view",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "These papers were the foundation for the 1905 paper on Brownian motion, which showed that Brownian movement can be construed as firm evidence that molecules exist",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His research in 1903 and 1904 was mainly concerned with the effect of finite atomic size on diffusion phenomena",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1317,
-                "completion_tokens": 163,
+                "prompt_tokens": 1282,
+                "completion_tokens": 175,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

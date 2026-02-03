@@ -15,7 +15,7 @@
         "context_quality": 0.9375
     },
     "sourceFile": "data/wikipedia/files/Albert_Einstein.md",
-    "actual_output": "During his **annus mirabilis** in 1905, Albert Einstein outlined a theory of the **photoelectric effect** [Albert_Einstein.md - Chunk #2]. He received the 1921 Nobel Prize in Physics for \"his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\" [Albert_Einstein.md - Chunk #0, Albert_Einstein.md - Chunk #90].",
+    "actual_output": "The discovery from Einstein's annus mirabilis that defined his theoretical physics legacy, excluding relativity, and for which he received the Nobel Prize, was the **law of the photoelectric effect** [Albert_Einstein.md - Chunk #0, Albert_Einstein.md - Chunk #2, Albert_Einstein.md - Chunk #90].",
     "retrieval_contexts": [
         {
             "content": "Source: https://en.wikipedia.org/wiki/Albert_Einstein\nAlbert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist best known for developing the theory of relativity. Einstein also made important contributions to quantum theory. His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called \"the world's most famous equation\". He received the 1921 Nobel Prize in Physics for \"his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect\".",
@@ -46,12 +46,30 @@
     "metrics": {
         "Answer Relevancy": {
             "score": 1.0,
-            "reason": "The score is 1.00 because the response stayed perfectly on topic and directly addressed the question about Einstein's Nobel Prize-winning discovery from his annus mirabilis year, excluding relativity as requested. Great job maintaining focus!",
+            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant content whatsoever! It correctly identified the photoelectric effect as Einstein's Nobel Prize-winning discovery from his annus mirabilis year, while properly excluding relativity as requested. Well done!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "idk",
+                    "reason": "This statement confirms Einstein had an annus mirabilis but doesn't specify which discovery defined his legacy, making it supporting context rather than a direct answer"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
-                "completion_tokens": 60,
+                "completion_tokens": 72,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -60,9 +78,15 @@
         },
         "Faithfulness": {
             "score": 1.0,
-            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is perfectly aligned with the retrieval context.",
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
                 "prompt_tokens": 277,
                 "completion_tokens": 46,
@@ -74,12 +98,34 @@
         },
         "Contextual Precision": {
             "score": 0.8055555555555555,
-            "reason": "The score is 0.81 because while most relevant nodes are ranked appropriately, there is one irrelevant node positioned too high in the rankings. The first node in retrieval contexts correctly addresses Einstein's '1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect', but the second node 'discusses Newton and Einstein's relative greatness as physicists but does not mention the photoelectric effect, annus mirabilis, or any specific Nobel-winning discovery' and is ranked higher than the fourth node which directly connects 'annus mirabilis (miracle year)' in 1905 to 'he outlined a theory of the photoelectric effect'. Additionally, the fifth node 'focuses on comparisons with von Neumann and mentions relativity theories rather than the photoelectric effect' when it should be ranked lower than the relevant nodes discussing the photoelectric effect discovery.",
+            "reason": "The score is 0.81 because while most relevant nodes are ranked appropriately, there is one irrelevant node positioned too early in the rankings. The first node correctly identifies that 'Einstein received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect', but the second node discussing 'Newton and Einstein's comparative achievements and mentions Einstein being voted greatest physicist ever' is irrelevant and should be ranked lower than the third and fourth nodes, which both directly address the Nobel Prize for the photoelectric effect discovery and connect it to the annus mirabilis period.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses the question by stating that Einstein 'received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect', which is the Nobel-winning discovery being asked about excluding relativity."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton and Einstein's comparative achievements and mentions Einstein being voted 'greatest physicist ever' but does not address the specific Nobel-winning discovery from Einstein's annus mirabilis excluding relativity."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is highly relevant as it confirms that Einstein 'was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect', directly answering what Nobel-winning discovery defined his legacy excluding relativity."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context is very useful as it mentions Einstein's '1905, sometimes described as his annus mirabilis (miracle year)' and specifically states 'he outlined a theory of the photoelectric effect', connecting the annus mirabilis period to the photoelectric effect discovery that won the Nobel Prize."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Einstein's mind and inventions, mentioning 'Two of his greatest inventions are the Special and General Theories of Relativity' and references the 'miracle year' in 1905, but does not specifically address the photoelectric effect or the Nobel Prize-winning discovery excluding relativity."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 828,
-                "completion_tokens": 210,
+                "prompt_tokens": 819,
+                "completion_tokens": 147,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -88,12 +134,94 @@
         },
         "Contextual Recall": {
             "score": 0.7,
-            "reason": "The score is 0.70 because most key facts about Einstein are well-supported by nodes in retrieval context, including his Nobel Prize for photoelectric effect discovery (nodes 1, 3, 4), his 1905 'annus mirabilis' publications (nodes 1, 4), birth/death dates and major theories (node 1), and timeline events like the 1915 general relativity proposal (node 4). However, some detailed explanations like the specific mechanism of photoelectric effect and electron emission are missing from the retrieval context, and certain biographical details such as his specific institutional roles and 1933 US residence decision cannot be attributed to any nodes.",
+            "reason": "The score is 0.70 because most sentences are well-supported by nodes in retrieval context 1, 3, and 4, which provide comprehensive information about Einstein's Nobel Prize, his 1905 miracle year publications, and major theoretical contributions. However, some details like the specific explanation of photons as 'discrete packets of energy' (sentences 3 and first Notable Contribution), Einstein's institutional roles at the Swiss Patent Office and Prussian Academy, his birthplace in Ulm, and his 1933 decision regarding Nazi persecution lack support in the retrieval context, preventing a perfect score.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by nodes 1, 3, and 4. Node 1 states Einstein 'received the 1921 Nobel Prize in Physics for...his discovery of the law of the photoelectric effect', node 3 confirms the same Nobel Prize citation, and node 4 mentions '1905, sometimes described as his annus mirabilis (miracle year)' when he 'outlined a theory of the photoelectric effect'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is directly supported by node 4, which states 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers. In them, he outlined a theory of the photoelectric effect...'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This sentence describes the theory of photons and discrete packets of energy. While the retrieval context mentions the photoelectric effect theory, it does not specifically describe light as 'discrete packets of energy' or mention 'photons'."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This sentence explains what the photoelectric effect phenomenon is and mentions classical physics' struggle to account for it. The retrieval context only mentions that Einstein 'outlined a theory of the photoelectric effect' but doesn't describe the phenomenon itself or classical physics' limitations."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by nodes 1 and 3. Node 1 states Einstein 'received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect', and node 3 provides the same Nobel Prize citation."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is directly supported by node 1, which states 'Albert Einstein (14 March 1879 \u2013 18 April 1955) was a German-born theoretical physicist...'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The sentence mentions specific roles like 'Swiss Patent Office', 'Prussian Academy of Sciences', and 'Kaiser Wilhelm Institute for Physics'. These specific positions are not mentioned in any of the retrieval context nodes."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 1, which mentions 'developing the theory of relativity', 'discovery of the law of the photoelectric effect', and 'His mass\u2013energy equivalence formula E = mc2'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by nodes 1 and 3, which both state Einstein 'received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect'."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The birth year and location are supported by node 1, which states 'Albert Einstein (14 March 1879 \u2013 18 April 1955)', but 'Ulm, German Empire' as the birthplace is not mentioned in the retrieval context."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 4, which states 'In 1905, sometimes described as his annus mirabilis (miracle year), he published four groundbreaking papers. In them, he outlined a theory of the photoelectric effect...introduced his special theory of relativity'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 4, which states 'In 1915, he proposed a general theory of relativity...'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The year 1921 for the Nobel Prize is supported by nodes 1 and 3, but the specific reason 'for the photoelectric effect' is confirmed, though the retrieval context doesn't explicitly mention it was awarded in 1921 for that discovery."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The decision to remain in the US in 1933 due to Nazi persecution is not mentioned in any of the retrieval context nodes."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "The death year 1955 is supported by node 1, which states 'Albert Einstein (14 March 1879 \u2013 18 April 1955)', but the retrieval context doesn't explicitly mention his death."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This sentence describes the photoelectric effect and photons. While the retrieval context mentions Einstein's 'discovery of the law of the photoelectric effect', it doesn't specifically describe 'light's particle nature (photons)'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 1, which mentions Einstein 'developing the theory of relativity' and 'His mass\u2013energy equivalence formula E = mc2', and node 4 confirms 'special theory of relativity'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 4, which states 'In 1915, he proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 4, which states 'In them, he...explained Brownian motion'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This sentence is supported by node 4, which states 'In 1917, Einstein wrote a paper which introduced the concepts of spontaneous emission and stimulated emission, the latter of which is the core mechanism behind the laser...'"
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1608,
-                "completion_tokens": 158,
+                "prompt_tokens": 1914,
+                "completion_tokens": 143,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +229,135 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.3333333333333333,
-            "reason": "The score is 0.33 because while the retrieval context contains key relevant information about 'Einstein's 1921 Nobel Prize in Physics for his discovery of the law of the photoelectric effect' and mentions his '1905 groundbreaking papers,' much of the context focuses on relativity theories which the input explicitly excludes, discusses irrelevant biographical details like 'Einstein keeping a picture of Newton on his study wall,' and includes comparative rankings from '1999 opinion polls' that don't address the specific Nobel-winning annus mirabilis discovery.",
+            "score": 0.3,
+            "reason": "The score is 0.30 because while the retrieval context contains key relevant information about 'Einstein's 1921 Nobel Prize for his discovery of the law of the photoelectric effect' and mentions his '1905 annus mirabilis papers including the photoelectric effect theory', much of the context is irrelevant as it discusses 'Einstein being best known for developing the theory of relativity' and contains extensive content about 'Newton comparisons', 'physicist rankings', and 'relativity theories' which are explicitly excluded from the input question.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Albert Einstein was a German-born theoretical physicist best known for developing the theory of relativity.",
+                            "verdict": "no",
+                            "reason": "The statement mentions Einstein being 'best known for developing the theory of relativity' which is not relevant since the input specifically asks to exclude relativity."
+                        },
+                        {
+                            "statement": "Einstein made important contributions to quantum theory.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His mass\u2013energy equivalence formula E = mc2, which arises from special relativity, has been called 'the world's most famous equation'.",
+                            "verdict": "no",
+                            "reason": "The statement mentions that the formula 'arises from special relativity' which is excluded from the input question."
+                        },
+                        {
+                            "statement": "He received the 1921 Nobel Prize in Physics for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was the greatest creative genius physics has ever seen, with none of the other candidates (Einstein, Maxwell, Boltzmann, Gibbs, and Feynman) matching his combined achievements as theoretician, experimentalist, and mathematician.",
+                            "verdict": "no",
+                            "reason": "This statement discusses Newton being the greatest physicist and compares him to other physicists, but does not address Einstein's specific Nobel-winning annus mirabilis discoveries excluding relativity."
+                        },
+                        {
+                            "statement": "Albert Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and James Clerk Maxwell.",
+                            "verdict": "no",
+                            "reason": "The information about 'Einstein kept a picture of Newton on his study wall' is biographical detail that doesn't relate to Einstein's Nobel-winning annus mirabilis discoveries."
+                        },
+                        {
+                            "statement": "Einstein stated that Newton's creation of calculus in relation to his laws of motion was 'perhaps the greatest advance in thought that a single individual was ever privileged to make.'",
+                            "verdict": "no",
+                            "reason": "This statement contains 'Einstein stated that Newton's creation of calculus' which is about Einstein's opinion of Newton's work, not about Einstein's own Nobel-winning discoveries."
+                        },
+                        {
+                            "statement": "Einstein noted that the whole evolution of ideas about processes of nature might be regarded as an organic development of Newton's ideas.",
+                            "verdict": "no",
+                            "reason": "This statement discusses 'Einstein noted that the whole evolution of ideas about processes of nature might be regarded as an organic development of Newton's ideas' which is Einstein's commentary on Newton's influence, not about Einstein's own theoretical physics discoveries."
+                        },
+                        {
+                            "statement": "In 1999, an opinion poll of 100 leading physicists voted Einstein the 'greatest physicist ever,' with Newton the runner-up, while a parallel survey of rank-and-file physicists ranked Newton as the greatest.",
+                            "verdict": "no",
+                            "reason": "The information about '1999 opinion poll' ranking physicists is about comparative rankings of physicists but doesn't address what specific Nobel-winning annus mirabilis discovery defined Einstein's legacy."
+                        },
+                        {
+                            "statement": "In 2005, a dual survey of the public and members of Britain's Royal Society asked questions about who made bigger overall contributions to science and positive contributions.",
+                            "verdict": "no",
+                            "reason": "The statement about '2005 dual survey' asking about contributions to science is about comparative assessments but doesn't identify Einstein's specific Nobel-winning annus mirabilis discoveries."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein was awarded the 1921 Nobel Prize in Physics for his services to Theoretical Physics, and especially for his discovery of the law of the photoelectric effect",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "None of the nominations in 1921 met the criteria set by Alfred Nobel, so the 1921 prize was carried forward and awarded to Einstein in 1922",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death",
+                            "verdict": "no",
+                            "reason": "The statement about 'Einsteinium, a synthetic chemical element, was named in his honor in 1955, a few months after his death' is not relevant to the question about Nobel-winning annus mirabilis discoveries that defined Einstein's theoretical physics legacy."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1905, sometimes described as his annus mirabilis (miracle year), Einstein published four groundbreaking papers including a theory of the photoelectric effect, explanation of Brownian motion, special theory of relativity, and mass-energy equivalence",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1915, Einstein proposed a general theory of relativity that extended his system of mechanics to incorporate gravitation",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'general theory of relativity' which relates to relativity, and the input specifically asks to exclude relativity from consideration."
+                        },
+                        {
+                            "statement": "Einstein published a paper in 1916 that laid out implications of general relativity for modeling the structure and evolution of the universe and introduced the cosmological constant",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'general relativity' and its implications, which should be excluded as the input asks for discoveries excluding relativity."
+                        },
+                        {
+                            "statement": "In 1917, Einstein wrote a paper introducing concepts of spontaneous emission and stimulated emission, which is the core mechanism behind laser and maser technology",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Physicist Eugene Wigner noted that while John von Neumann had the quickest and most acute mind he ever knew, it was Einstein who had the more penetrating and original mind of the two, with Einstein taking extraordinary pleasure in invention.",
+                            "verdict": "no",
+                            "reason": "The statement discusses comparisons between Einstein and von Neumann's minds and Einstein's pleasure in invention, but does not mention any specific Nobel-winning annus mirabilis discovery excluding relativity."
+                        },
+                        {
+                            "statement": "Two of Einstein's greatest inventions are the Special and General Theories of Relativity.",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'the Special and General Theories of Relativity' which are explicitly excluded from the input question asking for discoveries 'Excluding relativity'."
+                        },
+                        {
+                            "statement": "The International Union of Pure and Applied Physics declared 2005 the 'World Year of Physics', also known as 'Einstein Year', in recognition of Einstein's 'miracle year' in 1905, and it was also declared the 'International Year of Physics' by the United Nations.",
+                            "verdict": "no",
+                            "reason": "The statement mentions recognition of Einstein's 'miracle year' in 1905 but does not specify what Nobel-winning annus mirabilis discovery (excluding relativity) defined Einstein's theoretical physics legacy."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1034,
-                "completion_tokens": 131,
+                "prompt_tokens": 1029,
+                "completion_tokens": 130,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,

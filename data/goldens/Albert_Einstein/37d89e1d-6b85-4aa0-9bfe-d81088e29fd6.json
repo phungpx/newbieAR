@@ -15,7 +15,7 @@
         "context_quality": 0.9
     },
     "sourceFile": "data/wikipedia/files/Albert_Einstein.md",
-    "actual_output": "Albert Einstein held several European academic affiliations, including professorships and directorships, between 1908 and 1933:\n\n*   **Junior teaching position** at the University of Bern (1908) [Albert_Einstein.md - Chunk #16].\n*   **Associate professorship** at the University of Zurich (1909) [Albert_Einstein.md - Chunk #16].\n*   **Full professorship** at the German Charles-Ferdinand University in Prague (April 1911) [Albert_Einstein.md - Chunk #16].\n*   **Chair in theoretical physics** at the ETH Zurich (July 1912), where his teaching activities focused on thermodynamics and analytical mechanics [Albert_Einstein.md - Chunk #17].\n*   Joined the **Prussian Academy of Sciences** in 1914, resigning in March 1933 [Albert_Einstein.md - Chunk #1, Albert_Einstein.md - Chunk #21].\n*   **Director of the Kaiser Wilhelm Institute for Physics**, appointed in 1917 [Albert_Einstein.md - Chunk #1, Albert_Einstein.md - Chunk #19].\n\nThe roles that did not involve teaching duties, based on the provided context, were:\n\n*   **Prussian Academy of Sciences**: His accomplishments in this role were research-focused, including the completion of the general theory of relativity, proving the Einstein\u2013de Haas effect, contributing to the quantum theory of radiation, and the development of Bose\u2013Einstein statistics [Albert_Einstein.md - Chunk #21].\n*   **Director of the Kaiser Wilhelm Institute for Physics**: The documentation does not mention teaching duties associated with this directorship [Albert_Einstein.md - Chunk #1, Albert_Einstein.md - Chunk #19].",
+    "actual_output": "Albert Einstein held several academic affiliations in Europe between 1908 and 1933:\n\n*   A **junior teaching position** at the University of Bern in 1908 [Albert_Einstein.md - Chunk #16].\n*   An **associate professorship** at the University of Zurich in 1909 [Albert_Einstein.md - Chunk #16].\n*   A **full professorship** at the German Charles-Ferdinand University in Prague starting April 1911 [Albert_Einstein.md - Chunk #16].\n*   A **chair in theoretical physics** at the ETH Zurich from July 1912, where his teaching activities focused on thermodynamics and analytical mechanics [Albert_Einstein.md - Chunk #17].\n*   Joined the **Prussian Academy of Sciences** and the **Humboldt University of Berlin** in 1914 [Albert_Einstein.md - Chunk #1].\n*   Became **director** of the Kaiser Wilhelm Institute for Physics in 1917 [Albert_Einstein.md - Chunk #1, Albert_Einstein.md - Chunk #19]. He resigned from the Prussian Academy in March 1933 [Albert_Einstein.md - Chunk #21].\n\nThe roles that did not involve teaching duties, based on the provided context, were:\n\n*   **Prussian Academy of Sciences** [Albert_Einstein.md - Chunk #1]\n*   **Director** of the Kaiser Wilhelm Institute for Physics [Albert_Einstein.md - Chunk #1, Albert_Einstein.md - Chunk #19]",
     "retrieval_contexts": [
         {
             "content": "Einstein's contemporaries.\nAcademic career in Europe (1908\u20131933)\nEinstein's sabbatical as a civil servant approached its end in 1908, when he secured a junior teaching position at the University of Bern. In 1909, a lecture on relativistic electrodynamics that he gave at the University of Zurich, much admired by Alfred Kleiner, led to Zurich's luring him away from Bern with a newly created associate professorship. Promotion to a full professorship followed in April 1911, when he took up a chair at the German Charles-Ferdinand University in Prague, a move which required him to become an Austrian citizen of the Austro-Hungarian Empire, which was not completed. His time in Prague saw him producing eleven research papers.",
@@ -45,13 +45,63 @@
     ],
     "metrics": {
         "Answer Relevancy": {
-            "score": 0.75,
-            "reason": "The score is 0.75 because while the response addresses Einstein's academic affiliations and roles between 1908-1933, it includes excessive detail about his specific research accomplishments (like relativity theory developments) that don't directly answer the question about identifying his institutional positions and which roles lacked teaching duties. The core information is relevant, but the research details dilute the focus from the institutional affiliations being asked about.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addressed the specific question about Einstein's European academic affiliations between 1908 and 1933, with no irrelevant information present. Great job staying focused and comprehensive!",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While this provides information about Einstein's teaching activities, it doesn't directly address the specific question about which roles did not involve teaching duties"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 386,
-                "completion_tokens": 100,
+                "prompt_tokens": 295,
+                "completion_tokens": 60,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -59,13 +109,51 @@
             }
         },
         "Faithfulness": {
-            "score": 0.9,
-            "reason": "The score is 0.90 because the actual output contains a minor inaccuracy regarding Einstein's academic position at the University of Zurich in 1909. While the output correctly identifies that Einstein gave a lecture there in 1909, it incorrectly suggests he held an associate professorship at that time, when the retrieval context indicates his promotion to full professorship occurred later in April 1911 at Prague, not at Zurich in 1909.",
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context states Einstein gave a lecture at the University of Zurich in 1909 and that he secured a junior teaching position at the University of Bern in 1908, but does not mention him holding an associate professorship at the University of Zurich in 1909."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context does not provide information about whether Einstein's role at the Prussian Academy of Sciences involved teaching duties or not."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context does not provide information about whether the Director position at the Kaiser Wilhelm Institute for Physics involved teaching duties or not."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 338,
-                "completion_tokens": 111,
+                "prompt_tokens": 277,
+                "completion_tokens": 46,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -74,12 +162,34 @@
         },
         "Contextual Precision": {
             "score": 1.0,
-            "reason": "The score is 1.00 because all nodes in the retrieval contexts are relevant to the query and perfectly ranked! The first node comprehensively covers Einstein's early European positions from 1908-1911, including his teaching position at University of Bern, associate professorship at University of Zurich, and full professorship at Charles-Ferdinand University in Prague. The subsequent nodes effectively build upon this foundation, with the third node detailing his 1914 move to Berlin and directorship at the Kaiser Wilhelm Institute, and the fifth node covering his 1912 position at ETH Zurich with specific teaching duties, all directly addressing the question's requirements for European academic affiliations and teaching responsibilities.",
+            "reason": "The score is 1.00 because all five nodes in the retrieval contexts are highly relevant and perfectly ranked! Each node contributes essential information about Einstein's European academic career from 1908-1933, covering his positions at University of Bern, University of Zurich, German Charles-Ferdinand University in Prague, ETH Zurich, Prussian Academy of Sciences, Humboldt University of Berlin, and his directorship at the Kaiser Wilhelm Institute for Physics, with clear distinctions about which roles involved teaching duties.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This document provides crucial information about Einstein's early European academic positions, stating 'he secured a junior teaching position at the University of Bern' in 1908, 'a newly created associate professorship' at University of Zurich in 1909, and 'Promotion to a full professorship followed in April 1911, when he took up a chair at the German Charles-Ferdinand University in Prague.' These directly answer the question about his European academic affiliations between 1908 and 1933."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document mentions 'Einstein resigned from the Prussian Academy in March 1933' which establishes the end point of his European academic career and confirms his affiliation with the Prussian Academy, directly relevant to the question about his European academic affiliations between 1908 and 1933."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document provides key information about Einstein's major career moves, stating 'In 1914, he moved to Berlin to join the Prussian Academy of Sciences and the Humboldt University of Berlin, becoming director of the Kaiser Wilhelm Institute for Physics in 1917.' This directly addresses multiple European academic affiliations mentioned in the question."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document provides information about Einstein's directorship appointment, stating 'When the Kaiser Wilhelm Institute for Physics opened its doors the following year...Einstein was appointed its first director, just as Planck and Nernst had promised.' This confirms one of his European academic affiliations and a role that did not involve teaching duties."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This document provides specific information about Einstein's return to ETH Zurich, stating 'In July 1912, he returned to his alma mater, the ETH Zurich, to take up a chair in theoretical physics. His teaching activities there centered on thermodynamics and analytical mechanics.' This directly addresses his European academic affiliations and confirms this role involved teaching duties."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 886,
-                "completion_tokens": 160,
+                "prompt_tokens": 937,
+                "completion_tokens": 124,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -87,13 +197,63 @@
             }
         },
         "Contextual Recall": {
-            "score": 0.8461538461538461,
-            "reason": "The score is 0.85 because most of Einstein's academic positions and timeline from 1908-1933 are well-supported by nodes in retrieval context (sentences 1-6, 8-11), including his positions at University of Bern, Zurich, Prague, ETH Zurich, and Berlin institutions as documented in nodes 1, 2, 3, 4, and 5. However, two key details about teaching duties are missing: the retrieval context doesn't explicitly confirm that Einstein's Humboldt University chair exempted him from teaching duties (sentence 7) or that his Kaiser Wilhelm Institute director role was non-teaching (sentence 12).",
+            "score": 0.75,
+            "reason": "The score is 0.75 because 9 out of 12 sentences in the expected output are well-supported by nodes in retrieval context. Sentences 1-6 and 8-9 are backed by specific information from nodes 1, 3, 4, and 5, covering Einstein's academic positions, career timeline, and key appointments. However, 3 sentences lack support: the specific condition of 'no teaching duties' at Humboldt University, the precise installation timing in April 1914, and the non-teaching nature of the Kaiser Wilhelm Institute director role are not explicitly mentioned in the retrieval context.",
             "threshold": 0.5,
             "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 1st, 3rd, and 5th nodes. 1st node: 'junior teaching position at the University of Bern...1908...associate professorship...1909...full professorship...April 1911...German Charles-Ferdinand University in Prague'. 5th node: 'July 1912...ETH Zurich...chair in theoretical physics'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 1st node: 'secured a junior teaching position at the University of Bern' in 1908."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 1st node: 'In 1909...newly created associate professorship' at University of Zurich."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 1st node: 'Promotion to a full professorship followed in April 1911, when he took up a chair at the German Charles-Ferdinand University in Prague'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 5th node: 'In July 1912, he returned to his alma mater, the ETH Zurich, to take up a chair in theoretical physics'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 5th node: 'His teaching activities there centered on thermodynamics and analytical mechanics' at ETH Zurich."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 3rd node: 'In 1914, he moved to Berlin to join the Prussian Academy of Sciences and the Humboldt University of Berlin'."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The specific condition that the Humboldt University chair would allow him to pursue research 'with no teaching duties' is not mentioned in any of the retrieval context nodes."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The specific detail that he was installed in the Humboldt University position 'shortly after moving to Berlin in April 1914' is not explicitly stated in the retrieval context."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 4th node: 'When the Kaiser Wilhelm Institute for Physics opened its doors the following year...Einstein was appointed its first director' in 1917."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "The claim that the Kaiser Wilhelm Institute director role 'did not involve teaching' is not stated in the retrieval context."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Supported by 2nd node: 'Einstein resigned from the Prussian Academy in March 1933'."
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1704,
-                "completion_tokens": 161,
+                "prompt_tokens": 1643,
+                "completion_tokens": 150,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
@@ -101,13 +261,160 @@
             }
         },
         "Contextual Relevancy": {
-            "score": 0.44,
-            "reason": "The score is 0.44 because while the retrieval context contains valuable information about Einstein's European academic positions like his roles at University of Bern, University of Zurich, German Charles-Ferdinand University in Prague, Prussian Academy of Sciences, and directorship of the Kaiser Wilhelm Institute for Physics, much of the context is filled with irrelevant content including 'scientific achievements rather than his academic affiliations', information from 'before the specified time period of 1008-1933', and details about 'research topics rather than academic affiliations or teaching duties'.",
+            "score": 0.48,
+            "reason": "The score is 0.48 because while the retrieval context contains relevant information about Einstein's academic positions like 'associate professorship' at University of Zurich in 1909, 'full professorship' at German Charles-Ferdinand University in Prague in 1911, and 'director of the Kaiser Wilhelm Institute for Physics in 1917', approximately half the content is irrelevant, including statements about 'his scientific achievements rather than his academic affiliations', information about 'enrollment in 1897 and graduation in 1900' which are 'outside the specified timeframe of 1908-1933', and details about 'Nazi persecution of Jews' that 'do not directly relate to his European academic affiliations'.",
             "threshold": 0.5,
             "is_successful": false,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein's sabbatical as a civil servant approached its end in 1008, when he secured a junior teaching position at the University of Bern.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1909, Einstein gave a lecture on relativistic electrodynamics at the University of Zurich, which led to him being offered a newly created associate professorship there.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein was promoted to a full professorship in April 1911, when he took up a chair at the German Charles-Ferdinand University in Prague.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's move to Prague required him to become an Austrian citizen of the Austro-Hungarian Empire, which was not completed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His time in Prague saw him producing eleven research papers.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein's contemporaries.",
+                            "verdict": "no",
+                            "reason": "The phrase 'Einstein's contemporaries' provides no actual information about Einstein's academic affiliations and appears to be just a heading or fragment."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein resigned from the Prussian Academy in March 1933.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His accomplishments in Berlin had included the completion of the general theory of relativity, proving the Einstein\u2013de Haas effect, contributing to the quantum theory of radiation, and the development of Bose\u2013Einstein statistics.",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'His accomplishments in Berlin had included the completion of the general theory of relativity, proving the Einstein\u2013de Haas effect, contributing to the quantum theory of radiation, and the development of Bose\u2013Einstein statistics' which describes his scientific achievements rather than his academic affiliations, professorships, directorships, or teaching duties."
+                        },
+                        {
+                            "statement": "Putting general relativity to the test (1919)",
+                            "verdict": "no",
+                            "reason": "The statement 'Putting general relativity to the test (1919)' refers to scientific work rather than academic affiliations, professorships, directorships, or teaching duties."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Einstein was born in the German Empire and moved to Switzerland in 1895, forsaking his German citizenship the following year.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein being 'born in the German Empire and moved to Switzerland in 1895, forsaking his German citizenship' is not directly relevant to his European academic affiliations, professorships, and directorships between 1908 and 1933."
+                        },
+                        {
+                            "statement": "In 1897, he enrolled in the mathematics and physics teaching diploma program at the Swiss federal polytechnic school in Zurich, graduating in 1900.",
+                            "verdict": "no",
+                            "reason": "The enrollment 'in 1897' and graduation 'in 1900' are outside the specified timeframe of 1908-1933 and do not relate to professorships or directorships."
+                        },
+                        {
+                            "statement": "He acquired Swiss citizenship in 1901 and secured a permanent position at the Swiss Patent Office in Bern.",
+                            "verdict": "no",
+                            "reason": "The information about 'acquired Swiss citizenship' and 'secured a permanent position at the Swiss Patent Office in Bern' does not relate to academic affiliations, professorships, or directorships."
+                        },
+                        {
+                            "statement": "In 1905, he submitted a successful PhD dissertation to the University of Zurich.",
+                            "verdict": "no",
+                            "reason": "The year '1905' is outside the specified timeframe of 1908-1933, and submitting a PhD dissertation does not constitute a professorship or directorship."
+                        },
+                        {
+                            "statement": "In 1914, he moved to Berlin to join the Prussian Academy of Sciences and the Humboldt University of Berlin.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He became director of the Kaiser Wilhelm Institute for Physics in 1917.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He became a German citizen again in 1914 as a subject of the Kingdom of Prussia.",
+                            "verdict": "no",
+                            "reason": "The information about 'became a German citizen again' relates to citizenship status rather than academic affiliations, professorships, or directorships."
+                        },
+                        {
+                            "statement": "In 1933, while Einstein was visiting the United States, Adolf Hitler came to power in Germany and he decided to remain in the US due to Nazi persecution of Jews.",
+                            "verdict": "no",
+                            "reason": "The details about 'Adolf Hitler came to power' and 'Nazi persecution of Jews' and his decision to 'remain in the US' do not directly relate to his European academic affiliations, professorships, or directorships."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "The outbreak of the First World War in July 1914 marked the beginning of Einstein's gradual estrangement from the nation of his birth.",
+                            "verdict": "no",
+                            "reason": "The statement 'The outbreak of the First World War in July 1914 marked the beginning of Einstein's gradual estrangement from the nation of his birth' is about Einstein's political relationship with Germany rather than his academic affiliations."
+                        },
+                        {
+                            "statement": "Einstein was one of the few German intellectuals to distance himself from the 'Manifesto of the Ninety-Three' and sign the alternative 'Manifesto to the Europeans' instead.",
+                            "verdict": "no",
+                            "reason": "The statement about Einstein distancing himself from the 'Manifesto of the Ninety-Three' and signing the 'Manifesto to the Europeans' relates to his political stance rather than his academic affiliations."
+                        },
+                        {
+                            "statement": "Einstein was elected to a two-year term as president of the German Physical Society in 1916.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Einstein was appointed the first director of the Kaiser Wilhelm Institute for Physics when it opened in 1917.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "From 30 October to 3 November 1911, Einstein attended the first Solvay Conference on Physics.",
+                            "verdict": "no",
+                            "reason": "The statement 'Einstein attended the first Solvay Conference on Physics' describes a conference attendance rather than a European academic affiliation such as professorships or directorships."
+                        },
+                        {
+                            "statement": "In July 1912, he returned to his alma mater, the ETH Zurich, to take up a chair in theoretical physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His teaching activities there centered on thermodynamics and analytical mechanics, and his research interests included the molecular theory of heat, continuum mechanics and the development of a relativistic theory of gravitation.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In his work on the latter topic, he was assisted by his friend Marcel Grossmann, whose knowledge of the kind of mathematics required was greater than his own.",
+                            "verdict": "no",
+                            "reason": "The statement about 'his friend Marcel Grossmann' and their collaborative work relationship is not directly relevant to Einstein's European academic affiliations or teaching duties."
+                        }
+                    ]
+                }
+            ],
             "token_usage": {
-                "prompt_tokens": 1263,
-                "completion_tokens": 134,
+                "prompt_tokens": 1223,
+                "completion_tokens": 170,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "turn_name": null,
