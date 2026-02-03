@@ -72,9 +72,12 @@ class DocChunker:
             document = self.loader.convert(source=file_path).document
             logger.info(f"Document loaded in {time.time() - t:.2f} seconds")
 
-            logger.info("Chunking document...")
+            logger.info(f"Chunking document using {self.strategy} strategy...")
             t = time.time()
-            chunk_iter = self.chunker.chunk(document)
+            if self.strategy == "hierarchical":
+                chunk_iter = self.chunker.chunk(dl_doc=document)
+            else:
+                chunk_iter = self.chunker.chunk(document)
 
             chunks = []
             for i, chunk in enumerate(chunk_iter):
