@@ -84,6 +84,15 @@ class DocChunker:
                 text_tokens = self.tokenizer.count_tokens(chunk.text)
                 contextualized_text = self.chunker.contextualize(chunk=chunk)
                 contextualized_tokens = self.tokenizer.count_tokens(contextualized_text)
+
+                # Extract strategy-specific metadata
+                if self.strategy == "hierarchical":
+                    doc_items_refs = [it.self_ref for it in chunk.meta.doc_items]
+                    doc_items_labels = [it.label.value for it in chunk.meta.doc_items]
+                else:
+                    doc_items_refs = None
+                    doc_items_labels = None
+
                 chunk_info = ChunkInfo(
                     chunk_id=i,
                     text=chunk.text,
@@ -92,6 +101,8 @@ class DocChunker:
                     contextualized_tokens=contextualized_tokens,
                     filename=chunk.meta.origin.filename,
                     mimetype=chunk.meta.origin.mimetype,
+                    doc_items_refs=doc_items_refs,
+                    doc_items_labels=doc_items_labels,
                 )
                 chunks.append(chunk_info)
 
