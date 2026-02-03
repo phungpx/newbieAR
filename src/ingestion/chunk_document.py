@@ -33,12 +33,19 @@ class ImgPlaceholderSerializerProvider(ChunkingSerializerProvider):
 class DocChunker:
     def __init__(
         self,
+        strategy: str = "hybrid",
         tokenizer_name: str = MODEL_ID,
         max_tokens: int = MAX_CHUNKED_TOKENS,
         merge_peers: bool = True,
         always_emit_headings: bool = False,
+        merge_list_items: bool = True,
         output_dir: str = None,
     ):
+        if strategy not in VALID_STRATEGIES:
+            raise ValueError(
+                f"Invalid strategy '{strategy}'. Must be one of: {VALID_STRATEGIES}"
+            )
+        self.strategy = strategy
         self.output_dir = output_dir
         self.tokenizer = HuggingFaceTokenizer(
             tokenizer=AutoTokenizer.from_pretrained(tokenizer_name)
