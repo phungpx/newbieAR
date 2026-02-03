@@ -6,6 +6,12 @@ from transformers import AutoTokenizer
 from docling.chunking import HybridChunker
 from docling.document_converter import DocumentConverter
 from docling_core.transforms.chunker.tokenizer.huggingface import HuggingFaceTokenizer
+from docling_core.transforms.chunker.hierarchical_chunker import (
+    HierarchicalChunker,
+    ChunkingDocSerializer,
+    ChunkingSerializerProvider,
+)
+from docling_core.transforms.serializer.markdown import MarkdownParams
 from src.models import ChunkInfo
 
 
