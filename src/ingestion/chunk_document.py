@@ -50,12 +50,19 @@ class DocChunker:
         self.tokenizer = HuggingFaceTokenizer(
             tokenizer=AutoTokenizer.from_pretrained(tokenizer_name)
         )
-        self.chunker = HybridChunker(
-            tokenizer=self.tokenizer,
-            max_tokens=max_tokens,
-            merge_peers=merge_peers,  # Merges small adjacent items (like list items) into one chunk
-            always_emit_headings=always_emit_headings,
-        )
+        if strategy == "hybrid":
+            self.chunker = HybridChunker(
+                tokenizer=self.tokenizer,
+                max_tokens=max_tokens,
+                merge_peers=merge_peers,
+                always_emit_headings=always_emit_headings,
+            )
+        elif strategy == "hierarchical":
+            self.serializer_provider = ImgPlaceholderSerializerProvider()
+            self.chunker = HierarchicalChunker(
+                serializer_provider=self.serializer_provider,
+                merge_list_items=merge_list_items,
+            )
         self.loader = DocumentConverter()
 
     def chunk_document(self, file_path: str) -> tuple[list[ChunkInfo], str]:
