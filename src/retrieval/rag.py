@@ -6,7 +6,6 @@ from rich.markdown import Markdown
 from src.settings import settings
 from src.deps import OpenAILLMClient, OpenAIEmbeddingClient, QdrantVectorStore
 
-# Initialize Rich Console
 console = Console()
 
 
