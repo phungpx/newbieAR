@@ -1,1 +1,1 @@
-uv run python -m src.retrieval.simple_rag --collection_name research_papers
+uv run python -m src.retrieval.rag --collection_name research_papers
