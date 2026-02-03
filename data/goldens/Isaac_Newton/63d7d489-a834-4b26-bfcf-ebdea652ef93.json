@@ -1,10 +1,10 @@
 {
     "input": "Beyond optics, mechanics, and experimental methods, what were Newton's key mathematical and astronomical roles?",
-    "expectedOutput": "**Sir Isaac Newton**\n\nSir Isaac Newton (1643–1727) was an English polymath, renowned as a mathematician, physicist, astronomer, alchemist, theologian, author, and inventor. A pivotal figure in the Scientific Revolution and the Enlightenment, he held significant academic and public roles, including being a Fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge. He also served as a Member of Parliament, Warden and Master of the Royal Mint, and President of the Royal Society. His most influential work, *Philosophiæ Naturalis Principia Mathematica* (1687), established classical mechanics and unified physics. He was knighted by Queen Anne in 1705.\n\n**Concise Timeline of Major Events (Mathematical and Astronomical Focus):**\n*   **Pre-1687:** Developed infinitesimal calculus, years before Gottfried Wilhelm Leibniz.\n*   **1687:** Published *Philosophiæ Naturalis Principia Mathematica*, which included his mathematical description of gravity and its application to celestial mechanics.\n*   **1700:** Extended his \"error-slaying method\" to studies of equinoxes, devising a self-correcting method for equinoctial times.\n*   **1705:** Knighted by Queen Anne.\n\n**Mathematical Roles:**\nNewton's mathematical contributions were extensive and foundational. He is credited with inventing **infinitesimal calculus** years before Gottfried Wilhelm Leibniz, a revolutionary tool for understanding change and motion. He also devised the earliest form of **linear regression analysis**, a statistical method for finding the best-fit line through data, by formulating the first of the two 'normal equations' and ensuring the regression line passed through the average point. His broader mathematical work included generalizing the **binomial theorem** to any real number, introducing the **Puiseux series**, stating **Bézout's theorem**, classifying most **cubic plane curves**, contributing to **Cremona transformations**, developing methods for **approximating function roots**, originating the **Newton–Cotes formulas** for numerical integration, and producing the earliest explicit enunciation of the general **Taylor series**. He further initiated the field of **calculus of variations**, formulated and solved the earliest problem in **geometric probability**, and was a pioneer of **vector analysis**.\n\n**Astronomical Roles:**\nIn astronomy, Newton made profound contributions by applying his mathematical and mechanical principles to celestial phenomena. He famously used his description of universal gravitation to **derive Kepler's laws of planetary motion**, explain **tides**, predict the **trajectories of comets**, and account for the **precession of the equinoxes**, thereby eradicating doubt about the Solar System's heliocentricity. He solved the **two-body problem** and introduced the more complex **three-body problem**. Newton demonstrated that the same physical laws govern both terrestrial and celestial bodies, unifying the understanding of the cosmos. He inferred that the **Earth is an oblate spheroid**, a prediction later confirmed by geodetic measurements. Furthermore, he was the first to provide a **quantitative estimate of the solar mass** and recognized the advantage of **high-altitude sites for astronomical observation** due to clearer, less turbulent air, which reduces star twinkling. He also applied his \"error-slaying method\" to improve the accuracy of **equinoctial time measurements**.\n\n**Notable Contributions (Beyond Optics, Mechanics, and General Experimental Methods):**\n*   Invented infinitesimal calculus.\n*   Devised the earliest form of linear regression analysis.\n*   Generalized the binomial theorem and developed the Taylor series.\n*   Derived Kepler's laws of planetary motion from universal gravitation.\n*   Accounted for tides, comet trajectories, and the precession of the equinoxes.\n*   Solved the two-body problem and introduced the three-body problem.\n*   Inferred Earth's oblate spheroid shape.\n*   Provided the first quantitative estimate of the solar mass.\n*   Identified high-altitude sites as superior for astronomical observation.\n*   Applied advanced statistical methods to improve equinoctial time measurements.",
+    "expectedOutput": "**Sir Isaac Newton**\n\nSir Isaac Newton (1643\u20131727) was an English polymath, renowned as a mathematician, physicist, astronomer, alchemist, theologian, author, and inventor. A pivotal figure in the Scientific Revolution and the Enlightenment, he held significant academic and public roles, including being a Fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge. He also served as a Member of Parliament, Warden and Master of the Royal Mint, and President of the Royal Society. His most influential work, *Philosophi\u00e6 Naturalis Principia Mathematica* (1687), established classical mechanics and unified physics. He was knighted by Queen Anne in 1705.\n\n**Concise Timeline of Major Events (Mathematical and Astronomical Focus):**\n*   **Pre-1687:** Developed infinitesimal calculus, years before Gottfried Wilhelm Leibniz.\n*   **1687:** Published *Philosophi\u00e6 Naturalis Principia Mathematica*, which included his mathematical description of gravity and its application to celestial mechanics.\n*   **1700:** Extended his \"error-slaying method\" to studies of equinoxes, devising a self-correcting method for equinoctial times.\n*   **1705:** Knighted by Queen Anne.\n\n**Mathematical Roles:**\nNewton's mathematical contributions were extensive and foundational. He is credited with inventing **infinitesimal calculus** years before Gottfried Wilhelm Leibniz, a revolutionary tool for understanding change and motion. He also devised the earliest form of **linear regression analysis**, a statistical method for finding the best-fit line through data, by formulating the first of the two 'normal equations' and ensuring the regression line passed through the average point. His broader mathematical work included generalizing the **binomial theorem** to any real number, introducing the **Puiseux series**, stating **B\u00e9zout's theorem**, classifying most **cubic plane curves**, contributing to **Cremona transformations**, developing methods for **approximating function roots**, originating the **Newton\u2013Cotes formulas** for numerical integration, and producing the earliest explicit enunciation of the general **Taylor series**. He further initiated the field of **calculus of variations**, formulated and solved the earliest problem in **geometric probability**, and was a pioneer of **vector analysis**.\n\n**Astronomical Roles:**\nIn astronomy, Newton made profound contributions by applying his mathematical and mechanical principles to celestial phenomena. He famously used his description of universal gravitation to **derive Kepler's laws of planetary motion**, explain **tides**, predict the **trajectories of comets**, and account for the **precession of the equinoxes**, thereby eradicating doubt about the Solar System's heliocentricity. He solved the **two-body problem** and introduced the more complex **three-body problem**. Newton demonstrated that the same physical laws govern both terrestrial and celestial bodies, unifying the understanding of the cosmos. He inferred that the **Earth is an oblate spheroid**, a prediction later confirmed by geodetic measurements. Furthermore, he was the first to provide a **quantitative estimate of the solar mass** and recognized the advantage of **high-altitude sites for astronomical observation** due to clearer, less turbulent air, which reduces star twinkling. He also applied his \"error-slaying method\" to improve the accuracy of **equinoctial time measurements**.\n\n**Notable Contributions (Beyond Optics, Mechanics, and General Experimental Methods):**\n*   Invented infinitesimal calculus.\n*   Devised the earliest form of linear regression analysis.\n*   Generalized the binomial theorem and developed the Taylor series.\n*   Derived Kepler's laws of planetary motion from universal gravitation.\n*   Accounted for tides, comet trajectories, and the precession of the equinoxes.\n*   Solved the two-body problem and introduced the three-body problem.\n*   Inferred Earth's oblate spheroid shape.\n*   Provided the first quantitative estimate of the solar mass.\n*   Identified high-altitude sites as superior for astronomical observation.\n*   Applied advanced statistical methods to improve equinoctial time measurements.",
     "context": [
-        "he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring\", in effect introducing a now standard method for reducing noise in measurements, and which does not appear elsewhere at the time. He extended his \"error-slaying method\" to studies of equinoxes in 1700, which was described as an \"altogether unprecedented method\" but differed in that here \"Newton required good values for each of the original equinoctial times, and so he devised a method that allowed them to, as it were, self-correct.\" Newton \"invented a certain technique known today as linear regression analysis\", as he wrote the first of the two 'normal equations' known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer, the person originally thought to be the oldest to do so, and he also summed the residuals to zero, forcing the regression line through the average point. He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.\nHe showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour. Thus, he observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour. His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.\n\nFrom this work, he concluded that the lens of any refracting telescope would suffer from the dispersion of light into colours (chromatic aberration). As a proof of the concept, he constructed a telescope using reflective mirrors instead of lenses as the objective to bypass that problem. Building the design, the first known functional reflecting telescope, today known as a Newtonian telescope, involved solving the problem of a suitable mirror material and shaping technique. Previous designs for the reflecting telescope were never put into practice or ended in failure, thereby making Newton's telescope the first one truly created. Newton grounded his own mirrors out of a custom composition of highly reflective speculum metal, using Newton's rings to judge the quality of the optics for his telescopes. In late 1668, he was able to produce this first reflecting telescope. It was about eight inches long and it gave a clearer and larger image. Newton reported that he could see the four Galilean moons of Jupiter and the crescent phase of Venus with his new reflecting telescope. In 1671, he was asked for a demonstration of his reflecting telescope by the Royal Society. Their interest encouraged him to publish his notes, Of Colours, which he later expanded into the work Opticks. When Robert Hooke criticised some of Newton's ideas, Newton was so offended that he withdrew from public debate. However, the two had brief exchanges in 1679–80, when Hooke, who had been appointed Secretary of the Royal Society, opened a correspondence intended to elicit contributions from Newton to Royal Society transactions, which had the effect of stimulating Newton to work out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.\nIn astronomy, Newton is further credited with the realisation that high-altitude sites are superior for observation because they provide the \"most serene and quiet Air\" above the dense, turbulent atmosphere (\"grosser Clouds\"), thereby reducing star twinkling.\n\nNewton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium. He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13). Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction. Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light. The physicist David Finkelstein called Newton \"the first quantum physicist\" as a result.\nIn his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect",
-        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 – 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophiæ Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave–particle duality of light and was first to theorise the Goos–Hänchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state Bézout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton–Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689–1690 and 1701–1702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696–1699) and Master (1699–1727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703–1727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
-        " alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.\nIn 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions. In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating \"Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?\" Query 6 introduced the concept of a black body. Opticks has been referred to as one of the \"earliest exemplars of experimental procedure\".\nIn 1699, Newton presented an improved version of his reflecting quadrant, or octant, that he had previously designed to the Royal Society. His design was probably built as early as 1677. It is notable for being the first quadrant to use two mirrors, which greatly improved the accuracy of measurements since it provided a stable view of both the horizon and the celestial body at the same time. His quadrant was built but appears to have not survived to the present. John Hadley would later construct his own double-reflecting quadrant that was nearly identical to the one invented by Newton. However, Hadley likely did not know of Newton's original invention, causing confusion regarding originality.\nIn 1704, Newton constructed and presented a burning mirror to the Royal Society. It consisted of seven concave glass mirrors, each about one foot in diameter. It is estimated that it reached a maximum possible radiant energy of 460 W cm⁻², which has been described as \"certainly brighter thermally than a thousand Suns (1,000 × 0.065 W cm⁻²)\" based on estimating that the intensity of the Sun's radiation in London in May of 1704 was 0.065 W cm⁻². As a result of the maximum radiant intensity possibly achieved with his mirror he \"may have produced the greatest intensity of radiation brought about by human agency before the arrival of nuclear weapons in 1945.\" David Gregory reported that it caused metals to smoke, boiled gold and brought about the vitrification of slate. William Derham thought it be to the most powerful burning mirror in Europe at the time.\nNewton also made early studies into electricity, as he constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur, which had previously been used by scientists such as Otto von Guericke to construct their globes. He detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts \"light bodies\" to the opposite side. He interpreted this as evidence that electric forces could pass through glass. Newton also reported to the Royal Society that glass was effective for generating static electricity, classifying it as a \"good electric\" decades before this property was widely known. His idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force. He also recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light. He proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function. His theory of nervous transmission had an immense influence on the work of Luigi Galvani, as Newton's theory focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time. He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system. Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum.\nIn Opticks, Newton introduced prisms as Beam expanders and multiple-prism arrays, prismatic configurations that nearly 278 years later were incorporated into tunable lasers, where multiple-prism beam expanders became central to the development of narrow-linewidth systems. The use of these prismatic beam expanders led to the multiple-prism dispersion theory.\nNewton was also the first to propose the Goos–Hänchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected. He provided both experimental and theoretical explanations for the effect using a mechanical model.\nScience came to realise the difference between perception of colour and mathematisable optics. The German poet"
+        "he averaged all of the differences, and he then calculated the difference between the average and the value for the first ring\", in effect introducing a now standard method for reducing noise in measurements, and which does not appear elsewhere at the time. He extended his \"error-slaying method\" to studies of equinoxes in 1700, which was described as an \"altogether unprecedented method\" but differed in that here \"Newton required good values for each of the original equinoctial times, and so he devised a method that allowed them to, as it were, self-correct.\" Newton \"invented a certain technique known today as linear regression analysis\", as he wrote the first of the two 'normal equations' known from ordinary least squares, averaged a set of data, 50 years before Tobias Mayer, the person originally thought to be the oldest to do so, and he also summed the residuals to zero, forcing the regression line through the average point. He differentiated between two uneven sets of data and may have considered an optimal solution regarding bias, although not in terms of effectiveness.\nHe showed that coloured light does not change its properties by separating out a coloured beam and shining it on various objects, and that regardless of whether reflected, scattered, or transmitted, the light remains the same colour. Thus, he observed that colour is the result of objects interacting with already-coloured light rather than objects generating the colour themselves. This is known as Newton's theory of colour. His 1672 paper on the nature of white light and colours forms the basis for all work that followed on colour and colour vision.\n\nFrom this work, he concluded that the lens of any refracting telescope would suffer from the dispersion of light into colours (chromatic aberration). As a proof of the concept, he constructed a telescope using reflective mirrors instead of lenses as the objective to bypass that problem. Building the design, the first known functional reflecting telescope, today known as a Newtonian telescope, involved solving the problem of a suitable mirror material and shaping technique. Previous designs for the reflecting telescope were never put into practice or ended in failure, thereby making Newton's telescope the first one truly created. Newton grounded his own mirrors out of a custom composition of highly reflective speculum metal, using Newton's rings to judge the quality of the optics for his telescopes. In late 1668, he was able to produce this first reflecting telescope. It was about eight inches long and it gave a clearer and larger image. Newton reported that he could see the four Galilean moons of Jupiter and the crescent phase of Venus with his new reflecting telescope. In 1671, he was asked for a demonstration of his reflecting telescope by the Royal Society. Their interest encouraged him to publish his notes, Of Colours, which he later expanded into the work Opticks. When Robert Hooke criticised some of Newton's ideas, Newton was so offended that he withdrew from public debate. However, the two had brief exchanges in 1679\u201380, when Hooke, who had been appointed Secretary of the Royal Society, opened a correspondence intended to elicit contributions from Newton to Royal Society transactions, which had the effect of stimulating Newton to work out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.\nIn astronomy, Newton is further credited with the realisation that high-altitude sites are superior for observation because they provide the \"most serene and quiet Air\" above the dense, turbulent atmosphere (\"grosser Clouds\"), thereby reducing star twinkling.\n\nNewton argued that light is composed of particles or corpuscles, which were refracted by accelerating into a denser medium. He verged on soundlike waves to explain the repeated pattern of reflection and transmission by thin films (Opticks Bk. II, Props. 12), but still retained his theory of 'fits' that disposed corpuscles to be reflected or transmitted (Props.13). Physicists later favoured a purely wavelike explanation of light to account for the interference patterns and the general phenomenon of diffraction. Despite his known preference of a particle theory, Newton noted that light had both particle-like and wave-like properties in Opticks, and was the first to attempt to reconcile the two theories, thereby anticipating later developments of wave-particle duality, which is the modern understanding of light. The physicist David Finkelstein called Newton \"the first quantum physicist\" as a result.\nIn his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.\nIn 1704, Newton published Opticks, in which he expounded his corpuscular theory of light, and included a set of queries at the end, which were posed as unanswered questions and positive assertions. In line with his corpuscle theory, he thought that normal matter was made of grosser corpuscles and speculated that through a kind of alchemical transmutation, with query 30 stating \"Are not gross Bodies and Light convertible into one another, and may not Bodies receive much of their Activity from the Particles of Light which enter their Composition?\" Query 6 introduced the concept of a black body. Opticks has been referred to as one of the \"earliest exemplars of experimental procedure\".\nIn 1699, Newton presented an improved version of his reflecting quadrant, or octant, that he had previously designed to the Royal Society. His design was probably built as early as 1677. It is notable for being the first quadrant to use two mirrors, which greatly improved the accuracy of measurements since it provided a stable view of both the horizon and the celestial body at the same time. His quadrant was built but appears to have not survived to the present. John Hadley would later construct his own double-reflecting quadrant that was nearly identical to the one invented by Newton. However, Hadley likely did not know of Newton's original invention, causing confusion regarding originality.\nIn 1704, Newton constructed and presented a burning mirror to the Royal Society. It consisted of seven concave glass mirrors, each about one foot in diameter. It is estimated that it reached a maximum possible radiant energy of 460 W cm\u207b\u00b2, which has been described as \"certainly brighter thermally than a thousand Suns (1,000 \u00d7 0.065 W cm\u207b\u00b2)\" based on estimating that the intensity of the Sun's radiation in London in May of 1704 was 0.065 W cm\u207b\u00b2. As a result of the maximum radiant intensity possibly achieved with his mirror he \"may have produced the greatest intensity of radiation brought about by human agency before the arrival of nuclear weapons in 1945.\" David Gregory reported that it caused metals to smoke, boiled gold and brought about the vitrification of slate. William Derham thought it be to the most powerful burning mirror in Europe at the time.\nNewton also made early studies into electricity, as he constructed a primitive form of a frictional electrostatic generator using a glass globe, the first to do so with glass instead of sulfur, which had previously been used by scientists such as Otto von Guericke to construct their globes. He detailed an experiment in 1675 that showed when one side of a glass sheet is rubbed to create an electric charge, it attracts \"light bodies\" to the opposite side. He interpreted this as evidence that electric forces could pass through glass. Newton also reported to the Royal Society that glass was effective for generating static electricity, classifying it as a \"good electric\" decades before this property was widely known. His idea in Opticks that optical reflection and refraction arise from interactions across the entire surface is seen as a precursor to the field theory of the electric force. He also recognised the crucial role of electricity in nature, believing it to be responsible for various phenomena, including the emission, reflection, refraction, inflection, and heating effects of light. He proposed that electricity was involved in the sensations experienced by the human body, affecting everything from muscle movement to brain function. His theory of nervous transmission had an immense influence on the work of Luigi Galvani, as Newton's theory focused on electricity as a possible mediator of nervous transmission, which went against the prevailing Cartesian hydraulic theory of the time. He was also the first to present a clear and balanced theory for how both electrical and chemical mechanisms could work together in the nervous system. Newton's mass-dispersion model, ancestral to the successful use of the least action principle, provided a credible framework for understanding refraction, particularly in its approach to refraction in terms of momentum.\nIn Opticks, Newton introduced prisms as Beam expanders and multiple-prism arrays, prismatic configurations that nearly 278 years later were incorporated into tunable lasers, where multiple-prism beam expanders became central to the development of narrow-linewidth systems. The use of these prismatic beam expanders led to the multiple-prism dispersion theory.\nNewton was also the first to propose the Goos\u2013H\u00e4nchen effect, an optical phenomenon in which linearly polarised light undergoes a small lateral shift when totally internally reflected. He provided both experimental and theoretical explanations for the effect using a mechanical model.\nScience came to realise the difference between perception of colour and mathematisable optics. The German poet"
     ],
     "additionalMetadata": {
         "evolutions": [
@@ -14,5 +14,817 @@
         "synthetic_input_quality": 0.0,
         "context_quality": 0.925
     },
-    "sourceFile": "data/wikipedia/files/Isaac_Newton.md"
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "Newton's key mathematical and astronomical roles, beyond optics, mechanics, and experimental methods, include:\n\n**Mathematical Roles:**\n*   Formulated **infinitesimal calculus** [Isaac_Newton.md - Chunk #0, Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #84].\n*   Generalized the **binomial theorem** to any real number [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #20].\n*   Introduced the **Puiseux series** [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #20].\n*   Was the first to state **B\u00e9zout's theorem** [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #20].\n*   Classified most of the **cubic plane curves** and contributed to the study of **Cremona transformations** [Isaac_Newton.md - Chunk #3, Isaac_Newton.md - Chunk #20].\n*   Developed a method for approximating the **roots of a function** [Isaac_Newton.md - Chunk #3].\n*   Originated the **Newton\u2013Cotes formulas** used for numerical integration [Isaac_Newton.md - Chunk #4].\n*   Produced the earliest explicit enunciation of the general **Taylor series** [Isaac_Newton.md - Chunk #4, Isaac_Newton.md - Chunk #20].\n*   Initiated the field of **calculus of variations** [Isaac_Newton.md - Chunk #4].\n*   Formulated and solved the earliest problem in **geometric probability** [Isaac_Newton.md - Chunk #4].\n*   Devised the earliest form of **linear regression** [Isaac_Newton.md - Chunk #4].\n*   Was a pioneer of **vector analysis** [Isaac_Newton.md - Chunk #4].\n*   Discovered **Newton's identities**, **Newton's method**, and the **Newton polygon** [Isaac_Newton.md - Chunk #20].\n*   Made substantial contributions to the theory of **finite differences** [Isaac_Newton.md - Chunk #20].\n*   Was the first to use **fractional indices** and to employ **coordinate geometry** to derive solutions to **Diophantine equations** [Isaac_Newton.md - Chunk #20].\n*   Approximated partial sums of the **harmonic series by logarithms** [Isaac_Newton.md - Chunk #20].\n*   Was the first to use **power series** with confidence and to revert power series [Isaac_Newton.md - Chunk #20].\n\n**Astronomical Roles:**\n*   Derived **Kepler's laws of planetary motion** [Isaac_Newton.md - Chunk #1].\n*   Accounted for **tides**, the **trajectories of comets**, and the **precession of the equinoxes** [Isaac_Newton.md - Chunk #1, Isaac_Newton.md - Chunk #76].\n*   Eradicated doubt about the **Solar System's heliocentricity** [Isaac_Newton.md - Chunk #1].\n*   Solved the **two-body problem** and introduced the **three-body problem** [Isaac_Newton.md - Chunk #1].\n*   Demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles [Isaac_Newton.md - Chunk #1].\n*   Inferred that the **Earth is an oblate spheroid** [Isaac_Newton.md - Chunk #1].",
+    "retrieval_contexts": [
+        {
+            "content": "\"Hitherto I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses, for whatever is not deduced from the phenomena is to be called an hypothesis; and hypotheses, whether metaphysical or physical, whether of occult qualities or mechanical, have no place in experimental philosophy. In this philosophy particular propositions are inferred from the phenomena, and afterwards rendered general by induction\".\nNewton contributed to and refined the scientific method. In his work on the properties of light in the 1670s, he showed his rigorous method, which was conducting experiments, taking detailed notes, making measurements, conducting more experiments that grew out of the initial ones, he formulated a theory, created more experiments to test it, and finally described the entire process so other scientists could replicate every step.",
+            "source": "Isaac_Newton.md - Chunk #50",
+            "score": 0.60171425
+        },
+        {
+            "content": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to",
+            "source": "Isaac_Newton.md - Chunk #1",
+            "score": 0.57788783
+        },
+        {
+            "content": "On one assessment there should be no doubt: Newton was the greatest creative genius physics has ever seen. None of the other candidates for the superlative (Einstein, Maxwell, Boltzmann, Gibbs, and Feynman) has matched Newton's combined achievements as theoretician, experimentalist, and mathematician.Albert Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and of James Clerk Maxwell. Einstein stated that Newton's creation of calculus in relation to his laws of motion was \"perhaps the greatest advance in thought that a single individual was ever privileged to make.\" He also noted the influence of Newton, stating that:The whole evolution of our ideas about the processes of nature, with which we have been concerned so far, might be regarded as an organic development of Newton's ideas.In 1999, an opinion poll of 100 of the day's leading physicists voted Einstein the \"greatest physicist ever,\" with Newton the runner-up, while a parallel survey of rank-and-file physicists ranked Newton as the greatest. In 2005, a dual survey of the public and members of Britain's Royal Society asked two questions: who made the bigger overall contributions to science and who made the bigger positive contributions to",
+            "source": "Isaac_Newton.md - Chunk #84",
+            "score": 0.5745578
+        },
+        {
+            "content": "function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.",
+            "source": "Isaac_Newton.md - Chunk #4",
+            "score": 0.5742011
+        },
+        {
+            "content": "Source: https://en.wikipedia.org/wiki/Isaac_Newton\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+            "source": "Isaac_Newton.md - Chunk #0",
+            "score": 0.5678172
+        },
+        {
+            "content": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+            "source": "Isaac_Newton.md - Chunk #3",
+            "score": 0.5659088
+        },
+        {
+            "content": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft",
+            "source": "Isaac_Newton.md - Chunk #20",
+            "score": 0.5589447
+        },
+        {
+            "content": "In his 1687 Principia, he outlined four rules: the first is, 'Admit no more causes of natural things than are both true and sufficient to explain their appearances'; the second is, 'To the same natural effect, assign the same causes'; the third is, 'Qualities of bodies, which are found to belong to all bodies within experiments, are to be esteemed universal'; and lastly, 'Propositions collected from observation of phenomena should be viewed as accurate or very nearly true until contradicted by other phenomena'. These rules have become the basis of the modern approaches to science.\nNewton's scientific method went beyond simple prediction in three critical ways, thereby enriching the basic hypothetico-deductive model. First, it established a richer ideal of empirical success, requiring phenomena to accurately measure theoretical parameters. Second, it transformed theoretical questions into ones empirically solvable by measurement. Third, it used provisionally accepted propositions to guide research, enabling the method of successive approximations where deviations drive the creation of more accurate models. This robust method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains a foundational element in modern physics.",
+            "source": "Isaac_Newton.md - Chunk #51",
+            "score": 0.5506599
+        },
+        {
+            "content": "Here is buried Isaac Newton, Knight, who by a strength of mind almost divine, and mathematical principles peculiarly his own, explored the course and figures of the planets, the paths of comets, the tides of the sea, the dissimilarities in rays of light, and, what no other scholar has previously imagined, the properties of the colours thus produced. Diligent, sagacious and faithful, in his expositions of nature, antiquity and the holy Scriptures, he vindicated by his philosophy the majesty of God mighty and good, and expressed the simplicity of the Gospel in his manners. Mortals rejoice that there has existed such and so great an ornament of the human race! He was born on 25th December 1642, and died on 20th March 1726.",
+            "source": "Isaac_Newton.md - Chunk #76",
+            "score": 0.5283369
+        },
+        {
+            "content": "In his Hypothesis of Light of 1675, Newton posited the existence of the ether to transmit forces between particles. The contact with the Cambridge Platonist philosopher Henry More revived his interest in alchemy. He replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles. His contributions to science cannot be isolated from his interest in alchemy. This was at a time when there was no clear distinction between alchemy and science.\nNewton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that when oblique pencils of light undergo refraction, two distinct image points are created. This would later stimulate the work of Thomas Young.",
+            "source": "Isaac_Newton.md - Chunk #31",
+            "score": 0.52533805
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addresses the question with no irrelevant statements! It stays focused on Newton's mathematical and astronomical contributions beyond the mentioned fields, providing exactly what was asked for.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 275,
+                "completion_tokens": 56,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions found, indicating the actual output is completely faithful to the retrieval context with all information properly aligned.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton introducing the Puiseux series"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton stating B\u00e9zout's theorem"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work on cubic plane curves or Cremona transformations"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton originating the Newton\u2013Cotes formulas"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work on the general Taylor series"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton initiating the field of calculus of variations"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work in geometric probability"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton devising linear regression"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton as a pioneer of vector analysis"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's contributions to the theory of finite differences"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work with fractional indices or coordinate geometry for Diophantine equations"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work with harmonic series and logarithms"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work with power series"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work on tides, comets, or precession of the equinoxes"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton eradicating doubt about heliocentricity"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton's work on two-body or three-body problems"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The retrieval context does not mention Newton demonstrating that motion of objects on Earth and celestial bodies follow the same principles"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 46,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 0.740702947845805,
+            "reason": "The score is 0.74 because while most nodes contain relevant information about Newton's mathematical and astronomical contributions, there are some irrelevant nodes ranked higher than they should be. The first node in the retrieval contexts discusses Newton's scientific method and experimental approach but does not address his specific mathematical and astronomical roles, yet it's ranked at the top. Similarly, the eighth node focuses on Newton's scientific methodology from the Principia rather than his specific mathematical and astronomical roles, and it's positioned among more relevant nodes. The score isn't higher because these irrelevant nodes discussing general methodology and experimental approaches are interspersed with highly relevant nodes that provide detailed information about his astronomical work like 'deriving Kepler's laws of planetary motion' and 'solving the two-body problem', and his mathematical contributions including 'Newton's identities', 'Newton's method', and being 'founder of the theory of Cremona transformations'.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's scientific method and experimental approach but does not address his specific mathematical and astronomical roles beyond general methodology."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses Newton's astronomical roles by stating he 'used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes' and 'solved the two-body problem and introduced the three-body problem' and that he 'inferred that the Earth is an oblate spheroid'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context discusses Newton's general reputation and Einstein's praise for his 'creation of calculus in relation to his laws of motion' but doesn't provide specific details about his mathematical and astronomical roles."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses Newton's mathematical roles by mentioning he 'originated the Newton\u2013Cotes formulas used for numerical integration', 'produced the earliest explicit enunciation of the general Taylor series', 'initiated the field of calculus of variations', 'formulated and solved the earliest problem in geometric probability', 'devised the earliest form of linear regression', and 'was a pioneer of vector analysis'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides general biographical information and mentions Newton was 'a mathematician, physicist, astronomer' and 'shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz', which addresses his mathematical role."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context focuses on Newton's work in optics, heat transfer, and fluid mechanics, stating 'He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a', which addresses his mathematical roles."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context extensively covers Newton's mathematical contributions including 'the generalised binomial theorem', 'Newton's identities', 'Newton's method', 'the Newton polygon', 'classified cubic plane curves', 'founder of the theory of Cremona transformations', 'substantial contributions to the theory of finite differences', 'first to state B\u00e9zout's theorem', and 'earliest explicit formulation of the general Taylor series'."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's scientific method and rules from the Principia but does not specifically address his mathematical and astronomical roles beyond general methodology."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This appears to be Newton's epitaph mentioning he 'explored the course and figures of the planets, the paths of comets, the tides of the sea' which relates to his astronomical work, though it's more poetic than detailed."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's work on light, ether, alchemy, and astigmatism, which are not directly related to the specific mathematical and astronomical roles asked about in the input."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1202,
+                "completion_tokens": 210,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 0.6875,
+            "reason": "The score is 0.69 because the nodes in retrieval context strongly support Newton's major mathematical and scientific achievements, with nodes 2, 4, 5, 6, and 7 providing comprehensive coverage of his calculus development, Principia publication, gravitational work, and mathematical innovations. However, several specific details lack support, including his academic roles (Fellowship, Lucasian Professor), public positions (Parliament, Royal Mint, Royal Society), the 1700 equinoxes method, precise knighting details (1705, Queen Anne), and astronomical contributions like solar mass calculations and high-altitude observation sites, resulting in moderate but incomplete contextual coverage.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "5th node states 'Sir Isaac Newton...1643...1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "5th node mentions 'He was a key figure in the Scientific Revolution and the Enlightenment that followed' but specific academic roles like Fellowship and Lucasian Professor are not mentioned in retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of Parliamentary service, Royal Mint positions, or Royal Society presidency in the retrieval context"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node states 'His book Philosophi\u00e6 Naturalis Principia Mathematica...first published in 1687, achieved the first great unification in physics and established classical mechanics' and knighting is mentioned in 9th node"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node mentions Newton 'developed calculus years before Leibniz' which supports the pre-1687 timeline"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node confirms '1687' publication of Principia and 2nd node describes gravity applications to celestial mechanics"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of 1700 or equinoxes method in the retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "9th node mentions knighting but not specifically 1705 or Queen Anne"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Header for mathematical roles section - no specific claim to verify"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node states 'shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node mentions Newton 'devised the earliest form of linear regression' which supports the claim about normal equations and regression methods"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "6th and 7th nodes mention Newton 'generalised the binomial theorem to any real number, introduced the Puiseux series' and other mathematical contributions listed"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node states Newton 'initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability...and was a pioneer of vector analysis'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Header for astronomical roles section - no specific claim to verify"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states Newton 'used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node mentions Newton 'solved the two-body problem and introduced the three-body problem'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states 'He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states 'Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of solar mass calculation in the retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of high-altitude astronomical observation sites in the retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "2nd node mentions 'the precession of the equinoxes' but not the specific 'error-slaying method' for equinoctial measurements"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Header for notable contributions section - no specific claim to verify"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "5th node confirms Newton developed 'infinitesimal calculus'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "4th node states Newton 'devised the earliest form of linear regression'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "6th and 7th nodes mention Newton 'generalised the binomial theorem' and provided 'earliest explicit formulation of the general Taylor series'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states Newton used gravity to 'derive Kepler's laws of planetary motion'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node mentions Newton accounted for 'tides, the trajectories of comets, the precession of the equinoxes'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node states Newton 'solved the two-body problem and introduced the three-body problem'"
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "2nd node confirms 'Newton's inference that the Earth is an oblate spheroid'"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of quantitative solar mass estimate in the retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of high-altitude astronomical observation sites in the retrieval context"
+                },
+                {
+                    "verdict": "no",
+                    "reason": "No mention of statistical methods applied to equinoctial time measurements in the retrieval context"
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2189,
+                "completion_tokens": 155,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.6140350877192983,
+            "reason": "The score is 0.61 because while the retrieval context contains substantial relevant information about Newton's mathematical contributions (calculus, binomial theorem, Taylor series, Newton's identities, numerical methods) and astronomical work (Principia, planetary motion, comets, tides), a significant portion discusses topics explicitly excluded by the input such as 'optics,' 'mechanics,' and 'experimental methods,' as well as irrelevant biographical details and religious views.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton stated that he had not been able to discover the cause of those properties of gravity from phenomena and that he frames no hypotheses, emphasizing that hypotheses have no place in experimental philosophy.",
+                            "verdict": "no",
+                            "reason": "The statement 'Hitherto I have not been able to discover the cause of those properties of gravity from phenomena, and I frame no hypotheses' relates to Newton's philosophy on gravity and experimental methods rather than his mathematical and astronomical roles."
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method.",
+                            "verdict": "no",
+                            "reason": "The statement 'Newton contributed to and refined the scientific method' focuses on experimental methodology rather than his mathematical and astronomical roles."
+                        },
+                        {
+                            "statement": "In his work on the properties of light in the 1670s, Newton showed his rigorous method through conducting experiments, taking detailed notes, making measurements, formulating theories, and describing processes for replication.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's 'work on the properties of light in the 1670s' and his 'rigorous method, which was conducting experiments, taking detailed notes, making measurements' relates to optics and experimental methods, which the input specifically excludes."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton solved the two-body problem and introduced the three-body problem.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel.",
+                            "verdict": "no",
+                            "reason": "The information about 'described a precursor to the modern wind tunnel' relates to experimental methods, which the input specifically excludes by asking for contributions 'beyond optics, mechanics, and experimental methods'."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was the greatest creative genius physics has ever seen, with combined achievements as theoretician, experimentalist, and mathematician.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton created calculus in relation to his laws of motion, which Einstein called 'perhaps the greatest advance in thought that a single individual was ever privileged to make.'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "The whole evolution of ideas about the processes of nature might be regarded as an organic development of Newton's ideas.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Albert Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and of James Clerk Maxwell.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Einstein kept a picture of Newton on his study wall alongside ones of Michael Faraday and of James Clerk Maxwell' is about Einstein's personal decoration choices and does not address Newton's mathematical and astronomical roles."
+                        },
+                        {
+                            "statement": "In 1999, an opinion poll of 100 leading physicists voted Einstein the 'greatest physicist ever,' with Newton the runner-up, while a parallel survey of rank-and-file physicists ranked Newton as the greatest.",
+                            "verdict": "no",
+                            "reason": "The information about 'opinion poll of 100 leading physicists voted Einstein the greatest physicist ever, with Newton the runner-up' is about polling results and rankings rather than Newton's specific mathematical and astronomical roles."
+                        },
+                        {
+                            "statement": "In 2005, a dual survey of the public and members of Britain's Royal Society asked questions about contributions to science.",
+                            "verdict": "no",
+                            "reason": "The statement about 'a dual survey of the public and members of Britain's Royal Society asked questions about contributions to science' discusses survey methodology rather than Newton's mathematical and astronomical roles."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton originated the Newton\u2013Cotes formulas used for numerical integration",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton produced the earliest explicit enunciation of the general Taylor series",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton initiated the field of calculus of variations",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton formulated and solved the earliest problem in geometric probability",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton devised the earliest form of linear regression",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton was a pioneer of vector analysis",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was a key figure in the Scientific Revolution and the Enlightenment that followed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton also made seminal contributions to optics.",
+                            "verdict": "no",
+                            "reason": "The input specifically asks for information 'Beyond optics, mechanics, and experimental methods', so 'Newton also made seminal contributions to optics' is explicitly excluded from what is being asked."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's work in 'optics' with 'reflecting telescope' and 'theory of colour', which the input explicitly excludes."
+                        },
+                        {
+                            "statement": "His work on light was collected in his book Opticks, published in 1704.",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's 'work on light' and 'Opticks', which falls under optics that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'prisms as beam expanders' which is optical work that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'wave\u2013particle duality of light' and 'Goos\u2013H\u00e4nchen effect', which are optical phenomena that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'law of cooling', 'heat transfer', 'speed of sound', and 'Newtonian fluid', which fall under mechanics and experimental methods that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "He was also the first to explain the Magnus effect.",
+                            "verdict": "no",
+                            "reason": "The statement discusses the 'Magnus effect', which is a mechanical phenomenon that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "Moreover, he was the first to analyse Couette flow.",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'Couette flow', which is a mechanical/fluid dynamics concept that the input explicitly excludes."
+                        },
+                        {
+                            "statement": "In addition to his creation of calculus, Newton's work on mathematics was extensive.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called 'one of the most powerful and significant in the whole of mathematics.'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables).",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as 'the single most significant contributor to finite difference interpolation', with many formulas created by Newton.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He introduced the Puisseux series.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He also provided the earliest explicit formulation of the general Taylor series, which appeared in a 1691-1692 draft.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In his 1687 Principia, Newton outlined four rules that have become the basis of modern approaches to science",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's scientific method went beyond simple prediction by establishing a richer ideal of empirical success, transforming theoretical questions into empirically solvable ones, and using provisionally accepted propositions to guide research",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's robust method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains a foundational element in modern physics",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton explored the course and figures of the planets using mathematical principles peculiarly his own",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton studied the paths of comets",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton investigated the tides of the sea",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton explored the dissimilarities in rays of light and the properties of the colours thus produced",
+                            "verdict": "no",
+                            "reason": "The statement mentions 'dissimilarities in rays of light' and 'properties of the colours' which relates to optics, but the input specifically asks for contributions 'beyond optics, mechanics, and experimental methods'."
+                        },
+                        {
+                            "statement": "Newton was diligent, sagacious and faithful in his expositions of nature, antiquity and the holy Scriptures",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton vindicated by his philosophy the majesty of God mighty and good, and expressed the simplicity of the Gospel in his manners",
+                            "verdict": "no",
+                            "reason": "The statement about Newton vindicating 'the majesty of God mighty and good' and expressing 'the simplicity of the Gospel in his manners' relates to his religious and personal character rather than his mathematical and astronomical roles."
+                        },
+                        {
+                            "statement": "Newton was born on 25th December 1642, and died on 20th March 1726",
+                            "verdict": "no",
+                            "reason": "The biographical dates 'born on 25th December 1642, and died on 20th March 1726' are not related to his mathematical and astronomical roles."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton posited the existence of the ether to transmit forces between particles in his Hypothesis of Light of 1675",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's work 'in his Hypothesis of Light of 1675' and 'the existence of the ether to transmit forces between particles' which relates to his optical theories, but the input specifically asks for contributions 'Beyond optics, mechanics, and experimental methods'."
+                        },
+                        {
+                            "statement": "The contact with the Cambridge Platonist philosopher Henry More revived Newton's interest in alchemy, and he replaced the ether with occult forces based on Hermetic ideas of attraction and repulsion between particles",
+                            "verdict": "no",
+                            "reason": "The statement discusses 'alchemy' and 'occult forces based on Hermetic ideas' which are not mathematical or astronomical roles as requested in the input."
+                        },
+                        {
+                            "statement": "Newton's contributions to science cannot be isolated from his interest in alchemy, at a time when there was no clear distinction between alchemy and science",
+                            "verdict": "no",
+                            "reason": "The statement focuses on 'his interest in alchemy' which is not a mathematical or astronomical role as requested in the input."
+                        },
+                        {
+                            "statement": "Newton contributed to the study of astigmatism by helping to erect its mathematical foundation through his discovery that oblique pencils of light undergo refraction creating two distinct image points, which later stimulated the work of Thomas Young",
+                            "verdict": "no",
+                            "reason": "The statement discusses Newton's work on 'astigmatism' and 'oblique pencils of light undergo refraction' which relates to optics, but the input specifically asks for contributions 'Beyond optics, mechanics, and experimental methods'."
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2234,
+                "completion_tokens": 110,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
 }

@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File",
+            "name": "Synthesis",
             "type": "debugpy",
             "request": "launch",
-            "module": "RAG.src.core.synthesize",
+            "module": "src.synthesis.synthesize",
             "console": "integratedTerminal",
             "justMyCode": false
         },
@@ -33,6 +33,15 @@
             "module": "src.evals.evaluate",
             "console": "integratedTerminal",
             "justMyCode": false,
+            "args": [
+                "--file_dir",
+                "./data/goldens/Isaac_Newton",
+                "--retrieval_window_size",
+                "10",
+                "--collection_name",
+                "wikipedia",
+                "--force_rerun"
+            ]
         }
     ]
 }

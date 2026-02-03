@@ -10,10 +10,6 @@ from deepeval.metrics import (
     ContextualRecallMetric,
     ContextualRelevancyMetric,
 )
-
-# from deepeval.evaluate import evaluate
-# from deepeval.evaluate.configs import AsyncConfig
-# from deepeval.evaluate.types import EvaluationResult
 from deepeval.test_case import LLMTestCase
 
 from src.settings import settings
@@ -23,35 +19,57 @@ from src.evals.base_metric_wrapper import BaseMetricWrapper
 
 deepeval.login(settings.confident_api_key)
 
-critique_model = BedrockLLMWrapper(
-    model=settings.critique_model_name,
-    region_name=settings.critique_model_region_name,
-)
 
-logger.info(f"Critique model name: {settings.critique_model_name}")
-logger.info(f"Critique model region name: {settings.critique_model_region_name}")
+def create_metrics(
+    threshold: float = 0.5,
+    include_reason: bool = True,
+    async_mode: bool = True,
+):
+    critique_model = BedrockLLMWrapper(
+        model=settings.critique_model_name,
+        region_name=settings.critique_model_region_name,
+    )
 
-rag_metrics = [
-    AnswerRelevancyMetric(
-        model=critique_model, threshold=0.5, include_reason=True, async_mode=True
-    ),
-    FaithfulnessMetric(
-        model=critique_model, threshold=0.5, include_reason=True, async_mode=True
-    ),
-    ContextualPrecisionMetric(
-        model=critique_model, threshold=0.5, include_reason=True, async_mode=True
-    ),
-    ContextualRecallMetric(
-        model=critique_model, threshold=0.5, include_reason=True, async_mode=True
-    ),
-    ContextualRelevancyMetric(
-        model=critique_model, threshold=0.5, include_reason=True, async_mode=True
-    ),
-]
+    logger.info(f"Critique model name: {settings.critique_model_name}")
+    logger.info(f"Critique model region name: {settings.critique_model_region_name}")
 
-rag_metric_wrappers = [BaseMetricWrapper(metric) for metric in rag_metrics]
+    _metrics = [
+        AnswerRelevancyMetric(
+            model=critique_model,
+            threshold=threshold,
+            include_reason=include_reason,
+            async_mode=async_mode,
+        ),
+        FaithfulnessMetric(
+            model=critique_model,
+            threshold=threshold,
+            include_reason=include_reason,
+            async_mode=async_mode,
+        ),
+        ContextualPrecisionMetric(
+            model=critique_model,
+            threshold=threshold,
+            include_reason=include_reason,
+            async_mode=async_mode,
+        ),
+        ContextualRecallMetric(
+            model=critique_model,
+            threshold=threshold,
+            include_reason=include_reason,
+            async_mode=async_mode,
+        ),
+        ContextualRelevancyMetric(
+            model=critique_model,
+            threshold=threshold,
+            include_reason=include_reason,
+            async_mode=async_mode,
+        ),
+    ]
 
-logger.info(f"RAG metrics: {[metric.__name__ for metric in rag_metrics]}")
+    _metric_wrappers = [BaseMetricWrapper(metric) for metric in _metrics]
+    logger.info(f"RAG metrics: {[metric.__name__ for metric in _metrics]}")
+
+    return _metric_wrappers
 
 
 def create_llm_test_case(
@@ -100,11 +118,24 @@ def evaluate_llm_test_case_on_metrics(
         logger.info(f"Evaluating metric: {metric.__name__}")
         metric.measure(test_case, _log_metric_to_confident=True)
         token_usage = metric.get_last_token_usage()
+        if hasattr(metric.base_metric, "verdicts"):
+            verdicts = metric.base_metric.verdicts
+        elif hasattr(metric.base_metric, "verdicts_list"):
+            verdicts = metric.base_metric.verdicts_list
+        else:
+            verdicts = None
         metrics_result[metric.__name__] = {
             "score": metric.score,
             "reason": metric.reason,
             "threshold": metric.threshold,
             "is_successful": metric.is_successful(),
+            "verdicts": (
+                json.loads(
+                    json.dumps([verdict.model_dump() for verdict in verdicts], indent=4)
+                )
+                if verdicts is not None
+                else None
+            ),
             "token_usage": {
                 "prompt_tokens": token_usage.input_tokens,
                 "completion_tokens": token_usage.output_tokens,
@@ -115,7 +146,7 @@ def evaluate_llm_test_case_on_metrics(
             },
         }
 
-    logger.info(f"Metrics result: {json.dumps(metrics_result, indent=4)}")
+    # logger.info(f"Metrics result: {json.dumps(metrics_result, indent=4)}")
 
     return metrics_result
 
@@ -129,7 +160,17 @@ if __name__ == "__main__":
     parser.add_argument(
         "--collection_name", type=str, default=settings.qdrant_collection_name
     )
+    parser.add_argument("--force_rerun", action="store_true")
+    parser.add_argument("--threshold", type=float, default=0.5)
+    parser.add_argument("--include_reason", action="store_true", default=True)
+    parser.add_argument("--async_mode", action="store_true", default=True)
     args = parser.parse_args()
+
+    _metric_wrappers = create_metrics(
+        threshold=args.threshold,
+        include_reason=args.include_reason,
+        async_mode=args.async_mode,
+    )
 
     for file_path in Path(args.file_dir).glob("*.json"):
         with open(file=file_path, mode="r", encoding="utf-8") as f:
@@ -139,6 +180,7 @@ if __name__ == "__main__":
             sample.get("actual_output") is not None
             and sample.get("retrieval_contexts") is not None
             and sample.get("metrics") is not None
+            and not args.force_rerun
         ):
             continue
 
@@ -149,8 +191,7 @@ if __name__ == "__main__":
                 collection_name=args.collection_name,
             )
             metrics_result = evaluate_llm_test_case_on_metrics(
-                test_case=test_case,
-                metrics=rag_metric_wrappers,
+                test_case=test_case, metrics=_metric_wrappers
             )
             sample["metrics"] = metrics_result
             with open(file=file_path, mode="w", encoding="utf-8") as f:

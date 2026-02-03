@@ -1,10 +1,10 @@
 {
     "input": "How did Isaac Newton's Principia and his theory of universal gravitation unify terrestrial and celestial mechanics?",
-    "expectedOutput": "Isaac Newton's *Philosophiæ Naturalis Principia Mathematica* (Mathematical Principles of Natural Philosophy), published in 1687, achieved the first great unification in physics by establishing classical mechanics and demonstrating that the same fundamental principles govern both terrestrial and celestial phenomena. In the *Principia*, Newton formulated the laws of motion and his theory of universal gravitation. He applied this mathematical description of gravity to successfully derive Kepler's laws of planetary motion, explain tides, the trajectories of comets, and the precession of the equinoxes, thereby eradicating doubt about the Solar System's heliocentricity. This work showed that the motion of objects on Earth and the motion of celestial bodies could all be accounted for by the identical set of physical laws, providing a single, coherent framework for understanding the universe.",
+    "expectedOutput": "Isaac Newton's *Philosophi\u00e6 Naturalis Principia Mathematica* (Mathematical Principles of Natural Philosophy), published in 1687, achieved the first great unification in physics by establishing classical mechanics and demonstrating that the same fundamental principles govern both terrestrial and celestial phenomena. In the *Principia*, Newton formulated the laws of motion and his theory of universal gravitation. He applied this mathematical description of gravity to successfully derive Kepler's laws of planetary motion, explain tides, the trajectories of comets, and the precession of the equinoxes, thereby eradicating doubt about the Solar System's heliocentricity. This work showed that the motion of objects on Earth and the motion of celestial bodies could all be accounted for by the identical set of physical laws, providing a single, coherent framework for understanding the universe.",
     "context": [
-        " Articles, the basis of Church of England doctrine. By 1675 the issue could not be avoided, and his unconventional views stood in the way.\nHis academic work impressed the Lucasian Professor Isaac Barrow, who was anxious to develop his own religious and administrative potential (he became master of Trinity College two years later); in 1669, Newton succeeded him, only one year after receiving his MA. Newton argued that this should exempt him from the ordination requirement, and King Charles II, whose permission was needed, accepted this argument; thus, a conflict between Newton's religious views and Anglican orthodoxy was averted. He was appointed at the age of 26.\nAs accomplished as Newton was as a theoretician, he was less effective as a teacher; his classes were almost always empty. Humphrey Newton, his sizar (assistant), noted that Newton would arrive on time and, if the room was empty, he would reduce his lecture time in half from 30 to 15 minutes, talk to the walls, then retreat to his experiments, thus fulfilling his contractual obligations. For his part Newton enjoyed neither teaching nor students. Over his career he was only assigned three students to tutor and none were noteworthy.\nNewton was elected a Fellow of the Royal Society (FRS) in 1672.\n\nRevision of Geographia Generalis\nThe Lucasian Professor of Mathematics at Cambridge position included the responsibility of instructing geography. In 1672, and again in 1681, Newton published a revised, corrected, and amended edition of the Geographia Generalis, a geography textbook first published in 1650 by the then-deceased Bernhardus Varenius. In the Geographia Generalis, Varenius attempted to create a theoretical foundation linking scientific principles to classical concepts in geography, and considered geography to be a mix between science and pure mathematics applied to quantifying features of the Earth. While it is unclear if Newton ever lectured in geography, the 1733 Dugdale and Shaw English translation of the book stated Newton published the book to be read by students while he lectured on the subject. The Geographia Generalis is viewed by some as the dividing line between ancient and modern traditions in the history of geography, and Newton's involvement in the subsequent editions is thought to be a large part of the reason for this enduring legacy.\n\nScientific studies\nMathematics\nNewton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669, was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\". \nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.\n\nThe historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written — or at least made a good start upon — a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and",
-        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 – 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophiæ Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave–particle duality of light and was first to theorise the Goos–Hänchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state Bézout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton–Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689–1690 and 1701–1702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696–1699) and Master (1699–1727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703–1727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
-        " as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . . had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"\nHis work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.\n\nNewton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.\nNewton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state Bézout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared"
+        " Articles, the basis of Church of England doctrine. By 1675 the issue could not be avoided, and his unconventional views stood in the way.\nHis academic work impressed the Lucasian Professor Isaac Barrow, who was anxious to develop his own religious and administrative potential (he became master of Trinity College two years later); in 1669, Newton succeeded him, only one year after receiving his MA. Newton argued that this should exempt him from the ordination requirement, and King Charles II, whose permission was needed, accepted this argument; thus, a conflict between Newton's religious views and Anglican orthodoxy was averted. He was appointed at the age of 26.\nAs accomplished as Newton was as a theoretician, he was less effective as a teacher; his classes were almost always empty. Humphrey Newton, his sizar (assistant), noted that Newton would arrive on time and, if the room was empty, he would reduce his lecture time in half from 30 to 15 minutes, talk to the walls, then retreat to his experiments, thus fulfilling his contractual obligations. For his part Newton enjoyed neither teaching nor students. Over his career he was only assigned three students to tutor and none were noteworthy.\nNewton was elected a Fellow of the Royal Society (FRS) in 1672.\n\nRevision of Geographia Generalis\nThe Lucasian Professor of Mathematics at Cambridge position included the responsibility of instructing geography. In 1672, and again in 1681, Newton published a revised, corrected, and amended edition of the Geographia Generalis, a geography textbook first published in 1650 by the then-deceased Bernhardus Varenius. In the Geographia Generalis, Varenius attempted to create a theoretical foundation linking scientific principles to classical concepts in geography, and considered geography to be a mix between science and pure mathematics applied to quantifying features of the Earth. While it is unclear if Newton ever lectured in geography, the 1733 Dugdale and Shaw English translation of the book stated Newton published the book to be read by students while he lectured on the subject. The Geographia Generalis is viewed by some as the dividing line between ancient and modern traditions in the history of geography, and Newton's involvement in the subsequent editions is thought to be a large part of the reason for this enduring legacy.\n\nScientific studies\nMathematics\nNewton's work has been said \"to distinctly advance every branch of mathematics then studied\". His work on calculus, usually referred to as fluxions, began in 1664, and by 20 May 1665 as seen in a manuscript, Newton \"had already developed the calculus to the point where he could compute the tangent and the curvature at any point of a continuous curve\". His work by 1665 amounted to a systematic calculus that unified differentiation and integration, which he applied to the dynamic analysis of algebraic and transcendental curves, an approach described by scholar Tom Whiteside as \"radically novel, indeed unprecedented\" and which later directly informed the theory of central-force orbits in the Principia. Another manuscript of October 1666, is now published among Newton's mathematical papers. Newton recorded a definitive tract of calculus in what is called his \"Waste Book\". He was self-taught in mathematics and did his research without help, as according to scholar Richard S. Westfall, \"By every indication we have, Newton carried out his education in mathematics and his program of research entirely on his own.\" His work De analysi per aequationes numero terminorum infinitas, sent by Isaac Barrow to John Collins in June 1669, was identified by Barrow in a letter sent to Collins that August as the work \"of an extraordinary genius and proficiency in these things\". \nNewton later became involved in a dispute with the German polymath Gottfried Wilhelm Leibniz over priority in the development of calculus. Both are now credited with independently developing calculus, though with very different mathematical notations. However, it is established that Newton came to develop calculus much earlier than Leibniz. Despite this, the notation of Leibniz is recognised as the more convenient notation, being adopted by continental European mathematicians, and after 1820, by British mathematicians.\n\nThe historian of science A. Rupert Hall notes that while Leibniz deserves credit for his independent formulation of calculus, Newton was undoubtedly the first to develop it, stating:But all these matters are of little weight in comparison with the central truth, which has indeed long been universally recognized, that Newton was master of the essential techniques of the calculus by the end of 1666, almost exactly nine years before Leibniz . . . Newton's claim to have mastered the new infinitesimal calculus long before Leibniz, and even to have written \u2014 or at least made a good start upon \u2014 a publishable exposition of it as early as 1671, is certainly borne out by copious evidence, and though Leibniz and",
+        "# Isaac Newton\n\nSource: https://en.wikipedia.org/wiki/Isaac_Newton\n\nSir Isaac Newton ( ; 4 January [O.S. 25 December] 1643 \u2013 31 March [O.S. 20 March] 1727) was an English polymath who was a mathematician, physicist, astronomer, alchemist, theologian, author and inventor. He was a key figure in the Scientific Revolution and the Enlightenment that followed. His book Philosophi\u00e6 Naturalis Principia Mathematica (Mathematical Principles of Natural Philosophy), first published in 1687, achieved the first great unification in physics and established classical mechanics. Newton also made seminal contributions to optics, and shares credit with the German mathematician Gottfried Wilhelm Leibniz for formulating infinitesimal calculus, although he developed calculus years before Leibniz. Newton contributed to and refined the scientific method, and his work is considered the most influential in bringing forth modern science.\nIn the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to provide a quantitative estimate of the solar mass.\nNewton built the first reflecting telescope and developed a sophisticated theory of colour based on the observation that a prism separates white light into the colours of the visible spectrum. His work on light was collected in his book Opticks, published in 1704. He originated prisms as beam expanders and multiple-prism arrays, which would later become integral to the development of tunable lasers. He anticipated the wave\u2013particle duality of light and was first to theorise the Goos\u2013H\u00e4nchen effect. He also formulated an empirical law of cooling, which was the first heat transfer formulation and serves as the formal basis of convective heat transfer, made the first theoretical calculation of the speed of sound, and introduced the notions of a Newtonian fluid and a black body. He was also the first to explain the Magnus effect. Moreover, he was the first to analyse Couette flow. In addition to his creation of calculus, Newton's work on mathematics was extensive. He generalised the binomial theorem to any real number, introduced the Puiseux series, was the first to state B\u00e9zout's theorem, classified most of the cubic plane curves, contributed to the study of Cremona transformations, developed a method for approximating the roots of a function, originated the Newton\u2013Cotes formulas used for numerical integration, and further produced the earliest explicit enunciation of the general Taylor series. Additionally, Newton initiated the field of calculus of variations, formulated and solved the earliest problem in geometric probability, devised the earliest form of linear regression, and was a pioneer of vector analysis.\nNewton was a fellow of Trinity College and the second Lucasian Professor of Mathematics at the University of Cambridge; he was appointed at the age of 26. He was a devout but unorthodox Christian who privately rejected the doctrine of the Trinity. He refused to take holy orders in the Church of England, unlike most members of the Cambridge faculty of the day. Beyond his work on the mathematical sciences, Newton dedicated much of his time to the study of alchemy and biblical chronology, but most of his work in those areas remained unpublished until long after his death. Politically and personally tied to the Whigs, Newton served two brief terms as Member of Parliament for the University of Cambridge, in 1689\u20131690 and 1701\u20131702. He was knighted by Queen Anne in 1705 and spent the last three decades of his life in London, serving as Warden (1696\u20131699) and Master (1699\u20131727) of the Royal Mint, in which he increased the accuracy and security of British coinage. He was also the president of the Royal Society (1703\u20131727).\n\nEarly life\nIsaac Newton was born (according to the Julian calendar in use in England at",
+        " as 1671, is certainly borne out by copious evidence, and though Leibniz and some of his friends sought to belittle Newton's case, the truth has not been seriously in doubt for the last 250 years. Hall further notes that in Principia, Newton was able to \"formulate and resolve problems by the integration of differential equations\" and \"in fact, he anticipated in his book many results that later exponents of the calculus regarded as their own novel achievements.\" Hall notes Newton's rapid development of calculus in comparison to his contemporaries, stating that Newton \"well before 1690 . . . had reached roughly the point in the development of the calculus that Leibniz, the two Bernoullis, L'Hospital, Hermann and others had by joint efforts reached in print by the early 1700s\".\nDespite the convenience of Leibniz's notation, it has been noted that Newton's notation could also have developed multivariate techniques, with his dot notation still widely used in physics. Some academics have noted the richness and depth of Newton's work, such as the physicist Roger Penrose, stating \"in most cases Newton's geometrical methods are not only more concise and elegant, they reveal deeper principles than would become evident by the use of those formal methods of calculus that nowadays would seem more direct.\" The mathematician Vladimir Arnold stated that \"Comparing the texts of Newton with the comments of his successors, it is striking how Newton's original presentation is more modern, more understandable and richer in ideas than the translation due to commentators of his geometrical ideas into the formal language of the calculus of Leibniz.\"\nHis work extensively uses calculus in geometric form based on limiting values of the ratios of vanishingly small quantities: in the Principia itself, Newton gave demonstration of this under the name of \"the method of first and last ratios\" and explained why he put his expositions in this form, remarking also that \"hereby the same thing is performed as by the method of indivisibles.\" Because of this, the Principia has been called \"a book dense with the theory and application of the infinitesimal calculus\" in modern times and in Newton's time \"nearly all of it is of this calculus.\" His use of methods involving \"one or more orders of the infinitesimally small\" is present in his De motu corporum in gyrum of 1684 and in his papers on motion \"during the two decades preceding 1684\".\nIt has been argued that Newton had an imprecise or limited understanding of limits. However, the mathematician Bruce Pourciau contends that in his Principia, Newton actually demonstrated a more sophisticated understanding of limits than he is generally credited with, including being the first to present an epsilon argument.\n\nNewton had been reluctant to publish his calculus because he feared controversy and criticism. He was close to the Swiss mathematician Nicolas Fatio de Duillier. In 1691, Duillier started to write a new version of Newton's Principia, and corresponded with Leibniz. In 1693, the relationship between Duillier and Newton deteriorated and the book was never completed. Starting in 1699, Duillier accused Leibniz of plagiarism. The mathematician John Keill accused Leibniz of plagiarism in 1708 in the Royal Society journal, thereby deteriorating the situation even more. The dispute then broke out in full force in 1711 when the Royal Society proclaimed in a study that it was Newton who was the true discoverer and labelled Leibniz a fraud; it was later found that Newton wrote the study's concluding remarks on Leibniz. Thus began the bitter controversy which marred the lives of both men until Leibniz's death in 1716.\nNewton's first major mathematical discovery was the generalised binomial theorem, valid for any exponent, in 1664-5, which has been called \"one of the most powerful and significant in the whole of mathematics.\" He discovered Newton's identities (probably without knowing of earlier work by Albert Girard in 1629), Newton's method, the Newton polygon, and classified cubic plane curves (polynomials of degree three in two variables). Newton is also a founder of the theory of Cremona transformations, and he made substantial contributions to the theory of finite differences, with Newton regarded as \"the single most significant contributor to finite difference interpolation\", with many formulas created by Newton. He was the first to state B\u00e9zout's theorem, and was also the first to use fractional indices and to employ coordinate geometry to derive solutions to Diophantine equations. He approximated partial sums of the harmonic series by logarithms (a precursor to Euler's summation formula) and was the first to use power series with confidence and to revert power series. He introduced the Puisseux series. He also provided the earliest explicit formulation of the general Taylor series, which appeared"
     ],
     "additionalMetadata": {
         "evolutions": [
@@ -14,5 +14,557 @@
         "synthetic_input_quality": 1.0,
         "context_quality": 0.925
     },
-    "sourceFile": "data/wikipedia/files/Isaac_Newton.md"
+    "sourceFile": "data/wikipedia/files/Isaac_Newton.md",
+    "actual_output": "Isaac Newton's **Principia** and his theory of **universal gravitation** unified terrestrial and celestial mechanics by:\n\n*   Formulating the laws of motion and **universal gravitation** [Isaac_Newton.md - Chunk #1].\n*   Demonstrating that the motion of objects on Earth and celestial bodies could be accounted for by the **same principles** [Isaac_Newton.md - Chunk #1].\n*   Achieving the **first great unification in physics** through this work [Isaac_Newton.md - Chunk #39].\n*   Providing a \"supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe\" [Isaac_Newton.md - Chunk #43].\n*   Using his mathematical description of gravity to derive **Kepler's laws of planetary motion**, account for **tides**, the **trajectories of comets**, and the **precession of the equinoxes** [Isaac_Newton.md - Chunk #1].",
+    "retrieval_contexts": [
+        {
+            "content": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity. While this is the case, his laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields. He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity. Newton solved the two-body problem and introduced the three-body problem. He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles. Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems. He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel. Further, he was the first to",
+            "source": "Isaac_Newton.md - Chunk #1",
+            "score": 0.65031356
+        },
+        {
+            "content": "The Principia was published on 5 July 1687 with encouragement and financial help from Halley. In this work, Newton stated the three universal laws of motion. Together, these laws describe the relationship between any object, the forces acting upon it and the resulting motion, laying the foundation for classical mechanics. They contributed to numerous advances during the Industrial Revolution and were not improved upon for more than 200 years. Many of these advances still underpin non-relativistic technologies today. Newton used the Latin word gravitas (weight) for the effect that would become known as gravity, and formulated the law of universal gravitation. His work achieved the first great unification in physics. He solved the two-body problem, and introduced the three-body problem.",
+            "source": "Isaac_Newton.md - Chunk #39",
+            "score": 0.6403743
+        },
+        {
+            "content": "Philosophi\u00e6 Naturalis Principia Mathematica\nNewton had been developing his theory of gravitation as far back as 1665. In 1679, he returned to his work on celestial mechanics by considering gravitation and its effect on the orbits of planets with reference to Kepler's laws of planetary motion. Newton's reawakening interest in astronomical matters received further stimulus by the appearance of a comet in the winter of 1680\u20131681, on which he corresponded with John Flamsteed. After the exchanges with Hooke, Newton worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector. He shared his results with Edmond Halley and the Royal Society in De motu corporum in gyrum, a tract written on about nine sheets which was copied into the Royal Society's Register Book in December 1684. As part of this work, Newton also coined the term centripetal force. This tract contained the nucleus that Newton developed and expanded to form the Principia.",
+            "source": "Isaac_Newton.md - Chunk #38",
+            "score": 0.5906286
+        },
+        {
+            "content": "formulated the linear relation between viscous resistance and velocity gradient that now defines a Newtonian fluid, despite his experiments giving little direct insight into viscosity. Newton also discussed the circular motion of fluids and was the first to analyse Couette flow, initially in Proposition 51 for a single rotating cylinder and extended in Corollary 2 to the flow between two concentric cylinders. Further, he was the first to analyse the resistance of axisymmetric bodies moving through a rarefied medium.\nIn Principia, Newton provided the first quantitative estimate of the solar mass, with later editions incorporating more accurate measurements, bringing his Sun-to-Earth mass ratio calculation close to the modern value. He further determined the masses and densities of Jupiter and Saturn, putting all four celestial bodies (Sun, Earth, Jupiter, and Saturn) on the same comparative scale. This achievement by Newton has been called \"a supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe\".",
+            "source": "Isaac_Newton.md - Chunk #43",
+            "score": 0.531734
+        },
+        {
+            "content": "The historian of science James Gleick noted that Newton \"discovered more of the essential core of human knowledge than anyone before or after\", and wrote further:He was chief architect of the modern world. He answered the ancient philosophical riddles of light and motion, and he effectively discovered gravity. He showed how to predict the courses of heavenly bodies and so established our place in the cosmos. He made knowledge a thing of substance: quantitative and exact. He established principles, and they are called his laws.\nThe physicist Ludwig Boltzmann called Newton's Principia \"the first and greatest work ever written about theoretical physics\". Physicist Stephen Hawking similarly called Principia \"probably the most important single work ever published in the physical sciences\". The mathematician and physicist Joseph-Louis Lagrange called Principia \"the greatest production of the human mind\", and noted that \"he felt dazed at such an illustration of what man's intellect might be capable\".",
+            "source": "Isaac_Newton.md - Chunk #80",
+            "score": 0.53144246
+        },
+        {
+            "content": "provided the first calculation of the age of Earth by experiment, and also described a precursor to the modern wind tunnel.\nNewton identified two \"principal cases of attraction\"\u2014the inverse-square law and a central force proportional to distance\u2014showing that both yield stable conic-section orbits and that spherically symmetric bodies behave as if their mass were concentrated at a point; in modern terms, this linear force law is mathematically equivalent to the force associated with the cosmological constant.",
+            "source": "Isaac_Newton.md - Chunk #41",
+            "score": 0.5079952
+        },
+        {
+            "content": "He believed in a rationally immanent world, but he rejected the hylozoism implicit in Gottfried Wilhelm Leibniz and Baruch Spinoza. The ordered and dynamically informed Universe could be understood, and must be understood, by an active reason. In his correspondence, he claimed that in writing the Principia \"I had an eye upon such Principles as might work with considering men for the belief of a Deity\". He saw evidence of design in the system of the world: \"Such a wonderful uniformity in the planetary system must be allowed the effect of choice\". But Newton insisted that divine intervention would eventually be required to reform the system, due to the slow growth of instabilities. For this, Leibniz lampooned him: \"God Almighty wants to wind up his watch from time to time: otherwise it would cease to move. He had not, it seems, sufficient foresight to make it a perpetual motion.\"",
+            "source": "Isaac_Newton.md - Chunk #67",
+            "score": 0.50635517
+        },
+        {
+            "content": "In his 1687 Principia, he outlined four rules: the first is, 'Admit no more causes of natural things than are both true and sufficient to explain their appearances'; the second is, 'To the same natural effect, assign the same causes'; the third is, 'Qualities of bodies, which are found to belong to all bodies within experiments, are to be esteemed universal'; and lastly, 'Propositions collected from observation of phenomena should be viewed as accurate or very nearly true until contradicted by other phenomena'. These rules have become the basis of the modern approaches to science.\nNewton's scientific method went beyond simple prediction in three critical ways, thereby enriching the basic hypothetico-deductive model. First, it established a richer ideal of empirical success, requiring phenomena to accurately measure theoretical parameters. Second, it transformed theoretical questions into ones empirically solvable by measurement. Third, it used provisionally accepted propositions to guide research, enabling the method of successive approximations where deviations drive the creation of more accurate models. This robust method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains a foundational element in modern physics.",
+            "source": "Isaac_Newton.md - Chunk #51",
+            "score": 0.48341823
+        },
+        {
+            "content": "Newton's position was defended by his follower Samuel Clarke in a famous correspondence. A century later, Pierre-Simon Laplace's work Celestial Mechanics had a natural explanation for why the planet orbits do not require periodic divine intervention. The contrast between Laplace's mechanistic worldview and Newton's one is the most strident considering the famous answer which the French scientist gave Napoleon, who had criticised him for the absence of the Creator in the M\u00e9canique c\u00e9leste: \"Sire, j'ai pu me passer de cette hypoth\u00e8se\" (\"Sir, I can do without this hypothesis\").\nScholars long debated whether Newton disputed the doctrine of the Trinity. His first biographer, David Brewster, who compiled his manuscripts, interpreted Newton as questioning the veracity of some passages used to support the Trinity, but never denying the doctrine of the Trinity as such. In the twentieth century, encrypted manuscripts written by Newton and bought by John Maynard Keynes (among others) were deciphered and it became known that Newton did indeed reject Trinitarianism.",
+            "source": "Isaac_Newton.md - Chunk #68",
+            "score": 0.47080827
+        },
+        {
+            "content": "In the year 1666 he retired again from Cambridge to his mother in Lincolnshire. Whilst he was pensively meandering in a garden it came into his thought that the power of gravity (which brought an apple from a tree to the ground) was not limited to a certain distance from earth, but that this power must extend much further than was usually thought. Why not as high as the Moon said he to himself & if so, that must influence her motion & perhaps retain her in her orbit, whereupon he fell a calculating what would be the effect of that supposition.\nIt is known from his notebooks that Newton was grappling in the late 1660s with the idea that terrestrial gravity extends, in an inverse-square proportion, to the Moon, as other scientists had already conjectured. Around 1665, Newton made quantitative analysis, considering the period and distance of the Moon's orbit and considering the timing of objects falling on Earth. Newton did not publish these results at the time because he could not prove that the Earth's gravity acts as if all its mass were concentrated at its center. That proof took him twenty years.",
+            "source": "Isaac_Newton.md - Chunk #89",
+            "score": 0.46316302
+        }
+    ],
+    "metrics": {
+        "Answer Relevancy": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because the response perfectly addressed the question with no irrelevant statements. It directly explained how Newton's Principia unified terrestrial and celestial mechanics through universal gravitation, staying completely on topic throughout!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While tides are a terrestrial phenomenon explained by celestial gravitational forces, this specific application doesn't directly address the core question of how the unification was achieved"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Comet trajectories are a specific application of the unified theory but don't directly explain how the unification between terrestrial and celestial mechanics was accomplished"
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "Precession of equinoxes is a specific phenomenon explained by the theory but doesn't directly address how Newton unified terrestrial and celestial mechanics"
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 279,
+                "completion_tokens": 61,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Faithfulness": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating perfect faithfulness to the source material.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": null
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context confirms Newton formulated laws of motion and universal gravitation in the Principia, it does not explicitly state that this demonstrated terrestrial and celestial motion follow the same principles, though this may be implied."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context does not mention Newton's work being described as 'the first great unification in physics' or any similar characterization about unification in physics."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "While the context shows Newton's laws applied broadly and were highly praised, it does not explicitly state this doctrine about one set of physical concepts applying universally to all bodies."
+                },
+                {
+                    "verdict": "idk",
+                    "reason": "The context confirms Newton used his mathematical description of gravity to derive Kepler's laws, but does not mention his work accounting for tides, comet trajectories, or precession of the equinoxes."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 277,
+                "completion_tokens": 45,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Precision": {
+            "score": 0.9,
+            "reason": "The score is 0.90 because the first four nodes in retrieval contexts are highly relevant, with the first node directly addressing how 'Newton unified terrestrial and celestial mechanics by demonstrating that the motion of objects on Earth and celestial bodies could be accounted for by the same principles,' and subsequent nodes supporting this with information about 'the first great unification in physics' and gravitational theory applications. However, the score is not perfect due to several irrelevant nodes (fifth through ninth) being ranked higher than the final relevant node, which provides important foundational context about Newton's realization that 'the power of gravity must extend much further' than just Earth, showing the conceptual basis for unifying terrestrial and celestial phenomena.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "This context directly addresses how Newton unified terrestrial and celestial mechanics by stating 'He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles' and explains that 'In the Principia, Newton formulated the laws of motion and universal gravitation' and 'used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context provides relevant information about the Principia's publication date (1687) and mentions that 'His work achieved the first great unification in physics', which directly supports the unification theme in the expected output."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context explains Newton's development of gravitational theory and how 'he worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector', which shows the application of his theory to celestial mechanics."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context emphasizes the unification aspect by stating that Newton's achievement 'has been called a supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe', which directly supports the main theme of unification."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "While this context contains praise for Newton's work and calls the Principia important, it doesn't specifically address how Newton unified terrestrial and celestial mechanics, focusing instead on general acclaim."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's identification of attraction cases and orbital mechanics, mentioning 'inverse-square law' and 'stable conic-section orbits', but doesn't clearly explain the unification of terrestrial and celestial mechanics."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context focuses on Newton's religious and philosophical views about the universe and divine intervention, mentioning 'Such a wonderful uniformity in the planetary system', but doesn't address the scientific unification of terrestrial and celestial mechanics."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses Newton's scientific methodology and rules outlined in the Principia, but doesn't specifically address how his work unified terrestrial and celestial mechanics."
+                },
+                {
+                    "verdict": "no",
+                    "reason": "This context discusses theological debates and religious aspects of Newton's work, mentioning Laplace's 'Celestial Mechanics' but doesn't explain how Newton's Principia unified terrestrial and celestial mechanics."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "This context describes Newton's early thinking about gravity extending to the Moon and his realization that 'the power of gravity (which brought an apple from a tree to the ground) was not limited to a certain distance from earth, but that this power must extend much further', which shows the conceptual foundation for unifying terrestrial and celestial phenomena."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 1157,
+                "completion_tokens": 168,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Recall": {
+            "score": 1.0,
+            "reason": "The score is 1.00 because all sentences in the expected output are well-supported by the nodes in retrieval context. Sentence 1 is backed by nodes 2 and 3 covering Newton's unification achievement and the Principia's details, sentence 2 finds support in nodes 1 and 2 for the laws of motion and gravitation, sentence 3 aligns perfectly with node 1's comprehensive list of Newton's applications, and sentence 4 is confirmed by both nodes 1 and 4 regarding universal physical principles. Excellent coverage!",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 2nd and 3rd nodes. 2nd node states 'His work achieved the first great unification in physics' and 3rd node mentions 'Philosophi\u00e6 Naturalis Principia Mathematica'. The publication date 1687 is confirmed in 2nd node 'published on 5 July 1687'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st and 2nd nodes. 1st node states 'Newton formulated the laws of motion and universal gravitation' and 2nd node confirms 'Newton stated the three universal laws of motion' and 'formulated the law of universal gravitation'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st node which states 'He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity'."
+                },
+                {
+                    "verdict": "yes",
+                    "reason": "Attributed to 1st node which states 'He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles' and 4th node mentions 'one set of physical concepts and principles applies to all bodies on earth...and bodies anywhere throughout the universe'."
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 840,
+                "completion_tokens": 138,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        },
+        "Contextual Relevancy": {
+            "score": 0.6792452830188679,
+            "reason": "The score is 0.68 because while the retrieval context contains highly relevant information such as 'He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles' and 'His work achieved the first great unification in physics,' it also includes substantial irrelevant content about fluid mechanics ('viscous resistance and velocity gradient that now defines a Newtonian fluid'), theological debates ('Leibniz's criticism about God Almighty wants to wind up his watch'), and Newton's religious views ('whether Newton disputed the doctrine of the Trinity'), which dilutes the overall relevance to the question about unifying terrestrial and celestial mechanics.",
+            "threshold": 0.5,
+            "is_successful": true,
+            "verdicts": [
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In the Principia, Newton formulated the laws of motion and universal gravitation that formed the dominant scientific viewpoint for centuries until it was superseded by the theory of relativity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His laws still serve as excellent approximations for the vast majority of physical phenomena involving low speeds (much less than the speed of light) and weak gravitational fields.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He used his mathematical description of gravity to derive Kepler's laws of planetary motion, account for tides, the trajectories of comets, the precession of the equinoxes and other phenomena, eradicating doubt about the Solar System's heliocentricity.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton solved the two-body problem and introduced the three-body problem.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He demonstrated that the motion of objects on Earth and celestial bodies could be accounted for by the same principles.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's inference that the Earth is an oblate spheroid was later confirmed by the geodetic measurements of Alexis Clairaut, Charles Marie de La Condamine, and others, convincing most European scientists of the superiority of Newtonian mechanics over earlier systems.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He was also the first to calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel.",
+                            "verdict": "no",
+                            "reason": "The information about 'calculate the age of Earth by experiment, and described a precursor to the modern wind tunnel' is not relevant to how Newton's Principia unified terrestrial and celestial mechanics."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "The Principia was published on 5 July 1687 with encouragement and financial help from Halley.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In this work, Newton stated the three universal laws of motion that describe the relationship between any object, the forces acting upon it and the resulting motion, laying the foundation for classical mechanics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "These laws contributed to numerous advances during the Industrial Revolution and were not improved upon for more than 200 years, with many advances still underpinning non-relativistic technologies today.",
+                            "verdict": "no",
+                            "reason": "The information about 'advances during the Industrial Revolution' and 'underpinning non-relativistic technologies today' is not directly relevant to how Newton's work unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton used the Latin word gravitas (weight) for the effect that would become known as gravity, and formulated the law of universal gravitation.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "His work achieved the first great unification in physics.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He solved the two-body problem, and introduced the three-body problem.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton had been developing his theory of gravitation as far back as 1665.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "In 1679, he returned to his work on celestial mechanics by considering gravitation and its effect on the orbits of planets with reference to Kepler's laws of planetary motion.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's reawakening interest in astronomical matters received further stimulus by the appearance of a comet in the winter of 1680\u20131681, on which he corresponded with John Flamsteed.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "After the exchanges with Hooke, Newton worked out a proof that the elliptical form of planetary orbits would result from a centripetal force inversely proportional to the square of the radius vector.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "He shared his results with Edmond Halley and the Royal Society in De motu corporum in gyrum, a tract written on about nine sheets which was copied into the Royal Society's Register Book in December 1684.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "As part of this work, Newton also coined the term centripetal force.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This tract contained the nucleus that Newton developed and expanded to form the Principia.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton formulated the linear relation between viscous resistance and velocity gradient that now defines a Newtonian fluid, despite his experiments giving little direct insight into viscosity.",
+                            "verdict": "no",
+                            "reason": "The statement about 'viscous resistance and velocity gradient that now defines a Newtonian fluid' is about fluid mechanics rather than how Newton's Principia unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton discussed the circular motion of fluids and was the first to analyse Couette flow, initially in Proposition 51 for a single rotating cylinder and extended in Corollary 2 to the flow between two concentric cylinders.",
+                            "verdict": "no",
+                            "reason": "The information about 'circular motion of fluids' and 'Couette flow' relates to fluid dynamics rather than the unification of terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton was the first to analyse the resistance of axisymmetric bodies moving through a rarefied medium.",
+                            "verdict": "no",
+                            "reason": "The statement about 'resistance of axisymmetric bodies moving through a rarefied medium' is about fluid resistance rather than how Newton unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "In Principia, Newton provided the first quantitative estimate of the solar mass, with later editions incorporating more accurate measurements, bringing his Sun-to-Earth mass ratio calculation close to the modern value.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton determined the masses and densities of Jupiter and Saturn, putting all four celestial bodies (Sun, Earth, Jupiter, and Saturn) on the same comparative scale.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "This achievement by Newton has been called 'a supreme expression of the doctrine that one set of physical concepts and principles applies to all bodies on earth, the earth itself, and bodies anywhere throughout the universe'.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton discovered more of the essential core of human knowledge than anyone before or after and was chief architect of the modern world",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton answered the ancient philosophical riddles of light and motion, and he effectively discovered gravity",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton showed how to predict the courses of heavenly bodies and so established our place in the cosmos",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton made knowledge a thing of substance: quantitative and exact, and established principles called his laws",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Ludwig Boltzmann called Newton's Principia 'the first and greatest work ever written about theoretical physics'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Stephen Hawking called Principia 'probably the most important single work ever published in the physical sciences'",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Joseph-Louis Lagrange called Principia 'the greatest production of the human mind' and noted that he felt dazed at such an illustration of what man's intellect might be capable",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "provided the first calculation of the age of Earth by experiment, and also described a precursor to the modern wind tunnel.",
+                            "verdict": "no",
+                            "reason": "The statement 'provided the first calculation of the age of Earth by experiment, and also described a precursor to the modern wind tunnel' is not relevant to how Newton's Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton identified two 'principal cases of attraction'\u2014the inverse-square law and a central force proportional to distance\u2014showing that both yield stable conic-section orbits and that spherically symmetric bodies behave as if their mass were concentrated at a point; in modern terms, this linear force law is mathematically equivalent to the force associated with the cosmological constant.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton believed in a rationally immanent world, but rejected the hylozoism implicit in Gottfried Wilhelm Leibniz and Baruch Spinoza.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's philosophical beliefs regarding 'hylozoism implicit in Gottfried Wilhelm Leibniz and Baruch Spinoza' does not address how the Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton claimed that in writing the Principia 'I had an eye upon such Principles as might work with considering men for the belief of a Deity'.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton's religious motivations for writing the Principia does not explain how it unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton saw evidence of design in the system of the world, noting 'Such a wonderful uniformity in the planetary system must be allowed the effect of choice'.",
+                            "verdict": "no",
+                            "reason": "The statement about Newton seeing 'evidence of design' and 'wonderful uniformity' relates to his theological views rather than explaining the unification of terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Newton insisted that divine intervention would eventually be required to reform the system, due to the slow growth of instabilities.",
+                            "verdict": "no",
+                            "reason": "The statement about 'divine intervention' and 'slow growth of instabilities' does not address how universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Leibniz lampooned Newton saying 'God Almighty wants to wind up his watch from time to time: otherwise it would cease to move. He had not, it seems, sufficient foresight to make it a perpetual motion.'",
+                            "verdict": "no",
+                            "reason": "Leibniz's criticism about 'God Almighty wants to wind up his watch' is a theological debate that does not explain how the Principia unified terrestrial and celestial mechanics."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In his 1687 Principia, Newton outlined four rules that became the basis of modern approaches to science",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's scientific method went beyond simple prediction by establishing a richer ideal of empirical success, transforming theoretical questions into empirically solvable ones, and using provisionally accepted propositions to guide research",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton's method of theory-mediated measurements was adopted by his successors for extensions of his theory to astronomy and remains foundational in modern physics",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "Newton's position was defended by his follower Samuel Clarke in a famous correspondence.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Newton's position was defended by his follower Samuel Clarke in a famous correspondence' does not explain how Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "A century later, Pierre-Simon Laplace's work Celestial Mechanics had a natural explanation for why the planet orbits do not require periodic divine intervention.",
+                            "verdict": "no",
+                            "reason": "The statement about 'Pierre-Simon Laplace's work Celestial Mechanics' and 'periodic divine intervention' occurred a century later and does not address how Newton's Principia unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "The contrast between Laplace's mechanistic worldview and Newton's one is the most strident considering the famous answer which the French scientist gave Napoleon.",
+                            "verdict": "no",
+                            "reason": "The statement about 'the contrast between Laplace's mechanistic worldview and Newton's' and the 'famous answer which the French scientist gave Napoleon' does not explain how Newton's Principia unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "Scholars long debated whether Newton disputed the doctrine of the Trinity.",
+                            "verdict": "no",
+                            "reason": "The statement about 'whether Newton disputed the doctrine of the Trinity' has nothing to do with how Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "His first biographer, David Brewster, who compiled his manuscripts, interpreted Newton as questioning the veracity of some passages used to support the Trinity, but never denying the doctrine of the Trinity as such.",
+                            "verdict": "no",
+                            "reason": "The statement about 'David Brewster' and Newton's views on 'the Trinity' is unrelated to how Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        },
+                        {
+                            "statement": "In the twentieth century, encrypted manuscripts written by Newton and bought by John Maynard Keynes were deciphered and it became known that Newton did indeed reject Trinitarianism.",
+                            "verdict": "no",
+                            "reason": "The statement about 'encrypted manuscripts' and Newton's rejection of 'Trinitarianism' does not address how Principia and universal gravitation unified terrestrial and celestial mechanics."
+                        }
+                    ]
+                },
+                {
+                    "verdicts": [
+                        {
+                            "statement": "In 1666, Newton retired to his mother's home in Lincolnshire where he contemplated that gravity's power extends beyond Earth, possibly affecting the Moon's motion and orbit.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton was working in the late 1660s with the idea that terrestrial gravity extends to the Moon in an inverse-square proportion, as other scientists had conjectured.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Around 1665, Newton made quantitative analysis considering the Moon's orbital period and distance, and the timing of falling objects on Earth.",
+                            "verdict": "yes",
+                            "reason": null
+                        },
+                        {
+                            "statement": "Newton did not publish these results at the time because he could not prove that Earth's gravity acts as if all its mass were concentrated at its center, and that proof took him twenty years.",
+                            "verdict": "yes",
+                            "reason": null
+                        }
+                    ]
+                }
+            ],
+            "token_usage": {
+                "prompt_tokens": 2242,
+                "completion_tokens": 155,
+                "cache_creation_input_tokens": 0,
+                "cache_read_input_tokens": 0,
+                "turn_name": null,
+                "model_name": "apac.anthropic.claude-sonnet-4-20250514-v1:0"
+            }
+        }
+    }
 }

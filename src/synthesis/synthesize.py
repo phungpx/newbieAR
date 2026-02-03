@@ -74,10 +74,10 @@ context_construction_config = ContextConstructionConfig(
     encoding="utf-8",
     chunk_size=1024,
     chunk_overlap=20,
-    max_contexts_per_document=3,
-    min_contexts_per_document=1,
-    max_context_length=3,
-    min_context_length=1,
+    max_contexts_per_document=5,
+    min_contexts_per_document=3,
+    max_context_length=5,
+    min_context_length=3,
 )
 
 synthesizer = Synthesizer(
@@ -105,7 +105,7 @@ for file_path in file_paths:
         document_paths=[str(file_path)],
         include_expected_output=True,
         context_construction_config=context_construction_config,
-        max_goldens_per_context=5,
+        max_goldens_per_context=3,
     )
     logger.info(f"Synthesis cost: {synthesizer.synthesis_cost}")
     save_goldens_to_files(goldens, output_dir)
