@@ -1,5 +1,5 @@
 from loguru import logger
-from src.deps import QdrantVectorStore, OpenAIEmbeddingClient
+from src.deps import QdrantVectorStore, OpenAIEmbedding
 from src.deps import DocumentChunker, DocumentLoader
 from src.settings import settings
 from src.models import ChunkStrategy
@@ -26,7 +26,7 @@ class VectorDBIngestion:
             output_dir=chunks_dir,
             strategy=chunk_strategy,
         )
-        self.embedding_client = OpenAIEmbeddingClient(
+        self.embedding_client = OpenAIEmbedding(
             base_url=settings.embedding_base_url,
             api_key=settings.embedding_api_key,
             model_id=settings.embedding_model,
