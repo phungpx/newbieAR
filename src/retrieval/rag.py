@@ -4,7 +4,7 @@ from rich.panel import Panel
 from rich.markdown import Markdown
 
 from src.settings import settings
-from src.deps import OpenAILLMClient, OpenAIEmbeddingClient, QdrantVectorStore
+from src.deps import OpenAILLMClient, OpenAIEmbedding, QdrantVectorStore
 
 console = Console()
 
@@ -15,7 +15,7 @@ class Retrieval:
             uri=settings.qdrant_uri,
             api_key=settings.qdrant_api_key,
         )
-        self.embedding_client = OpenAIEmbeddingClient(
+        self.embedding_client = OpenAIEmbedding(
             base_url=settings.embedding_base_url,
             api_key=settings.embedding_api_key,
             model_id=settings.embedding_model,
@@ -79,14 +79,12 @@ class Retrieval:
         context_block = "\n---\n".join(raw_contexts_for_prompt)
         prompt_end = f"---\n# USER QUESTION: \n{query}\n\n# ANSWER:"
 
+        prompt = prompt_start + context_block + prompt_end
+
         # 3. LLM Generation
         with console.status("[bold blue]Generating answer...", spinner="bouncingBar"):
             response = self.llm_client.chat_completion(
-                messages=[
-                    {"role": "user", "content": prompt_start},
-                    {"role": "user", "content": context_block},
-                    {"role": "user", "content": prompt_end},
-                ],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=settings.llm_temperature,
                 max_tokens=settings.llm_max_tokens,
             )
