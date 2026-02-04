@@ -11,7 +11,7 @@ from src.deps import OpenAIEmbedding, QdrantVectorStore, OpenAILLMClient
 console = Console()
 
 
-class Retrieval:
+class BasicRAG:
     def __init__(self):
         self.vector_store = QdrantVectorStore(
             uri=settings.qdrant_uri,
@@ -22,13 +22,18 @@ class Retrieval:
             api_key=settings.embedding_api_key,
             model_id=settings.embedding_model,
         )
+        self.llm = OpenAILLMClient(
+            base_url=settings.llm_base_url,
+            api_keys=settings.llm_api_key,
+            model_id=settings.llm_model,
+        )
         self.cross_encoder = None
 
-    def __call__(
+    def retrieve(
         self,
         query: str,
         collection_name: str,
-        limit: int = 5,
+        top_k: int = 5,
     ) -> list[RetrievalInfo]:
         with console.status(
             f"[bold green]Searching knowledge base {collection_name}...", spinner="dots"
@@ -37,7 +42,7 @@ class Retrieval:
             retrieved_documents = self.vector_store.query(
                 collection_name=collection_name,
                 query_vector=embedding[0],
-                top_k=limit,
+                top_k=top_k,
             )
 
         retrieval_infos: list[RetrievalInfo] = []
@@ -55,16 +60,15 @@ class Retrieval:
 
         return retrieval_infos
 
+    def generate(
+        self,
+        query: str,
+        collection_name: str,
+        top_k: int = 5,
+        return_context: bool = False,
+    ) -> tuple[list[RetrievalInfo], str] | str:
+        retrieval_infos = self.retrieve(query, collection_name, top_k)
 
-class Generation:
-    def __init__(self):
-        self.llm = OpenAILLMClient(
-            base_url=settings.llm_base_url,
-            api_keys=settings.llm_api_key,
-            model_id=settings.llm_model,
-        )
-
-    def __call__(self, query: str, retrieval_infos: list[RetrievalInfo]) -> str:
         context = ""
         for retrieval_info in retrieval_infos:
             context += f"Document: {retrieval_info.content} (Score: {retrieval_info.score:.4f}), Source: {retrieval_info.source}\n"
@@ -77,13 +81,24 @@ class Generation:
             max_tokens=settings.llm_max_tokens,
         )
 
+        if return_context:
+            return retrieval_infos, response
+
         return response
 
 
 def display_results(
     query: str, retrieval_infos: list[RetrievalInfo], response: str = None
 ):
-    console.print(f"\n[bold magenta]Query:[/bold magenta] [italic]{query}[/italic]\n")
+    console.print(
+        Panel.fit(
+            Markdown(query),
+            title="[bold green]Question[/bold green]",
+            border_style="green",
+            padding=(1, 2),
+        )
+    )
+
     table = Table(title="Retrieved Documents", show_lines=True, expand=True)
     table.add_column("Rank", justify="center", style="cyan", no_wrap=True)
     table.add_column("Score", justify="center", style="green")
@@ -114,11 +129,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--collection_name", type=str, required=True)
-    parser.add_argument("--limit", type=int, default=10)
+    parser.add_argument("--top_k", type=int, default=10)
     args = parser.parse_args()
 
-    retrieval = Retrieval()
-    generation = Generation()
+    basic_rag = BasicRAG()
 
     console.print(
         Panel.fit(
@@ -135,12 +149,9 @@ if __name__ == "__main__":
             if query.lower() in ["exit", "quit"]:
                 break
 
-            retrieval_infos = retrieval(
-                query,
-                collection_name=args.collection_name,
-                limit=args.limit,
+            retrieval_infos, response = basic_rag.generate(
+                query, args.collection_name, args.top_k, return_context=True
             )
-            response = generation(query, retrieval_infos)
             display_results(query, retrieval_infos, response)
 
         except KeyboardInterrupt:
