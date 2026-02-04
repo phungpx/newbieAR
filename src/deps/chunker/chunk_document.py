@@ -33,7 +33,7 @@ class MDSerializerProvider(ChunkingSerializerProvider):
         )
 
 
-class DocChunker:
+class DocumentChunker:
     def __init__(
         self,
         strategy: str = ChunkStrategy.HYBRID.value,
@@ -153,6 +153,6 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    chunker = DocChunker(strategy=args.chunk_strategy, output_dir=args.output_dir)
+    chunker = DocumentChunker(strategy=args.chunk_strategy, output_dir=args.output_dir)
     chunks, output_path = chunker.chunk_document(args.file_path)
     print(f"{len(chunks)} chunks saved to {output_path}")

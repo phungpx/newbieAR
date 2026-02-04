@@ -3,7 +3,7 @@ from loguru import logger
 from docling.document_converter import DocumentConverter
 
 
-class DocLoader:
+class DocumentLoader:
     def __init__(self, output_dir: str):
         self.output_dir = output_dir
         self.converter = DocumentConverter()
@@ -44,7 +44,7 @@ class DocLoader:
 
 
 def convert_document_to_markdown(file_path: str, output_dir: str = None) -> dict:
-    converter = DocLoader(output_dir=output_dir)
+    converter = DocumentLoader(output_dir=output_dir)
     doc_info = converter.convert(file_path)
     return doc_info.model_dump()
 
@@ -57,6 +57,6 @@ if __name__ == "__main__":
     parser.add_argument("--output_dir", type=str, required=True)
     args = parser.parse_args()
 
-    converter = DocLoader(output_dir=args.output_dir)
+    converter = DocumentLoader(output_dir=args.output_dir)
     saved_path = converter.convert(args.file_path)
     print(f"Saved to: {saved_path}")

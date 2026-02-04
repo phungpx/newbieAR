@@ -1,8 +1,6 @@
 from loguru import logger
-
 from src.deps import QdrantVectorStore, OpenAIEmbeddingClient
-from src.ingestion.load_document import DocLoader
-from src.ingestion.chunk_document import DocChunker
+from src.deps import DocumentChunker, DocumentLoader
 from src.settings import settings
 from src.models import ChunkStrategy
 
@@ -23,8 +21,8 @@ class VectorDBIngestion:
         if collection_name is not None:
             settings.qdrant_collection_name = collection_name
 
-        self.document_converter = DocLoader(output_dir=docs_dir)
-        self.loader_and_chunker = DocChunker(
+        self.document_converter = DocumentLoader(output_dir=docs_dir)
+        self.loader_and_chunker = DocumentChunker(
             output_dir=chunks_dir,
             strategy=chunk_strategy,
         )

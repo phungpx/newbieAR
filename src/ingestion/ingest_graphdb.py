@@ -2,8 +2,7 @@ import asyncio
 from loguru import logger
 from datetime import datetime, timezone
 from graphiti_core.nodes import EpisodeType
-from src.deps import GraphitiClient
-from src.ingestion.chunk_document import DocChunker
+from src.deps import GraphitiClient, DocumentChunker
 
 
 async def ingest(
@@ -13,7 +12,7 @@ async def ingest(
     max_tokens: int = 1024,
     output_dir: str | None = None,
 ):
-    doc_chunker = DocChunker(
+    doc_chunker = DocumentChunker(
         tokenizer_name=tokenizer_name,
         max_tokens=max_tokens,
         output_dir=output_dir,
