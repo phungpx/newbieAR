@@ -12,7 +12,10 @@ console = Console()
 
 
 class BasicRAG:
-    def __init__(self):
+    def __init__(self, qdrant_collection_name: str = None):
+        if qdrant_collection_name is not None:
+            settings.qdrant_collection_name = qdrant_collection_name
+
         self.vector_store = QdrantVectorStore(
             uri=settings.qdrant_uri,
             api_key=settings.qdrant_api_key,
@@ -29,18 +32,14 @@ class BasicRAG:
         )
         self.cross_encoder = None
 
-    def retrieve(
-        self,
-        query: str,
-        collection_name: str,
-        top_k: int = 5,
-    ) -> list[RetrievalInfo]:
+    def retrieve(self, query: str, top_k: int = 5) -> list[RetrievalInfo]:
         with console.status(
-            f"[bold green]Searching knowledge base {collection_name}...", spinner="dots"
+            f"[bold green]Searching knowledge base {settings.qdrant_collection_name}...",
+            spinner="dots",
         ):
             embedding = self.embedder.embed_texts([query])
             retrieved_documents = self.vector_store.query(
-                collection_name=collection_name,
+                collection_name=settings.qdrant_collection_name,
                 query_vector=embedding[0],
                 top_k=top_k,
             )
@@ -61,13 +60,9 @@ class BasicRAG:
         return retrieval_infos
 
     def generate(
-        self,
-        query: str,
-        collection_name: str,
-        top_k: int = 5,
-        return_context: bool = False,
+        self, query: str, top_k: int = 5, return_context: bool = False
     ) -> tuple[list[RetrievalInfo], str] | str:
-        retrieval_infos = self.retrieve(query, collection_name, top_k)
+        retrieval_infos = self.retrieve(query, top_k)
 
         context = ""
         for retrieval_info in retrieval_infos:
@@ -132,7 +127,7 @@ if __name__ == "__main__":
     parser.add_argument("--top_k", type=int, default=10)
     args = parser.parse_args()
 
-    basic_rag = BasicRAG()
+    basic_rag = BasicRAG(qdrant_collection_name=args.collection_name)
 
     console.print(
         Panel.fit(
@@ -150,7 +145,9 @@ if __name__ == "__main__":
                 break
 
             retrieval_infos, response = basic_rag.generate(
-                query, args.collection_name, args.top_k, return_context=True
+                query,
+                top_k=args.top_k,
+                return_context=True,
             )
             display_results(query, retrieval_infos, response)
 
