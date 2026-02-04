@@ -4,15 +4,30 @@ from src.deps import QdrantVectorStore, OpenAIEmbeddingClient
 from src.ingestion.load_document import DocLoader
 from src.ingestion.chunk_document import DocChunker
 from src.settings import settings
+from src.models import ChunkStrategy
 
 
 class VectorDBIngestion:
-    def __init__(self, docs_dir: str, chunks_dir: str, collection_name: str = None):
+    def __init__(
+        self,
+        docs_dir: str,
+        chunks_dir: str,
+        collection_name: str = None,
+        chunk_strategy: str = ChunkStrategy.HYBRID.value,
+    ):
+        if chunk_strategy not in [e.value for e in ChunkStrategy]:
+            raise ValueError(
+                f"Invalid chunk strategy '{chunk_strategy}'. Must be one of: {ChunkStrategy.values()}"
+            )
+        self.chunk_strategy = chunk_strategy
         if collection_name is not None:
             settings.qdrant_collection_name = collection_name
 
         self.document_converter = DocLoader(output_dir=docs_dir)
-        self.loader_and_chunker = DocChunker(output_dir=chunks_dir)
+        self.loader_and_chunker = DocChunker(
+            output_dir=chunks_dir,
+            strategy=chunk_strategy,
+        )
         self.embedding_client = OpenAIEmbeddingClient(
             base_url=settings.embedding_base_url,
             api_key=settings.embedding_api_key,
@@ -77,12 +92,20 @@ if __name__ == "__main__":
     parser.add_argument("--docs_dir", type=str, default="data/papers/docs")
     parser.add_argument("--chunks_dir", type=str, default="data/papers/chunks")
     parser.add_argument("--collection_name", type=str, required=False, default=None)
+    parser.add_argument(
+        "--chunk_strategy",
+        type=str,
+        default=ChunkStrategy.HYBRID.value,
+        choices=[e.value for e in ChunkStrategy],
+        help="Chunking strategy to use (default: hybrid)",
+    )
     args = parser.parse_args()
 
     pipeline = VectorDBIngestion(
         docs_dir=args.docs_dir,
         chunks_dir=args.chunks_dir,
         collection_name=args.collection_name,
+        chunk_strategy=args.chunk_strategy,
     )
     results = pipeline.ingest_document(args.file_path)
     logger.info(f"Results: {results}")

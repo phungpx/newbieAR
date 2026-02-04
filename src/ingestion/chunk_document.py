@@ -11,29 +11,32 @@ from docling_core.transforms.chunker.hierarchical_chunker import (
     ChunkingDocSerializer,
     ChunkingSerializerProvider,
 )
-from docling_core.transforms.serializer.markdown import MarkdownParams
-from src.models import ChunkInfo
+from docling_core.transforms.serializer.markdown import (
+    MarkdownParams,
+    MarkdownTableSerializer,
+    MarkdownTextSerializer,
+)
+from src.models import ChunkInfo, ChunkStrategy
 
 
 MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
 MAX_CHUNKED_TOKENS = 1024
-VALID_STRATEGIES = {"hybrid", "hierarchical"}
 
 
-class ImgPlaceholderSerializerProvider(ChunkingSerializerProvider):
-    """Serializer provider for hierarchical chunking with image placeholders."""
-
+class MDSerializerProvider(ChunkingSerializerProvider):
     def get_serializer(self, doc):
         return ChunkingDocSerializer(
             doc=doc,
             params=MarkdownParams(image_placeholder="<!-- image -->"),
+            table_serializer=MarkdownTableSerializer(),  # configuring a different table serializer
+            text_serializer=MarkdownTextSerializer(),
         )
 
 
 class DocChunker:
     def __init__(
         self,
-        strategy: str = "hybrid",
+        strategy: str = ChunkStrategy.HYBRID.value,
         tokenizer_name: str = MODEL_ID,
         max_tokens: int = MAX_CHUNKED_TOKENS,
         merge_peers: bool = True,
@@ -41,29 +44,29 @@ class DocChunker:
         merge_list_items: bool = True,
         output_dir: str = None,
     ):
-        if strategy not in VALID_STRATEGIES:
+        if strategy not in [e.value for e in ChunkStrategy]:
             raise ValueError(
-                f"Invalid strategy '{strategy}'. Must be one of: {VALID_STRATEGIES}"
+                f"Invalid strategy '{strategy}'. Must be one of: {ChunkStrategy.values()}"
             )
         self.strategy = strategy
         self.output_dir = output_dir
+        self.loader = DocumentConverter()
         self.tokenizer = HuggingFaceTokenizer(
             tokenizer=AutoTokenizer.from_pretrained(tokenizer_name)
         )
-        if strategy == "hybrid":
+        if strategy == ChunkStrategy.HYBRID.value:
             self.chunker = HybridChunker(
                 tokenizer=self.tokenizer,
                 max_tokens=max_tokens,
                 merge_peers=merge_peers,
                 always_emit_headings=always_emit_headings,
             )
-        elif strategy == "hierarchical":
-            self.serializer_provider = ImgPlaceholderSerializerProvider()
+        elif strategy == ChunkStrategy.HIERARCHICAL.value:
+            self.serializer_provider = MDSerializerProvider()
             self.chunker = HierarchicalChunker(
                 serializer_provider=self.serializer_provider,
                 merge_list_items=merge_list_items,
             )
-        self.loader = DocumentConverter()
 
     def chunk_document(self, file_path: str) -> tuple[list[ChunkInfo], str]:
         try:
@@ -74,7 +77,7 @@ class DocChunker:
 
             logger.info(f"Chunking document using {self.strategy} strategy...")
             t = time.time()
-            if self.strategy == "hierarchical":
+            if self.strategy == ChunkStrategy.HIERARCHICAL.value:
                 chunk_iter = self.chunker.chunk(dl_doc=document)
             else:
                 chunk_iter = self.chunker.chunk(document)
@@ -86,7 +89,7 @@ class DocChunker:
                 contextualized_tokens = self.tokenizer.count_tokens(contextualized_text)
 
                 # Extract strategy-specific metadata
-                if self.strategy == "hierarchical":
+                if self.strategy == ChunkStrategy.HIERARCHICAL.value:
                     doc_items_refs = [it.self_ref for it in chunk.meta.doc_items]
                     doc_items_labels = [it.label.value for it in chunk.meta.doc_items]
                 else:
@@ -142,14 +145,14 @@ if __name__ == "__main__":
     parser.add_argument("--file_path", type=str, required=True)
     parser.add_argument("--output_dir", type=str, required=True)
     parser.add_argument(
-        "--strategy",
+        "--chunk_strategy",
         type=str,
-        default="hybrid",
-        choices=["hybrid", "hierarchical"],
-        help="Chunking strategy to use (default: hybrid)"
+        default=ChunkStrategy.HYBRID.value,
+        choices=[e.value for e in ChunkStrategy],
+        help="Chunking strategy to use (default: hybrid)",
     )
     args = parser.parse_args()
 
-    chunker = DocChunker(strategy=args.strategy, output_dir=args.output_dir)
+    chunker = DocChunker(strategy=args.chunk_strategy, output_dir=args.output_dir)
     chunks, output_path = chunker.chunk_document(args.file_path)
     print(f"{len(chunks)} chunks saved to {output_path}")
