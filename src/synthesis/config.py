@@ -1,14 +1,70 @@
-STYLING_CONFIG = {
-    "research_paper": {
-        "input_format": "Natural language questions about research papers, technical concepts, methodologies, findings, and implementations",
-        "expected_output_format": "Detailed technical responses that include: key concepts and definitions, methodology explanations, experimental findings and results, technical comparisons, implementation details, limitations and future work, and citations to relevant sections. Responses should be precise, technically accurate, and reference specific content from the research papers. Include both high-level summaries and technical depth as appropriate.",
-        "task": "Knowledge retrieval and technical analysis of research papers, including understanding methodologies, experimental results, technical architectures, comparisons with related work, and practical applications",
-        "scenario": "Researchers, engineers, and technical professionals seeking information about research papers, including: understanding proposed methods and architectures, experimental setups and results, technical comparisons with other approaches, implementation details and code examples, limitations and future research directions, and practical applications. Questions may range from high-level overviews to deep technical details. Responses should be accurate, well-structured, and grounded in the paper content.",
-    },
-    "wikipedia_article": {
-        "input_format": "Natural language questions",
-        "expected_output_format": "Detailed paragraph responses and short structured bios. Include key facts (roles, affiliations, notable works, awards), a concise timeline of major events, and a short bullet list of notable contributions. Provide plain-language explanations for general audiences and optional technical depth when requested.",
-        "task": "Knowledge retrieval and concise biographical summaries for individuals",
-        "scenario": "Users asking about people such as entrepreneurs, scientists, researchers, engineers, and other professionals seeking background information, achievements, affiliations, research contributions, patents, publications, company roles, and notable awards. Responses should be factual, neutral in tone, organized for quick scanning, and reference retrieved context where available.",
-    },
-}
+from dataclasses import dataclass, field
+from typing import Optional, Union, Dict
+
+from deepeval.metrics.utils import initialize_embedding_model, initialize_model
+from deepeval.models import DeepEvalBaseLLM
+from deepeval.models.base_model import DeepEvalBaseEmbeddingModel
+from src.models.evolution import Evolution
+
+
+@dataclass
+class FiltrationConfig:
+    synthetic_input_quality_threshold: float = 0.5
+    max_quality_retries: int = 3
+    critic_model: Optional[Union[str, DeepEvalBaseLLM]] = None
+
+    def __post_init__(self):
+        self.critic_model, _ = initialize_model(self.critic_model)
+
+
+@dataclass
+class EvolutionConfig:
+    num_evolutions: int = 1
+    evolutions: Dict[Evolution, float] = field(
+        default_factory=lambda: {
+            Evolution.REASONING: 1 / 7,
+            Evolution.MULTICONTEXT: 1 / 7,
+            Evolution.CONCRETIZING: 1 / 7,
+            Evolution.CONSTRAINED: 1 / 7,
+            Evolution.COMPARATIVE: 1 / 7,
+            Evolution.HYPOTHETICAL: 1 / 7,
+            Evolution.IN_BREADTH: 1 / 7,
+        }
+    )
+
+
+@dataclass
+class StylingConfig:
+    scenario: Optional[str] = None
+    task: Optional[str] = None
+    input_format: Optional[str] = None
+    expected_output_format: Optional[str] = None
+
+
+@dataclass
+class ConversationalStylingConfig:
+    scenario_context: Optional[str] = None
+    conversational_task: Optional[str] = None
+    participant_roles: Optional[str] = None
+    scenario_format: Optional[str] = None
+    expected_outcome_format: Optional[str] = None
+
+
+@dataclass
+class ContextConstructionConfig:
+    embedder: Optional[Union[str, DeepEvalBaseEmbeddingModel]] = None
+    critic_model: Optional[Union[str, DeepEvalBaseLLM]] = None
+    encoding: Optional[str] = None
+    max_contexts_per_document: int = 3
+    min_contexts_per_document: int = 1
+    max_context_length: int = 3
+    min_context_length: int = 1
+    chunk_size: int = 1024
+    chunk_overlap: int = 0
+    context_quality_threshold: float = 0.5
+    context_similarity_threshold: float = 0.0
+    max_retries: int = 3
+
+    def __post_init__(self):
+        self.critic_model, _ = initialize_model(self.critic_model)
+        self.embedder = initialize_embedding_model(self.embedder)
