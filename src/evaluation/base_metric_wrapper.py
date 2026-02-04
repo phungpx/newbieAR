@@ -2,7 +2,7 @@ from loguru import logger
 from deepeval.metrics import BaseMetric
 from deepeval.test_case import LLMTestCase
 from src.models.token_usage import TokenUsage
-from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
+from src.evaluation.bedrock_llm_wrapper import BedrockLLMWrapper
 
 
 class BaseMetricWrapper(BaseMetric):

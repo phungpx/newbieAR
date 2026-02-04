@@ -14,8 +14,8 @@ from deepeval.test_case import LLMTestCase
 
 from src.settings import settings
 from src.retrieval.rag import Retrieval
-from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
-from src.evals.base_metric_wrapper import BaseMetricWrapper
+from src.evaluation.bedrock_llm_wrapper import BedrockLLMWrapper
+from src.evaluation.base_metric_wrapper import BaseMetricWrapper
 
 deepeval.login(settings.confident_api_key)
 
