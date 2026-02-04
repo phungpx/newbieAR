@@ -150,14 +150,12 @@ You are a precise Knowledge Assistant. Your goal is to answer questions based st
 
         prompt_end = f"---\n# USER QUESTION: \n{query}\n\n# ANSWER:"
 
+        prompt = prompt_start + context_block + prompt_end
+
         # 3. LLM Generation
         with console.status("[bold blue]Generating answer...", spinner="bouncingBar"):
             response = self.llm_client.chat_completion(
-                messages=[
-                    {"role": "user", "content": prompt_start},
-                    {"role": "user", "content": context_block},
-                    {"role": "user", "content": prompt_end},
-                ],
+                messages=[{"role": "user", "content": prompt}],
                 temperature=settings.llm_temperature,
                 max_tokens=settings.llm_max_tokens,
             )
