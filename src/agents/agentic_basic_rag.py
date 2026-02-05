@@ -15,22 +15,18 @@ from pydantic_ai import Agent, RunContext, ModelRetry
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
-from src.models.graphiti_search_info import (
-    GraphitiNodeInfo,
-    GraphitiEdgeInfo,
-    GraphitiEpisodeInfo,
-)
+from src.models import RetrievalInfo
 from src.settings import settings
-from src.prompts import GRAPHITI_AGENT_INSTRUCTION
-from src.retrieval.graph_rag import GraphRetrieval
+from src.prompts import BASIC_RAG_AGENT_INSTRUCTION
+from src.retrieval.basic_rag import BasicRAG
 
 logger.remove()
 logger.add("agent.log", rotation="10 MB", level="DEBUG")
 
 
 @dataclass
-class GraphitiDependencies:
-    graph_retrieval: GraphRetrieval
+class BasicRAGDependencies:
+    basic_rag: BasicRAG
     top_k: int = 5
 
 
@@ -46,26 +42,29 @@ def get_openai_model() -> OpenAIChatModel:
     )
 
 
-graphiti_agent = Agent(
+basic_rag_agent = Agent(
     model=get_openai_model(),
-    system_prompt=GRAPHITI_AGENT_INSTRUCTION,
-    deps_type=GraphitiDependencies,
+    system_prompt=BASIC_RAG_AGENT_INSTRUCTION,
+    deps_type=BasicRAGDependencies,
     retries=2,
 )
 
 
-@graphiti_agent.tool
-async def search_graphiti(
-    ctx: RunContext[GraphitiDependencies], query: str
-) -> tuple[list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]]:
+@basic_rag_agent.tool
+async def search_basic_rag(
+    ctx: RunContext[BasicRAGDependencies], query: str
+) -> tuple[list[RetrievalInfo], str]:
     """
-    Search the Graphiti knowledge graph.
+    Search the vector database and generate an answer.
 
     Args:
-        ctx: Context containing retrieval dependencies.
-        query: The semantic search query.
+        ctx: Context containing BasicRAG instance and config
+        query: The search query
+
+    Returns:
+        Tuple of (retrieval_infos, generated_answer)
     """
-    graph_retrieval = ctx.deps.graph_retrieval
+    basic_rag = ctx.deps.basic_rag
 
     # Input validation
     if not query or not query.strip():
@@ -75,19 +74,20 @@ async def search_graphiti(
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        results = await graph_retrieval.retrieve(query, num_results=ctx.deps.top_k)
-        node_infos, edge_infos, episode_infos = results
+        retrieval_infos, generated_answer = basic_rag.generate(
+            query, top_k=ctx.deps.top_k, return_context=True
+        )
 
         logger.debug(
-            f"Retrieved: {len(node_infos)} nodes, {len(edge_infos)} edges, {len(episode_infos)} episodes"
+            f"Retrieved {len(retrieval_infos)} documents, answer length: {len(generated_answer)}"
         )
 
         # Handle empty results gracefully
-        if not any([node_infos, edge_infos, episode_infos]):
+        if not retrieval_infos:
             logger.warning(f"No results for query: {query}")
-            return [], [], []
+            return [], "No relevant documents found in the database."
 
-        return node_infos, edge_infos, episode_infos
+        return retrieval_infos, generated_answer
 
     except asyncio.TimeoutError:
         logger.error("Search timed out")
@@ -96,7 +96,7 @@ async def search_graphiti(
         logger.error(f"Connection failed: {e}")
         raise ModelRetry("Database connection failed. Please try again.")
     except Exception as e:
-        logger.exception(f"Graphiti search failed: {e}")
+        logger.exception(f"BasicRAG search failed: {e}")
         raise ModelRetry(f"Search encountered an error. Try rephrasing your query.")
 
 
@@ -108,21 +108,36 @@ async def get_user_input(console: Console) -> str:
 
 
 async def main():
-    graph_retrieval = GraphRetrieval()
-    console = Console()
+    import argparse
 
+    parser = argparse.ArgumentParser(description="BasicRAG Knowledge Agent")
+    parser.add_argument(
+        "--collection_name", type=str, required=True, help="Qdrant collection name"
+    )
+    parser.add_argument(
+        "--top_k", type=int, default=5, help="Number of documents to retrieve"
+    )
+    args = parser.parse_args()
+
+    # Initialize components
+    basic_rag = BasicRAG(qdrant_collection_name=args.collection_name)
+    console = Console()
     messages: list[ModelMessage] = []
 
+    # Welcome panel
     console.print(
         Panel(
-            "[bold blue]Graphiti Knowledge Agent[/]\nType 'exit' to quit.", expand=False
+            f"[bold blue]BasicRAG Knowledge Agent[/]\nCollection: {args.collection_name}\nType 'exit' to quit.",
+            expand=False,
         )
     )
 
     try:
         while True:
+            # Non-blocking user input
             user_input = await get_user_input(console)
 
+            # Exit handling
             if user_input.lower() in ["exit", "quit", "bye"]:
                 console.print("[bold red]Goodbye![/]")
                 break
@@ -138,18 +153,18 @@ async def main():
                 )
                 continue
 
-            deps = GraphitiDependencies(graph_retrieval=graph_retrieval, top_k=5)
+            deps = BasicRAGDependencies(basic_rag=basic_rag, top_k=args.top_k)
 
             console.print("\n[bold purple]Assistant[/]")
 
-            # Using a spinner for the initial connection/tool usage phase
+            # Stream response with Live markdown display
             with Live(
                 Spinner("dots", text="Thinking..."),
                 console=console,
                 refresh_per_second=10,
             ) as live:
                 try:
-                    async with graphiti_agent.run_stream(
+                    async with basic_rag_agent.run_stream(
                         user_input, message_history=messages, deps=deps
                     ) as result:
                         accumulated_text = ""
@@ -177,7 +192,6 @@ async def main():
     except KeyboardInterrupt:
         console.print("\n[yellow]Interrupted by user.[/]")
     finally:
-        await graph_retrieval.close()
         logger.info("Session closed.")
 
 
