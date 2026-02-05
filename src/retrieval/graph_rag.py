@@ -37,6 +37,7 @@ def get_node_edge_episode_infos(
         GraphitiNodeInfo(
             uuid=n.uuid,
             summary=n.summary,
+            group_id=n.group_id,
         )
         for n in nodes
     ]
@@ -46,6 +47,7 @@ def get_node_edge_episode_infos(
             fact=e.fact,
             invalid_at=str(e.invalid_at),
             valid_at=str(e.valid_at),
+            group_id=e.group_id,
         )
         for e in edges
     ]
@@ -53,6 +55,7 @@ def get_node_edge_episode_infos(
         GraphitiEpisodeInfo(
             uuid=ep.uuid,
             content=ep.content,
+            group_id=ep.group_id,
         )
         for ep in episodes
     ]
@@ -122,30 +125,35 @@ class GraphRetrieval:
 
     async def generate(
         self, query: str, num_results: int = 10
-    ) -> tuple[list[dict], str]:
+    ) -> tuple[list[dict], list[str], str]:
         node_infos, edge_infos, episode_infos = await self.retrieve(
             query, num_results=num_results
         )
 
         contexts_data = []
+        citations = []
         if len(node_infos) > 0:
             node_content = "Node Content:"
             for n in node_infos:
-                node_content += f"\n- {n.summary}"
+                node_content += f"\n- {n.summary} (Citation: {n.group_id})"
+                if n.group_id and n.group_id not in citations:
+                    citations.append(n.group_id)
             contexts_data.append(node_content)
 
         if len(edge_infos) > 0:
             edge_content = "Edge Content:"
             for e in edge_infos:
-                edge_content += (
-                    f"\n- {e.fact} (Valid from {e.valid_at} to {e.invalid_at})"
-                )
+                edge_content += f"\n- {e.fact} (Valid from {e.valid_at} to {e.invalid_at}) (Citation: {e.group_id})"
+                if e.group_id and e.group_id not in citations:
+                    citations.append(e.group_id)
             contexts_data.append(edge_content)
 
         if len(episode_infos) > 0:
             episode_content = "Episode Content:"
             for ep in episode_infos:
-                episode_content += f"\n- {ep.content}"
+                episode_content += f"\n- {ep.content} (Citation: {ep.group_id})"
+                if ep.group_id and ep.group_id not in citations:
+                    citations.append(ep.group_id)
             contexts_data.append(episode_content)
 
         context_block = "\n---\n".join(contexts_data)
@@ -159,7 +167,7 @@ class GraphRetrieval:
                 max_tokens=settings.llm_max_tokens,
             )
 
-        return contexts_data, response
+        return contexts_data, citations, response
 
     async def close(self):
         """Close the graph database connection"""
@@ -167,7 +175,9 @@ class GraphRetrieval:
             await self.graphiti_client.close()
 
 
-def display_results(query: str, contexts: list[str], response: str):
+def display_results(
+    query: str, contexts: list[str], citations: list[str], response: str
+):
     # 1. Show the Query
     console.print(f"\n[bold magenta]Query:[/bold magenta] [italic]{query}[/italic]\n")
 
@@ -194,6 +204,14 @@ def display_results(query: str, contexts: list[str], response: str):
             padding=(1, 2),
         )
     )
+    console.print(
+        Panel(
+            Markdown(f"- {'\n- '.join(citations)}"),
+            title="[bold magenta]Citations[/bold magenta]",
+            border_style="magenta",
+            padding=(1, 2),
+        )
+    )
 
 
 async def main_async():
@@ -209,8 +227,10 @@ async def main_async():
                 if query.lower() in ["exit", "quit"]:
                     break
 
-                contexts, response = await retrieval.generate(query, num_results=5)
-                display_results(query, contexts, response)
+                contexts, citations, response = await retrieval.generate(
+                    query, num_results=5
+                )
+                display_results(query, contexts, citations, response)
             except Exception as e:
                 console.print(f"[bold red]Error: {e}[/bold red]")
     finally:

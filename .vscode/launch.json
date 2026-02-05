@@ -42,6 +42,20 @@
                 "wikipedia",
                 "--force_rerun"
             ]
+        },
+        {
+            "name": "Retrieval",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.retrieval.graph_rag",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--query",
+                "What is the capital of France?",
+                "--num_results",
+                "10",
+            ]
         }
     ]
 }
