@@ -14,13 +14,15 @@ It combines a Qdrant-based vector store, LLM-powered synthesis, and DeepEval-bas
 
 ### Features (RAG & Evaluation Focus)
 
-- **Basic RAG retrieval**:  
+- **Basic RAG retrieval**:
   Backed by `QdrantVectorStore` and `OpenAIEmbedding` in `BasicRAG`, with a simple CLI loop for inspecting retrieved chunks and answers.
-- **Agentic RAG console**:  
+- **Agentic RAG console**:
   A conversational `BasicRAG` agent (`agentic_basic_rag.py`) that uses tools to search your collection and stream Markdown answers.
-- **End-to-end evaluation with DeepEval**:  
+- **Automatic Citations**:
+  Footnote-style citations [1], [2], etc. for all retrieved sources, color-coded by relevance score with interactive document viewer in the Streamlit UI.
+- **End-to-end evaluation with DeepEval**:
   Metrics such as answer relevancy, faithfulness, contextual precision/recall/relevancy via `src/evaluation/evaluate.py`.
-- **Golden-based workflows**:  
+- **Golden-based workflows**:
   JSON goldens in `data/goldens/` drive consistent evaluation runs and enable regression-style RAG testing.
 
 ---
