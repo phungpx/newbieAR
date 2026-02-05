@@ -15,14 +15,17 @@ from pydantic_ai import Agent, RunContext, ModelRetry
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
+from typing import Tuple, Optional, AsyncIterator
 from src.models.graphiti_search_info import (
     GraphitiNodeInfo,
     GraphitiEdgeInfo,
     GraphitiEpisodeInfo,
 )
+from src.models import TurnMetadata
 from src.settings import settings
 from src.prompts import GRAPHITI_AGENT_INSTRUCTION
 from src.retrieval.graph_rag import GraphRetrieval
+from src.agents.result_extractor import build_turn_metadata
 
 logger.remove()
 logger.add("agent.log", rotation="10 MB", level="DEBUG")
@@ -97,7 +100,73 @@ async def search_graphiti(
         raise ModelRetry("Database connection failed. Please try again.")
     except Exception as e:
         logger.exception(f"Graphiti search failed: {e}")
-        raise ModelRetry(f"Search encountered an error. Try rephrasing your query.")
+        raise ModelRetry("Search encountered an error. Try rephrasing your query.")
+
+
+async def run_agent_with_metadata(
+    query: str,
+    deps: GraphitiDependencies,
+    message_history: Optional[list[ModelMessage]] = None,
+    collection: str = "",
+) -> Tuple[str, TurnMetadata]:
+    """Run agent and return answer with full metadata.
+
+    Args:
+        query: User query
+        deps: Agent dependencies
+        message_history: Optional message history
+        collection: Collection name for metadata
+
+    Returns:
+        Tuple of (answer_text, turn_metadata)
+    """
+    result = await graphiti_agent.run(query, deps=deps, message_history=message_history)
+    answer = result.data
+
+    # Build metadata
+    turn_metadata = build_turn_metadata(
+        result=result,
+        rag_mode="graph",
+        collection=collection,
+    )
+
+    return answer, turn_metadata
+
+
+async def run_agent_stream_with_metadata(
+    query: str,
+    deps: GraphitiDependencies,
+    message_history: Optional[list[ModelMessage]] = None,
+    collection: str = "",
+) -> AsyncIterator[Tuple[str, Optional[TurnMetadata]]]:
+    """Run agent with streaming and yield text deltas with final metadata.
+
+    Args:
+        query: User query
+        deps: Agent dependencies
+        message_history: Optional message history
+        collection: Collection name for metadata
+
+    Yields:
+        Tuples of (text_delta, metadata_or_none)
+        Metadata is None during streaming, provided at the end
+    """
+    async with graphiti_agent.run_stream(
+        query, deps=deps, message_history=message_history
+    ) as result:
+        # Stream text deltas
+        async for text_delta in result.stream_text(delta=True):
+            yield text_delta, None
+
+        # After streaming is complete, extract metadata
+        turn_metadata = build_turn_metadata(
+            result=result,
+            rag_mode="graph",
+            collection=collection,
+        )
+
+        # Yield final metadata (with empty text delta to signal completion)
+        yield "", turn_metadata
 
 
 async def get_user_input(console: Console) -> str:

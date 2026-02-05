@@ -76,7 +76,7 @@ def render_document_viewer(citation: CitationInfo) -> None:
     st.markdown(citation.content)
 
     # Add copy button
-    if st.button(f"📋 Copy text", key=f"copy_{citation.citation_number}"):
+    if st.button("📋 Copy text", key=f"copy_{citation.citation_number}"):
         st.code(citation.content, language=None)
         st.success("Text displayed above - you can select and copy it!")
 
@@ -87,15 +87,65 @@ def render_citations_tab_view(cited_response: CitedResponse) -> None:
     Args:
         cited_response: The cited response to display
     """
-    tab1, tab2 = st.tabs(["💬 Answer", "📚 Sources"])
+    # Determine which tabs to show
+    has_citations = bool(cited_response.citations)
+    has_tools = bool(cited_response.tool_calls)
+
+    if has_tools:
+        tab1, tab2, tab3 = st.tabs(["💬 Answer", "📚 Sources", "🔧 Tools"])
+    else:
+        tab1, tab2 = st.tabs(["💬 Answer", "📚 Sources"])
 
     with tab1:
         st.markdown(cited_response.answer)
-        if cited_response.citations:
-            st.info(f"📚 {len(cited_response.citations)} sources cited - see Sources tab")
+        if has_citations:
+            st.info(
+                f"📚 {len(cited_response.citations)} sources cited - see Sources tab"
+            )
+        if has_tools:
+            st.info(f"🔧 {len(cited_response.tool_calls)} tools used - see Tools tab")
 
     with tab2:
-        if cited_response.citations:
+        if has_citations:
             render_citations_section(cited_response.citations)
         else:
             st.info("No source documents were retrieved for this query")
+
+    if has_tools:
+        with tab3:
+            from src.ui.components.tool_calls import render_tool_calls
+
+            render_tool_calls(cited_response.tool_calls)
+
+
+def render_citations_with_tools(cited_response: CitedResponse) -> None:
+    """Render citations alongside tool calls with better visual hierarchy.
+
+    Args:
+        cited_response: The cited response to display
+    """
+    # Display answer
+    st.markdown(cited_response.answer)
+
+    # Show summary
+    if cited_response.citations or cited_response.tool_calls:
+        st.divider()
+        col1, col2 = st.columns(2)
+        with col1:
+            if cited_response.citations:
+                st.metric("Sources", len(cited_response.citations))
+        with col2:
+            if cited_response.tool_calls:
+                st.metric("Tools Used", len(cited_response.tool_calls))
+
+    # Display citations
+    if cited_response.citations:
+        st.markdown("---")
+        render_citations_section(cited_response.citations)
+
+    # Display tool calls
+    if cited_response.tool_calls:
+        st.markdown("---")
+        from src.ui.components.tool_calls import render_tool_calls
+
+        render_tool_calls(cited_response.tool_calls)

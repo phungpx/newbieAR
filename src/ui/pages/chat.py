@@ -2,16 +2,17 @@
 
 import streamlit as st
 import asyncio
+from typing import Optional
 from src.ui.utils import (
     get_basic_rag_instance,
     get_agentic_rag_deps,
-    format_retrieval_info,
     get_collections,
     CitationFormatter,
+    run_agentic_rag_stream_with_metadata,
 )
-from src.ui.components import render_citations_tab_view
-from src.models import CitedResponse
-from src.agents.agentic_basic_rag import basic_rag_agent
+from src.ui.components.chat_message import render_chat_message
+from src.ui.components.citations import render_citations_tab_view
+from src.models import CitedResponse, TurnMetadata
 from src.settings import settings
 
 
@@ -20,15 +21,26 @@ def render():
     st.title("💬 Chat with Documents")
     st.markdown("Query your documents using Basic RAG or Agentic RAG.")
     
-    # Collection selector
-    collections = get_collections()
-    if not collections:
-        st.warning("No collections found. Please create a collection first in the Collections page.")
-        return
-    
-    # RAG mode selector
-    col1, col2 = st.columns([1, 2])
-    with col1:
+    # Sidebar for configuration
+    with st.sidebar:
+        st.markdown("### Configuration")
+        
+        # Collection selector
+        collections = get_collections()
+        if not collections:
+            st.warning("No collections found. Please create a collection first in the Collections page.")
+            return
+        
+        selected_collection = st.selectbox(
+            "Collection",
+            collections,
+            index=0 if st.session_state.get("selected_collection") in collections else 0,
+            help="Select the vector store collection to query",
+        )
+        if selected_collection != st.session_state.get("selected_collection"):
+            st.session_state.selected_collection = selected_collection
+        
+        # RAG mode selector
         rag_mode = st.radio(
             "RAG Mode",
             ["basic", "agentic"],
@@ -36,25 +48,41 @@ def render():
             help="Basic RAG: Simple retrieval + generation. Agentic RAG: Uses agent with tools.",
         )
         st.session_state.rag_mode = rag_mode
-    
-    with col2:
-        selected_collection = st.selectbox(
-            "Collection",
-            collections,
-            index=0 if st.session_state.get("selected_collection") in collections else 0,
+        
+        # Top K selector
+        top_k = st.slider(
+            "Top K",
+            min_value=1,
+            max_value=20,
+            value=st.session_state.get("top_k", 5),
+            help="Number of most relevant documents to retrieve",
         )
-        if selected_collection != st.session_state.get("selected_collection"):
-            st.session_state.selected_collection = selected_collection
-    
-    # Top K selector
-    top_k = st.slider(
-        "Top K (Number of documents to retrieve)",
-        min_value=1,
-        max_value=20,
-        value=st.session_state.get("top_k", 5),
-        help="Number of most relevant documents to retrieve",
-    )
-    st.session_state.top_k = top_k
+        st.session_state.top_k = top_k
+        
+        st.divider()
+        
+        # Display options
+        st.markdown("### Display Options")
+        show_tool_calls = st.checkbox(
+            "Show Tool Calls",
+            value=st.session_state.get("show_tool_calls", True),
+            help="Display tool calls in agentic mode",
+        )
+        st.session_state.show_tool_calls = show_tool_calls
+        
+        show_citations = st.checkbox(
+            "Show Citations",
+            value=st.session_state.get("show_citations", True),
+            help="Display source citations",
+        )
+        st.session_state.show_citations = show_citations
+        
+        st.divider()
+        
+        # Clear chat button
+        if st.button("🗑️ Clear Chat History", use_container_width=True):
+            st.session_state.messages = []
+            st.rerun()
     
     # Initialize chat history if needed
     if "messages" not in st.session_state:
@@ -62,20 +90,7 @@ def render():
     
     # Display chat history
     for message in st.session_state.messages:
-        with st.chat_message(message["role"]):
-            # Check if we have a cited response
-            if "cited_response" in message and message["cited_response"]:
-                cited_response = CitedResponse(**message["cited_response"])
-                render_citations_tab_view(cited_response)
-            else:
-                # Legacy display for old messages
-                st.markdown(message["content"])
-
-                # Display retrieval info if available
-                if "retrieval_info" in message and message["retrieval_info"]:
-                    with st.expander("📄 Retrieved Documents"):
-                        for i, info in enumerate(message["retrieval_info"]):
-                            st.markdown(format_retrieval_info(info, i))
+        render_chat_message(message)
     
     # Chat input
     if prompt := st.chat_input("Ask a question about your documents..."):
@@ -88,121 +103,134 @@ def render():
         with st.chat_message("assistant"):
             if rag_mode == "basic":
                 # Basic RAG mode
-                with st.spinner("Retrieving and generating answer..."):
-                    try:
-                        basic_rag = get_basic_rag_instance(selected_collection)
-                        retrieval_infos, answer = basic_rag.generate(
-                            prompt,
-                            top_k=top_k,
-                            return_context=True,
-                        )
-
-                        # Create cited response
-                        citation_formatter = CitationFormatter(retrieval_infos)
-                        cited_response = citation_formatter.create_cited_response(
-                            answer=answer,
-                            rag_mode="basic",
-                            collection=selected_collection
-                        )
-
-                        # Display with tab view
-                        render_citations_tab_view(cited_response)
-
-                        # Add to history
-                        st.session_state.messages.append({
-                            "role": "assistant",
-                            "content": answer,
-                            "retrieval_info": retrieval_infos,
-                            "cited_response": cited_response.model_dump(),
-                        })
-
-                    except Exception as e:
-                        error_msg = f"Error: {str(e)}"
-                        st.error(error_msg)
-                        st.session_state.messages.append({
-                            "role": "assistant",
-                            "content": error_msg,
-                        })
-            
+                _handle_basic_rag(prompt, selected_collection, top_k)
             else:
                 # Agentic RAG mode
-                message_placeholder = st.empty()
-                full_response = ""
-                retrieval_infos = []
+                _handle_agentic_rag(prompt, selected_collection, top_k)
 
-                try:
-                    deps = get_agentic_rag_deps(selected_collection)
 
-                    # Run agent with streaming
-                    async def run_agent():
-                        async with basic_rag_agent.run_stream(
-                            prompt,
-                            deps=deps,
-                        ) as result:
-                            accumulated_text = ""
-                            async for message in result.stream_text(delta=True):
-                                accumulated_text += message
-                                message_placeholder.markdown(accumulated_text + "▌")
-                            return accumulated_text, result
-
-                    # Execute async function
-                    answer, result = asyncio.run(run_agent())
-                    message_placeholder.empty()  # Clear streaming placeholder
-
-                    full_response = answer
-
-                    # Extract retrieval info from tool calls
-                    try:
-                        # Get all messages from the result
-                        all_messages = result.all_messages()
-
-                        # Look for tool response messages
-                        for msg in all_messages:
-                            if hasattr(msg, 'kind') and msg.kind == 'response':
-                                if hasattr(msg, 'content') and isinstance(msg.content, list):
-                                    for part in msg.content:
-                                        # Check if this is a tool return with our search results
-                                        if hasattr(part, 'tool_name') and part.tool_name == 'search_basic_rag':
-                                            if hasattr(part, 'content'):
-                                                # The tool returns (retrieval_infos, answer)
-                                                tool_result = part.content
-                                                if isinstance(tool_result, tuple) and len(tool_result) == 2:
-                                                    retrieval_infos = tool_result[0]
-                                                    break
-                    except Exception as e:
-                        # If extraction fails, log but continue
-                        import logging
-                        logging.warning(f"Could not extract retrieval info: {e}")
-
-                    # Create cited response
-                    citation_formatter = CitationFormatter(retrieval_infos)
-                    cited_response = citation_formatter.create_cited_response(
-                        answer=full_response,
-                        rag_mode="agentic",
-                        collection=selected_collection
-                    )
-
-                    # Display with tab view
-                    with message_placeholder.container():
-                        render_citations_tab_view(cited_response)
-
-                    # Add to history
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": full_response,
-                        "retrieval_info": retrieval_infos,
-                        "cited_response": cited_response.model_dump(),
-                    })
-
-                except Exception as e:
-                    error_msg = f"Error: {str(e)}"
-                    st.error(error_msg)
-                    st.session_state.messages.append({
-                        "role": "assistant",
-                        "content": error_msg,
-                    })
+def _handle_basic_rag(prompt: str, collection: str, top_k: int):
+    """Handle Basic RAG query.
     
-    # Clear chat button
-    if st.button("Clear Chat History"):
-        st.session_state.messages = []
-        st.rerun()
+    Args:
+        prompt: User query
+        collection: Collection name
+        top_k: Number of documents to retrieve
+    """
+    with st.spinner("Retrieving and generating answer..."):
+        try:
+            basic_rag = get_basic_rag_instance(collection)
+            retrieval_infos, answer = basic_rag.generate(
+                prompt,
+                top_k=top_k,
+                return_context=True,
+            )
+
+            # Create cited response
+            citation_formatter = CitationFormatter(retrieval_infos)
+            cited_response = citation_formatter.create_cited_response(
+                answer=answer,
+                rag_mode="basic",
+                collection=collection
+            )
+
+            # Display with tab view
+            render_citations_tab_view(cited_response)
+
+            # Add to history
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": answer,
+                "retrieval_info": retrieval_infos,
+                "cited_response": cited_response.model_dump(),
+            })
+
+        except Exception as e:
+            error_msg = f"Error: {str(e)}"
+            st.error(error_msg)
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": error_msg,
+            })
+
+
+def _handle_agentic_rag(prompt: str, collection: str, top_k: int):
+    """Handle Agentic RAG query with streaming and metadata.
+    
+    Args:
+        prompt: User query
+        collection: Collection name
+        top_k: Number of documents to retrieve
+    """
+    message_placeholder = st.empty()
+    full_response = ""
+    turn_metadata: Optional[TurnMetadata] = None
+    tool_calls = []
+    retrieval_infos = []
+
+    try:
+        # Run agent with streaming
+        async def run_agent():
+            nonlocal full_response, turn_metadata, tool_calls, retrieval_infos
+            
+            accumulated_text = ""
+            async for text_delta, metadata in run_agentic_rag_stream_with_metadata(
+                query=prompt,
+                collection_name=collection,
+                message_history=st.session_state.messages[:-1] if st.session_state.messages else None,
+            ):
+                if text_delta:
+                    accumulated_text += text_delta
+                    message_placeholder.markdown(accumulated_text + "▌")
+                
+                if metadata:
+                    turn_metadata = metadata
+                    tool_calls = metadata.tool_calls
+                    # Extract retrieval info from tool calls
+                    for tool_call in tool_calls:
+                        if tool_call.tool_name == "search_basic_rag" and tool_call.result:
+                            if isinstance(tool_call.result, tuple) and len(tool_call.result) >= 1:
+                                retrieval_infos = tool_call.result[0]
+                                break
+            
+            full_response = accumulated_text
+            return full_response, turn_metadata
+
+        # Execute async function
+        answer, metadata = asyncio.run(run_agent())
+        message_placeholder.empty()  # Clear streaming placeholder
+
+        # Create cited response with metadata
+        citation_formatter = CitationFormatter(retrieval_infos)
+        cited_response = citation_formatter.create_cited_response(
+            answer=full_response,
+            rag_mode="agentic",
+            collection=collection,
+            tool_calls=tool_calls,
+            turn_metadata=metadata,
+        )
+
+        # Display with tab view
+        with message_placeholder.container():
+            render_citations_tab_view(cited_response)
+
+        # Add to history with full metadata
+        message_data = {
+            "role": "assistant",
+            "content": full_response,
+            "retrieval_info": retrieval_infos,
+            "cited_response": cited_response.model_dump(),
+        }
+        
+        if metadata:
+            message_data["turn_metadata"] = metadata.model_dump()
+        
+        st.session_state.messages.append(message_data)
+
+    except Exception as e:
+        error_msg = f"Error: {str(e)}"
+        st.error(error_msg)
+        st.session_state.messages.append({
+            "role": "assistant",
+            "content": error_msg,
+        })
