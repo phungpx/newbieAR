@@ -1,0 +1,180 @@
+"""Utility functions for Streamlit UI."""
+
+import asyncio
+import tempfile
+import os
+from pathlib import Path
+from typing import Optional, Tuple, List
+import streamlit as st
+
+from src.main import newbieAR
+from src.retrieval.basic_rag import BasicRAG
+from src.agents.agentic_basic_rag import (
+    basic_rag_agent,
+    BasicRAGDependencies,
+    get_openai_model,
+)
+from src.models import RetrievalInfo
+from src.settings import settings
+from src.deps import QdrantVectorStore
+
+
+def init_session_state():
+    """Initialize session state variables."""
+    if "chat_history" not in st.session_state:
+        st.session_state.chat_history = []
+    
+    if "selected_collection" not in st.session_state:
+        st.session_state.selected_collection = settings.qdrant_collection_name
+    
+    if "rag_mode" not in st.session_state:
+        st.session_state.rag_mode = "basic"
+    
+    if "top_k" not in st.session_state:
+        st.session_state.top_k = 5
+    
+    if "llm_temperature" not in st.session_state:
+        st.session_state.llm_temperature = settings.llm_temperature
+    
+    if "llm_max_tokens" not in st.session_state:
+        st.session_state.llm_max_tokens = settings.llm_max_tokens
+    
+    if "documents_dir" not in st.session_state:
+        st.session_state.documents_dir = "data/research_papers/files"
+    
+    if "chunks_dir" not in st.session_state:
+        st.session_state.chunks_dir = "data/research_papers/chunks"
+
+
+def get_newbiear_instance(
+    collection_name: Optional[str] = None,
+    documents_dir: Optional[str] = None,
+    chunks_dir: Optional[str] = None,
+) -> newbieAR:
+    """Initialize and return a newbieAR instance."""
+    collection = collection_name or st.session_state.get("selected_collection") or settings.qdrant_collection_name
+    docs_dir = documents_dir or st.session_state.get("documents_dir", "data/research_papers/files")
+    chunks_dir_path = chunks_dir or st.session_state.get("chunks_dir", "data/research_papers/chunks")
+    
+    return newbieAR(
+        documents_dir=docs_dir,
+        chunks_dir=chunks_dir_path,
+        qdrant_collection_name=collection,
+    )
+
+
+def get_basic_rag_instance(collection_name: Optional[str] = None) -> BasicRAG:
+    """Initialize and return a BasicRAG instance."""
+    collection = collection_name or st.session_state.get("selected_collection") or settings.qdrant_collection_name
+    return BasicRAG(qdrant_collection_name=collection)
+
+
+def get_agentic_rag_deps(collection_name: Optional[str] = None) -> BasicRAGDependencies:
+    """Get dependencies for Agentic RAG."""
+    basic_rag = get_basic_rag_instance(collection_name)
+    top_k = st.session_state.get("top_k", 5)
+    return BasicRAGDependencies(basic_rag=basic_rag, top_k=top_k)
+
+
+def save_uploaded_file(uploaded_file) -> str:
+    """Save uploaded file to temporary location and return path."""
+    # Create temp file
+    suffix = Path(uploaded_file.name).suffix
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp_file:
+        tmp_file.write(uploaded_file.getvalue())
+        return tmp_file.name
+
+
+def format_retrieval_info(retrieval_info: RetrievalInfo, index: int) -> str:
+    """Format a RetrievalInfo object for display."""
+    return f"""
+**Rank {index + 1}** | Score: {retrieval_info.score:.4f} | Source: {retrieval_info.source}
+
+{retrieval_info.content[:500]}{'...' if len(retrieval_info.content) > 500 else ''}
+"""
+
+
+def format_chat_message(role: str, content: str) -> str:
+    """Format a chat message for display."""
+    return f"**{role.capitalize()}:**\n\n{content}"
+
+
+def get_collections() -> List[str]:
+    """Get list of all collections from Qdrant."""
+    try:
+        vector_store = QdrantVectorStore(
+            uri=settings.qdrant_uri,
+            api_key=settings.qdrant_api_key,
+        )
+        collections_response = vector_store.client.get_collections()
+        return [col.name for col in collections_response.collections]
+    except Exception as e:
+        # Don't use st.error here as this might be called outside streamlit context
+        # Return empty list and let the calling code handle the error
+        return []
+
+
+def get_collection_info(collection_name: str) -> dict:
+    """Get information about a collection."""
+    try:
+        vector_store = QdrantVectorStore(
+            uri=settings.qdrant_uri,
+            api_key=settings.qdrant_api_key,
+        )
+        collection_info = vector_store.client.get_collection(collection_name)
+        vectors_count = collection_info.points_count
+        if hasattr(collection_info, 'vectors_count'):
+            vectors_count = collection_info.vectors_count
+        elif hasattr(collection_info, 'config') and hasattr(collection_info.config, 'params'):
+            # Try to get from config
+            pass
+        
+        return {
+            "name": collection_name,
+            "points_count": collection_info.points_count,
+            "vectors_count": vectors_count,
+            "config": collection_info.config.model_dump() if hasattr(collection_info.config, 'model_dump') else str(collection_info.config),
+        }
+    except Exception as e:
+        # Don't use st.error here as this might be called outside streamlit context
+        return {}
+
+
+async def run_agentic_rag_streaming(
+    query: str,
+    collection_name: Optional[str] = None,
+) -> Tuple[List[RetrievalInfo], str]:
+    """Run agentic RAG with streaming and return results."""
+    deps = get_agentic_rag_deps(collection_name)
+    
+    # Run the agent
+    result = await basic_rag_agent.run(query, deps=deps)
+    
+    # Extract retrieval info from tool calls if available
+    retrieval_infos = []
+    answer = ""
+    
+    # Get messages from result
+    messages = result.all_messages()
+    
+    # Try to extract answer from messages
+    for msg in messages:
+        if hasattr(msg, 'content') and msg.content:
+            if isinstance(msg.content, str):
+                answer += msg.content
+            elif isinstance(msg.content, list):
+                for part in msg.content:
+                    if isinstance(part, str):
+                        answer += part
+    
+    # If we have tool results, extract retrieval info
+    # This is a simplified version - in practice, you'd parse tool results
+    return retrieval_infos, answer or "No answer generated."
+
+
+def run_agentic_rag_sync(
+    query: str,
+    collection_name: Optional[str] = None,
+) -> Tuple[List[RetrievalInfo], str]:
+    """Run agentic RAG synchronously (wrapper for async function)."""
+    return asyncio.run(run_agentic_rag_streaming(query, collection_name))
