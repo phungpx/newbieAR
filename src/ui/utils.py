@@ -14,9 +14,112 @@ from src.agents.agentic_basic_rag import (
     BasicRAGDependencies,
     get_openai_model,
 )
-from src.models import RetrievalInfo
+from src.models import RetrievalInfo, CitationInfo, CitedResponse
 from src.settings import settings
 from src.deps import QdrantVectorStore
+
+
+class CitationFormatter:
+    """Formats retrieval results into citations."""
+
+    def __init__(self, retrieval_infos: List[RetrievalInfo]):
+        """Initialize with retrieval information.
+
+        Args:
+            retrieval_infos: List of retrieved documents with scores
+        """
+        # Handle None or empty input
+        self.retrieval_infos = retrieval_infos if retrieval_infos else []
+
+    def create_citations(self) -> List[CitationInfo]:
+        """Create citation list sorted by relevance score.
+
+        Returns:
+            List of CitationInfo objects with sequential citation numbers
+        """
+        if not self.retrieval_infos:
+            return []
+
+        # Sort by score (highest first), handle missing scores
+        sorted_infos = sorted(
+            self.retrieval_infos,
+            key=lambda x: getattr(x, 'score', 0.0),
+            reverse=True
+        )
+
+        # Create citations with sequential numbers
+        citations = []
+        for idx, info in enumerate(sorted_infos, start=1):
+            try:
+                citation = CitationInfo(
+                    citation_number=idx,
+                    content=info.content if info.content else "No content available",
+                    source=self._sanitize_source(getattr(info, 'source', '')),
+                    score=getattr(info, 'score', 0.0),
+                )
+                citations.append(citation)
+            except Exception as e:
+                # Log error but continue processing other citations
+                import logging
+                logging.warning(f"Failed to create citation {idx}: {e}")
+                continue
+
+        return citations
+
+    def create_cited_response(
+        self,
+        answer: str,
+        rag_mode: str = "basic",
+        collection: str = ""
+    ) -> CitedResponse:
+        """Create a complete cited response.
+
+        Args:
+            answer: The generated answer text
+            rag_mode: RAG mode used (basic/agentic)
+            collection: Collection name used
+
+        Returns:
+            CitedResponse with answer and citations
+        """
+        citations = self.create_citations()
+
+        return CitedResponse(
+            answer=answer if answer else "No answer generated",
+            citations=citations,
+            metadata={
+                "rag_mode": rag_mode,
+                "collection": collection,
+                "citation_count": len(citations),
+            }
+        )
+
+    @staticmethod
+    def _sanitize_source(source: str) -> str:
+        """Sanitize source filename for display.
+
+        Args:
+            source: Raw source path/filename
+
+        Returns:
+            Cleaned source name
+        """
+        if not source or not isinstance(source, str):
+            return "Unknown source"
+
+        # Get basename only
+        try:
+            basename = Path(source).name
+        except Exception:
+            # Fallback if path is malformed
+            basename = str(source)
+
+        # Truncate if too long
+        max_length = 50
+        if len(basename) > max_length:
+            basename = basename[:max_length-3] + "..."
+
+        return basename
 
 
 def init_session_state():
