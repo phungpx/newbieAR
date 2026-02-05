@@ -13,7 +13,7 @@ from deepeval.metrics import (
 from deepeval.test_case import LLMTestCase
 
 from src.settings import settings
-from src.retrieval.rag import Retrieval
+from src.retrieval.basic_rag import BasicRAG
 from src.evaluation.bedrock_llm_wrapper import BedrockLLMWrapper
 from src.evaluation.base_metric_wrapper import BaseMetricWrapper
 
@@ -91,19 +91,22 @@ def create_llm_test_case(
     )
 
     # Run RAG to get actual output and retrieval contexts
-    retrieval_contexts, actual_output = Retrieval().generate(
+    retrieval_contexts, actual_output = BasicRAG().generate(
         query=test_case.input,
-        limit=retrieval_window_size,
+        top_k=retrieval_window_size,
         collection_name=collection_name,
+        return_context=True,
     )
     test_case.actual_output = actual_output
     test_case.retrieval_context = [
-        retrieval_context["content"] for retrieval_context in retrieval_contexts
+        retrieval_context.content for retrieval_context in retrieval_contexts
     ]
 
     # Add metrics to sample
     sample["actual_output"] = actual_output
-    sample["retrieval_contexts"] = retrieval_contexts
+    sample["retrieval_contexts"] = [
+        retrieval_context.model_dump() for retrieval_context in retrieval_contexts
+    ]
 
     return test_case, sample
 

@@ -33,6 +33,15 @@ class QdrantVectorStore:
         except UnexpectedResponse as e:
             raise RuntimeError(f"Failed to create collection '{collection_name}': {e}")
 
+    def delete_collection(self, collection_name: str) -> None:
+        try:
+            if self.client.collection_exists(collection_name):
+                print(f"Removing existing Qdrant collection: {collection_name}")
+                self.client.delete_collection(collection_name)
+        except Exception as e:
+            print(f"Warning: could not delete collection {collection_name}: {e}")
+            raise RuntimeError(f"Failed to delete collection '{collection_name}': {e}")
+
     def add_embeddings(
         self,
         collection_name: str,

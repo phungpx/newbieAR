@@ -20,23 +20,44 @@ from graphiti_core.search.search_config import (
 
 from src.settings import settings
 from src.deps import OpenAILLMClient, GraphitiClient
+from src.models import GraphitiEdgeInfo, GraphitiNodeInfo, GraphitiEpisodeInfo
+from src.prompts import RAG_GENERATION_PROMPT
 
-# Initialize Rich Console
 console = Console()
 
 
-def get_node_edge_episode_contents(
+def get_node_edge_episode_infos(
     result: SearchResults,
-) -> tuple[list[str], list[str], list[str]]:
+) -> tuple[list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]]:
     nodes = result.nodes or []
     edges = result.edges or []
     episodes = result.episodes or []
 
-    node_contents = [n.summary for n in nodes if n.summary]
-    edge_contents = [e.fact for e in edges if e.fact]
-    episode_contents = [ep.content for ep in episodes if ep.content]
+    node_infos = [
+        GraphitiNodeInfo(
+            uuid=n.uuid,
+            summary=n.summary,
+        )
+        for n in nodes
+    ]
+    edge_infos = [
+        GraphitiEdgeInfo(
+            uuid=e.uuid,
+            fact=e.fact,
+            invalid_at=str(e.invalid_at),
+            valid_at=str(e.valid_at),
+        )
+        for e in edges
+    ]
+    episode_infos = [
+        GraphitiEpisodeInfo(
+            uuid=ep.uuid,
+            content=ep.content,
+        )
+        for ep in episodes
+    ]
 
-    return node_contents, edge_contents, episode_contents
+    return node_infos, edge_infos, episode_infos
 
 
 class GraphRetrieval:
@@ -49,16 +70,19 @@ class GraphRetrieval:
             model_id=settings.llm_model,
         )
 
-    async def initialize(self):
+    async def initialize_graphiti_client(self):
         if self.graphiti is None:
-            self.graphiti = await self.graphiti_client.create_client(
+            self.graphiti = await GraphitiClient().create_client(
                 clear_existing_graphdb_data=False,
                 max_coroutines=1,
             )
 
-    async def retrieve(self, query: str, num_results: int = 10):
-        if self.graphiti is None:
-            await self.initialize()
+    async def retrieve(
+        self, query: str, num_results: int = 10
+    ) -> tuple[
+        list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]
+    ]:
+        await self.initialize_graphiti_client()
 
         with console.status("[bold green]Searching graph database...", spinner="dots"):
             config = SearchConfig(
@@ -88,71 +112,46 @@ class GraphRetrieval:
             )
             results = await self.graphiti._search(query, config)
 
-            node_contents, edge_contents, episode_contents = (
-                get_node_edge_episode_contents(results)
-            )
+            node_infos, edge_infos, episode_infos = get_node_edge_episode_infos(results)
 
-            logger.info(f"Node: {len(results.nodes)}")
-            logger.info(f"Edge: {len(results.edges)}")
-            logger.info(f"Episode: {len(results.episodes)}")
+            logger.info(f"Node: {len(node_infos)}")
+            logger.info(f"Edge: {len(edge_infos)}")
+            logger.info(f"Episode: {len(episode_infos)}")
 
-        return node_contents, edge_contents, episode_contents
+        return node_infos, edge_infos, episode_infos
 
     async def generate(
         self, query: str, num_results: int = 10
     ) -> tuple[list[dict], str]:
-        """Retrieve results and generate an answer using LLM"""
-        # 1. Retrieve from graph database
-        node_contents, edge_contents, episode_contents = await self.retrieve(
+        node_infos, edge_infos, episode_infos = await self.retrieve(
             query, num_results=num_results
         )
 
         contexts_data = []
-        if len(node_contents) > 0:
+        if len(node_infos) > 0:
             node_content = "Node Content:"
-            for i, text in enumerate(node_contents):
-                node_content += f"\n- Node {i + 1}: {text}"
+            for n in node_infos:
+                node_content += f"\n- {n.summary}"
             contexts_data.append(node_content)
 
-        if len(edge_contents) > 0:
+        if len(edge_infos) > 0:
             edge_content = "Edge Content:"
-            for i, text in enumerate(edge_contents):
-                edge_content += f"\n- Edge {i + 1}: {text}"
+            for e in edge_infos:
+                edge_content += (
+                    f"\n- {e.fact} (Valid from {e.valid_at} to {e.invalid_at})"
+                )
             contexts_data.append(edge_content)
 
-        if len(episode_contents) > 0:
+        if len(episode_infos) > 0:
             episode_content = "Episode Content:"
-            for i, text in enumerate(episode_contents):
-                episode_content += f"\n- Episode {i + 1}: {text}"
+            for ep in episode_infos:
+                episode_content += f"\n- {ep.content}"
             contexts_data.append(episode_content)
 
         context_block = "\n---\n".join(contexts_data)
 
-        # 2. Prompt Construction
-        prompt_start = """
-# ROLE
-You are a precise Knowledge Assistant. Your goal is to answer questions based strictly on the provided facts from the knowledge graph.
+        prompt = RAG_GENERATION_PROMPT.format(context_block=context_block, query=query)
 
-# RULES OF ENGAGEMENT
-1. **Greeting Logic:** If the user provides a general greeting (e.g., "Hi", "Hello"), respond with a friendly greeting and do not reference the facts.
-2. **Contextual Fidelity:** Only answer using the provided Facts. If the answer is not contained within the Facts, respond exactly with: "I don't know."
-3. **Fact Integration:** Synthesize information from multiple facts when relevant to provide a comprehensive answer.
-4. **Temporal Awareness:** Pay attention to validity periods if mentioned in the facts.
-5. **Tone:** Maintain a professional, helpful, and concise tone. Avoid fluff or repetitive introductory phrases.
-
-# RESPONSE FORMAT
-- Use bullet points for steps or lists.
-- Bold key terms for readability.
-- Synthesize information from multiple facts when relevant.
-
-# FACTS FROM KNOWLEDGE GRAPH:
-"""
-
-        prompt_end = f"---\n# USER QUESTION: \n{query}\n\n# ANSWER:"
-
-        prompt = prompt_start + context_block + prompt_end
-
-        # 3. LLM Generation
         with console.status("[bold blue]Generating answer...", spinner="bouncingBar"):
             response = self.llm_client.chat_completion(
                 messages=[{"role": "user", "content": prompt}],
@@ -169,7 +168,6 @@ You are a precise Knowledge Assistant. Your goal is to answer questions based st
 
 
 def display_results(query: str, contexts: list[str], response: str):
-    """Display search results and LLM response in formatted tables"""
     # 1. Show the Query
     console.print(f"\n[bold magenta]Query:[/bold magenta] [italic]{query}[/italic]\n")
 

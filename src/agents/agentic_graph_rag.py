@@ -1,0 +1,156 @@
+import asyncio
+from loguru import logger
+from dataclasses import dataclass
+
+from rich.live import Live
+from rich.panel import Panel
+from rich.prompt import Prompt
+from rich.spinner import Spinner
+from rich.console import Console
+from rich.markdown import Markdown
+
+from pydantic_ai.messages import ModelMessage
+from pydantic_ai.settings import ModelSettings
+from pydantic_ai import Agent, RunContext, ModelRetry
+from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.providers.openai import OpenAIProvider
+
+# Assumed imports (Keep your existing paths)
+from src.models.graphiti_search_info import (
+    GraphitiNodeInfo,
+    GraphitiEdgeInfo,
+    GraphitiEpisodeInfo,
+)
+from src.settings import settings
+from src.prompts import GRAPHITI_AGENT_INSTRUCTION
+from src.retrieval.graph_rag import GraphRetrieval
+
+logger.remove()
+logger.add("agent.log", rotation="10 MB", level="DEBUG")
+
+
+@dataclass
+class GraphitiDependencies:
+    graph_retrieval: GraphRetrieval
+    top_k: int = 5
+
+
+def get_openai_model() -> OpenAIChatModel:
+    return OpenAIChatModel(
+        model_name=settings.llm_model,
+        provider=OpenAIProvider(
+            base_url=settings.llm_base_url, api_key=settings.llm_api_key
+        ),
+        settings=ModelSettings(
+            temperature=settings.llm_temperature, max_tokens=settings.llm_max_tokens
+        ),
+    )
+
+
+graphiti_agent = Agent(
+    model=get_openai_model(),
+    system_prompt=GRAPHITI_AGENT_INSTRUCTION,
+    deps_type=GraphitiDependencies,
+    retries=2,
+)
+
+
+@graphiti_agent.tool
+async def search_graphiti(
+    ctx: RunContext[GraphitiDependencies], query: str
+) -> tuple[list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]]:
+    """
+    Search the Graphiti knowledge graph.
+
+    Args:
+        ctx: Context containing retrieval dependencies.
+        query: The semantic search query.
+    """
+    graph_retrieval = ctx.deps.graph_retrieval
+
+    # Log to file, not console, to keep UI clean
+    logger.info(f"Tool executing search for: {query}")
+
+    try:
+        results = await graph_retrieval.retrieve(query, num_results=ctx.deps.top_k)
+        node_infos, edge_infos, episode_infos = results
+
+        logger.debug(f"Retrieved: {len(node_infos)} nodes, {len(edge_infos)} edges")
+
+        if not any([node_infos, edge_infos, episode_infos]):
+            # Optional: Retry/Feedback to model if search yields nothing
+            logger.warning("Empty search results")
+
+        return node_infos, edge_infos, episode_infos
+
+    except Exception as e:
+        logger.exception(f"Graphiti search failed: {e}")
+        # Allow the LLM to know the tool failed rather than crashing the app
+        raise ModelRetry(f"Search failed due to internal error: {e}. Try rephrasing.")
+
+
+async def get_user_input(console: Console) -> str:
+    """Runs blocking input in an executor to keep asyncio loop healthy."""
+    loop = asyncio.get_running_loop()
+    # Use Rich's Prompt, but run it in a thread so we don't block background async tasks
+    return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
+
+
+async def main():
+    graph_retrieval = GraphRetrieval()
+    console = Console()
+
+    messages: list[ModelMessage] = []
+
+    console.print(
+        Panel(
+            "[bold blue]Graphiti Knowledge Agent[/]\nType 'exit' to quit.", expand=False
+        )
+    )
+
+    try:
+        while True:
+            user_input = await get_user_input(console)
+
+            if user_input.lower() in ["exit", "quit", "bye"]:
+                console.print("[bold red]Goodbye![/]")
+                break
+
+            deps = GraphitiDependencies(graph_retrieval=graph_retrieval, top_k=5)
+
+            console.print("\n[bold purple]Assistant[/]")
+
+            # Using a spinner for the initial connection/tool usage phase
+            with Live(
+                Spinner("dots", text="Thinking..."),
+                console=console,
+                refresh_per_second=10,
+            ) as live:
+                try:
+                    async with graphiti_agent.run_stream(
+                        user_input, message_history=messages, deps=deps
+                    ) as result:
+                        accumulated_text = ""
+                        async for message in result.stream_text(delta=True):
+                            accumulated_text += message
+                            # Update Live display with rendered Markdown
+                            live.update(Markdown(accumulated_text))
+
+                    # Persist history
+                    messages.extend(result.all_messages())
+
+                except Exception as e:
+                    logger.error(f"Stream error: {e}")
+                    live.update(
+                        Panel(f"[bold red]Error:[/]\n{str(e)}", border_style="red")
+                    )
+
+    except KeyboardInterrupt:
+        console.print("\n[yellow]Interrupted by user.[/]")
+    finally:
+        await graph_retrieval.close()
+        logger.info("Session closed.")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

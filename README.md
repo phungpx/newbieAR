@@ -1,4 +1,46 @@
-# Features
+# minRAG
+
+## Core Concepts
+
+minrag = minRAG(
+    qdrant_uri=
+    qdrant_api_key=
+    embedding....
+)
+
+- Synthesis
+
+minRAG(
+
+)
+
+- Ingestion
+
+minRAG.ingest_file(
+    file_path=
+    qdrant_collection_name=
+)
+
+minRAG.ingest_files(
+    file_paths=[]
+    qdrant_collection_name=
+)
+
+- Retrieval
+
+minRAG.generate(
+    query=
+    top_k=
+    qdrant_collection_name=
+    return_context=
+)
+
+- Evaluation
+
+minRAG.evaluate(
+    
+)
+
 
 ## Ingestion Pipeline
 - Orchestration: Apache Airflow for DAG-based scheduling and pipeline resilience.
