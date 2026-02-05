@@ -3,7 +3,7 @@ from src.ingestion.ingest_vectordb import VectorDBIngestion
 from src.models import ChunkStrategy
 
 
-class minRAG:
+class newbieAR:
     def __init__(
         self,
         documents_dir: str,
