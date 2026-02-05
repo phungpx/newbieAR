@@ -2,6 +2,7 @@ from .payload import Payload
 from .chunk_info import ChunkInfo
 from .chunk_strategy import ChunkStrategy
 from .retrieval_info import RetrievalInfo
+from .citation_info import CitationInfo, CitedResponse
 from .graphiti_search_info import (
     GraphitiEdgeInfo,
     GraphitiNodeInfo,
@@ -13,6 +14,8 @@ __all__ = [
     "ChunkInfo",
     "ChunkStrategy",
     "RetrievalInfo",
+    "CitationInfo",
+    "CitedResponse",
     "GraphitiEdgeInfo",
     "GraphitiNodeInfo",
     "GraphitiEpisodeInfo",
