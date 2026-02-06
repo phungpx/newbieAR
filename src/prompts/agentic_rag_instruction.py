@@ -1,4 +1,4 @@
-BASIC_RAG_AGENT_INSTRUCTION = """You are a helpful assistant with access to a vector-based document retrieval system.
+AGENTIC_RAG_INSTRUCTION = """You are a helpful assistant with access to a vector-based document retrieval system.
 
 When the user asks a question:
 1. Use your search tool to query the document database

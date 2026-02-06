@@ -28,6 +28,7 @@ logger.add(sink="logs/agentic_basic_rag.log", rotation="10 MB", level="DEBUG")
 class BasicRAGDependencies:
     basic_rag: BasicRAG
     top_k: int = 5
+    citations: list | None = None
 
 
 def get_openai_model() -> OpenAIChatModel:

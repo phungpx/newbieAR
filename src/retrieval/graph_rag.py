@@ -1,9 +1,7 @@
 import asyncio
 from loguru import logger
 from rich.console import Console
-from rich.table import Table
 from rich.panel import Panel
-from rich.markdown import Markdown
 from graphiti_core.search.search_config import (
     EdgeSearchConfig,
     EdgeSearchMethod,
@@ -19,6 +17,7 @@ from graphiti_core.search.search_config import (
 )
 
 from src.settings import settings
+from src.retrieval.utils import display_rag_results
 from src.deps import OpenAILLMClient, GraphitiClient
 from src.models import GraphitiEdgeInfo, GraphitiNodeInfo, GraphitiEpisodeInfo
 from src.prompts import RAG_GENERATION_PROMPT
@@ -175,45 +174,6 @@ class GraphRetrieval:
             await self.graphiti_client.close()
 
 
-def display_results(
-    query: str, contexts: list[str], citations: list[str], response: str
-):
-    # 1. Show the Query
-    console.print(f"\n[bold magenta]Query:[/bold magenta] [italic]{query}[/italic]\n")
-
-    # 2. Show Results Table
-    table = Table(
-        title="Retrieved Facts from Knowledge Graph", show_lines=True, expand=True
-    )
-    table.add_column("Rank", justify="center", style="cyan", no_wrap=True)
-    table.add_column("Content", style="white")
-
-    for i, context in enumerate(contexts):
-        table.add_row(f"Context {i + 1}", context)
-
-    console.print(table)
-
-    # 3. Show Final Answer in a Panel
-    # Using Markdown inside the panel so your bolding/bullets render correctly
-    md_answer = Markdown(response)
-    console.print(
-        Panel(
-            md_answer,
-            title="[bold green]LLM Response[/bold green]",
-            border_style="green",
-            padding=(1, 2),
-        )
-    )
-    console.print(
-        Panel(
-            Markdown(f"- {'\n- '.join(citations)}"),
-            title="[bold magenta]Citations[/bold magenta]",
-            border_style="magenta",
-            padding=(1, 2),
-        )
-    )
-
-
 async def main_async():
     retrieval = GraphRetrieval()
     console.print(Panel.fit("Graph RAG Evaluation CLI Mode", style="bold cyan"))
@@ -230,7 +190,13 @@ async def main_async():
                 contexts, citations, response = await retrieval.generate(
                     query, num_results=5
                 )
-                display_results(query, contexts, citations, response)
+                display_rag_results(
+                    console,
+                    query=query,
+                    contexts=contexts,
+                    citations=citations,
+                    response=response,
+                )
             except Exception as e:
                 console.print(f"[bold red]Error: {e}[/bold red]")
     finally:

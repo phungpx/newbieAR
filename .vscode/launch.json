@@ -10,7 +10,13 @@
             "request": "launch",
             "module": "src.synthesis.synthesize",
             "console": "integratedTerminal",
-            "justMyCode": false
+            "justMyCode": false,
+            "args": [
+                "--file_dir",
+                "data/wikipedia/files",
+                "--output_dir",
+                "data/goldens/wikipedia",
+            ]
         },
         {
             "name": "Ingestion",
