@@ -1,3 +1,4 @@
+from enum import Enum
 from pathlib import Path
 from loguru import logger
 from deepeval.models.llms import GPTModel
@@ -8,20 +9,27 @@ from deepeval.synthesizer.config import (
     StylingConfig,
     ContextConstructionConfig,
 )
+from deepeval.synthesizer import Synthesizer, Evolution
+
 from src.settings import settings
 
 # from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
-from deepeval.synthesizer import Synthesizer, Evolution
 from .utils import save_goldens_to_files
 
+
+class Topic(Enum):
+    RESEARCH_PAPER = "paper"
+    WIKIPEDIA_ARTICLE = "article"
+
+
 STYLING_CONFIG = {
-    "research_paper": {
+    Topic.RESEARCH_PAPER.value: {
         "input_format": "Natural language questions about research papers, technical concepts, methodologies, findings, and implementations",
         "expected_output_format": "Detailed technical responses that include: key concepts and definitions, methodology explanations, experimental findings and results, technical comparisons, implementation details, limitations and future work, and citations to relevant sections. Responses should be precise, technically accurate, and reference specific content from the research papers. Include both high-level summaries and technical depth as appropriate.",
         "task": "Knowledge retrieval and technical analysis of research papers, including understanding methodologies, experimental results, technical architectures, comparisons with related work, and practical applications",
         "scenario": "Researchers, engineers, and technical professionals seeking information about research papers, including: understanding proposed methods and architectures, experimental setups and results, technical comparisons with other approaches, implementation details and code examples, limitations and future research directions, and practical applications. Questions may range from high-level overviews to deep technical details. Responses should be accurate, well-structured, and grounded in the paper content.",
     },
-    "wikipedia_article": {
+    Topic.WIKIPEDIA_ARTICLE.value: {
         "input_format": "Natural language questions",
         "expected_output_format": "Detailed paragraph responses and short structured bios. Include key facts (roles, affiliations, notable works, awards), a concise timeline of major events, and a short bullet list of notable contributions. Provide plain-language explanations for general audiences and optional technical depth when requested.",
         "task": "Knowledge retrieval and concise biographical summaries for individuals",
@@ -29,7 +37,7 @@ STYLING_CONFIG = {
     },
 }
 
-TOPIC = "wikipedia_article"
+TOPIC = Topic.WIKIPEDIA_ARTICLE.value
 
 model = GPTModel(
     model=settings.llm_model,
