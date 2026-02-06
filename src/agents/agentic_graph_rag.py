@@ -15,11 +15,6 @@ from pydantic_ai import Agent, RunContext, ModelRetry
 from pydantic_ai.models.openai import OpenAIChatModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
-from src.models.graphiti_search_info import (
-    GraphitiNodeInfo,
-    GraphitiEdgeInfo,
-    GraphitiEpisodeInfo,
-)
 from src.settings import settings
 from src.prompts import GRAPHITI_AGENT_INSTRUCTION
 from src.retrieval.graph_rag import GraphRetrieval
@@ -57,13 +52,16 @@ graphiti_agent = Agent(
 @graphiti_agent.tool
 async def search_graphiti(
     ctx: RunContext[GraphitiDependencies], query: str
-) -> tuple[list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]]:
+) -> tuple[list[str], list[str], str]:
     """
-    Search the Graphiti knowledge graph.
+    Search the Graphiti knowledge graph and generate an answer.
 
     Args:
         ctx: Context containing retrieval dependencies.
         query: The semantic search query.
+
+    Returns:
+        Tuple of (contexts_data, citations, generated_answer)
     """
     graph_retrieval = ctx.deps.graph_retrieval
 
@@ -75,19 +73,20 @@ async def search_graphiti(
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        results = await graph_retrieval.retrieve(query, num_results=ctx.deps.top_k)
-        node_infos, edge_infos, episode_infos = results
+        contexts_data, citations, generated_answer = await graph_retrieval.generate(
+            query, num_results=ctx.deps.top_k
+        )
 
         logger.debug(
-            f"Retrieved: {len(node_infos)} nodes, {len(edge_infos)} edges, {len(episode_infos)} episodes"
+            f"Retrieved {len(contexts_data)} context blocks with {len(citations)} citations"
         )
 
         # Handle empty results gracefully
-        if not any([node_infos, edge_infos, episode_infos]):
+        if not contexts_data:
             logger.warning(f"No results for query: {query}")
-            return [], [], []
+            return [], [], "No relevant information found in the knowledge graph."
 
-        return node_infos, edge_infos, episode_infos
+        return contexts_data, citations, generated_answer
 
     except asyncio.TimeoutError:
         logger.error("Search timed out")
