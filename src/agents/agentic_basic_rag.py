@@ -21,7 +21,7 @@ from src.prompts import BASIC_RAG_AGENT_INSTRUCTION
 from src.retrieval.basic_rag import BasicRAG
 
 logger.remove()
-logger.add("agent.log", rotation="10 MB", level="DEBUG")
+logger.add(sink="logs/agentic_basic_rag.log", rotation="10 MB", level="DEBUG")
 
 
 @dataclass

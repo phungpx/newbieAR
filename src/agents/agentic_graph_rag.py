@@ -25,7 +25,7 @@ from src.prompts import GRAPHITI_AGENT_INSTRUCTION
 from src.retrieval.graph_rag import GraphRetrieval
 
 logger.remove()
-logger.add("agent.log", rotation="10 MB", level="DEBUG")
+logger.add(sink="logs/agentic_graph_rag.log", rotation="10 MB", level="DEBUG")
 
 
 @dataclass
