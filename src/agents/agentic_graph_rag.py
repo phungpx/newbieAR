@@ -125,7 +125,7 @@ async def search_graphiti(
         raise ModelRetry("Database connection failed. Please try again.")
     except Exception as e:
         logger.exception(f"Graphiti search failed: {e}")
-        raise ModelRetry(f"Search encountered an error. Try rephrasing your query.")
+        raise ModelRetry("Search encountered an error. Try rephrasing your query.")
 
 
 async def get_user_input(console: Console) -> str:

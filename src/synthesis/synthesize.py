@@ -1,7 +1,7 @@
 from enum import Enum
 from pathlib import Path
 from loguru import logger
-from deepeval.models.llms import GPTModel, AmazonBedrockModel
+from src.synthesis.bedrock_model import AmazonBedrockModel
 from deepeval.models.embedding_models import LocalEmbeddingModel
 from deepeval.synthesizer.config import (
     FiltrationConfig,
@@ -15,7 +15,7 @@ from deepeval.synthesizer import Synthesizer, Evolution
 from src.settings import settings
 
 # from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
-from .utils import save_goldens_to_files
+from src.synthesis.utils import save_goldens_to_files
 
 
 class Topic(Enum):
@@ -46,7 +46,7 @@ STYLING_CONFIG = {
     ),
 }
 
-TOPIC = Topic.WIKIPEDIA_ARTICLE.value
+TOPIC = Topic.RESEARCH_PAPER.value
 
 # model = GPTModel(
 #     model=settings.llm_model,
@@ -56,11 +56,21 @@ TOPIC = Topic.WIKIPEDIA_ARTICLE.value
 #     cost_per_output_token=2.5 * 10**-6,
 # )
 
+import os
+
+aws_access_key_id = os.environ["AWS_ACCESS_KEY_ID"]
+aws_secret_access_key = os.environ["AWS_SECRET_ACCESS_KEY"]
+aws_session_token = os.environ.get("AWS_SESSION_TOKEN")
+
 model = AmazonBedrockModel(
     model=settings.critique_model_name,
     region=settings.critique_model_region_name,
+    aws_access_key_id=aws_access_key_id,
+    aws_secret_access_key=aws_secret_access_key,
+    aws_session_token=aws_session_token,
     cost_per_input_token=0.3 * 10**-6,
     cost_per_output_token=2.5 * 10**-6,
+    generation_kwargs={"max_tokens": 7000, "temperature": 0.1, "top_p": 0.9},
 )
 
 
@@ -73,7 +83,7 @@ embeder = LocalEmbeddingModel(
 # Apply for filtering the generated query by the critic model
 filtration_config = FiltrationConfig(
     # Relax threshold to avoid over-filtering all generated samples
-    synthetic_input_quality_threshold=0.3,
+    synthetic_input_quality_threshold=0.1,
     max_quality_retries=1,
     critic_model=model,
 )
