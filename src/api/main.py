@@ -1,7 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from loguru import logger
 
 from src.api.routers import ingestion, retrieval, agents
@@ -52,6 +52,18 @@ app.add_exception_handler(Exception, global_exception_handler)
 app.include_router(ingestion.router, prefix=settings.api.api_prefix)
 app.include_router(retrieval.router, prefix=settings.api.api_prefix)
 app.include_router(agents.router, prefix=settings.api.api_prefix)
+
+
+@app.get("/docs", include_in_schema=False)
+async def docs_redirect():
+    """Redirect /docs to prefixed docs URL"""
+    return RedirectResponse(url=f"{settings.api.api_prefix}/docs")
+
+
+@app.get("/redoc", include_in_schema=False)
+async def redoc_redirect():
+    """Redirect /redoc to prefixed redoc URL"""
+    return RedirectResponse(url=f"{settings.api.api_prefix}/redoc")
 
 
 @app.get("/health")
