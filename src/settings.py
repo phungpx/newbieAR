@@ -72,7 +72,7 @@ class APISettings(ProjectBaseSettings):
     api_port: int = 8000
     api_prefix: str = "/api/v1"
     cors_origins: list[str] = ["http://localhost:3000"]
-    admin_api_key: str = "newbie_admin_dev_key_change_in_production"
+    admin_api_key: str = "empty"
 
 
 class AuthSettings(ProjectBaseSettings):

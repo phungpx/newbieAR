@@ -15,6 +15,7 @@ from src.api.models import (
     TokenUsageBreakdown,
 )
 from src.api.services import session_manager
+from pydantic_ai.messages import ModelResponse, ToolCallPart
 from src.agents.agentic_basic_rag import basic_rag_agent, BasicRAGDependencies
 from src.retrieval.basic_rag import BasicRAG
 from src.settings import settings

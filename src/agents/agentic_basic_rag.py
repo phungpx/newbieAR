@@ -13,7 +13,9 @@ from pydantic_ai.messages import ModelMessage
 from pydantic_ai.settings import ModelSettings
 from pydantic_ai import Agent, RunContext, ModelRetry
 from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.openai import OpenAIProvider
+from pydantic_ai.providers.google import GoogleProvider
 
 from src.models import RetrievalInfo
 from src.settings import settings
@@ -43,8 +45,28 @@ def get_openai_model() -> OpenAIChatModel:
     )
 
 
+def get_google_model() -> GoogleModel:
+    model_name = "gemini-2.5-flash"
+    project_id = "vns-durian-traceability"
+    return GoogleModel(
+        model_name=model_name,
+        provider=GoogleProvider(project=project_id, vertexai=True),
+        settings=ModelSettings(
+            temperature=settings.llm_temperature, max_tokens=settings.llm_max_tokens
+        ),
+    )
+
+
+llm_provider = "google"
+if llm_provider == "openai":
+    model = get_openai_model()
+elif llm_provider == "google":
+    model = get_google_model()
+else:
+    raise ValueError(f"Invalid LLM provider: {llm_provider}")
+
 basic_rag_agent = Agent(
-    model=get_openai_model(),
+    model=model,
     system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=BasicRAGDependencies,
     retries=2,

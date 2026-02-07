@@ -1,6 +1,14 @@
-import time
-from fastapi import APIRouter, Depends, UploadFile, File, Form, HTTPException, status, BackgroundTasks
 from loguru import logger
+from fastapi import (
+    APIRouter,
+    Depends,
+    UploadFile,
+    File,
+    Form,
+    HTTPException,
+    status,
+    BackgroundTasks,
+)
 
 from src.api.dependencies import require_ingest_permission
 from src.api.models import APIKey, IngestJobResponse, IngestJobStatusResponse
@@ -22,7 +30,6 @@ async def process_vectordb_ingestion(
     try:
         job_manager.update_job(job_id, status=JobStatus.PROCESSING, progress=10)
 
-        # Initialize ingestion pipeline
         pipeline = VectorDBIngestion(
             documents_dir="data/api_uploads/docs",
             chunks_dir="data/api_uploads/chunks",
@@ -53,7 +60,9 @@ async def process_vectordb_ingestion(
         )
 
 
-@router.post("/vectordb", response_model=IngestJobResponse, status_code=status.HTTP_202_ACCEPTED)
+@router.post(
+    "/vectordb", response_model=IngestJobResponse, status_code=status.HTTP_202_ACCEPTED
+)
 async def ingest_vectordb(
     background_tasks: BackgroundTasks,
     file: UploadFile = File(...),
@@ -89,6 +98,7 @@ async def ingest_vectordb(
 
     # Save uploaded file
     import os
+
     os.makedirs("data/api_uploads", exist_ok=True)
     file_path = f"data/api_uploads/{file.filename}"
 
