@@ -33,6 +33,11 @@ class QdrantVectorStore:
         except UnexpectedResponse as e:
             raise RuntimeError(f"Failed to create collection '{collection_name}': {e}")
 
+    def list_collections(self) -> list[str]:
+        """List all collection names in Qdrant"""
+        collections = self.client.get_collections()
+        return [c.name for c in collections.collections]
+
     def delete_collection(self, collection_name: str) -> None:
         try:
             if self.client.collection_exists(collection_name):

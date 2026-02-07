@@ -17,7 +17,7 @@ from pydantic_ai.providers.openai import OpenAIProvider
 
 from src.models import RetrievalInfo
 from src.settings import settings
-from src.prompts import BASIC_RAG_AGENT_INSTRUCTION
+from src.prompts import AGENTIC_RAG_INSTRUCTION
 from src.retrieval.basic_rag import BasicRAG
 
 logger.remove()
@@ -45,7 +45,7 @@ def get_openai_model() -> OpenAIChatModel:
 
 basic_rag_agent = Agent(
     model=get_openai_model(),
-    system_prompt=BASIC_RAG_AGENT_INSTRUCTION,
+    system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=BasicRAGDependencies,
     retries=2,
 )
