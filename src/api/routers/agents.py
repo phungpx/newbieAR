@@ -75,20 +75,20 @@ async def basic_rag_chat(
             deps=deps,
         )
 
-        # Extract response data
-        response_text = result.data
+        # Extract response data (.output in pydantic-ai >= 1.x)
+        response_text = result.output
 
         # Extract tool calls and citations from result
         tool_calls = []
         citations = []
 
-        # Parse tool calls from result messages
-        if hasattr(result, 'all_messages'):
-            for msg in result.all_messages():
-                if hasattr(msg, 'tool_calls') and msg.tool_calls:
-                    for tc in msg.tool_calls:
+        # Parse tool calls from ModelResponse messages
+        for msg in result.all_messages():
+            if isinstance(msg, ModelResponse):
+                for part in msg.parts:
+                    if isinstance(part, ToolCallPart):
                         tool_calls.append(ToolCallInfo(
-                            tool=tc.tool_name if hasattr(tc, 'tool_name') else "search_basic_rag",
+                            tool=part.tool_name,
                             query=request.message,
                             results_count=request.top_k,
                             token_usage={"embedding_tokens": 8},

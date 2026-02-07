@@ -124,9 +124,7 @@ async def search_basic_rag(
 
 
 async def get_user_input(console: Console) -> str:
-    """Runs blocking input in an executor to keep asyncio loop healthy."""
     loop = asyncio.get_running_loop()
-    # Use Rich's Prompt, but run it in a thread so we don't block background async tasks
     return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
 
 
