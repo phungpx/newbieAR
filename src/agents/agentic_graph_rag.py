@@ -13,16 +13,14 @@ from pydantic_ai.messages import ModelMessage
 from pydantic_ai.settings import ModelSettings
 from pydantic_ai import Agent, RunContext, ModelRetry
 from pydantic_ai.models.openai import OpenAIChatModel
+from pydantic_ai.models.google import GoogleModel
 from pydantic_ai.providers.openai import OpenAIProvider
+from pydantic_ai.providers.google import GoogleProvider
 
-from src.models.graphiti_search_info import (
-    GraphitiNodeInfo,
-    GraphitiEdgeInfo,
-    GraphitiEpisodeInfo,
-)
 from src.settings import settings
-from src.prompts import GRAPHITI_AGENT_INSTRUCTION
+from src.prompts import AGENTIC_RAG_INSTRUCTION
 from src.retrieval.graph_rag import GraphRetrieval
+from src.retrieval.utils import display_rag_results
 
 logger.remove()
 logger.add(sink="logs/agentic_graph_rag.log", rotation="10 MB", level="DEBUG")
@@ -32,6 +30,8 @@ logger.add(sink="logs/agentic_graph_rag.log", rotation="10 MB", level="DEBUG")
 class GraphitiDependencies:
     graph_retrieval: GraphRetrieval
     top_k: int = 5
+    citations: list | None = None
+    contexts: list | None = None
 
 
 def get_openai_model() -> OpenAIChatModel:
@@ -46,9 +46,29 @@ def get_openai_model() -> OpenAIChatModel:
     )
 
 
+def get_google_model() -> GoogleModel:
+    model_name = "gemini-2.5-flash"
+    project_id = "vns-durian-traceability"
+    return GoogleModel(
+        model_name=model_name,
+        provider=GoogleProvider(project=project_id, vertexai=True),
+        settings=ModelSettings(
+            temperature=settings.llm_temperature, max_tokens=settings.llm_max_tokens
+        ),
+    )
+
+
+llm_provider = "google"
+if llm_provider == "openai":
+    model = get_openai_model()
+elif llm_provider == "google":
+    model = get_google_model()
+else:
+    raise ValueError(f"Invalid LLM provider: {llm_provider}")
+
 graphiti_agent = Agent(
-    model=get_openai_model(),
-    system_prompt=GRAPHITI_AGENT_INSTRUCTION,
+    model=model,
+    system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=GraphitiDependencies,
     retries=2,
 )
@@ -57,13 +77,16 @@ graphiti_agent = Agent(
 @graphiti_agent.tool
 async def search_graphiti(
     ctx: RunContext[GraphitiDependencies], query: str
-) -> tuple[list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]]:
+) -> tuple[list[str], list[str], str]:
     """
-    Search the Graphiti knowledge graph.
+    Search the Graphiti knowledge graph and generate an answer.
 
     Args:
         ctx: Context containing retrieval dependencies.
         query: The semantic search query.
+
+    Returns:
+        Tuple of (contexts, citations, generated_answer)
     """
     graph_retrieval = ctx.deps.graph_retrieval
 
@@ -75,19 +98,24 @@ async def search_graphiti(
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        results = await graph_retrieval.retrieve(query, num_results=ctx.deps.top_k)
-        node_infos, edge_infos, episode_infos = results
-
-        logger.debug(
-            f"Retrieved: {len(node_infos)} nodes, {len(edge_infos)} edges, {len(episode_infos)} episodes"
+        contexts, citations, generated_answer = await graph_retrieval.generate(
+            query, num_results=ctx.deps.top_k
         )
 
-        # Handle empty results gracefully
-        if not any([node_infos, edge_infos, episode_infos]):
-            logger.warning(f"No results for query: {query}")
-            return [], [], []
+        logger.debug(
+            f"Retrieved {len(contexts)} context blocks with {len(citations)} citations"
+        )
 
-        return node_infos, edge_infos, episode_infos
+        # Store citations into dependencies
+        ctx.deps.citations = citations
+        ctx.deps.contexts = contexts
+
+        # Handle empty results gracefully
+        if not contexts:
+            logger.warning(f"No results for query: {query}")
+            return [], [], "No relevant information found in the knowledge graph."
+
+        return contexts, citations, generated_answer
 
     except asyncio.TimeoutError:
         logger.error("Search timed out")
@@ -97,13 +125,11 @@ async def search_graphiti(
         raise ModelRetry("Database connection failed. Please try again.")
     except Exception as e:
         logger.exception(f"Graphiti search failed: {e}")
-        raise ModelRetry(f"Search encountered an error. Try rephrasing your query.")
+        raise ModelRetry("Search encountered an error. Try rephrasing your query.")
 
 
 async def get_user_input(console: Console) -> str:
-    """Runs blocking input in an executor to keep asyncio loop healthy."""
     loop = asyncio.get_running_loop()
-    # Use Rich's Prompt, but run it in a thread so we don't block background async tasks
     return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
 
 
@@ -157,12 +183,11 @@ async def main():
                             accumulated_text += message
                             # Update Live display with rendered Markdown
                             live.update(Markdown(accumulated_text))
-
-                    # Persist history
+                    display_rag_results(
+                        console, contexts=deps.contexts, citations=deps.citations
+                    )
                     messages.extend(result.all_messages())
-
                 except ModelRetry as e:
-                    # Expected retry - show friendly message
                     logger.warning(f"Model retry: {e}")
                     live.update(
                         Panel(f"[yellow]{str(e)}[/yellow]", border_style="yellow")

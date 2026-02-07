@@ -215,3 +215,4 @@ logs/
 plugins/
 config/
 .DS_Store
+google_credentials.json
