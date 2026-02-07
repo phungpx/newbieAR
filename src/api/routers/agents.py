@@ -43,13 +43,10 @@ async def basic_rag_chat(
         if not session_id:
             session_id = session_manager.create_session(request.user_id)
         else:
-            # Validate session ownership
+            # Try to get existing session; auto-create if not found
             session = session_manager.get_session(session_id, request.user_id)
             if not session:
-                raise HTTPException(
-                    status_code=status.HTTP_404_NOT_FOUND,
-                    detail="Session not found or access denied",
-                )
+                session_id = session_manager.create_session(request.user_id)
 
         # Get message history if requested
         messages = []
@@ -164,10 +161,10 @@ async def basic_rag_stream(
             if not session_id:
                 session_id = session_manager.create_session(request.user_id)
             else:
+                # Try to get existing session; auto-create if not found
                 session = session_manager.get_session(session_id, request.user_id)
                 if not session:
-                    yield f"event: error\ndata: {json.dumps({'error': 'Session not found'})}\n\n"
-                    return
+                    session_id = session_manager.create_session(request.user_id)
 
             # Get message history
             messages = []
