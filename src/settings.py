@@ -67,6 +67,33 @@ class CritiqueModelSettings(ProjectBaseSettings):
     critique_model_region_name: str
 
 
+class APISettings(ProjectBaseSettings):
+    api_host: str = "0.0.0.0"
+    api_port: int = 8000
+    api_prefix: str = "/api/v1"
+    cors_origins: list[str] = ["http://localhost:3000"]
+    admin_api_key: str = "newbie_admin_dev_key_change_in_production"
+
+
+class AuthSettings(ProjectBaseSettings):
+    api_keys_storage: str = "memory"  # or "redis"
+    rate_limit_enabled: bool = True
+    rate_limit_standard: str = "100/minute"
+    rate_limit_premium: str = "1000/minute"
+
+
+class JobSettings(ProjectBaseSettings):
+    job_storage: str = "memory"  # or "redis"
+    job_timeout_seconds: int = 600
+    max_file_size_mb: int = 50
+
+
+class SessionSettings(ProjectBaseSettings):
+    session_storage: str = "memory"  # or "redis"
+    session_ttl_hours: int = 24
+    max_history_messages: int = 20
+
+
 class ProjectSettings(
     OpenAILLMSettings,
     LangfuseSettings,
@@ -77,6 +104,10 @@ class ProjectSettings(
     Neo4jGraphDBSettings,
     MinIOSettings,
     CritiqueModelSettings,
+    APISettings,
+    AuthSettings,
+    JobSettings,
+    SessionSettings,
 ):
     @property
     def openai_llm(self) -> OpenAILLMSettings:
@@ -113,6 +144,22 @@ class ProjectSettings(
     @property
     def critique_model(self) -> CritiqueModelSettings:
         return CritiqueModelSettings(**self.model_dump())
+
+    @property
+    def api(self) -> APISettings:
+        return APISettings(**self.model_dump())
+
+    @property
+    def auth(self) -> AuthSettings:
+        return AuthSettings(**self.model_dump())
+
+    @property
+    def jobs(self) -> JobSettings:
+        return JobSettings(**self.model_dump())
+
+    @property
+    def sessions(self) -> SessionSettings:
+        return SessionSettings(**self.model_dump())
 
 
 settings = ProjectSettings()
