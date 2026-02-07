@@ -28,7 +28,7 @@ if __name__ == "__main__":
     embed = OpenAIEmbedding(
         base_url="http://127.0.0.1:1234/v1",
         api_key="empty",
-        model_id="text-embedding-all-minilm-l6-v2-embedding",
+        model_id="text-embedding-snowflake-arctic-embed-l-v2.0",
     ).embed_texts([text])
     if embed:
         print(len(embed[0]))
