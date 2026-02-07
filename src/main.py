@@ -33,6 +33,9 @@ class NewbieAR:
             query, top_k=top_k, return_context=return_context
         )
 
+    def agent(self):
+        pass
+
     def evaluate(self):
         pass
 
