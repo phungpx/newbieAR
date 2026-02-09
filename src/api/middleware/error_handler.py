@@ -1,4 +1,3 @@
-import traceback
 from datetime import datetime
 from fastapi import Request, status
 from fastapi.responses import JSONResponse

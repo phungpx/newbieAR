@@ -9,6 +9,7 @@ from fastapi import (
     status,
     BackgroundTasks,
 )
+from pathlib import Path
 
 from src.api.dependencies import require_ingest_permission
 from src.api.models import APIKey, IngestJobResponse, IngestJobStatusResponse
@@ -19,22 +20,23 @@ from src.settings import settings
 
 router = APIRouter(prefix="/ingest", tags=["Ingestion"])
 
+FILE_STORAGE_DIR = Path("data/api_uploads")
+
 
 async def process_vectordb_ingestion(
     job_id: str,
     file_path: str,
-    collection_name: str,
+    qdrant_collection_name: str,
     chunk_strategy: str,
 ):
-    """Background task to process vectordb ingestion"""
     try:
         job_manager.update_job(job_id, status=JobStatus.PROCESSING, progress=10)
 
         pipeline = VectorDBIngestion(
-            documents_dir="data/api_uploads/docs",
-            chunks_dir="data/api_uploads/chunks",
+            documents_dir=f"{FILE_STORAGE_DIR}/docs",
+            chunks_dir=f"{FILE_STORAGE_DIR}/chunks",
             chunk_strategy=chunk_strategy,
-            qdrant_collection_name=collection_name,
+            qdrant_collection_name=qdrant_collection_name,
         )
 
         job_manager.update_job(job_id, progress=30)
@@ -61,7 +63,9 @@ async def process_vectordb_ingestion(
 
 
 @router.post(
-    "/vectordb", response_model=IngestJobResponse, status_code=status.HTTP_202_ACCEPTED
+    "/ingest_file",
+    response_model=IngestJobResponse,
+    status_code=status.HTTP_202_ACCEPTED,
 )
 async def ingest_vectordb(
     background_tasks: BackgroundTasks,
@@ -74,7 +78,6 @@ async def ingest_vectordb(
     Upload and process document into vector database.
     Returns job ID immediately, processing happens in background.
     """
-    # Validate chunk strategy
     if chunk_strategy not in [e.value for e in ChunkStrategy]:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -97,12 +100,12 @@ async def ingest_vectordb(
     job_id = job_manager.create_job()
 
     # Save uploaded file
-    import os
+    if not FILE_STORAGE_DIR.exists():
+        FILE_STORAGE_DIR.mkdir(parents=True, exist_ok=True)
 
-    os.makedirs("data/api_uploads", exist_ok=True)
-    file_path = f"data/api_uploads/{file.filename}"
+    file_path = Path(FILE_STORAGE_DIR) / file.filename
 
-    with open(file_path, "wb") as f:
+    with file_path.open(mode="wb") as f:
         f.write(await file.read())
 
     # Schedule background processing
@@ -129,7 +132,6 @@ async def get_job_status(
     job_id: str,
     api_key: APIKey = Depends(require_ingest_permission),
 ):
-    """Get ingestion job status and results"""
     job = job_manager.get_job(job_id)
 
     if not job:
@@ -153,13 +155,12 @@ async def get_job_status(
 async def list_collections(
     api_key: APIKey = Depends(require_ingest_permission),
 ):
-    """List available Qdrant collections"""
     from src.deps import QdrantVectorStore
 
-    vector_store = QdrantVectorStore(
+    qdrant_client = QdrantVectorStore(
         uri=settings.qdrant_uri,
         api_key=settings.qdrant_api_key,
     )
 
-    collections = vector_store.list_collections()
+    collections = qdrant_client.list_collections()
     return collections

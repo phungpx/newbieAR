@@ -1,11 +1,9 @@
 from fastapi import Header, HTTPException, status, Depends
 from src.api.services import auth_service
 from src.api.models import APIKey
-from src.api.middleware.error_handler import ErrorCode, create_error_response
 
 
 async def get_api_key(x_api_key: str = Header(..., alias="X-API-Key")) -> APIKey:
-    """Validate API key from header"""
     api_key = auth_service.validate_key(x_api_key)
 
     if not api_key:
@@ -18,7 +16,6 @@ async def get_api_key(x_api_key: str = Header(..., alias="X-API-Key")) -> APIKey
 
 
 async def require_permission(permission: str):
-    """Factory for permission-checking dependencies"""
     async def check_permission(api_key: APIKey = Depends(get_api_key)) -> APIKey:
         if not auth_service.has_permission(api_key, permission):
             raise HTTPException(
@@ -40,7 +37,9 @@ async def require_ingest_permission(api_key: APIKey = Depends(get_api_key)) -> A
     return api_key
 
 
-async def require_retrieval_permission(api_key: APIKey = Depends(get_api_key)) -> APIKey:
+async def require_retrieval_permission(
+    api_key: APIKey = Depends(get_api_key),
+) -> APIKey:
     if not auth_service.has_permission(api_key, "retrieval"):
         raise HTTPException(
             status_code=status.HTTP_403_FORBIDDEN,

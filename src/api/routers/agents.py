@@ -54,10 +54,12 @@ async def basic_rag_chat(
             history = session_manager.get_history(session_id, request.user_id)
             # Convert to ModelMessage format (simplified)
             for msg in history:
-                messages.append({
-                    "role": msg["role"],
-                    "content": msg["content"],
-                })
+                messages.append(
+                    {
+                        "role": msg["role"],
+                        "content": msg["content"],
+                    }
+                )
 
         # Create dependencies
         deps = BasicRAGDependencies(
@@ -84,20 +86,18 @@ async def basic_rag_chat(
             if isinstance(msg, ModelResponse):
                 for part in msg.parts:
                     if isinstance(part, ToolCallPart):
-                        tool_calls.append(ToolCallInfo(
-                            tool=part.tool_name,
-                            query=request.message,
-                            results_count=request.top_k,
-                            token_usage={"embedding_tokens": 8},
-                            execution_time_ms=100,
-                        ))
+                        tool_calls.append(
+                            ToolCallInfo(
+                                tool=part.tool_name,
+                                query=request.message,
+                                results_count=request.top_k,
+                                token_usage={"embedding_tokens": 8},
+                                execution_time_ms=100,
+                            )
+                        )
 
         # Store conversation in session
-        session_manager.add_message(
-            session_id,
-            role="user",
-            content=request.message,
-        )
+        session_manager.add_message(session_id, role="user", content=request.message)
         session_manager.add_message(
             session_id,
             role="assistant",
@@ -151,6 +151,7 @@ async def basic_rag_stream(
     Streaming agentic chat with BasicRAG.
     Returns Server-Sent Events stream.
     """
+
     async def event_generator():
         try:
             # Initialize BasicRAG
@@ -171,10 +172,12 @@ async def basic_rag_stream(
             if request.include_history:
                 history = session_manager.get_history(session_id, request.user_id)
                 for msg in history:
-                    messages.append({
-                        "role": msg["role"],
-                        "content": msg["content"],
-                    })
+                    messages.append(
+                        {
+                            "role": msg["role"],
+                            "content": msg["content"],
+                        }
+                    )
 
             # Create dependencies
             deps = BasicRAGDependencies(
@@ -198,7 +201,9 @@ async def basic_rag_stream(
 
                 # Send completion event
                 elapsed_ms = int((time.time() - start_time) * 1000)
-                total_tokens = len(request.message.split()) * 2 + len(accumulated_text.split()) * 2
+                total_tokens = (
+                    len(request.message.split()) * 2 + len(accumulated_text.split()) * 2
+                )
 
                 done_data = {
                     "token_usage": {
@@ -207,7 +212,7 @@ async def basic_rag_stream(
                             "retrieval_embedding_tokens": 8,
                             "llm_prompt_tokens": len(request.message.split()) * 2,
                             "llm_completion_tokens": len(accumulated_text.split()) * 2,
-                        }
+                        },
                     },
                     "response_time_ms": elapsed_ms,
                     "session_id": session_id,
@@ -216,8 +221,12 @@ async def basic_rag_stream(
                 yield f"event: done\ndata: {json.dumps(done_data)}\n\n"
 
                 # Store in session
-                session_manager.add_message(session_id, role="user", content=request.message)
-                session_manager.add_message(session_id, role="assistant", content=accumulated_text)
+                session_manager.add_message(
+                    session_id, role="user", content=request.message
+                )
+                session_manager.add_message(
+                    session_id, role="assistant", content=accumulated_text
+                )
 
         except Exception as e:
             logger.exception(f"Streaming failed: {e}")
@@ -250,7 +259,9 @@ async def get_session_history(
             detail="Session not found or access denied",
         )
 
-    messages = session_manager.get_history(session_id, user_id, limit=limit, offset=offset)
+    messages = session_manager.get_history(
+        session_id, user_id, limit=limit, offset=offset
+    )
 
     return {
         "session_id": session.session_id,
