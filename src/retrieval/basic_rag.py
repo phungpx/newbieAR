@@ -1,21 +1,14 @@
-from rich.console import Console
-from rich.table import Table
-from rich.panel import Panel
-from rich.markdown import Markdown
-
 from src.settings import settings
 from src.models import RetrievalInfo
 from src.prompts import RAG_GENERATION_PROMPT
 from src.deps import OpenAIEmbedding, QdrantVectorStore, OpenAILLMClient
-
-console = Console()
+from src.retrieval.utils import display_rag_results
 
 
 class BasicRAG:
     def __init__(self, qdrant_collection_name: str = None):
         if qdrant_collection_name is not None:
             settings.qdrant_collection_name = qdrant_collection_name
-
         self.vector_store = QdrantVectorStore(
             uri=settings.qdrant_uri,
             api_key=settings.qdrant_api_key,
@@ -33,19 +26,14 @@ class BasicRAG:
         self.cross_encoder = None
 
     def retrieve(self, query: str, top_k: int = 5) -> list[RetrievalInfo]:
-        with console.status(
-            f"[bold green]Searching knowledge base {settings.qdrant_collection_name}...",
-            spinner="dots",
-        ):
-            embedding = self.embedder.embed_texts([query])
-            retrieved_documents = self.vector_store.query(
-                collection_name=settings.qdrant_collection_name,
-                query_vector=embedding[0],
-                top_k=top_k,
-            )
+        embedding = self.embedder.embed_texts([query])
+        retrieved_documents = self.vector_store.query(
+            collection_name=settings.qdrant_collection_name,
+            query_vector=embedding[0],
+            top_k=top_k,
+        )
 
         retrieval_infos: list[RetrievalInfo] = []
-
         for doc in retrieved_documents.points:
             content = doc.payload.get("text", "")
             score = getattr(doc, "score", 0.0)
@@ -82,56 +70,23 @@ class BasicRAG:
         return response
 
 
-def display_results(
-    query: str, retrieval_infos: list[RetrievalInfo], response: str = None
-):
-    console.print(
-        Panel.fit(
-            Markdown(query),
-            title="[bold green]Question[/bold green]",
-            border_style="green",
-            padding=(1, 2),
-        )
-    )
-
-    table = Table(title="Retrieved Documents", show_lines=True, expand=True)
-    table.add_column("Rank", justify="center", style="cyan", no_wrap=True)
-    table.add_column("Score", justify="center", style="green")
-    table.add_column("Source", style="yellow")
-    table.add_column("Content (Preview)", style="white")
-
-    for i, retrieval_info in enumerate(retrieval_infos):
-        preview = retrieval_info.content.replace("\n", " ") + "..."
-        table.add_row(
-            str(i + 1), f"{retrieval_info.score:.4f}", retrieval_info.source, preview
-        )
-
-    console.print(table)
-
-    if response is not None:
-        console.print(
-            Panel.fit(
-                Markdown(response),
-                title="[bold green]Response[/bold green]",
-                border_style="green",
-                padding=(1, 2),
-            )
-        )
-
-
 if __name__ == "__main__":
     import argparse
+    from rich.panel import Panel
+    from rich.console import Console
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("--collection_name", type=str, required=True)
+    parser.add_argument("--qdrant_collection_name", type=str, required=True)
     parser.add_argument("--top_k", type=int, default=10)
     args = parser.parse_args()
 
-    basic_rag = BasicRAG(qdrant_collection_name=args.collection_name)
+    basic_rag = BasicRAG(qdrant_collection_name=args.qdrant_collection_name)
+
+    console = Console()
 
     console.print(
         Panel.fit(
-            f"Basic Retrieval CLI Mode - Collection: {args.collection_name}",
+            f"Basic Retrieval CLI Mode - Collection: {args.qdrant_collection_name}",
             style="bold cyan",
         )
     )
@@ -149,7 +104,13 @@ if __name__ == "__main__":
                 top_k=args.top_k,
                 return_context=True,
             )
-            display_results(query, retrieval_infos, response)
+
+            contexts = []
+            citations = []
+            for retrieval_info in retrieval_infos:
+                contexts.append(retrieval_info.content)
+                citations.append(retrieval_info.source)
+            display_rag_results(console, query, contexts, citations, response)
 
         except KeyboardInterrupt:
             break
