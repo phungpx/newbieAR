@@ -36,6 +36,18 @@ uv run python -m src.evaluation.evaluate \
   --file_dir data/goldens \
   --retrieval_window_size 5 \
   --collection_name research_papers
+
+# Start the agent API + Open WebUI + Redis
+docker compose -f infras/docker-compose.openwebui.yaml up -d
+
+# Run API locally (requires Redis running)
+uv run uvicorn src.api.app:app --reload
+
+# Run tests
+uv run pytest tests/ -v
+
+# Run a specific test file
+uv run pytest tests/api/test_session.py -v
 ```
 
 ## Architecture
@@ -66,7 +78,9 @@ Documents → Ingestion → Qdrant VectorDB
 | `src/evaluation/` | deepeval metrics (AnswerRelevancy, Faithfulness, ContextualPrecision/Recall/Relevancy) measured with Bedrock critic |
 | `src/agents/` | Agentic RAG variants (`agentic_basic_rag`, `agentic_graph_rag`) |
 | `src/prompts/` | Generation and agentic RAG instruction prompts |
+| `src/api/` | OpenAI-compatible HTTP API: `app.py` (lifespan), `routers/` (models + chat), `services/` (session + agent_runner) |
 | `infras/` | Docker Compose files for Qdrant, Neo4j, MinIO, Airflow; Airflow DAGs for scheduled ingestion |
+| `infras/docker-compose.openwebui.yaml` | Open WebUI + newbie-ar-api + Redis stack |
 
 ### Key Design Patterns
 
