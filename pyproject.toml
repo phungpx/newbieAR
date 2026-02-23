@@ -31,4 +31,13 @@ dependencies = [
     "sse-starlette>=2.2.1",
     "passlib[bcrypt]>=1.7.4",
     "python-jose[cryptography]>=3.3.0",
+    "redis[hiredis]>=5.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.3",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.28",
+    "fakeredis>=2.26",
 ]
