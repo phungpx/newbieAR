@@ -57,16 +57,7 @@ def get_google_model() -> GoogleModel:
     )
 
 
-llm_provider = "google"
-if llm_provider == "openai":
-    model = get_openai_model()
-elif llm_provider == "google":
-    model = get_google_model()
-else:
-    raise ValueError(f"Invalid LLM provider: {llm_provider}")
-
 basic_rag_agent = Agent(
-    model=model,
     system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=BasicRAGDependencies,
     retries=2,
@@ -97,8 +88,8 @@ async def search_basic_rag(
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        retrieval_infos, generated_answer = basic_rag.generate(
-            query, top_k=ctx.deps.top_k, return_context=True
+        retrieval_infos, generated_answer = await asyncio.to_thread(
+            basic_rag.generate, query, top_k=ctx.deps.top_k, return_context=True
         )
 
         logger.debug(
@@ -141,6 +132,7 @@ async def main():
     args = parser.parse_args()
 
     # Initialize components
+    model = get_openai_model()
     basic_rag = BasicRAG(qdrant_collection_name=args.collection_name)
     console = Console()
     messages: list[ModelMessage] = []
@@ -186,7 +178,7 @@ async def main():
             ) as live:
                 try:
                     async with basic_rag_agent.run_stream(
-                        user_input, message_history=messages, deps=deps
+                        user_input, model=model, message_history=messages, deps=deps
                     ) as result:
                         accumulated_text = ""
                         async for message in result.stream_text(delta=True):
