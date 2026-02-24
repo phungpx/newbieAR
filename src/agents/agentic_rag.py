@@ -8,6 +8,7 @@ from src.prompts import AGENTIC_RAG_INSTRUCTION
 from src.retrieval import BasicRAG, GraphRAG
 from src.agents import AgentDependencies
 from src.agents.models import get_openai_model, get_google_vertex_model
+from src.agents.tools import search_basic_rag, search_graphiti
 from src.retrieval.utils import display_rag_results
 from src.settings import settings
 
@@ -20,9 +21,8 @@ agentic_rag = Agent(
     system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=AgentDependencies,
     retries=2,
+    tools=[search_basic_rag, search_graphiti],
 )
-
-import src.agents.tools  # noqa: F401 — registers tools via @agentic_rag.tool decorators
 
 
 async def main():

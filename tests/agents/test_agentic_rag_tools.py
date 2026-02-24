@@ -1,7 +1,6 @@
 import inspect
 from src.agents.agentic_rag import agentic_rag
 from src.agents import tools as tools_module
-import src.agents.tools  # ensure import
 
 
 def test_agentic_rag_has_tools_registered():

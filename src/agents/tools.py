@@ -4,10 +4,8 @@ from loguru import logger
 from pydantic_ai import RunContext, ModelRetry
 
 from src.agents.deps import AgentDependencies
-from src.agents.agentic_rag import agentic_rag
 
 
-@agentic_rag.tool
 async def search_basic_rag(ctx: RunContext[AgentDependencies], query: str) -> list[str]:
     """
     Search the vector database and generate an answer.
@@ -66,7 +64,6 @@ async def search_basic_rag(ctx: RunContext[AgentDependencies], query: str) -> li
         raise ModelRetry("Search encountered an error. Try rephrasing your query.")
 
 
-@agentic_rag.tool
 async def search_graphiti(ctx: RunContext[AgentDependencies], query: str) -> list[str]:
     """
     Search the Graphiti knowledge graph and generate an answer.
