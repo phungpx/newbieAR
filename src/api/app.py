@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.agents.models import get_openai_model
+from src.api.routers.sessions import router as sessions_router
 from src.settings import settings
 
 
@@ -26,6 +27,8 @@ def create_app() -> FastAPI:
         allow_methods=["*"],
         allow_headers=["*"],
     )
+
+    app.include_router(sessions_router, prefix=settings.api_prefix)
 
     @app.get("/health")
     async def health():
