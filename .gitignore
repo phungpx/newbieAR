@@ -217,3 +217,5 @@ config/
 .DS_Store
 google_credentials.json
 data/api_uploads/
+data/
+docs/plan
