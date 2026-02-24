@@ -48,7 +48,10 @@ class BasicRAG:
         return retrieval_infos
 
     def generate(
-        self, query: str, top_k: int = 5, return_context: bool = False
+        self,
+        query: str,
+        top_k: int = 5,
+        return_context: bool = False,
     ) -> tuple[list[RetrievalInfo], str] | str:
         retrieval_infos = self.retrieve(query, top_k)
 

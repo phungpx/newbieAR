@@ -1,7 +1,4 @@
 import asyncio
-from loguru import logger
-from rich.console import Console
-from rich.panel import Panel
 from graphiti_core.search.search_config import (
     EdgeSearchConfig,
     EdgeSearchMethod,
@@ -17,12 +14,9 @@ from graphiti_core.search.search_config import (
 )
 
 from src.settings import settings
-from src.retrieval.utils import display_rag_results
 from src.deps import OpenAILLMClient, GraphitiClient
 from src.models import GraphitiEdgeInfo, GraphitiNodeInfo, GraphitiEpisodeInfo
 from src.prompts import RAG_GENERATION_PROMPT
-
-console = Console()
 
 
 def get_node_edge_episode_infos(
@@ -62,7 +56,41 @@ def get_node_edge_episode_infos(
     return node_infos, edge_infos, episode_infos
 
 
-class GraphRetrieval:
+def get_retrieval_info(
+    node_infos: list[GraphitiNodeInfo],
+    edge_infos: list[GraphitiEdgeInfo],
+    episode_infos: list[GraphitiEpisodeInfo],
+) -> tuple[list[str], list[str]]:
+    contexts = []
+    citations = []
+    if len(node_infos) > 0:
+        node_content = "Node Content:"
+        for n in node_infos:
+            node_content += f"\n- {n.summary} (Citation: {n.group_id})"
+            if n.group_id and n.group_id not in citations:
+                citations.append(n.group_id)
+        contexts.append(node_content)
+
+    if len(edge_infos) > 0:
+        edge_content = "Edge Content:"
+        for e in edge_infos:
+            edge_content += f"\n- {e.fact} (Valid from {e.valid_at} to {e.invalid_at}) (Citation: {e.group_id})"
+            if e.group_id and e.group_id not in citations:
+                citations.append(e.group_id)
+        contexts.append(edge_content)
+
+    if len(episode_infos) > 0:
+        episode_content = "Episode Content:"
+        for ep in episode_infos:
+            episode_content += f"\n- {ep.content} (Citation: {ep.group_id})"
+            if ep.group_id and ep.group_id not in citations:
+                citations.append(ep.group_id)
+        contexts.append(episode_content)
+
+    return contexts, citations
+
+
+class GraphRAG:
     def __init__(self):
         self.graphiti_client = GraphitiClient()
         self.graphiti = None
@@ -80,93 +108,61 @@ class GraphRetrieval:
             )
 
     async def retrieve(
-        self, query: str, num_results: int = 10
-    ) -> tuple[
-        list[GraphitiNodeInfo], list[GraphitiEdgeInfo], list[GraphitiEpisodeInfo]
-    ]:
+        self, query: str, top_k: int = 10
+    ) -> tuple[list[str], list[str]]:
         await self.initialize_graphiti_client()
+        config = SearchConfig(
+            edge_config=EdgeSearchConfig(
+                search_methods=[
+                    EdgeSearchMethod.bm25,
+                    EdgeSearchMethod.cosine_similarity,
+                    EdgeSearchMethod.bfs,
+                ],
+                reranker=EdgeReranker.rrf,
+            ),
+            node_config=NodeSearchConfig(
+                search_methods=[
+                    NodeSearchMethod.bm25,
+                    NodeSearchMethod.cosine_similarity,
+                    NodeSearchMethod.bfs,
+                ],
+                reranker=NodeReranker.rrf,
+            ),
+            episode_config=EpisodeSearchConfig(
+                search_methods=[
+                    EpisodeSearchMethod.bm25,
+                ],
+                reranker=EpisodeReranker.rrf,
+            ),
+            limit=top_k,
+        )
+        results = await self.graphiti._search(query, config)
 
-        with console.status("[bold green]Searching graph database...", spinner="dots"):
-            config = SearchConfig(
-                edge_config=EdgeSearchConfig(
-                    search_methods=[
-                        EdgeSearchMethod.bm25,
-                        EdgeSearchMethod.cosine_similarity,
-                        EdgeSearchMethod.bfs,
-                    ],
-                    reranker=EdgeReranker.rrf,
-                ),
-                node_config=NodeSearchConfig(
-                    search_methods=[
-                        NodeSearchMethod.bm25,
-                        NodeSearchMethod.cosine_similarity,
-                        NodeSearchMethod.bfs,
-                    ],
-                    reranker=NodeReranker.rrf,
-                ),
-                episode_config=EpisodeSearchConfig(
-                    search_methods=[
-                        EpisodeSearchMethod.bm25,
-                    ],
-                    reranker=EpisodeReranker.rrf,
-                ),
-                limit=num_results,
-            )
-            results = await self.graphiti._search(query, config)
+        node_infos, edge_infos, episode_infos = get_node_edge_episode_infos(results)
+        contexts, citations = get_retrieval_info(node_infos, edge_infos, episode_infos)
 
-            node_infos, edge_infos, episode_infos = get_node_edge_episode_infos(results)
-
-            logger.info(f"Node: {len(node_infos)}")
-            logger.info(f"Edge: {len(edge_infos)}")
-            logger.info(f"Episode: {len(episode_infos)}")
-
-        return node_infos, edge_infos, episode_infos
+        return contexts, citations
 
     async def generate(
-        self, query: str, num_results: int = 10
-    ) -> tuple[list[dict], list[str], str]:
-        node_infos, edge_infos, episode_infos = await self.retrieve(
-            query, num_results=num_results
+        self,
+        query: str,
+        top_k: int = 10,
+        return_context: bool = False,
+    ) -> tuple[list[str], list[str], str] | str:
+        contexts, citations = await self.retrieve(query, top_k=top_k)
+        prompt = RAG_GENERATION_PROMPT.format(
+            context_block="\n---\n".join(contexts), query=query
         )
 
-        contexts_data = []
-        citations = []
-        if len(node_infos) > 0:
-            node_content = "Node Content:"
-            for n in node_infos:
-                node_content += f"\n- {n.summary} (Citation: {n.group_id})"
-                if n.group_id and n.group_id not in citations:
-                    citations.append(n.group_id)
-            contexts_data.append(node_content)
+        response = self.llm_client.chat_completion(
+            messages=[{"role": "user", "content": prompt}],
+            temperature=settings.llm_temperature,
+            max_tokens=settings.llm_max_tokens,
+        )
+        if return_context:
+            return contexts, citations, response
 
-        if len(edge_infos) > 0:
-            edge_content = "Edge Content:"
-            for e in edge_infos:
-                edge_content += f"\n- {e.fact} (Valid from {e.valid_at} to {e.invalid_at}) (Citation: {e.group_id})"
-                if e.group_id and e.group_id not in citations:
-                    citations.append(e.group_id)
-            contexts_data.append(edge_content)
-
-        if len(episode_infos) > 0:
-            episode_content = "Episode Content:"
-            for ep in episode_infos:
-                episode_content += f"\n- {ep.content} (Citation: {ep.group_id})"
-                if ep.group_id and ep.group_id not in citations:
-                    citations.append(ep.group_id)
-            contexts_data.append(episode_content)
-
-        context_block = "\n---\n".join(contexts_data)
-
-        prompt = RAG_GENERATION_PROMPT.format(context_block=context_block, query=query)
-
-        with console.status("[bold blue]Generating answer...", spinner="bouncingBar"):
-            response = self.llm_client.chat_completion(
-                messages=[{"role": "user", "content": prompt}],
-                temperature=settings.llm_temperature,
-                max_tokens=settings.llm_max_tokens,
-            )
-
-        return contexts_data, citations, response
+        return response
 
     async def close(self):
         """Close the graph database connection"""
@@ -174,8 +170,13 @@ class GraphRetrieval:
             await self.graphiti_client.close()
 
 
-async def main_async():
-    retrieval = GraphRetrieval()
+async def main():
+    from rich.console import Console
+    from rich.panel import Panel
+    from src.retrieval.utils import display_rag_results
+
+    console = Console()
+    retrieval = GraphRAG()
     console.print(Panel.fit("Graph RAG Evaluation CLI Mode", style="bold cyan"))
 
     try:
@@ -187,9 +188,7 @@ async def main_async():
                 if query.lower() in ["exit", "quit"]:
                     break
 
-                contexts, citations, response = await retrieval.generate(
-                    query, num_results=5
-                )
+                contexts, citations, response = await retrieval.generate(query, top_k=5)
                 display_rag_results(
                     console,
                     query=query,
@@ -204,4 +203,4 @@ async def main_async():
 
 
 if __name__ == "__main__":
-    asyncio.run(main_async())
+    asyncio.run(main())
