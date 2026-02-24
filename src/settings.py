@@ -34,6 +34,7 @@ class QdrantVectorStoreSettings(ProjectBaseSettings):
     qdrant_uri: str
     qdrant_api_key: str | None = None
     qdrant_collection_name: str
+    retrieval_score_threshold: float = 0.0
 
 
 class OpenAIEmbeddingSettings(ProjectBaseSettings):

@@ -41,3 +41,6 @@ test = [
     "httpx>=0.28",
     "fakeredis>=2.26",
 ]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"

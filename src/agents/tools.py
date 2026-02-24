@@ -29,9 +29,7 @@ async def search_basic_rag(ctx: RunContext[AgentDependencies], query: str) -> li
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        retrieval_infos = await asyncio.to_thread(
-            ctx.deps.basic_rag.retrieve, query, top_k=ctx.deps.top_k
-        )
+        retrieval_infos = await ctx.deps.basic_rag.retrieve(query, top_k=ctx.deps.top_k)
 
         logger.debug(f"Retrieved {len(retrieval_infos)} documents.")
 

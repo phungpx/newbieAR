@@ -24,9 +24,14 @@ class BasicRAG:
         )
         self.cross_encoder = None
 
-    def retrieve(self, query: str, top_k: int = 5) -> list[RetrievalInfo]:
-        embedding = self.embedder.embed_texts([query])
-        retrieved_documents = self.vector_store.query(
+    async def retrieve(
+        self, query: str, top_k: int = 5, score_threshold: float = 0.0
+    ) -> list[RetrievalInfo]:
+        import asyncio
+
+        embedding = await asyncio.to_thread(self.embedder.embed_texts, [query])
+        retrieved_documents = await asyncio.to_thread(
+            self.vector_store.query,
             collection_name=self.collection_name,
             query_vector=embedding[0],
             top_k=top_k,
@@ -44,15 +49,18 @@ class BasicRAG:
                 RetrievalInfo(content=content, source=source, score=score)
             )
 
+        if score_threshold > 0.0:
+            retrieval_infos = [r for r in retrieval_infos if r.score >= score_threshold]
+
         return retrieval_infos
 
-    def generate(
+    async def generate(
         self,
         query: str,
         top_k: int = 5,
         return_context: bool = False,
     ) -> tuple[list[RetrievalInfo], str] | str:
-        retrieval_infos = self.retrieve(query, top_k)
+        retrieval_infos = await self.retrieve(query, top_k)
 
         context = ""
         for retrieval_info in retrieval_infos:
@@ -73,46 +81,34 @@ class BasicRAG:
 
 
 if __name__ == "__main__":
+    import asyncio
     import argparse
     from rich.panel import Panel
     from rich.console import Console
 
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--qdrant_collection_name", type=str, required=True)
-    parser.add_argument("--top_k", type=int, default=10)
-    args = parser.parse_args()
+    async def _main():
+        parser = argparse.ArgumentParser()
+        parser.add_argument("--qdrant_collection_name", type=str, required=True)
+        parser.add_argument("--top_k", type=int, default=10)
+        args = parser.parse_args()
 
-    basic_rag = BasicRAG(qdrant_collection_name=args.qdrant_collection_name)
-
-    console = Console()
-
-    console.print(
-        Panel.fit(
+        basic_rag = BasicRAG(qdrant_collection_name=args.qdrant_collection_name)
+        console = Console()
+        console.print(Panel.fit(
             f"Basic Retrieval CLI Mode - Collection: {args.qdrant_collection_name}",
             style="bold cyan",
-        )
-    )
+        ))
 
-    while True:
-        try:
-            query = console.input(
-                "[bold yellow]Enter a question (or 'exit'): [/bold yellow]"
-            )
-            if query.lower() in ["exit", "quit"]:
+        while True:
+            try:
+                query = console.input("[bold yellow]Enter a question (or 'exit'): [/bold yellow]")
+                if query.lower() in ["exit", "quit"]:
+                    break
+                retrieval_infos, response = await basic_rag.generate(query, top_k=args.top_k, return_context=True)
+                contexts = [r.content for r in retrieval_infos]
+                citations = [r.source for r in retrieval_infos]
+                display_rag_results(console, query, contexts, citations, response)
+            except KeyboardInterrupt:
                 break
 
-            retrieval_infos, response = basic_rag.generate(
-                query,
-                top_k=args.top_k,
-                return_context=True,
-            )
-
-            contexts = []
-            citations = []
-            for retrieval_info in retrieval_infos:
-                contexts.append(retrieval_info.content)
-                citations.append(retrieval_info.source)
-            display_rag_results(console, query, contexts, citations, response)
-
-        except KeyboardInterrupt:
-            break
+    asyncio.run(_main())
