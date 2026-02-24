@@ -2,13 +2,6 @@ import asyncio
 from loguru import logger
 from dataclasses import dataclass
 
-from rich.live import Live
-from rich.panel import Panel
-from rich.prompt import Prompt
-from rich.spinner import Spinner
-from rich.console import Console
-from rich.markdown import Markdown
-
 from pydantic_ai.messages import ModelMessage
 from pydantic_ai.settings import ModelSettings
 from pydantic_ai import Agent, RunContext, ModelRetry
@@ -78,8 +71,6 @@ async def search_basic_rag(
     Returns:
         Tuple of (retrieval_infos, generated_answer)
     """
-    basic_rag = ctx.deps.basic_rag
-
     # Input validation
     if not query or not query.strip():
         raise ModelRetry("Query cannot be empty. Please provide a search query.")
@@ -89,7 +80,10 @@ async def search_basic_rag(
 
     try:
         retrieval_infos, generated_answer = await asyncio.to_thread(
-            basic_rag.generate, query, top_k=ctx.deps.top_k, return_context=True
+            ctx.deps.basic_rag.generate,
+            query,
+            top_k=ctx.deps.top_k,
+            return_context=True,
         )
 
         logger.debug(
@@ -111,16 +105,17 @@ async def search_basic_rag(
         raise ModelRetry("Database connection failed. Please try again.")
     except Exception as e:
         logger.exception(f"BasicRAG search failed: {e}")
-        raise ModelRetry(f"Search encountered an error. Try rephrasing your query.")
-
-
-async def get_user_input(console: Console) -> str:
-    loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
+        raise ModelRetry("Search encountered an error. Try rephrasing your query.")
 
 
 async def main():
     import argparse
+    from rich.live import Live
+    from rich.panel import Panel
+    from rich.prompt import Prompt
+    from rich.spinner import Spinner
+    from rich.console import Console
+    from rich.markdown import Markdown
 
     parser = argparse.ArgumentParser(description="BasicRAG Knowledge Agent")
     parser.add_argument(
@@ -130,6 +125,10 @@ async def main():
         "--top_k", type=int, default=5, help="Number of documents to retrieve"
     )
     args = parser.parse_args()
+
+    async def get_user_input() -> str:
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
 
     # Initialize components
     model = get_openai_model()
@@ -148,7 +147,8 @@ async def main():
     try:
         while True:
             # Non-blocking user input
-            user_input = await get_user_input(console)
+            user_input = await get_user_input()
+            logger.info(f"User: {user_input}")
 
             # Exit handling
             if user_input.lower() in ["exit", "quit", "bye"]:
@@ -161,6 +161,7 @@ async def main():
                 continue
 
             if len(user_input) > 1000:
+                # TODO: check for the context window size of embedding model if this question is routed to searching tool
                 console.print(
                     "[yellow]Query too long. Please keep it under 1000 characters.[/yellow]"
                 )
@@ -186,6 +187,7 @@ async def main():
                             # Update Live display with rendered Markdown
                             live.update(Markdown(accumulated_text))
 
+                    logger.info(f"Assistant: {accumulated_text}")
                     # Persist history
                     messages.extend(result.all_messages())
 

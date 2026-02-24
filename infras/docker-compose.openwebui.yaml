@@ -1,33 +1,4 @@
 services:
-  newbie-ar-api:
-    build:
-      context: ..
-      dockerfile: Dockerfile.api
-    ports:
-      - "8000:8000"
-    env_file:
-      - ../.env
-    environment:
-      - REDIS_URL=redis://redis:6379
-    volumes:
-      # Mount Google credentials for Vertex AI (if using gemini- models)
-      - ../google_credentials.json:/app/google_credentials.json:ro
-    depends_on:
-      - redis
-    restart: unless-stopped
-    networks:
-      - newbie-ar-net
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-    restart: unless-stopped
-    networks:
-      - newbie-ar-net
-
   open-webui:
     image: ghcr.io/open-webui/open-webui:main
     ports:
@@ -38,16 +9,7 @@ services:
       - WEBUI_AUTH=false
     volumes:
       - openwebui_data:/app/backend/data
-    depends_on:
-      - newbie-ar-api
     restart: unless-stopped
-    networks:
-      - newbie-ar-net
 
 volumes:
-  redis_data:
   openwebui_data:
-
-networks:
-  newbie-ar-net:
-    driver: bridge

@@ -1,1 +1,1 @@
-# newbieAR - Newbie Agentic RAG
+# newbieAR — Newbie Agentic RAG

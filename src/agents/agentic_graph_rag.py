@@ -2,13 +2,6 @@ import asyncio
 from loguru import logger
 from dataclasses import dataclass
 
-from rich.live import Live
-from rich.panel import Panel
-from rich.prompt import Prompt
-from rich.spinner import Spinner
-from rich.console import Console
-from rich.markdown import Markdown
-
 from pydantic_ai.messages import ModelMessage
 from pydantic_ai.settings import ModelSettings
 from pydantic_ai import Agent, RunContext, ModelRetry
@@ -119,12 +112,18 @@ async def search_graphiti(
         raise ModelRetry("Search encountered an error. Try rephrasing your query.")
 
 
-async def get_user_input(console: Console) -> str:
-    loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
-
-
 async def main():
+    from rich.live import Live
+    from rich.panel import Panel
+    from rich.prompt import Prompt
+    from rich.spinner import Spinner
+    from rich.console import Console
+    from rich.markdown import Markdown
+
+    async def get_user_input(console: Console) -> str:
+        loop = asyncio.get_running_loop()
+        return await loop.run_in_executor(None, Prompt.ask, "\n[bold green]You[/]")
+
     model = get_openai_model()
     graph_retrieval = GraphRetrieval()
     console = Console()

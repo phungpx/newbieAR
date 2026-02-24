@@ -1,10 +1,7 @@
-from __future__ import annotations
-
 import json
 import os
 import time
 import uuid
-import asyncio
 from collections.abc import AsyncGenerator
 from typing import Callable, Awaitable
 
@@ -76,8 +73,8 @@ async def stream_response(
     llm_model_name: str | None,
     user_input: str,
     prior_messages: list[ModelMessage],
-    basic_rag,       # BasicRAG instance from app.state
-    graph_retrieval, # GraphRetrieval instance from app.state
+    basic_rag,  # BasicRAG instance from app.state
+    graph_retrieval,  # GraphRetrieval instance from app.state
     session_saver: Callable[[list[ModelMessage]], Awaitable[None]],
 ) -> AsyncGenerator[str, None]:
     """Yield SSE text chunks in OpenAI delta format, then save the session."""
@@ -92,9 +89,7 @@ async def stream_response(
             "object": "chat.completion.chunk",
             "created": created,
             "model": model_id,
-            "choices": [
-                {"index": 0, "delta": delta, "finish_reason": finish_reason}
-            ],
+            "choices": [{"index": 0, "delta": delta, "finish_reason": finish_reason}],
         }
         return f"data: {json.dumps(payload)}\n\n"
 
