@@ -90,9 +90,7 @@ async def search_graphiti(ctx: RunContext[AgentDependencies], query: str) -> lis
     logger.info(f"Tool executing search for: {query}")
 
     try:
-        contexts, citations = await asyncio.to_thread(
-            ctx.deps.graph_rag.generate, query, num_results=ctx.deps.top_k
-        )
+        contexts, citations = await ctx.deps.graph_rag.retrieve(query, top_k=ctx.deps.top_k)
 
         logger.debug(
             f"Retrieved {len(contexts)} context blocks with {len(citations)} citations"
