@@ -7,8 +7,7 @@ from src.retrieval.utils import display_rag_results
 
 class BasicRAG:
     def __init__(self, qdrant_collection_name: str = None):
-        if qdrant_collection_name is not None:
-            settings.qdrant_collection_name = qdrant_collection_name
+        self.collection_name = qdrant_collection_name or settings.qdrant_collection_name
         self.vector_store = QdrantVectorStore(
             uri=settings.qdrant_uri,
             api_key=settings.qdrant_api_key,
@@ -28,7 +27,7 @@ class BasicRAG:
     def retrieve(self, query: str, top_k: int = 5) -> list[RetrievalInfo]:
         embedding = self.embedder.embed_texts([query])
         retrieved_documents = self.vector_store.query(
-            collection_name=settings.qdrant_collection_name,
+            collection_name=self.collection_name,
             query_vector=embedding[0],
             top_k=top_k,
         )
