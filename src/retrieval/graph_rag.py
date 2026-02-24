@@ -102,7 +102,7 @@ class GraphRAG:
 
     async def initialize_graphiti_client(self):
         if self.graphiti is None:
-            self.graphiti = await GraphitiClient().create_client(
+            self.graphiti = await self.graphiti_client.create_client(
                 clear_existing_graphdb_data=False,
                 max_coroutines=1,
             )
