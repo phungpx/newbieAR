@@ -22,6 +22,8 @@ agentic_rag = Agent(
     retries=2,
 )
 
+import src.agents.tools  # noqa: F401 — registers tools via @agentic_rag.tool decorators
+
 
 async def main():
     import argparse
