@@ -10,3 +10,7 @@ class AgentDependencies:
     top_k: int = 5
     citations: list[str] | None = None
     contexts: list[str] | None = None
+
+    def reset(self):
+        self.citations = None
+        self.contexts = None

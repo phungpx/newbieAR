@@ -105,9 +105,7 @@ async def main():
 
             console.print("\n[bold purple]Assistant[/]")
 
-            # Clean information in deps
-            deps.citations = None
-            deps.contexts = None
+            deps.reset()
 
             # Stream response with Live markdown display
             with Live(
