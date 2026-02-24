@@ -42,3 +42,9 @@ def test_chat_request_empty_message():
 def test_chat_request_whitespace_only_message():
     with pytest.raises(ValidationError):
         ChatRequest(session_id="abc123", message="   ")
+
+
+async def test_app_health(client):
+    response = await client.get("/health")
+    assert response.status_code == 200
+    assert response.json() == {"status": "ok"}
