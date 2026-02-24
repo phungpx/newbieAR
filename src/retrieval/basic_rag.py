@@ -52,6 +52,14 @@ class BasicRAG:
         if score_threshold > 0.0:
             retrieval_infos = [r for r in retrieval_infos if r.score >= score_threshold]
 
+        if self.cross_encoder is not None and retrieval_infos:
+            passages = [r.content for r in retrieval_infos]
+            ranked = await self.cross_encoder.rank(query, passages)
+            score_map = {passage: score for passage, score in ranked}
+            for r in retrieval_infos:
+                r.score = score_map.get(r.content, r.score)
+            retrieval_infos.sort(key=lambda r: r.score, reverse=True)
+
         return retrieval_infos
 
     async def generate(
