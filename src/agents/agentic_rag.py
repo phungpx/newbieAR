@@ -105,7 +105,7 @@ async def main():
 
             console.print("\n[bold purple]Assistant[/]")
 
-            deps.reset()
+            deps.clear_context()
 
             # Stream response with Live markdown display
             with Live(

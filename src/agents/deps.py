@@ -11,6 +11,6 @@ class AgentDependencies:
     citations: list[str] | None = None
     contexts: list[str] | None = None
 
-    def reset(self):
+    def clear_context(self):
         self.citations = None
         self.contexts = None

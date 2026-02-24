@@ -25,7 +25,10 @@ class BasicRAG:
         self.cross_encoder = None
 
     async def retrieve(
-        self, query: str, top_k: int = 5, score_threshold: float = 0.0
+        self,
+        query: str,
+        top_k: int = 5,
+        score_threshold: float = 0.0,
     ) -> list[RetrievalInfo]:
         import asyncio
 
@@ -102,17 +105,23 @@ if __name__ == "__main__":
 
         basic_rag = BasicRAG(qdrant_collection_name=args.qdrant_collection_name)
         console = Console()
-        console.print(Panel.fit(
-            f"Basic Retrieval CLI Mode - Collection: {args.qdrant_collection_name}",
-            style="bold cyan",
-        ))
+        console.print(
+            Panel.fit(
+                f"Basic Retrieval CLI Mode - Collection: {args.qdrant_collection_name}",
+                style="bold cyan",
+            )
+        )
 
         while True:
             try:
-                query = console.input("[bold yellow]Enter a question (or 'exit'): [/bold yellow]")
+                query = console.input(
+                    "[bold yellow]Enter a question (or 'exit'): [/bold yellow]"
+                )
                 if query.lower() in ["exit", "quit"]:
                     break
-                retrieval_infos, response = await basic_rag.generate(query, top_k=args.top_k, return_context=True)
+                retrieval_infos, response = await basic_rag.generate(
+                    query, top_k=args.top_k, return_context=True
+                )
                 contexts = [r.content for r in retrieval_infos]
                 citations = [r.source for r in retrieval_infos]
                 display_rag_results(console, query, contexts, citations, response)
