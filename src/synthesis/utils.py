@@ -1,8 +1,11 @@
 import json
+import random
+from pathlib import Path
 from loguru import logger
 from uuid import uuid4
-from pathlib import Path
 from deepeval.dataset.golden import Golden
+
+from src.deps import DocumentChunker, OpenAIEmbedding, QdrantVectorStore
 
 
 def save_goldens_to_files(goldens: list[Golden], output_dir: str = "goldens"):
@@ -28,3 +31,66 @@ def save_goldens_to_files(goldens: list[Golden], output_dir: str = "goldens"):
             logger.error(f"Failed to save {file_path}: {e}")
 
     logger.info(f"\nSuccessfully saved {len(goldens)} files to '{output_dir}'.")
+
+
+def build_contexts_from_doc(
+    file_path: str,
+    embedder: OpenAIEmbedding,
+    vector_store: QdrantVectorStore,
+    embedding_size: int,
+    num_contexts: int = 5,
+    context_size: int = 3,
+) -> list[list[str]]:
+    """Chunk a document with docling, embed all chunks, store in Qdrant, then
+    build semantically coherent contexts by retrieving k-1 nearest neighbors
+    for randomly selected seed chunks.
+
+    Args:
+        file_path: Path to the document (PDF, DOCX, etc.)
+        embedder: OpenAIEmbedding instance for embedding chunk texts.
+        vector_store: QdrantVectorStore instance for similarity search.
+        embedding_size: Dimensionality of the embedding vectors.
+        num_contexts: Number of contexts to build per document.
+        context_size: Chunks per context (1 seed + context_size-1 neighbors).
+
+    Returns:
+        List of contexts, each a list of paragraph strings.
+        Returns [] if the document produces no chunks.
+    """
+    chunker = DocumentChunker(strategy="hierarchical")
+    chunks, _ = chunker.chunk_document(file_path)
+    texts = [c.text for c in chunks]
+
+    if not texts:
+        logger.warning(f"No chunks extracted from {file_path}. Skipping.")
+        return []
+
+    vectors = embedder.embed_texts(texts)
+    collection_name = f"synthesis_{Path(file_path).stem}"
+
+    try:
+        vector_store.create_collection(collection_name, embedding_size)
+        vector_store.add_embeddings(
+            collection_name,
+            embeddings=vectors,
+            payloads=[{"text": t, "chunk_idx": i} for i, t in enumerate(texts)],
+            ids=list(range(len(texts))),
+        )
+
+        contexts = []
+        for _ in range(min(num_contexts, len(texts))):
+            seed_idx = random.randint(0, len(texts) - 1)
+            seed_vec = vectors[seed_idx]
+            results = vector_store.query(
+                collection_name, seed_vec, top_k=context_size + 1
+            )
+            neighbors = [
+                r for r in results.points
+                if r.payload["chunk_idx"] != seed_idx
+            ][:context_size - 1]
+            context = [texts[seed_idx]] + [n.payload["text"] for n in neighbors]
+            contexts.append(context)
+
+        return contexts
+    finally:
+        vector_store.delete_collection(collection_name)
