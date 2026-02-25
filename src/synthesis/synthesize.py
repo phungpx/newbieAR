@@ -4,20 +4,19 @@ from loguru import logger
 
 # from src.synthesis.bedrock_model import AmazonBedrockModel
 from deepeval.models.llms import GPTModel
-from deepeval.models.embedding_models import LocalEmbeddingModel
 from deepeval.synthesizer.config import (
     FiltrationConfig,
     EvolutionConfig,
     StylingConfig,
-    ContextConstructionConfig,
 )
 from dataclasses import dataclass
 from deepeval.synthesizer import Synthesizer, Evolution
 
 from src.settings import settings
+from src.deps import OpenAIEmbedding, QdrantVectorStore
 
 # from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
-from src.synthesis.utils import save_goldens_to_files
+from src.synthesis.utils import save_goldens_to_files, build_contexts_from_doc
 
 
 class Topic(Enum):
@@ -76,12 +75,6 @@ model = GPTModel(
 # )
 
 
-embeder = LocalEmbeddingModel(
-    model=settings.embedding_model,
-    base_url=settings.embedding_base_url,
-    api_key=settings.embedding_api_key,
-)
-
 # Apply for filtering the generated query by the critic model
 filtration_config = FiltrationConfig(
     # Relax threshold to avoid over-filtering all generated samples
@@ -112,19 +105,6 @@ styling_config = StylingConfig(
     scenario=STYLING_CONFIG[TOPIC].scenario,
 )
 
-# Settings for building RAG
-context_construction_config = ContextConstructionConfig(
-    embedder=embeder,
-    critic_model=model,
-    encoding="utf-8",
-    chunk_size=1024,
-    chunk_overlap=20,
-    max_contexts_per_document=5,
-    min_contexts_per_document=3,
-    max_context_length=5,
-    min_context_length=3,
-)
-
 synthesizer = Synthesizer(
     model=model,
     async_mode=False,
@@ -133,6 +113,17 @@ synthesizer = Synthesizer(
     evolution_config=evolution_config,
     styling_config=styling_config,
     cost_tracking=True,
+)
+
+embedder = OpenAIEmbedding(
+    base_url=settings.embedding_base_url,
+    api_key=settings.embedding_api_key,
+    model_id=settings.embedding_model,
+)
+
+vector_store = QdrantVectorStore(
+    uri=settings.qdrant_uri,
+    api_key=settings.qdrant_api_key,
 )
 
 
@@ -157,11 +148,20 @@ if __name__ == "__main__":
 
     for file_path in file_paths:
         logger.info(f"Synthesizing {file_path}")
-        goldens = synthesizer.generate_goldens_from_docs(
-            document_paths=[str(file_path)],
+        contexts = build_contexts_from_doc(
+            str(file_path),
+            embedder=embedder,
+            vector_store=vector_store,
+            embedding_size=settings.embedding_dimensions,
+            num_contexts=5,
+            context_size=3,
+        )
+        logger.info(f"Built {len(contexts)} contexts from {file_path.name}")
+        goldens = synthesizer.generate_goldens_from_contexts(
+            contexts=contexts,
             include_expected_output=True,
-            context_construction_config=context_construction_config,
             max_goldens_per_context=1,
+            source_files=[str(file_path)] * len(contexts),
         )
         logger.info(f"Synthesis cost: {synthesizer.synthesis_cost}")
         save_goldens_to_files(goldens, output_dir)
