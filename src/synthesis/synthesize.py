@@ -1,3 +1,4 @@
+import asyncio
 from enum import Enum
 from pathlib import Path
 from loguru import logger
@@ -113,6 +114,8 @@ if __name__ == "__main__":
     parser.add_argument("--topic", type=Topic, default=Topic.WIKIPEDIA_ARTICLE)
     parser.add_argument("--file_dir", type=Path, default=Path("data/wikipedia/files"))
     parser.add_argument("--output_dir", type=Path, default=Path("data/goldens"))
+    parser.add_argument("--num_contexts", type=int, default=5)
+    parser.add_argument("--context_size", type=int, default=5)
     args = parser.parse_args()
 
     file_dir = Path(args.file_dir)
@@ -127,13 +130,16 @@ if __name__ == "__main__":
 
     for file_path in file_paths:
         logger.info(f"Synthesizing {file_path}")
-        contexts = generate_contexts(
-            str(file_path),
-            embedder=embedder,
-            vector_store=vector_store,
-            embedding_size=settings.embedding_dimensions,
-            num_contexts=5,
-            context_size=3,
+        contexts = asyncio.run(
+            generate_contexts(
+                str(file_path),
+                model=model,
+                embedder=embedder,
+                vector_store=vector_store,
+                embedding_size=settings.embedding_dimensions,
+                num_contexts=args.num_contexts,
+                context_size=args.context_size,
+            )
         )
         logger.info(f"Built {len(contexts)} contexts from {file_path.name}")
         goldens = synthesizer.generate_goldens_from_contexts(

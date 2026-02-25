@@ -36,28 +36,41 @@ def save_goldens_to_files(goldens: list[Golden], output_dir: str = "goldens"):
     logger.info(f"\nSuccessfully saved {len(goldens)} files to '{output_dir}'.")
 
 
-def generate_contexts(
+async def generate_contexts(
     file_path: str,
+    model: DeepEvalBaseLLM,
     embedder: OpenAIEmbedding,
     vector_store: QdrantVectorStore,
     embedding_size: int,
     num_contexts: int = 5,
     context_size: int = 3,
+    chunk_quality_threshold: float = 0.8,
+    max_tries: int = 10,
 ) -> list[list[str]]:
     """Chunk a document with docling, embed all chunks, store in Qdrant, then
     build semantically coherent contexts by retrieving k-1 nearest neighbors
-    for randomly selected seed chunks.
+    for quality-filtered seed chunks.
+
+    For each context, randomly samples candidate chunks up to max_tries times
+    and selects the first one whose quality score (average of clarity, depth,
+    structure, and relevance) meets chunk_quality_threshold. Falls back gracefully
+    if no valid seed is found within the attempt budget.
 
     Args:
         file_path: Path to the document (PDF, DOCX, etc.)
+        model: LLM used by evaluate_chunk to score candidate seeds.
         embedder: OpenAIEmbedding instance for embedding chunk texts.
         vector_store: QdrantVectorStore instance for similarity search.
         embedding_size: Dimensionality of the embedding vectors.
         num_contexts: Number of contexts to build per document.
         context_size: Chunks per context (1 seed + context_size-1 neighbors).
+        chunk_quality_threshold: Minimum average score [0, 1] a seed chunk must
+            achieve across clarity, depth, structure, and relevance.
+        max_tries: Maximum candidate draws per context before giving up.
 
     Returns:
-        List of contexts, each a list of paragraph strings.
+        List of contexts, each a list of paragraph strings. May contain fewer
+        than num_contexts entries if seeds repeatedly fail the quality check.
         Returns [] if the document produces no chunks.
     """
     chunker = DocumentChunker(strategy="hierarchical")
@@ -82,8 +95,33 @@ def generate_contexts(
 
         contexts = []
         for _ in range(min(num_contexts, len(texts))):
-            seed_idx = random.randint(0, len(texts) - 1)
-            seed_vec = vectors[seed_idx]
+            seed_idx, seed_vec = None, None
+            for attempt in range(1, max_tries + 1):
+                candidate_idx = random.randint(0, len(texts) - 1)
+                score = await evaluate_chunk(model, texts[candidate_idx])
+                logger.debug(
+                    f"Picked Chunk Content: {texts[candidate_idx]} (Score {score})"
+                )
+                if score >= chunk_quality_threshold:
+                    seed_idx, seed_vec = candidate_idx, vectors[candidate_idx]
+                    logger.debug(
+                        f"Seed chunk {candidate_idx} accepted "
+                        f"(score={score:.2f}, attempt={attempt}/{max_tries})"
+                    )
+                    break
+                logger.debug(
+                    f"Chunk {candidate_idx} rejected "
+                    f"(score={score:.2f} < threshold={chunk_quality_threshold}, "
+                    f"attempt={attempt}/{max_tries})"
+                )
+
+            if seed_idx is None:
+                logger.warning(
+                    f"No chunk met chunk_quality_threshold={chunk_quality_threshold} "
+                    f"in {max_tries} attempts. Skipping context."
+                )
+                continue
+
             results = vector_store.query(
                 collection_name, seed_vec, top_k=context_size + 1
             )
