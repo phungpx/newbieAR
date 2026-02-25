@@ -2,7 +2,7 @@ from src.settings import settings
 from loguru import logger
 import os
 import asyncio
-from src.synthesis.bedrock_model import AmazonBedrockModel
+from .bedrock_model import AmazonBedrockModel
 
 logger.info(
     f"Testing DeepEval model: model {settings.critique_model_name} region {settings.critique_model_region_name}"

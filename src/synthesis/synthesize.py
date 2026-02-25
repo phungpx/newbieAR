@@ -13,10 +13,7 @@ from deepeval.synthesizer import Synthesizer, Evolution
 
 from src.settings import settings
 from src.deps import OpenAIEmbedding, QdrantVectorStore
-from src.synthesis.generate_contexts import (
-    save_goldens_to_files,
-    build_contexts_from_doc,
-)
+from src.synthesis.generate_contexts import save_goldens_to_files, generate_contexts
 
 
 class Topic(Enum):
@@ -130,7 +127,7 @@ if __name__ == "__main__":
 
     for file_path in file_paths:
         logger.info(f"Synthesizing {file_path}")
-        contexts = build_contexts_from_doc(
+        contexts = generate_contexts(
             str(file_path),
             embedder=embedder,
             vector_store=vector_store,

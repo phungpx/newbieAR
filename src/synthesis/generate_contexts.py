@@ -36,7 +36,7 @@ def save_goldens_to_files(goldens: list[Golden], output_dir: str = "goldens"):
     logger.info(f"\nSuccessfully saved {len(goldens)} files to '{output_dir}'.")
 
 
-def build_contexts_from_doc(
+def generate_contexts(
     file_path: str,
     embedder: OpenAIEmbedding,
     vector_store: QdrantVectorStore,
