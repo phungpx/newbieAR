@@ -21,7 +21,8 @@ agentic_rag = Agent(
     system_prompt=AGENTIC_RAG_INSTRUCTION,
     deps_type=AgentDependencies,
     retries=2,
-    tools=[search_basic_rag, search_graphiti],
+    # tools=[search_basic_rag, search_graphiti],
+    tools=[search_basic_rag],
 )
 
 
