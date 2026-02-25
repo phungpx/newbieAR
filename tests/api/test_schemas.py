@@ -1,6 +1,6 @@
 import pytest
 from pydantic import ValidationError
-from src.api.schemas import CreateSessionRequest, CreateSessionResponse, DeleteSessionResponse, ChatRequest
+from src.api.schemas import CreateSessionRequest, CreateSessionResponse, DeleteSessionResponse, ChatRequest, CompletionResponse
 
 
 def test_create_session_request_valid():
@@ -48,3 +48,20 @@ async def test_app_health(client):
     response = await client.get("/health")
     assert response.status_code == 200
     assert response.json() == {"status": "ok"}
+
+
+def test_completion_response():
+    resp = CompletionResponse(
+        text="Docling is a document conversion library.",
+        contexts=["ctx1", "ctx2"],
+        citations=["cite1"],
+    )
+    assert resp.text == "Docling is a document conversion library."
+    assert resp.contexts == ["ctx1", "ctx2"]
+    assert resp.citations == ["cite1"]
+
+
+def test_completion_response_empty_lists():
+    resp = CompletionResponse(text="answer", contexts=[], citations=[])
+    assert resp.contexts == []
+    assert resp.citations == []

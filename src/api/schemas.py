@@ -28,3 +28,9 @@ class ChatRequest(BaseModel):
         if len(v) > 1000:
             raise ValueError("Message must be 1000 characters or fewer")
         return v
+
+
+class CompletionResponse(BaseModel):
+    text: str
+    contexts: list[str]
+    citations: list[str]
