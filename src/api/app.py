@@ -7,6 +7,7 @@ from src.api.routers.sessions import router as sessions_router
 from src.api.routers.stream import router as stream_router
 from src.api.routers.chat import router as chat_router
 from src.api.routers.ingest import router as ingest_router
+from src.api.routers.retrieve import router as retrieve_router
 from src.settings import settings
 
 
@@ -36,6 +37,7 @@ def create_app() -> FastAPI:
     app.include_router(stream_router, prefix=settings.api_prefix)
     app.include_router(chat_router, prefix=settings.api_prefix)
     app.include_router(ingest_router, prefix=settings.api_prefix)
+    app.include_router(retrieve_router, prefix=settings.api_prefix)
 
     @app.get("/health")
     async def health():
