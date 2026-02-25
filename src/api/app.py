@@ -4,8 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.agents.models import get_openai_model
 from src.api.routers.sessions import router as sessions_router
+from src.api.routers.stream import router as stream_router
 from src.api.routers.chat import router as chat_router
-from src.api.routers.completion import router as completion_router
 from src.settings import settings
 
 
@@ -31,8 +31,8 @@ def create_app() -> FastAPI:
     )
 
     app.include_router(sessions_router, prefix=settings.api_prefix)
+    app.include_router(stream_router, prefix=settings.api_prefix)
     app.include_router(chat_router, prefix=settings.api_prefix)
-    app.include_router(completion_router, prefix=settings.api_prefix)
 
     @app.get("/health")
     async def health():

@@ -30,7 +30,7 @@ class ChatRequest(BaseModel):
         return v
 
 
-class CompletionResponse(BaseModel):
+class ChatResponse(BaseModel):
     text: str
     contexts: list[str]
     citations: list[str]
