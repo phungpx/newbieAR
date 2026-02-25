@@ -4,7 +4,10 @@ from pathlib import Path
 from loguru import logger
 from uuid import uuid4
 from deepeval.dataset.golden import Golden
+from deepeval.models import DeepEvalBaseLLM
 
+from .schema import ContextScore
+from .prompts.context_evaluation import CONTEXT_EVALUATION
 from src.deps import DocumentChunker, OpenAIEmbedding, QdrantVectorStore
 
 
@@ -85,12 +88,19 @@ def build_contexts_from_doc(
                 collection_name, seed_vec, top_k=context_size + 1
             )
             neighbors = [
-                r for r in results.points
-                if r.payload["chunk_idx"] != seed_idx
-            ][:context_size - 1]
+                r for r in results.points if r.payload["chunk_idx"] != seed_idx
+            ][: context_size - 1]
             context = [texts[seed_idx]] + [n.payload["text"] for n in neighbors]
             contexts.append(context)
 
         return contexts
     finally:
         vector_store.delete_collection(collection_name)
+
+
+async def evaluate_chunk(model: DeepEvalBaseLLM, chunk: str) -> float:
+    prompt = CONTEXT_EVALUATION.format(context=chunk)
+    response, _ = await model.a_generate(prompt, schema=ContextScore)
+    return (
+        response.clarity + response.depth + response.structure + response.relevance
+    ) / 4

@@ -2,7 +2,6 @@ from enum import Enum
 from pathlib import Path
 from loguru import logger
 
-# from src.synthesis.bedrock_model import AmazonBedrockModel
 from deepeval.models.llms import GPTModel
 from deepeval.synthesizer.config import (
     FiltrationConfig,
@@ -14,9 +13,10 @@ from deepeval.synthesizer import Synthesizer, Evolution
 
 from src.settings import settings
 from src.deps import OpenAIEmbedding, QdrantVectorStore
-
-# from src.evals.bedrock_llm_wrapper import BedrockLLMWrapper
-from src.synthesis.utils import save_goldens_to_files, build_contexts_from_doc
+from src.synthesis.generate_contexts import (
+    save_goldens_to_files,
+    build_contexts_from_doc,
+)
 
 
 class Topic(Enum):
@@ -56,24 +56,6 @@ model = GPTModel(
     cost_per_input_token=0.3 * 10**-6,
     cost_per_output_token=2.5 * 10**-6,
 )
-
-# import os
-
-# aws_access_key_id = os.environ["AWS_ACCESS_KEY_ID"]
-# aws_secret_access_key = os.environ["AWS_SECRET_ACCESS_KEY"]
-# aws_session_token = os.environ.get("AWS_SESSION_TOKEN")
-
-# model = AmazonBedrockModel(
-#     model=settings.critique_model_name,
-#     region=settings.critique_model_region_name,
-#     aws_access_key_id=aws_access_key_id,
-#     aws_secret_access_key=aws_secret_access_key,
-#     aws_session_token=aws_session_token,
-#     cost_per_input_token=0.3 * 10**-6,
-#     cost_per_output_token=2.5 * 10**-6,
-#     generation_kwargs={"max_tokens": 7000, "temperature": 0.1, "top_p": 0.9},
-# )
-
 
 # Apply for filtering the generated query by the critic model
 filtration_config = FiltrationConfig(
