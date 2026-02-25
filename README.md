@@ -41,6 +41,13 @@ flowchart TD
 ```
 newbieAR/
 ├── src/
+│   ├── api/             # FastAPI layer (HTTP + SSE streaming)
+│   │   ├── app.py       # FastAPI factory, lifespan, CORS
+│   │   ├── schemas.py   # Pydantic request/response models
+│   │   ├── session_store.py  # In-memory session management
+│   │   └── routers/
+│   │       ├── sessions.py   # POST/DELETE /sessions
+│   │       └── chat.py       # POST /chat → SSE stream
 │   ├── agents/          # pydantic-ai agentic RAG (agent, tools, deps)
 │   ├── deps/            # infra clients: Qdrant, Graphiti, OpenAI, CrossEncoder, MinIO
 │   ├── evaluation/      # deepeval metrics runner + Bedrock wrapper
@@ -204,6 +211,95 @@ uv run python -m src.evaluation.evaluate \
 - `ContextualRecall`
 - `ContextualRelevancy`
 
+### 8. FastAPI Server (HTTP + SSE)
+
+A thin HTTP wrapper around the agentic RAG agent with SSE streaming and in-memory multi-turn sessions.
+
+**Start the server:**
+
+```bash
+uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
+```
+
+**Base URL:** `http://localhost:8000`
+**API prefix:** `/api/v1`
+
+#### Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/health` | Health check |
+| `POST` | `/api/v1/sessions` | Create a new chat session |
+| `DELETE` | `/api/v1/sessions/{session_id}` | Delete a session |
+| `POST` | `/api/v1/chat` | Stream a response (SSE) |
+| `POST` | `/api/v1/completion` | Run agent and return full response (non-streaming) |
+
+#### Create a session
+
+```bash
+curl -X POST http://localhost:8000/api/v1/sessions \
+  -H "Content-Type: application/json" \
+  -d '{"collection_name": "research_papers", "top_k": 5}'
+```
+
+```json
+{
+  "session_id": "3f2a1b...",
+  "collection_name": "research_papers",
+  "top_k": 5
+}
+```
+
+#### Stream a chat message
+
+```bash
+curl -X POST http://localhost:8000/api/v1/chat \
+  -H "Content-Type: application/json" \
+  -d '{"session_id": "3f2a1b...", "message": "What is docling?"}' \
+  --no-buffer
+```
+
+The response is a stream of SSE events:
+
+```
+event: delta
+data: {"text": "Docling is a "}
+
+event: delta
+data: {"text": "document conversion library..."}
+
+event: done
+data: {"contexts": ["..."], "citations": ["..."]}
+```
+
+| Event | Payload | Description |
+|-------|---------|-------------|
+| `delta` | `{"text": "..."}` | Incremental text chunk |
+| `done` | `{"contexts": [...], "citations": [...]}` | Stream complete; retrieved sources |
+| `error` | `{"detail": "..."}` | Error (e.g. session not found) |
+
+#### Delete a session
+
+```bash
+curl -X DELETE http://localhost:8000/api/v1/sessions/3f2a1b...
+```
+
+#### Get a completion (non-streaming)
+
+```bash
+curl -X POST http://localhost:8000/api/v1/completion \
+  -H "Content-Type: application/json" \
+  -d '{"session_id": "3f2a1b...", "message": "What is docling?"}'
+```
+
+```json
+{
+  "text": "Docling is a document conversion library...",
+  "contexts": ["Docling is designed to..."],
+  "citations": ["docling.pdf, page 3"]
+}
+```
+
 ---
 
 ## Running Tests
@@ -253,6 +349,8 @@ Copy `.env.example` to `.env` and fill in the values below.
 
 | Library | Role |
 |---------|------|
+| [FastAPI](https://fastapi.tiangolo.com/) | HTTP API framework with SSE streaming |
+| [sse-starlette](https://github.com/sysid/sse-starlette) | Server-Sent Events support for Starlette/FastAPI |
 | [pydantic-ai](https://github.com/pydantic/pydantic-ai) | Agentic RAG orchestration and tool calling |
 | [deepeval](https://github.com/confident-ai/deepeval) | Synthetic data generation and RAG evaluation |
 | [Qdrant](https://qdrant.tech/) | Vector database for dense retrieval |

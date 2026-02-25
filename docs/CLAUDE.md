@@ -63,6 +63,9 @@ uv run python -m src.synthesis.synthesize \
 # Evaluate with deepeval metrics
 uv run python -m src.evaluation.evaluate \
   --file_dir data/goldens --retrieval_window_size 5
+
+# Run the FastAPI server
+uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
 ```
 
 ## Architecture
