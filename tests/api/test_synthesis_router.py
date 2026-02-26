@@ -74,3 +74,26 @@ async def test_get_synthesis_job_failed(client):
 async def test_get_synthesis_job_not_found(client):
     response = await client.get("/api/v1/synthesis/jobs/nonexistent-id")
     assert response.status_code == 404
+
+
+async def test_upload_synthesis_files_success(client):
+    response = await client.post(
+        "/api/v1/synthesis/upload",
+        files=[
+            ("files", ("paper1.pdf", b"%PDF-1.4 content1", "application/pdf")),
+            ("files", ("paper2.pdf", b"%PDF-1.4 content2", "application/pdf")),
+        ],
+    )
+    assert response.status_code == 200
+    body = response.json()
+    assert body["file_count"] == 2
+    assert "file_dir" in body
+    # Cleanup
+    import shutil, os
+    if os.path.isdir(body["file_dir"]):
+        shutil.rmtree(body["file_dir"])
+
+
+async def test_upload_synthesis_files_empty(client):
+    response = await client.post("/api/v1/synthesis/upload", files=[])
+    assert response.status_code == 422  # FastAPI validation: files required
