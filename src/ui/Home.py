@@ -2,7 +2,9 @@ import sys
 from pathlib import Path
 
 # Ensure project root is on sys.path when Streamlit runs this file directly
-_project_root = next(p for p in Path(__file__).resolve().parents if (p / "src").is_dir())
+_project_root = next(
+    p for p in Path(__file__).resolve().parents if (p / "src").is_dir()
+)
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 

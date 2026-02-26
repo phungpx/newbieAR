@@ -2,7 +2,9 @@ import sys
 import time
 from pathlib import Path
 
-_project_root = next(p for p in Path(__file__).resolve().parents if (p / "src").is_dir())
+_project_root = next(
+    p for p in Path(__file__).resolve().parents if (p / "src").is_dir()
+)
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
@@ -18,8 +20,12 @@ with col1:
     goldens_dir = st.text_input("Goldens directory", value="data/goldens")
     collection_name = st.text_input("Collection name", value="research_papers")
 with col2:
-    retrieval_window_size = st.slider("Retrieval window size", min_value=1, max_value=20, value=5)
-    threshold = st.slider("Metric threshold", min_value=0.0, max_value=1.0, value=0.5, step=0.01)
+    retrieval_window_size = st.slider(
+        "Retrieval window size", min_value=1, max_value=20, value=5
+    )
+    threshold = st.slider(
+        "Metric threshold", min_value=0.0, max_value=1.0, value=0.5, step=0.01
+    )
     force_rerun = st.toggle("Force re-evaluation (ignore cache)")
 
 start_btn = st.button("Start Evaluation")
@@ -65,7 +71,9 @@ if start_btn:
                 skipped = result.get("skipped", 0)
                 avg_scores: dict = result.get("avg_scores", {})
 
-                st.success(f"Evaluation complete — **{evaluated}** evaluated, **{skipped}** skipped")
+                st.success(
+                    f"Evaluation complete — **{evaluated}** evaluated, **{skipped}** skipped"
+                )
 
                 if avg_scores:
                     st.subheader("Average Scores")

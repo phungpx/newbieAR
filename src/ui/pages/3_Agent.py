@@ -2,7 +2,9 @@ import sys
 import json
 from pathlib import Path
 
-_project_root = next(p for p in Path(__file__).resolve().parents if (p / "src").is_dir())
+_project_root = next(
+    p for p in Path(__file__).resolve().parents if (p / "src").is_dir()
+)
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
@@ -39,7 +41,9 @@ with st.sidebar:
         st.info(f"Active: `{st.session_state['session_id'][:8]}…`")
         if st.button("Delete session"):
             try:
-                resp = client.delete(api_url(f"/sessions/{st.session_state['session_id']}"))
+                resp = client.delete(
+                    api_url(f"/sessions/{st.session_state['session_id']}")
+                )
                 if resp.status_code == 200:
                     del st.session_state["session_id"]
                     st.session_state["chat_history"] = []
@@ -84,14 +88,17 @@ if user_input and has_session:
             with stream_client.stream(
                 "POST",
                 api_url("/chat/stream"),
-                json={"session_id": st.session_state["session_id"], "message": user_input},
+                json={
+                    "session_id": st.session_state["session_id"],
+                    "message": user_input,
+                },
             ) as resp:
                 event_type = None
                 for line in resp.iter_lines():
                     if line.startswith("event:"):
-                        event_type = line[len("event:"):].strip()
+                        event_type = line[len("event:") :].strip()
                     elif line.startswith("data:"):
-                        data_str = line[len("data:"):].strip()
+                        data_str = line[len("data:") :].strip()
                         try:
                             data = json.loads(data_str)
                         except json.JSONDecodeError:
@@ -123,6 +130,11 @@ if user_input and has_session:
             full_text = f"Error: {exc}"
 
     chat_history.append(
-        {"role": "assistant", "content": full_text, "contexts": contexts, "citations": citations}
+        {
+            "role": "assistant",
+            "content": full_text,
+            "contexts": contexts,
+            "citations": citations,
+        }
     )
     st.session_state["chat_history"] = chat_history

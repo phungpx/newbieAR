@@ -1,7 +1,9 @@
 import sys
 from pathlib import Path
 
-_project_root = next(p for p in Path(__file__).resolve().parents if (p / "src").is_dir())
+_project_root = next(
+    p for p in Path(__file__).resolve().parents if (p / "src").is_dir()
+)
 if str(_project_root) not in sys.path:
     sys.path.insert(0, str(_project_root))
 
@@ -30,13 +32,28 @@ if ingest_btn and uploaded_file is not None:
             if db_type == "Vector DB":
                 resp = client.post(
                     api_url("/ingest/vector"),
-                    files={"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")},
-                    data={"collection_name": collection_name, "chunk_strategy": chunk_strategy},
+                    files={
+                        "file": (
+                            uploaded_file.name,
+                            uploaded_file.getvalue(),
+                            "application/pdf",
+                        )
+                    },
+                    data={
+                        "collection_name": collection_name,
+                        "chunk_strategy": chunk_strategy,
+                    },
                 )
             else:
                 resp = client.post(
                     api_url("/ingest/graph"),
-                    files={"file": (uploaded_file.name, uploaded_file.getvalue(), "application/pdf")},
+                    files={
+                        "file": (
+                            uploaded_file.name,
+                            uploaded_file.getvalue(),
+                            "application/pdf",
+                        )
+                    },
                     data={"chunk_strategy": chunk_strategy},
                 )
 
