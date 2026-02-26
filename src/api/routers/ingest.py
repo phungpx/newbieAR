@@ -6,6 +6,8 @@ from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from src.ingestion.ingest_vectordb import VectorDBIngestion
 from src.ingestion.ingest_graphdb import GraphitiIngestion
 from src.models import ChunkStrategy
+from src.deps import QdrantVectorStore
+from src.settings import settings
 
 router = APIRouter(prefix="/ingest", tags=["ingest"])
 
@@ -76,3 +78,12 @@ async def ingest_graph(
         "chunk_strategy": chunk_strategy,
         "filename": file.filename,
     }
+
+
+@router.get("/collections/{name}")
+async def get_collection_info(name: str):
+    qs = QdrantVectorStore(uri=settings.qdrant_uri, api_key=settings.qdrant_api_key)
+    info = qs.get_collection_info(name)
+    if info is None:
+        raise HTTPException(status_code=404, detail=f"Collection '{name}' not found")
+    return info

@@ -83,3 +83,27 @@ async def test_ingest_graph_default_chunk_strategy(client):
     assert response.status_code == 200
     body = response.json()
     assert body["chunk_strategy"] == "hierarchical"
+
+
+async def test_get_collection_info_found(client):
+    mock_info = {
+        "vectors_count": 42,
+        "dimensions": 1536,
+        "distance": "cosine",
+        "status": "green",
+    }
+    with patch("src.api.routers.ingest.QdrantVectorStore") as MockQdrant:
+        MockQdrant.return_value.get_collection_info.return_value = mock_info
+        response = await client.get("/api/v1/ingest/collections/research_papers")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["vectors_count"] == 42
+    assert body["dimensions"] == 1536
+    assert body["distance"] == "cosine"
+
+
+async def test_get_collection_info_not_found(client):
+    with patch("src.api.routers.ingest.QdrantVectorStore") as MockQdrant:
+        MockQdrant.return_value.get_collection_info.return_value = None
+        response = await client.get("/api/v1/ingest/collections/nonexistent")
+    assert response.status_code == 404
