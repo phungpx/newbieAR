@@ -91,10 +91,9 @@ def create_llm_test_case(
     )
 
     # Run RAG to get actual output and retrieval contexts
-    retrieval_contexts, actual_output = BasicRAG().generate(
+    retrieval_contexts, actual_output = BasicRAG(collection_name).generate(
         query=test_case.input,
         top_k=retrieval_window_size,
-        collection_name=collection_name,
         return_context=True,
     )
     test_case.actual_output = actual_output

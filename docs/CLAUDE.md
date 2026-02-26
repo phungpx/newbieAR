@@ -66,6 +66,16 @@ uv run python -m src.evaluation.evaluate \
 
 # Run the FastAPI server
 uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
+
+# Run the Streamlit UI (requires FastAPI server to be running)
+uv run streamlit run src/ui/Home.py
+
+# Run both together (two terminals):
+#   Terminal 1: uvicorn src.api.app:app --host 0.0.0.0 --port 8000 --reload
+#   Terminal 2: uv run streamlit run src/ui/Home.py
+#
+# Override the backend URL (default: http://localhost:8000):
+#   FASTAPI_BASE_URL=http://my-server:8000 uv run streamlit run src/ui/Home.py
 ```
 
 ## Architecture
