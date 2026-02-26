@@ -40,7 +40,7 @@ class GraphitiIngestion:
                 max_coroutines=self.max_coroutines,
             )
 
-    async def ingest_file(self, file_path: str):
+    async def ingest_file(self, file_path: str, original_filename: str | None = None) -> dict:
         await self.initialize_graphiti_client()
 
         logger.info(f"Loading and chunking document: {file_path}")
@@ -62,6 +62,19 @@ class GraphitiIngestion:
                 reference_time=datetime.now(timezone.utc),
                 group_id=group_id,
             )
+
+        return {
+            "filename": original_filename or Path(file_path).name,
+            "chunk_count": len(chunks),
+            "chunks": [
+                {
+                    "chunk_id": c.chunk_id,
+                    "text_tokens": c.text_tokens,
+                    "text_preview": c.text[:120],
+                }
+                for c in chunks
+            ],
+        }
 
     async def ingest_files(self, file_paths: list[str]):
         for file_path in file_paths:
