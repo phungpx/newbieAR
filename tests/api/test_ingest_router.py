@@ -146,3 +146,19 @@ async def test_get_collection_info_not_found(client):
         MockQdrant.return_value.get_collection_info.return_value = None
         response = await client.get("/api/v1/ingest/collections/nonexistent")
     assert response.status_code == 404
+
+
+async def test_delete_collection_success(client):
+    with patch("src.api.routers.ingest.QdrantVectorStore") as MockQdrant:
+        MockQdrant.return_value.delete_collection.return_value = None
+        response = await client.delete("/api/v1/ingest/collections/research_papers")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["deleted"] == "research_papers"
+
+
+async def test_delete_collection_failure(client):
+    with patch("src.api.routers.ingest.QdrantVectorStore") as MockQdrant:
+        MockQdrant.return_value.delete_collection.side_effect = RuntimeError("Failed")
+        response = await client.delete("/api/v1/ingest/collections/research_papers")
+    assert response.status_code == 500

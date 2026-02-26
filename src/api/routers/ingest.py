@@ -130,3 +130,13 @@ async def get_collection_info(name: str):
     if info is None:
         raise HTTPException(status_code=404, detail=f"Collection '{name}' not found")
     return info
+
+
+@router.delete("/collections/{name}")
+async def delete_collection(name: str):
+    qs = QdrantVectorStore(uri=settings.qdrant_uri, api_key=settings.qdrant_api_key)
+    try:
+        qs.delete_collection(name)
+    except RuntimeError as exc:
+        raise HTTPException(status_code=500, detail=str(exc))
+    return {"deleted": name}
