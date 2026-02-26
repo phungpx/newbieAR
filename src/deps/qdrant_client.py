@@ -52,7 +52,7 @@ class QdrantVectorStore:
             dimensions = first.size
             distance = str(first.distance.value).lower()
         return {
-            "vectors_count": info.vectors_count or 0,
+            "vectors_count": info.points_count or 0,
             "dimensions": dimensions,
             "distance": distance,
             "status": str(info.status.value).lower(),
