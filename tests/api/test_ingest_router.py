@@ -107,6 +107,23 @@ async def test_ingest_graph_default_chunk_strategy(client):
     assert body["chunk_strategy"] == "hierarchical"
 
 
+async def test_get_graph_summary_success(client):
+    mock_stats = {"nodes": 142, "relationships": 89, "communities": 7}
+    with patch("src.api.routers.ingest.get_neo4j_stats", new_callable=AsyncMock, return_value=mock_stats):
+        response = await client.get("/api/v1/ingest/graph/summary")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["nodes"] == 142
+    assert body["relationships"] == 89
+    assert body["communities"] == 7
+
+
+async def test_get_graph_summary_connection_error(client):
+    with patch("src.api.routers.ingest.get_neo4j_stats", new_callable=AsyncMock, side_effect=Exception("Neo4j unavailable")):
+        response = await client.get("/api/v1/ingest/graph/summary")
+    assert response.status_code == 503
+
+
 async def test_get_collection_info_found(client):
     mock_info = {
         "vectors_count": 42,
