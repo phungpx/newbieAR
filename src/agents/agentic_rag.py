@@ -22,7 +22,8 @@ agentic_rag = Agent(
     deps_type=AgentDependencies,
     retries=2,
     # tools=[search_basic_rag, search_graphiti],
-    tools=[search_basic_rag],
+    # tools=[search_basic_rag],
+    tools=[search_graphiti],
 )
 
 
