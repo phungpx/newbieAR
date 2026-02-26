@@ -79,6 +79,15 @@ class VectorDBIngestion:
             "file_save_path": file_save_path,
             "chunk_save_path": chunk_save_path,
             "qdrant_collection_name": settings.qdrant_collection_name,
+            "chunk_count": len(chunks),
+            "chunks": [
+                {
+                    "chunk_id": c.chunk_id,
+                    "text_tokens": c.text_tokens,
+                    "text_preview": c.text[:120],
+                }
+                for c in chunks
+            ],
         }
 
 
