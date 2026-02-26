@@ -36,7 +36,9 @@ if uploaded_files:
                 f = uploaded_files[file_idx]
                 size_kb = len(f.getvalue()) / 1024
                 size_str = (
-                    f"{size_kb:.1f} KB" if size_kb < 1024 else f"{size_kb / 1024:.2f} MB"
+                    f"{size_kb:.1f} KB"
+                    if size_kb < 1024
+                    else f"{size_kb / 1024:.2f} MB"
                 )
                 with cols[col_idx]:
                     st.markdown(
@@ -84,9 +86,7 @@ if start_btn and uploaded_files:
                 st.stop()
             upload_body = upload_resp.json()
             tmp_dir = upload_body["file_dir"]
-            st.success(
-                f"✅ {upload_body['file_count']} file(s) uploaded to server"
-            )
+            st.success(f"✅ {upload_body['file_count']} file(s) uploaded to server")
         except Exception as exc:
             st.error(f"Upload request failed: {exc}")
             st.stop()

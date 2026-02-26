@@ -71,7 +71,9 @@ async def ingest_graph(
     try:
         ingestion = GraphitiIngestion(chunk_strategy=chunk_strategy)
         try:
-            result = await ingestion.ingest_file(tmp_path, original_filename=original_filename)
+            result = await ingestion.ingest_file(
+                tmp_path, original_filename=original_filename
+            )
         except Exception as exc:
             raise HTTPException(status_code=500, detail=str(exc))
         finally:
@@ -99,7 +101,9 @@ async def get_neo4j_stats() -> dict:
             nodes_record = await nodes_result.single()
             nodes = nodes_record["nodes"] if nodes_record else 0
 
-            rels_result = await session.run("MATCH ()-[r]->() RETURN count(r) AS relationships")
+            rels_result = await session.run(
+                "MATCH ()-[r]->() RETURN count(r) AS relationships"
+            )
             rels_record = await rels_result.single()
             relationships = rels_record["relationships"] if rels_record else 0
 

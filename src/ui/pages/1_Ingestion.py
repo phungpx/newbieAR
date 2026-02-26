@@ -107,14 +107,17 @@ if ingest_btn and uploaded_file is not None:
                 if chunks:
                     with st.expander(f"Show {len(chunks)} chunks"):
                         import pandas as pd
-                        df = pd.DataFrame([
-                            {
-                                "#": c["chunk_id"] + 1,
-                                "Tokens": c["text_tokens"],
-                                "Preview": c["text_preview"],
-                            }
-                            for c in chunks
-                        ])
+
+                        df = pd.DataFrame(
+                            [
+                                {
+                                    "#": c["chunk_id"] + 1,
+                                    "Tokens": c["text_tokens"],
+                                    "Preview": c["text_preview"],
+                                }
+                                for c in chunks
+                            ]
+                        )
                         st.dataframe(df, use_container_width=True, hide_index=True)
 
             else:

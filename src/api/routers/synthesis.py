@@ -84,7 +84,9 @@ def _run_synthesis(job_id: str, req: SynthesisRequest) -> None:
 
 
 @router.post("/jobs", status_code=202)
-async def create_synthesis_job(req: SynthesisRequest, background_tasks: BackgroundTasks):
+async def create_synthesis_job(
+    req: SynthesisRequest, background_tasks: BackgroundTasks
+):
     job_id = job_store.create()
     background_tasks.add_task(_run_synthesis, job_id, req)
     return {"job_id": job_id, "status": "pending"}

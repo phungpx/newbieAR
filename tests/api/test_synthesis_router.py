@@ -10,6 +10,7 @@ def app():
     mock_model = MagicMock()
     with patch("src.api.app.get_google_vertex_model", return_value=mock_model):
         from src.api.app import create_app
+
         application = create_app()
     application.state.model = mock_model
     yield application
@@ -53,7 +54,11 @@ async def test_get_synthesis_job_pending(client):
 
 async def test_get_synthesis_job_done(client):
     job_id = job_store.create()
-    job_store.update(job_id, status=JobStatus.DONE, result={"goldens_count": 10, "output_dir": "data/goldens"})
+    job_store.update(
+        job_id,
+        status=JobStatus.DONE,
+        result={"goldens_count": 10, "output_dir": "data/goldens"},
+    )
     response = await client.get(f"/api/v1/synthesis/jobs/{job_id}")
     assert response.status_code == 200
     body = response.json()
@@ -90,6 +95,7 @@ async def test_upload_synthesis_files_success(client):
     assert "file_dir" in body
     # Cleanup
     import shutil, os
+
     if os.path.isdir(body["file_dir"]):
         shutil.rmtree(body["file_dir"])
 

@@ -8,6 +8,7 @@ def app():
     mock_model = MagicMock()
     with patch("src.api.app.get_google_vertex_model", return_value=mock_model):
         from src.api.app import create_app
+
         application = create_app()
     application.state.model = mock_model
     yield application
@@ -38,7 +39,9 @@ async def test_ingest_vector_success(client):
             MockVec.return_value = MagicMock()
             response = await client.post(
                 "/api/v1/ingest/vector",
-                files={"file": ("test.pdf", b"%PDF-1.4 test content", "application/pdf")},
+                files={
+                    "file": ("test.pdf", b"%PDF-1.4 test content", "application/pdf")
+                },
                 data={"collection_name": "research_papers", "chunk_strategy": "hybrid"},
             )
     assert response.status_code == 200
@@ -109,7 +112,11 @@ async def test_ingest_graph_default_chunk_strategy(client):
 
 async def test_get_graph_summary_success(client):
     mock_stats = {"nodes": 142, "relationships": 89, "communities": 7}
-    with patch("src.api.routers.ingest.get_neo4j_stats", new_callable=AsyncMock, return_value=mock_stats):
+    with patch(
+        "src.api.routers.ingest.get_neo4j_stats",
+        new_callable=AsyncMock,
+        return_value=mock_stats,
+    ):
         response = await client.get("/api/v1/ingest/graph/summary")
     assert response.status_code == 200
     body = response.json()
@@ -119,7 +126,11 @@ async def test_get_graph_summary_success(client):
 
 
 async def test_get_graph_summary_connection_error(client):
-    with patch("src.api.routers.ingest.get_neo4j_stats", new_callable=AsyncMock, side_effect=Exception("Neo4j unavailable")):
+    with patch(
+        "src.api.routers.ingest.get_neo4j_stats",
+        new_callable=AsyncMock,
+        side_effect=Exception("Neo4j unavailable"),
+    ):
         response = await client.get("/api/v1/ingest/graph/summary")
     assert response.status_code == 503
 
@@ -165,7 +176,9 @@ async def test_delete_collection_failure(client):
 
 
 async def test_clear_graph_success(client):
-    with patch("src.api.routers.ingest.clear_data", new_callable=AsyncMock) as mock_clear:
+    with patch(
+        "src.api.routers.ingest.clear_data", new_callable=AsyncMock
+    ) as mock_clear:
         with patch("src.api.routers.ingest.GraphitiClient") as MockClient:
             mock_driver = MagicMock()
             MockClient.return_value.driver = mock_driver
@@ -178,7 +191,11 @@ async def test_clear_graph_success(client):
 
 
 async def test_clear_graph_failure(client):
-    with patch("src.api.routers.ingest.clear_data", new_callable=AsyncMock, side_effect=Exception("Neo4j error")):
+    with patch(
+        "src.api.routers.ingest.clear_data",
+        new_callable=AsyncMock,
+        side_effect=Exception("Neo4j error"),
+    ):
         with patch("src.api.routers.ingest.GraphitiClient") as MockClient:
             MockClient.return_value.driver = MagicMock()
             MockClient.return_value.close = AsyncMock()
