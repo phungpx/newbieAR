@@ -46,6 +46,8 @@ async def ingest_vector(
     return {
         "collection_name": collection_name,
         "chunk_strategy": chunk_strategy,
+        "chunk_count": result.get("chunk_count", 0),
+        "chunks": result.get("chunks", []),
         "file_save_path": result.get("file_save_path"),
         "chunk_save_path": result.get("chunk_save_path"),
     }

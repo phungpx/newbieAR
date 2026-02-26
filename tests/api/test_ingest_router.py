@@ -26,6 +26,12 @@ async def test_ingest_vector_success(client):
         "file_save_path": "/tmp/test.md",
         "chunk_save_path": "/tmp/chunks/test.json",
         "qdrant_collection_name": "research_papers",
+        "chunk_count": 3,
+        "chunks": [
+            {"chunk_id": 0, "text_tokens": 100, "text_preview": "First chunk..."},
+            {"chunk_id": 1, "text_tokens": 150, "text_preview": "Second chunk..."},
+            {"chunk_id": 2, "text_tokens": 120, "text_preview": "Third chunk..."},
+        ],
     }
     with patch("src.api.routers.ingest.asyncio.to_thread", return_value=mock_result):
         with patch("src.api.routers.ingest.VectorDBIngestion") as MockVec:
@@ -39,6 +45,10 @@ async def test_ingest_vector_success(client):
     body = response.json()
     assert body["collection_name"] == "research_papers"
     assert body["chunk_strategy"] == "hybrid"
+    assert body["chunk_count"] == 3
+    assert len(body["chunks"]) == 3
+    assert body["chunks"][0]["chunk_id"] == 0
+    assert body["chunks"][0]["text_preview"] == "First chunk..."
 
 
 async def test_ingest_vector_invalid_chunk_strategy(client):
