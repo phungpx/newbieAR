@@ -162,3 +162,25 @@ async def test_delete_collection_failure(client):
         MockQdrant.return_value.delete_collection.side_effect = RuntimeError("Failed")
         response = await client.delete("/api/v1/ingest/collections/research_papers")
     assert response.status_code == 500
+
+
+async def test_clear_graph_success(client):
+    with patch("src.api.routers.ingest.clear_data", new_callable=AsyncMock) as mock_clear:
+        with patch("src.api.routers.ingest.GraphitiClient") as MockClient:
+            mock_driver = MagicMock()
+            MockClient.return_value.driver = mock_driver
+            MockClient.return_value.close = AsyncMock()
+            response = await client.post("/api/v1/ingest/graph/clear")
+    assert response.status_code == 200
+    body = response.json()
+    assert body["status"] == "cleared"
+    mock_clear.assert_awaited_once_with(mock_driver)
+
+
+async def test_clear_graph_failure(client):
+    with patch("src.api.routers.ingest.clear_data", new_callable=AsyncMock, side_effect=Exception("Neo4j error")):
+        with patch("src.api.routers.ingest.GraphitiClient") as MockClient:
+            MockClient.return_value.driver = MagicMock()
+            MockClient.return_value.close = AsyncMock()
+            response = await client.post("/api/v1/ingest/graph/clear")
+    assert response.status_code == 500

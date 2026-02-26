@@ -3,11 +3,12 @@ import tempfile
 import os
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 from neo4j import AsyncGraphDatabase
+from graphiti_core.utils.maintenance.graph_data_operations import clear_data
 
 from src.ingestion.ingest_vectordb import VectorDBIngestion
 from src.ingestion.ingest_graphdb import GraphitiIngestion
 from src.models import ChunkStrategy
-from src.deps import QdrantVectorStore
+from src.deps import QdrantVectorStore, GraphitiClient
 from src.settings import settings
 
 router = APIRouter(prefix="/ingest", tags=["ingest"])
@@ -140,3 +141,15 @@ async def delete_collection(name: str):
     except RuntimeError as exc:
         raise HTTPException(status_code=500, detail=str(exc))
     return {"deleted": name}
+
+
+@router.post("/graph/clear")
+async def clear_graph():
+    client = GraphitiClient()
+    try:
+        await clear_data(client.driver)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Failed to clear graph: {exc}")
+    finally:
+        await client.close()
+    return {"status": "cleared"}
