@@ -63,9 +63,17 @@ async def test_ingest_vector_invalid_chunk_strategy(client):
 
 
 async def test_ingest_graph_success(client):
+    mock_result = {
+        "filename": "test.pdf",
+        "chunk_count": 2,
+        "chunks": [
+            {"chunk_id": 0, "text_tokens": 80, "text_preview": "Graph chunk one..."},
+            {"chunk_id": 1, "text_tokens": 95, "text_preview": "Graph chunk two..."},
+        ],
+    }
     with patch("src.api.routers.ingest.GraphitiIngestion") as MockGraph:
         mock_instance = MagicMock()
-        mock_instance.ingest_file = AsyncMock()
+        mock_instance.ingest_file = AsyncMock(return_value=mock_result)
         mock_instance.close = AsyncMock()
         MockGraph.return_value = mock_instance
         response = await client.post(
@@ -76,14 +84,18 @@ async def test_ingest_graph_success(client):
     assert response.status_code == 200
     body = response.json()
     assert body["chunk_strategy"] == "hierarchical"
+    assert body["filename"] == "test.pdf"
+    assert body["chunk_count"] == 2
+    assert len(body["chunks"]) == 2
     mock_instance.ingest_file.assert_awaited_once()
     mock_instance.close.assert_awaited_once()
 
 
 async def test_ingest_graph_default_chunk_strategy(client):
+    mock_result = {"filename": "test.pdf", "chunk_count": 0, "chunks": []}
     with patch("src.api.routers.ingest.GraphitiIngestion") as MockGraph:
         mock_instance = MagicMock()
-        mock_instance.ingest_file = AsyncMock()
+        mock_instance.ingest_file = AsyncMock(return_value=mock_result)
         mock_instance.close = AsyncMock()
         MockGraph.return_value = mock_instance
         response = await client.post(

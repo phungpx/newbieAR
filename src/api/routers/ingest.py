@@ -59,8 +59,9 @@ async def ingest_graph(
     chunk_strategy: str = Form(ChunkStrategy.HIERARCHICAL.value),
 ):
     content = await file.read()
+    original_filename = file.filename or "upload.pdf"
 
-    suffix = os.path.splitext(file.filename or "upload")[1] or ".pdf"
+    suffix = os.path.splitext(original_filename)[1] or ".pdf"
     with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as tmp:
         tmp.write(content)
         tmp_path = tmp.name
@@ -68,7 +69,7 @@ async def ingest_graph(
     try:
         ingestion = GraphitiIngestion(chunk_strategy=chunk_strategy)
         try:
-            await ingestion.ingest_file(tmp_path)
+            result = await ingestion.ingest_file(tmp_path, original_filename=original_filename)
         except Exception as exc:
             raise HTTPException(status_code=500, detail=str(exc))
         finally:
@@ -77,8 +78,10 @@ async def ingest_graph(
         os.unlink(tmp_path)
 
     return {
+        "filename": result.get("filename", original_filename),
         "chunk_strategy": chunk_strategy,
-        "filename": file.filename,
+        "chunk_count": result.get("chunk_count", 0),
+        "chunks": result.get("chunks", []),
     }
 
 
