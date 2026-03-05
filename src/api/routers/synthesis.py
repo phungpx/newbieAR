@@ -1,7 +1,10 @@
 import asyncio
+import os
+import tempfile
 from pathlib import Path
+from uuid import uuid4
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException
+from fastapi import APIRouter, BackgroundTasks, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
 from src.api.job_store import JobStatus, job_store
@@ -15,6 +18,18 @@ class SynthesisRequest(BaseModel):
     topic: str = "paper"
     num_contexts: int = 5
     context_size: int = 5
+
+
+@router.post("/upload")
+async def upload_synthesis_files(files: list[UploadFile] = File(...)):
+    tmp_dir = tempfile.mkdtemp(prefix="synthesis_")
+    for file in files:
+        content = await file.read()
+        filename = file.filename or f"upload_{uuid4().hex}.pdf"
+        dest = os.path.join(tmp_dir, filename)
+        with open(dest, "wb") as f:
+            f.write(content)
+    return {"file_dir": tmp_dir, "file_count": len(files)}
 
 
 def _run_synthesis(job_id: str, req: SynthesisRequest) -> None:
@@ -69,7 +84,9 @@ def _run_synthesis(job_id: str, req: SynthesisRequest) -> None:
 
 
 @router.post("/jobs", status_code=202)
-async def create_synthesis_job(req: SynthesisRequest, background_tasks: BackgroundTasks):
+async def create_synthesis_job(
+    req: SynthesisRequest, background_tasks: BackgroundTasks
+):
     job_id = job_store.create()
     background_tasks.add_task(_run_synthesis, job_id, req)
     return {"job_id": job_id, "status": "pending"}

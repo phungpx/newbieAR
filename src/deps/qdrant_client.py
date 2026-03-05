@@ -38,6 +38,26 @@ class QdrantVectorStore:
         collections = self.client.get_collections()
         return [c.name for c in collections.collections]
 
+    def get_collection_info(self, collection_name: str) -> dict | None:
+        """Return basic stats for a collection, or None if it doesn't exist."""
+        if not self.client.collection_exists(collection_name):
+            return None
+        info = self.client.get_collection(collection_name)
+        vectors_config = info.config.params.vectors
+        if hasattr(vectors_config, "size"):
+            dimensions = vectors_config.size
+            distance = str(vectors_config.distance.value).lower()
+        else:
+            first = next(iter(vectors_config.values()))
+            dimensions = first.size
+            distance = str(first.distance.value).lower()
+        return {
+            "vectors_count": info.points_count or 0,
+            "dimensions": dimensions,
+            "distance": distance,
+            "status": str(info.status.value).lower(),
+        }
+
     def delete_collection(self, collection_name: str) -> None:
         try:
             if self.client.collection_exists(collection_name):
