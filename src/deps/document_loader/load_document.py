@@ -30,7 +30,9 @@ class DocumentLoader:
         """
         try:
             if self.ocr_processor and self.ocr_processor.is_scanned_pdf(file_path):
-                logger.info(f"Scanned PDF detected – running Document AI OCR on {file_path}")
+                logger.info(
+                    f"Scanned PDF detected – running Document AI OCR on {file_path}"
+                )
                 ocr_text = self.ocr_processor.ocr(file_path)
                 markdown_path = self._save_markdown(file_path, ocr_text)
                 logger.info(f"OCR complete for {file_path}")
